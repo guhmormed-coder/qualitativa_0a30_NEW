@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pesquisa Qualitativa · Pós-Implantação · 13/04/2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+/* ── RESET ──────────────────────────────────────── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ── SCALE ENGINE ───────────────────────────────── */
+html, body { width: 100%; overflow-x: hidden; background: #0a1628; }
+#scaler { transform-origin: top left; width: 1440px; }
+
+/* ── TOKENS ─────────────────────────────────────── */
+:root {
+  --navy:   #082D60;
+  --green:  #1DB87E;
+  --amber:  #F59E0B;
+  --red:    #EF4444;
+  --blue:   #3B82F6;
+  --purple: #7C3AED;
+  --gray:   #94A3B8;
+  --bg:     #EEF2F7;
+  --card:   #FFFFFF;
+  --border: #D8E2EF;
+  --text:   #0F172A;
+  --t2:     #3D5068;
+  --t3:     #7B93AE;
+  --r:      12px;
+  --sh:     0 2px 8px rgba(8,45,96,.07), 0 0 0 1px var(--border);
+}
+
+/* ── ROOT LAYOUT ─────────────────────────────────── */
+/* Full page = header + ribbon + [sidebar | content] */
+#root {
+  width: 1440px;
+  min-height: 100vh;
+  background: var(--bg);
+  font-family: 'Syne', sans-serif;
+  font-size: 15px;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── HEADER ──────────────────────────────────────── */
+.hdr {
+  background: var(--navy);
+  padding: 32px 56px 28px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.hdr::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 93% 50%, rgba(29,184,126,.13) 0%, transparent 52%);
+}
+.hdr-chip {
+  display: inline-flex;
+  align-items: center;
+  background: var(--green);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+.hdr h1 {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 5px;
+}
+.hdr-sub {
+  color: rgba(255,255,255,.42);
+  font-size: 13px;
+  font-family: 'DM Mono', monospace;
+}
+.hdr-meta {
+  display: flex;
+  gap: 52px;
+  margin-top: 22px;
+  align-items: flex-end;
+}
+.hdr-mi { display: flex; flex-direction: column; gap: 3px; }
+.hdr-ml {
+  font-size: 10px;
+  color: rgba(255,255,255,.38);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+.hdr-mv {
+  font-size: 26px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+}
+.hdr-mv .dim { font-size: 15px; font-weight: 400; opacity: .5; }
+.hdr-mv.accent { color: var(--green); }
+
+/* ── SEGMENT RIBBON — subtle, below header ─────── */
+/* Only visible when a segment is active */
+.ribbon {
+  height: 0;
+  overflow: hidden;
+  background: var(--green); /* overridden by JS */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 56px 0 calc(48px + 56px); /* indent past sidebar */
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255,255,255,.92);
+  border-bottom: 1px solid rgba(255,255,255,.15);
+  transition: height .2s ease, padding .2s ease;
+  flex-shrink: 0;
+}
+.ribbon.show {
+  height: 36px;
+}
+.ribbon-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.ribbon-pill {
+  background: rgba(255,255,255,.12);
+  border-radius: 8px;
+  padding: 2px 10px;
+  font-size: 10px;
+  font-family: 'DM Mono', monospace;
+}
+
+/* ── BODY ROW = sidebar + content ────────────────── */
+.body-row {
+  display: flex;
+  flex: 1;
+  align-items: stretch;
+}
+
+/* ── SIDEBAR TABS ────────────────────────────────── */
+.sidebar {
+  width: 48px;
+  flex-shrink: 0;
+  background: var(--card);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  gap: 4px;
+  /* Stays in place — no sticky needed, sidebar scrolls with content */
+}
+
+.stab {
+  position: relative;
+  width: 36px;
+  /* Height = text length + padding; text is rotated so height = visual width */
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: 'Syne', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--t3);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  /* text rotated bottom-to-top */
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  transition: background .15s, color .15s;
+  white-space: nowrap;
+}
+.stab:hover {
+  background: var(--bg);
+  color: var(--t2);
+}
+.stab.on {
+  background: var(--seg-bg, #EEF2F7);
+  color: var(--seg-c, var(--navy));
+  font-weight: 800;
+}
+/* active indicator — thin left strip (appears as top strip due to rotation) */
+.stab::before {
+  content: '';
+  position: absolute;
+  /* in rotated context: bottom = visual left */
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 0;
+  border-radius: 2px;
+  background: var(--seg-c, var(--navy));
+  transition: height .2s ease;
+}
+.stab.on::before { height: 100%; width: 3px; bottom: 0; left: 2px; transform: none; height: 36px; }
+
+/* dot indicator for colored tabs */
+.stab-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  /* in vertical writing mode this stacks above the text */
+  margin-bottom: 6px;
+}
+/* since writing-mode flips margins: dot appears to the right visually */
+
+/* ── CONTENT AREA ────────────────────────────────── */
+.content {
+  flex: 1;
+  padding: 0 48px 56px;
+  overflow-y: auto;
+  min-width: 0;
+}
+
+/* ── SECTION HEADER ──────────────────────────────── */
+.sec {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 26px 0 14px;
+}
+.sec-lbl {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--t3);
+  white-space: nowrap;
+}
+.sec-line { flex: 1; height: 1px; background: var(--border); }
+
+/* ── KPI GRID ────────────────────────────────────── */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+}
+.kpi {
+  background: var(--card);
+  border-radius: var(--r);
+  box-shadow: var(--sh);
+  padding: 20px 18px 16px;
+  border-top: 3px solid var(--ac, var(--gray));
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.kpi-n {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--text);
+}
+.kpi-l {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--t3);
+  line-height: 1.4;
+  min-height: 26px;
+}
+.kpi-s { font-size: 11.5px; color: var(--t2); }
+
+/* ── FUNNEL ──────────────────────────────────────── */
+.funnel { display: flex; flex-direction: column; }
+.frow {
+  display: grid;
+  grid-template-columns: 210px 1fr 130px;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 22px;
+  border-bottom: 1px solid var(--bg);
+}
+.frow:last-child { border-bottom: none; }
+.frow-lbl { font-size: 13px; color: var(--t2); }
+.ftrack { height: 9px; background: var(--bg); border-radius: 5px; overflow: hidden; }
+.ffill { height: 100%; border-radius: 5px; }
+.fval { font-size: 13px; font-weight: 700; color: var(--text); text-align: right; }
+
+/* ── NPS GRID ────────────────────────────────────── */
+.nps-grid {
+  display: grid;
+  grid-template-columns: 210px 1fr 1fr;
+  gap: 14px;
+  align-items: stretch;
+}
+
+/* NPS score — font sized to never overflow 210px card */
+.nps-card {
+  background: var(--navy);
+  border-radius: var(--r);
+  padding: 26px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+.nps-lbl {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.38);
+}
+/* 
+  Card inner width: 210 - 40px padding = 170px
+  "50,9" in Syne 800 at 46px ≈ 128px → fits with margin
+*/
+.nps-num {
+  font-size: 46px;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--green);
+  white-space: nowrap;
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+.nps-tag {
+  font-size: 10px;
+  color: rgba(255,255,255,.38);
+  text-align: center;
+  line-height: 1.4;
+}
+.nps-bar-track {
+  width: 100%;
+  height: 4px;
+  background: rgba(255,255,255,.12);
+  border-radius: 2px;
+  margin-top: 8px;
+}
+.nps-bar-fill { height: 100%; border-radius: 2px; background: var(--green); }
+.nps-scale {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 3px;
+}
+.nps-scale span { font-size: 9px; color: rgba(255,255,255,.22); }
+
+/* ── DONUT CARD ──────────────────────────────────── */
+.card { background: var(--card); border-radius: var(--r); box-shadow: var(--sh); overflow: hidden; }
+.cpd { padding: 18px 22px; }
+.ctitle {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--t3);
+  margin-bottom: 14px;
+}
+.donut-body { display: flex; gap: 22px; align-items: center; }
+.donut-fig { flex-shrink: 0; position: relative; width: 120px; height: 120px; }
+.donut-center {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+}
+.dc-n { font-size: 22px; font-weight: 800; color: var(--text); line-height: 1; }
+.dc-s { font-size: 10px; color: var(--t3); margin-top: 2px; }
+.leg { display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.leg-row { display: flex; align-items: center; gap: 8px; }
+.leg-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.leg-lbl { font-size: 12.5px; color: var(--t2); flex: 1; }
+.leg-val { font-size: 12.5px; font-weight: 700; color: var(--text); }
+.leg-pct { font-size: 10.5px; color: var(--t3); margin-left: 3px; }
+
+/* ── BAR CHART ───────────────────────────────────── */
+.bar-wrap {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  height: 130px;          /* pure chart area, no label space */
+  position: relative;
+}
+.bar-wrap::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px; background: var(--border);
+}
+/* Label row sits below the chart, outside bar-wrap */
+.bar-labels {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+}
+.bar-lbl-cell {
+  flex: 1;
+  text-align: center;
+  font-size: 10.5px;
+  color: var(--t3);
+  white-space: nowrap;
+}
+.bar-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  position: relative;
+}
+.bar-num {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.bar-item { width: 100%; border-radius: 4px 4px 0 0; }
+
+
+/* ── MACRO GROUPS ────────────────────────────────── */
+.macro-list { display: flex; flex-direction: column; gap: 9px; }
+.mrow {
+  display: grid;
+  grid-template-columns: 5px 1fr 60px;
+  background: var(--card);
+  border-radius: 10px;
+  box-shadow: var(--sh);
+  overflow: hidden;
+  transition: box-shadow .15s;
+}
+.mrow:hover { box-shadow: 0 4px 16px rgba(8,45,96,.11), 0 0 0 1px var(--border); }
+.mrow.sp { opacity: .68; outline: 1px dashed var(--border); outline-offset: -1px; }
+.m-ac { background: var(--mc, var(--gray)); }
+.m-body { padding: 13px 16px; }
+.m-name { font-size: 13.5px; font-weight: 700; color: var(--text); margin-bottom: 3px; }
+.m-desc { font-size: 11px; color: var(--t3); line-height: 1.4; }
+.m-bar-track { height: 3px; background: var(--border); border-radius: 2px; margin-top: 8px; overflow: hidden; }
+.m-bar-fill { height: 100%; border-radius: 2px; background: var(--mc, var(--gray)); }
+.m-cnt {
+  display: flex; flex-direction: column;
+  align-items: flex-end; justify-content: center;
+  padding: 13px 16px 13px 0;
+}
+.m-n { font-size: 22px; font-weight: 800; color: var(--text); line-height: 1; }
+.m-p { font-size: 10px; color: var(--t3); margin-top: 2px; }
+.mrow.sp .m-n { color: var(--t3); }
+
+/* ── WORD CLOUDS ─────────────────────────────────── */
+.wc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.wc-grid.single { grid-template-columns: 1fr; }
+.wc-head {
+  display: flex; align-items: center; gap: 9px;
+  padding: 13px 16px;
+  border-bottom: 1px solid var(--border);
+}
+.wc-hdot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+.wc-htitle { font-size: 12.5px; font-weight: 700; color: var(--t2); flex: 1; }
+.wc-hsub { font-size: 10.5px; color: var(--t3); }
+.wc-body { padding: 10px; }
+canvas.wc { display: block; width: 100%; border-radius: 8px; }
+
+/* ── DEPOIMENTOS ─────────────────────────────────── */
+.dep-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.dep {
+  background: var(--card);
+  border-radius: 10px;
+  box-shadow: var(--sh);
+  padding: 13px 15px;
+  display: flex; gap: 11px;
+}
+.dep-badge {
+  width: 27px; height: 27px; border-radius: 7px;
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 800; color: #fff;
+  margin-top: 1px;
+}
+.dep-txt {
+  font-size: 12px; color: var(--t2); line-height: 1.55;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ── NOTE ────────────────────────────────────────── */
+.note {
+  background: #FFFBEB;
+  border: 1px solid #FDE68A;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 11.5px;
+  color: #92400E;
+  display: flex; gap: 10px;
+  margin-top: 16px;
+  line-height: 1.5;
+}
+
+/* ── FADE ────────────────────────────────────────── */
+.dyn { transition: opacity .2s ease, transform .2s ease; }
+.dyn.out { opacity: 0; transform: translateY(5px); pointer-events: none; }
+</style>
+</head>
+<body>
+<div id="scaler">
+<div id="root">
+
+  <!-- HEADER -->
+  <header class="hdr">
+    <div class="hdr-chip">Pesquisa Qualitativa · Pós-Implantação</div>
+    <h1>Resultados da Campanha de Avaliação</h1>
+    <p class="hdr-sub">Disparo em 13/04/2026 · Digisac / Ikatec Engenharia de Software</p>
+    <div class="hdr-meta">
+      <div class="hdr-mi">
+        <div class="hdr-ml">Total Disparado</div>
+        <div class="hdr-mv">750</div>
+      </div>
+      <div class="hdr-mi">
+        <div class="hdr-ml">Respondentes</div>
+        <div class="hdr-mv">57 <span class="dim">de 750</span></div>
+      </div>
+      <div class="hdr-mi">
+        <div class="hdr-ml">NPS Score</div>
+        <div class="hdr-mv accent">50,9</div>
+      </div>
+      <div class="hdr-mi">
+        <div class="hdr-ml">Exportado em</div>
+        <div class="hdr-mv" style="font-size:19px">23/04/2026</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- RIBBON — subtle info strip, only shows when segment active -->
+  <div class="ribbon" id="ribbon">
+    <div class="ribbon-dot" id="rdot"></div>
+    <span id="rtxt"></span>
+    <span class="ribbon-pill" id="rpill"></span>
+  </div>
+
+  <!-- BODY ROW -->
+  <div class="body-row">
+
+    <!-- SIDEBAR with rotated tabs -->
+    <aside class="sidebar">
+      <button class="stab on" data-seg="all" onclick="setSeg('all')"
+              style="--seg-c:var(--navy);--seg-bg:#EAF0FA">
+        Visão Geral
+      </button>
+      <button class="stab" data-seg="promotores" onclick="setSeg('promotores')"
+              style="--seg-c:#1DB87E;--seg-bg:#F0FDF8">
+        <span class="stab-dot" style="background:#1DB87E"></span>
+        Promotores
+      </button>
+      <button class="stab" data-seg="neutros" onclick="setSeg('neutros')"
+              style="--seg-c:#F59E0B;--seg-bg:#FFFBEB">
+        <span class="stab-dot" style="background:#F59E0B"></span>
+        Neutros
+      </button>
+      <button class="stab" data-seg="detratores" onclick="setSeg('detratores')"
+              style="--seg-c:#EF4444;--seg-bg:#FEF2F2">
+        <span class="stab-dot" style="background:#EF4444"></span>
+        Detratores
+      </button>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="content">
+
+      <!-- KPIs -->
+      <div class="sec"><span class="sec-lbl">Participação da campanha</span><span class="sec-line"></span></div>
+      <div class="kpi-grid">
+        <div class="kpi" style="--ac:var(--navy)">
+          <div class="kpi-n">750</div><div class="kpi-l">Total Disparado</div><div class="kpi-s">base da campanha</div>
+        </div>
+        <div class="kpi" style="--ac:var(--blue)">
+          <div class="kpi-n">143</div><div class="kpi-l">Interagiram</div><div class="kpi-s">19.1% do total</div>
+        </div>
+        <div class="kpi" style="--ac:var(--green)">
+          <div class="kpi-n">91</div><div class="kpi-l">Responderam</div><div class="kpi-s">12.1% do total</div>
+        </div>
+        <div class="kpi" style="--ac:var(--red)">
+          <div class="kpi-n">33</div><div class="kpi-l">Não Quiseram Opinar</div><div class="kpi-s">4.4% do total</div>
+        </div>
+        <div class="kpi" style="--ac:var(--amber)">
+          <div class="kpi-n">19</div><div class="kpi-l">Abriu mas Expirou</div><div class="kpi-s">2.5% do total</div>
+        </div>
+        <div class="kpi" style="--ac:var(--gray)">
+          <div class="kpi-n">607</div><div class="kpi-l">Não Interagiram</div><div class="kpi-s">80.9% do total</div>
+        </div>
+      </div>
+
+      <!-- FUNIL -->
+      <div class="sec"><span class="sec-lbl">Funil de participação · base: 750</span><span class="sec-line"></span></div>
+      <div class="card">
+        <div class="funnel">
+          <div class="frow">
+            <div class="frow-lbl">✅ Responderam com nota</div>
+            <div class="ftrack"><div class="ffill" style="width:12.1%;background:var(--green)"></div></div>
+            <div class="fval">91 &nbsp;(12.1%)</div>
+          </div>
+          <div class="frow">
+            <div class="frow-lbl">🚫 Não quiseram opinar</div>
+            <div class="ftrack"><div class="ffill" style="width:4.4%;background:var(--red)"></div></div>
+            <div class="fval">33 &nbsp;(4.4%)</div>
+          </div>
+          <div class="frow">
+            <div class="frow-lbl">⏱ Abriu mas expirou</div>
+            <div class="ftrack"><div class="ffill" style="width:2.5%;background:var(--amber)"></div></div>
+            <div class="fval">19 &nbsp;(2.5%)</div>
+          </div>
+          <div class="frow">
+            <div class="frow-lbl">— Não interagiram</div>
+            <div class="ftrack"><div class="ffill" style="width:80.9%;background:var(--gray)"></div></div>
+            <div class="fval">607 &nbsp;(80.9%)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NPS -->
+      <div class="sec">
+        <span class="sec-lbl" id="nps-sec-lbl">Satisfação e NPS · base: 91 respondentes</span>
+        <span class="sec-line"></span>
+      </div>
+      <div class="nps-grid dyn" id="nps-row">
+        <div class="nps-card">
+          <div class="nps-lbl">NPS Score</div>
+          <div class="nps-num" id="nps-num">61.5</div>
+          <div class="nps-tag" id="nps-tag">Zona de Qualidade</div>
+          <div class="nps-bar-track">
+            <div class="nps-bar-fill" id="nps-bar" style="width:75.5%"></div>
+          </div>
+          <div class="nps-scale"><span>−100</span><span>0</span><span>+100</span></div>
+        </div>
+        <div class="card cpd">
+          <div class="ctitle" id="donut-title">Distribuição NPS</div>
+          <div class="donut-body">
+            <div class="donut-fig">
+              <canvas id="donut-c" width="120" height="120"></canvas>
+              <div class="donut-center">
+                <div class="dc-n" id="dc-n">91</div>
+                <div class="dc-s" id="dc-s">respondentes</div>
+              </div>
+            </div>
+            <div class="leg" id="legend"></div>
+          </div>
+        </div>
+        <div class="card cpd">
+          <div class="ctitle">Distribuição por nota</div>
+          <div class="bar-wrap" id="bar-chart"></div>
+        </div>
+      </div>
+
+      <!-- MACROS -->
+      <div class="sec"><span class="sec-lbl" id="mac-lbl">Macrogrupos de motivos</span><span class="sec-line"></span></div>
+      <div class="macro-list dyn" id="macro-list"></div>
+
+      <!-- WORD CLOUDS -->
+      <div class="sec"><span class="sec-lbl" id="wc-lbl">Nuvem de palavras</span><span class="sec-line"></span></div>
+      <div id="wc-wrap" class="dyn"></div>
+
+      <!-- DEPOIMENTOS -->
+      <div id="dep-sec" style="display:none">
+        <div class="sec"><span class="sec-lbl" id="dep-lbl">Depoimentos</span><span class="sec-line"></span></div>
+        <div class="dep-grid dyn" id="dep-list"></div>
+      </div>
+
+      <div class="note">
+        <span style="font-size:15px;flex-shrink:0">⚠️</span>
+        <span>8 registros de avaliações não constavam no histórico de chamados exportado (base histórico: 95 chamados; base consolidada: 103). O total de 750 mensagens disparadas foi informado pela equipe comercial.</span>
+      </div>
+
+    </div><!-- /content -->
+  </div><!-- /body-row -->
+</div><!-- /root -->
+</div><!-- /scaler -->
+
+<script>
+// ── SCALE ─────────────────────────────────────────
+const DESIGN_W = 1440;
+function applyScale() {
+  const ratio = window.innerWidth / DESIGN_W;
+  const s = document.getElementById('scaler');
+  s.style.transform = `scale(${ratio})`;
+  s.style.transformOrigin = 'top left';
+  s.style.width = DESIGN_W + 'px';
+  document.body.style.height = Math.ceil(
+    document.getElementById('root').scrollHeight * ratio
+  ) + 'px';
+}
+window.addEventListener('resize', applyScale);
+window.addEventListener('load', () => { applyScale(); setTimeout(applyScale, 400); });
+
+// ── DATA ──────────────────────────────────────────
+const SEG = {
+  all: {
+    id:'all', label:'Visão Geral', color:'#082D60',
+    resp:57, promo:38, neutro:10, detr:9,
+    notas:[5,4,10,10,28],
+    npsNum:'50,9', npsTag:'Zona de Qualidade', npsPct:75.5,
+    words:{Excelente:8,Atencioso:7,Satisfeito:6,Rápido:6,Claro:5,
+           Banimento:9,Demora:7,Instabilidade:5,Falhas:5,
+           Organizado:4,Eficiente:4,Desinformação:4,
+           Profissional:3,Cancelamento:3,Impessoal:3,
+           Dedicado:2,Transparente:2,Lentidão:2,Descontinuidade:2},
+    wColors:['#082D60','#0d3a7a','#1DB87E','#17A06C','#EF4444','#B91C1C','#059669'],
+    macros:[
+      {name:'Atendimento e Suporte',desc:'Velocidade, continuidade, calor humano e follow-up proativo',n:6,base:40,c:'#EF4444'},
+      {name:'Problemas Técnicos e Instabilidade',desc:'Banimento Meta, falhas no envio/recebimento, instabilidades recorrentes',n:5,base:40,c:'#F59E0B'},
+      {name:'Processo de Implantação',desc:'Ritmo, personalização e suporte contínuo durante a implantação',n:4,base:40,c:'#7C3AED'},
+      {name:'Produto e Usabilidade',desc:'Funcionalidades ausentes, layout, material educativo, curva de aprendizado',n:4,base:40,c:'#3B82F6'},
+      {name:'Transparência Comercial',desc:'Clareza sobre valores, condições contratuais e riscos do serviço',n:2,base:40,c:'#1DB87E'},
+      {name:'Cancelamento / Churn',desc:'Clientes que não chegaram a operar ou encerraram o contrato',n:1,base:40,c:'#EF4444'},
+      {name:'Sem Registro de Motivo',desc:'Responderam com nota mas não preencheram o campo de justificativa',n:17,base:57,c:'#94A3B8',sp:true},
+    ], deps:[]},
+
+  promotores:{id:'promotores',label:'Promotores',color:'#1DB87E',
+    resp:38,promo:38,neutro:0,detr:0,notas:[0,0,0,10,28],
+    npsNum:'38',npsTag:'respondentes neste segmento',npsPct:(38/57)*100,
+    words:{Excelente:9,Atencioso:8,Satisfeito:7,Rápido:6,Claro:5,
+           Organizado:4,Eficiente:4,Dedicado:3,Profissional:3,
+           Objetivo:2,Acolhedor:2,Confiante:2,Pontual:1,Maduro:1,Transparente:1},
+    wColors:['#0B6E44','#1DB87E','#17A06C','#059669','#10B981','#065F46','#34D399'],
+    macros:[
+      {name:'Produto e Usabilidade',desc:'Dúvidas em funcionalidades, layout e sugestão de novos recursos',n:4,base:14,c:'#3B82F6'},
+      {name:'Atendimento e Suporte',desc:'Elogios ao atendimento, acompanhamento e follow-up',n:3,base:14,c:'#1DB87E'},
+      {name:'Problemas Técnicos',desc:'Falhas pontuais no envio de mensagens',n:1,base:14,c:'#F59E0B'},
+      {name:'Processo de Implantação',desc:'Pedido de mais horas de configuração',n:1,base:14,c:'#7C3AED'},
+      {name:'Sem Registro de Motivo',desc:'Responderam com nota mas não preencheram o campo de justificativa',n:21,base:38,c:'#94A3B8',sp:true},
+    ],
+    deps:[
+      {nota:5,txt:'Foi ótimo, o pessoal foi super atencioso.'},
+      {nota:5,txt:'Foram excelentes. Tanto na apresentação como no acompanhamento diário tirando todas as dúvidas.'},
+      {nota:5,txt:'Até o momento minha experiência foi excelente e fui muito bem atendida.'},
+      {nota:5,txt:'Achei um atendimento bem maduro, não tive reclamação.'},
+      {nota:5,txt:'Pra mim foi tudo muito bom. Rápido, direto ao ponto, sem enrolação.'},
+      {nota:5,txt:'Ainda estou aprendendo, mas acho que poderia ser um layout mais intuitivo — muitas abas escondidas.'},
+      {nota:5,txt:'Ainda tenho dúvidas em algumas funcionalidades da ferramenta.'},
+      {nota:5,txt:'Até o momento está de acordo. Queria mais horas para configuração, pois é muita coisa e muitos detalhes.'},
+      {nota:5,txt:'A experiência foi ótima, equipe super atenciosa na venda e no pós-venda.'},
+      {nota:5,txt:'Suporte me respondia sempre muito rápido.'},
+      {nota:5,txt:'Tem um WhatsApp que está desconectando com frequência, gerando atraso no trabalho.'},
+      {nota:5,txt:'A plataforma é difícil de usar sozinha — queria ter mais autonomia.'},
+      {nota:4,txt:'Meu contato ficou fidelizado a um vendedor — quando precisei de suporte, ocorreu uma leve demora.'},
+      {nota:4,txt:'Área de membros com passo a passo em vídeo de todas as funções seria ótimo.'},
+      {nota:4,txt:'A plataforma é ótima, porém acontecem muitos problemas no envio de mensagens quase diariamente.'},
+      {nota:4,txt:'Ter opção de colocar localização e chave pix.'},
+      {nota:4,txt:'O segundo treinamento fui eu que agendei — era para a equipe ter feito isso. Importante ter follow-up.'},
+      {nota:4,txt:'Um pouco mais de tempo em acompanhamento direto para criação do robô personalizado.'},
+      {nota:4,txt:'Clientes relatam que selecionam o atendente e a mensagem não chega — precisa de correção.'},
+    ]},
+
+  neutros:{id:'neutros',label:'Neutros',color:'#F59E0B',
+    resp:10,promo:0,neutro:10,detr:0,notas:[0,0,10,0,0],
+    npsNum:'10',npsTag:'respondentes neste segmento',npsPct:(10/57)*100,
+    words:{Demora:5,Atendimento:4,Implantação:4,Instabilidade:3,
+           Personalização:3,Banimento:2,Continuidade:2,Clareza:2,Reunião:2,Atenção:1},
+    wColors:['#92400E','#B45309','#D97706','#F59E0B','#FBBF24','#78350F'],
+    macros:[
+      {name:'Atendimento e Suporte',desc:'Demora no atendimento e falta de continuidade entre sessões',n:2,base:8,c:'#EF4444'},
+      {name:'Processo de Implantação',desc:'Implantação incompleta e pedido de reunião individual',n:2,base:8,c:'#7C3AED'},
+      {name:'Problemas Técnicos',desc:'Instabilidades e banimento durante período de uso',n:2,base:8,c:'#F59E0B'},
+      {name:'Transparência Comercial',desc:'Falta de clareza sobre valores e opções adicionais',n:1,base:8,c:'#1DB87E'},
+      {name:'Sem Registro de Motivo',desc:'Responderam com nota mas não preencheram o campo de justificativa',n:2,base:10,c:'#94A3B8',sp:true},
+    ],
+    deps:[
+      {nota:3,txt:'Melhora na explicação em relação a valores. As informações foram passadas por etapas quando pedíamos mais opções.'},
+      {nota:3,txt:'Queria reunião on-line individual para personalização. Queria contratar mais recursos mas fiquei insegura sem ela.'},
+      {nota:3,txt:'A implantação ainda não finalizou.'},
+      {nota:3,txt:'Desde a contratação estou tendo diversas instabilidades — clientes não recebem mensagens e eu também não recebo.'},
+      {nota:3,txt:'Dar mais atenção no processo em geral.'},
+      {nota:3,txt:'Estou tendo problema com banimento.'},
+      {nota:3,txt:'Demora no atendimento. Quando atendiam saíam para almoço e eu precisava recomeçar com outra pessoa no dia seguinte.'},
+      {nota:3,txt:'Não tive orientação clara sobre o melhor uso da ferramenta. Consegui me virar por já ter experiência em sistemas similares.'},
+      {nota:3,txt:'O pessoal não se adaptou — vamos optar por outro sistema.'},
+    ]},
+
+  detratores:{id:'detratores',label:'Detratores',color:'#EF4444',
+    resp:9,promo:0,neutro:0,detr:9,notas:[5,4,0,0,0],
+    npsNum:'9',npsTag:'respondentes neste segmento',npsPct:(9/57)*100,
+    words:{Banimento:9,Demora:7,Instabilidade:6,Falhas:5,Desinformação:4,
+           Impessoal:3,Cancelamento:3,Lentidão:2,Descontinuidade:2,Inflexível:1,Desamparo:1},
+    wColors:['#991B1B','#B91C1C','#DC2626','#EF4444','#F87171','#7F1D1D'],
+    macros:[
+      {name:'Problemas Técnicos e Instabilidade',desc:'Banimento Meta, falhas no envio e recebimento de mensagens',n:3,base:6,c:'#F59E0B'},
+      {name:'Atendimento e Suporte',desc:'Atendimento frio e impessoal, demora no retorno',n:2,base:6,c:'#EF4444'},
+      {name:'Transparência Comercial',desc:'Não informada sobre risco de banimento, inflexibilidade contratual',n:1,base:6,c:'#1DB87E'},
+      {name:'Cancelamento / Churn',desc:'Não chegou a operar, contrato encerrado antes do uso',n:1,base:6,c:'#EF4444'},
+      {name:'Processo de Implantação',desc:'Falta de suporte contínuo durante a implantação',n:1,base:6,c:'#7C3AED'},
+      {name:'Sem Registro de Motivo',desc:'Responderam com nota mas não preencheram o campo de justificativa',n:3,base:9,c:'#94A3B8',sp:true},
+    ],
+    deps:[
+      {nota:1,txt:'Quando conectei o WhatsApp na Digisac recebi um banimento da Meta. Não fui informada previamente do risco e não consigo mais usar nem o WhatsApp Web.'},
+      {nota:1,txt:'O atendimento robótico, frio e desagradável me fez perder a vontade de usar o sistema.'},
+      {nota:1,txt:'Não houve operação do serviço e portanto foi cancelado.'},
+      {nota:1,txt:'Falta de um auxiliar para ajudar na implantação de forma contínua.'},
+      {nota:2,txt:'Muita demora na resposta — estou 2 horas aguardando.'},
+      {nota:2,txt:'As pessoas não estão recebendo as mensagens no WhatsApp de forma rápida e não dá para atender ligação.'},
+      {nota:2,txt:'Bug no CSAT: clientes que não respondem a pesquisa ficam bloqueados e não conseguem entrar em contato novamente.'},
+    ]},
+};
+
+// ── WORD CLOUD ────────────────────────────────────
+function drawWC(id, words, colors) {
+  const cv = document.getElementById(id);
+  if (!cv) return;
+  const rect = cv.getBoundingClientRect();
+  const dpr = window.devicePixelRatio || 1;
+  cv.width  = rect.width  * dpr;
+  cv.height = rect.height * dpr;
+  const ctx = cv.getContext('2d');
+  ctx.scale(dpr, dpr);
+  const W = rect.width, H = rect.height;
+  ctx.clearRect(0,0,W,H);
+  const entries = Object.entries(words).sort((a,b)=>b[1]-a[1]);
+  const maxV = entries[0][1];
+  const placed = [];
+  const fs = v => Math.round(11 + (v/maxV)*42);
+  const fw = v => v >= maxV*0.5 ? '800':'700';
+  function fits(r) {
+    if (r.x<5||r.y<5||r.x+r.w>W-5||r.y+r.h>H-5) return false;
+    for (const p of placed)
+      if (!(r.x>p.x+p.w+5||r.x+r.w+5<p.x||r.y>p.y+p.h+5||r.y+r.h+5<p.y)) return false;
+    return true;
+  }
+  const cx=W/2, cy=H/2;
+  for (const [word,val] of entries) {
+    const size=fs(val), weight=fw(val);
+    ctx.font=`${weight} ${size}px Syne,sans-serif`;
+    const tw=ctx.measureText(word).width, th=size*1.25;
+    let angle=Math.random()*Math.PI*2, r=0;
+    for (let i=0;i<900;i++) {
+      const x=cx+r*Math.cos(angle)-tw/2;
+      const y=cy+r*Math.sin(angle)+th*0.35;
+      const rect={x,y:y-th*0.9,w:tw,h:th};
+      if (fits(rect)) {
+        placed.push(rect);
+        ctx.globalAlpha=0.5+(val/maxV)*0.5;
+        ctx.fillStyle=colors[Math.floor(Math.random()*colors.length)];
+        ctx.fillText(word,x,y);
+        ctx.globalAlpha=1;
+        break;
+      }
+      angle+=0.20; r+=0.30;
+    }
+  }
+}
+
+// ── DONUT ─────────────────────────────────────────
+function drawDonut(p,n,d,total) {
+  const cv=document.getElementById('donut-c');
+  if(!cv)return;
+  const ctx=cv.getContext('2d'),W=120,H=120,R=50,IR=31;
+  ctx.clearRect(0,0,W,H);
+  const segs=[{v:p,c:'#1DB87E'},{v:n,c:'#F59E0B'},{v:d,c:'#EF4444'}].filter(s=>s.v>0);
+  let start=-Math.PI/2;
+  for(const{v,c}of segs){
+    const arc=(v/total)*Math.PI*2;
+    ctx.beginPath();ctx.moveTo(W/2,H/2);
+    ctx.arc(W/2,H/2,R,start,start+arc);
+    ctx.closePath();ctx.fillStyle=c;ctx.fill();
+    start+=arc;
+  }
+  ctx.beginPath();ctx.arc(W/2,H/2,IR,0,Math.PI*2);
+  ctx.fillStyle='#fff';ctx.fill();
+}
+
+// ── BAR CHART ─────────────────────────────────────
+const BC=['#EF4444','#F97316','#F59E0B','#84CC16','#1DB87E'];
+function renderBar(notas){
+  const wrap=document.getElementById('bar-chart');
+  if(!wrap)return;
+  const maxV=Math.max(...notas,1);
+  // clear both chart and label row
+  wrap.innerHTML='';
+  let lblRow=document.getElementById('bar-labels-row');
+  if(lblRow) lblRow.innerHTML='';
+  else {
+    lblRow=document.createElement('div');
+    lblRow.id='bar-labels-row';
+    lblRow.className='bar-labels';
+    wrap.parentNode.appendChild(lblRow);
+  }
+  notas.forEach((v,i)=>{
+    const pct=(v/maxV)*100;
+    // bar column
+    const col=document.createElement('div');
+    col.className='bar-col';
+    col.innerHTML=`
+      ${v>0?`<div class="bar-num">${v}</div>`:'<div class="bar-num" style="opacity:0">0</div>'}
+      <div class="bar-item" style="height:${pct}%;background:${BC[i]};min-height:${v>0?4:0}px"></div>`;
+    wrap.appendChild(col);
+    // label cell (separate row, below axis)
+    const lbl=document.createElement('div');
+    lbl.className='bar-lbl-cell';
+    lbl.textContent='Nota '+(i+1);
+    lblRow.appendChild(lbl);
+  });
+}
+
+// ── LEGEND ────────────────────────────────────────
+function renderLegend(seg){
+  const el=document.getElementById('legend');
+  if(!el)return;
+  if(seg.id==='all'){
+    el.innerHTML=`
+      <div class="leg-row"><div class="leg-dot" style="background:#1DB87E"></div>
+        <span class="leg-lbl">Promotores (4–5)</span>
+        <span class="leg-val">38<span class="leg-pct">66,7%</span></span></div>
+      <div class="leg-row"><div class="leg-dot" style="background:#F59E0B"></div>
+        <span class="leg-lbl">Neutros (3)</span>
+        <span class="leg-val">10<span class="leg-pct">17,5%</span></span></div>
+      <div class="leg-row"><div class="leg-dot" style="background:#EF4444"></div>
+        <span class="leg-lbl">Detratores (1–2)</span>
+        <span class="leg-val">9<span class="leg-pct">15,8%</span></span></div>`;
+  } else {
+    const pct=(seg.resp/57*100).toFixed(1), o=57-seg.resp;
+    el.innerHTML=`
+      <div class="leg-row"><div class="leg-dot" style="background:${seg.color}"></div>
+        <span class="leg-lbl">${seg.label}</span>
+        <span class="leg-val">${seg.resp}<span class="leg-pct">${pct}%</span></span></div>
+      <div class="leg-row"><div class="leg-dot" style="background:#D8E2EF"></div>
+        <span class="leg-lbl">Outros segmentos</span>
+        <span class="leg-val">${o}<span class="leg-pct">${(o/57*100).toFixed(1)}%</span></span></div>`;
+  }
+}
+
+// ── MACROS ────────────────────────────────────────
+function renderMacros(seg){
+  const el=document.getElementById('macro-list');
+  if(!el)return;
+  el.innerHTML='';
+  for(const m of seg.macros){
+    const pct=(m.n/m.base*100).toFixed(0);
+    const d=document.createElement('div');
+    d.className='mrow'+(m.sp?' sp':'');
+    d.style.setProperty('--mc',m.c);
+    d.innerHTML=`
+      <div class="m-ac"></div>
+      <div class="m-body">
+        <div class="m-name">${m.name}</div>
+        <div class="m-desc">${m.desc}</div>
+        <div class="m-bar-track"><div class="m-bar-fill" style="width:${m.n/m.base*100}%"></div></div>
+      </div>
+      <div class="m-cnt"><div class="m-n">${m.n}</div><div class="m-p">${pct}%</div></div>`;
+    el.appendChild(d);
+  }
+}
+
+// ── WORD CLOUDS ───────────────────────────────────
+function renderWC(seg){
+  const wrap=document.getElementById('wc-wrap');
+  const isAll=!seg||seg.id==='all';
+  if(isAll){
+    wrap.className='wc-grid dyn';
+    wrap.innerHTML=`
+      <div class="card">
+        <div class="wc-head"><div class="wc-hdot" style="background:#1DB87E"></div>
+          <div class="wc-htitle">O que dizem os Promotores</div>
+          <div class="wc-hsub">notas 4–5 · 38 respondentes</div></div>
+        <div class="wc-body" style="background:#F0FDF8">
+          <canvas class="wc" id="wc-p" style="height:180px"></canvas></div></div>
+      <div class="card">
+        <div class="wc-head"><div class="wc-hdot" style="background:#EF4444"></div>
+          <div class="wc-htitle">O que dizem os Detratores</div>
+          <div class="wc-hsub">notas 1–2 · 9 respondentes</div></div>
+        <div class="wc-body" style="background:#FEF2F2">
+          <canvas class="wc" id="wc-d" style="height:180px"></canvas></div></div>`;
+    requestAnimationFrame(()=>setTimeout(()=>{
+      drawWC('wc-p',SEG.promotores.words,SEG.promotores.wColors);
+      drawWC('wc-d',SEG.detratores.words,SEG.detratores.wColors);
+    },80));
+  } else {
+    const bgMap={promotores:'#F0FDF8',neutros:'#FFFBEB',detratores:'#FEF2F2'};
+    const bg=bgMap[seg.id];
+    wrap.className='wc-grid single dyn';
+    wrap.innerHTML=`
+      <div class="card">
+        <div class="wc-head"><div class="wc-hdot" style="background:${seg.color}"></div>
+          <div class="wc-htitle">Palavras que definem os ${seg.label}</div>
+          <div class="wc-hsub">${seg.resp} respondentes · essência das avaliações</div></div>
+        <div class="wc-body" style="background:${bg}">
+          <canvas class="wc" id="wc-seg" style="height:180px"></canvas></div></div>`;
+    requestAnimationFrame(()=>setTimeout(()=>
+      drawWC('wc-seg',seg.words,seg.wColors),80));
+  }
+}
+
+// ── DEPOIMENTOS ───────────────────────────────────
+function notaColor(n){return n>=4?'#1DB87E':n===3?'#F59E0B':'#EF4444';}
+function renderDeps(seg){
+  const sec=document.getElementById('dep-sec');
+  const list=document.getElementById('dep-list');
+  if(!seg||seg.id==='all'||!seg.deps.length){sec.style.display='none';return;}
+  sec.style.display='block';
+  document.getElementById('dep-lbl').textContent=
+    `Depoimentos · ${seg.label} · ${seg.deps.length} com justificativa`;
+  list.innerHTML='';
+  for(const d of seg.deps){
+    const div=document.createElement('div');
+    div.className='dep';
+    div.innerHTML=`
+      <div class="dep-badge" style="background:${notaColor(d.nota)}">${d.nota}</div>
+      <div class="dep-txt">"${d.txt}"</div>`;
+    list.appendChild(div);
+  }
+}
+
+// ── SET SEGMENT ───────────────────────────────────
+let cur='all';
+function setSeg(id){
+  if(id===cur)return;
+  cur=id;
+  const seg=SEG[id];
+
+  // sidebar tabs
+  document.querySelectorAll('.stab').forEach(b=>{
+    b.classList.toggle('on', b.dataset.seg===id);
+  });
+
+  // ribbon — subtle, below header
+  const rib=document.getElementById('ribbon');
+  if(id==='all'){
+    rib.classList.remove('show');
+    rib.style.background = '';
+  } else {
+    rib.classList.add('show');
+    rib.style.background = seg.color;
+    document.getElementById('rdot').style.background='rgba(255,255,255,.5)';
+    document.getElementById('rtxt').textContent=`Exibindo apenas: ${seg.label}`;
+    document.getElementById('rpill').textContent=
+      `${seg.resp} respondentes · ${(seg.resp/57*100).toFixed(1)}% do total`;
+  }
+
+  document.querySelectorAll('.dyn').forEach(e=>e.classList.add('out'));
+
+  setTimeout(()=>{
+    document.getElementById('nps-sec-lbl').textContent=id==='all'
+      ?'Satisfação e NPS · base: 91 respondentes'
+      :`Segmento: ${seg.label} · ${seg.resp} de 57 respondentes`;
+    document.getElementById('nps-num').textContent=seg.npsNum;
+    document.getElementById('nps-tag').textContent=seg.npsTag;
+    document.getElementById('nps-bar').style.width=seg.npsPct+'%';
+    document.getElementById('dc-n').textContent=seg.resp;
+    document.getElementById('dc-s').textContent=id==='all'?'respondentes':seg.label.toLowerCase();
+    document.getElementById('donut-title').textContent=
+      id==='all'?'Distribuição NPS':`${seg.resp} de 57 respondentes`;
+
+    drawDonut(seg.promo,seg.neutro,seg.detr,57);
+    renderBar(seg.notas);
+    renderLegend(seg);
+    renderMacros(seg);
+    renderWC(seg);
+    renderDeps(seg);
+
+    document.querySelectorAll('.dyn').forEach(e=>e.classList.remove('out'));
+    setTimeout(applyScale, 100);
+  },200);
+}
+
+// ── INIT ──────────────────────────────────────────
+window.addEventListener('load',()=>{
+  drawDonut(66,15,10,91);
+  renderBar([5,5,15,18,48]);
+  renderLegend(SEG.all);
+  renderMacros(SEG.all);
+  renderWC(null);
+});
+</script>
+</body>
+</html>
