@@ -1,60 +1,60 @@
-# About Section Templates
+# Modelos de Seção Sobre
 
-## Display budget
+## Orçamento de exibição
 
-- **Mobile cutoff:** first 265-275 chars show before "see more"
-- **Full length:** 200-300 words (1,000-1,500 characters)
-- **Voice:** first person ("I help...") never third person ("Jane is a passionate...")
+- **Corte no mobile:** os primeiros 265-275 caracteres aparecem antes do "ver mais"
+- **Tamanho completo:** 200-300 palavras (1.000-1.500 caracteres)
+- **Voz:** primeira pessoa ("eu ajudo...") nunca terceira pessoa ("Jane é uma apaixonada...")
 
-The hook is everything — most readers never click "see more", so the first 265 chars have to carry the whole pitch.
+O gancho é tudo — a maioria dos leitores nunca clica em "ver mais", então os primeiros 265 caracteres precisam carregar todo o pitch.
 
-## 7-Step Structure
+## Estrutura de 7 etapas
 
-| Step | Purpose | Budget |
+| Etapa | Objetivo | Orçamento |
 |---|---|---|
-| 1. Hook | Open with a question, claim, or specific number that stops the scroll | ~50 chars |
-| 2. Your role | State what you actually do, who you help | ~100 chars |
-| 3. Achievements | One or two concrete wins with numbers | ~150 chars |
-| 4. Value proposition | What problem you solve and how | ~200 chars |
-| 5. Personality | One line that shows you're human | ~100 chars |
-| 6. Specialties | Keywords for search (no generic buzzwords) | ~150 chars |
-| 7. Call-to-action | What should they do next | ~100 chars |
+| 1. Gancho | Comece com uma pergunta, uma afirmação ou um número específico que interrompa a rolagem | ~50 caracteres |
+| 2. Seu papel | Diga o que você realmente faz, quem você ajuda | ~100 caracteres |
+| 3. Conquistas | Uma ou duas vitórias concretas com números | ~150 caracteres |
+| 4. Proposta de valor | Que problema você resolve e como | ~200 caracteres |
+| 5. Personalidade | Uma linha que mostra que você é humano | ~100 caracteres |
+| 6. Especialidades | Palavras-chave para busca (sem termos genéricos) | ~150 caracteres |
+| 7. Chamada para ação | O que a pessoa deve fazer em seguida | ~100 caracteres |
 
-## Full worked example
+## Exemplo completo
 
 ```
-Why do most B2B founders burn 40% of their pipeline on bad-fit leads?
+Por que a maioria dos fundadores B2B queima 40% do pipeline com leads que não têm fit?
 
-I help 1-10M ARR SaaS founders rebuild their inbound motion around signal, not volume.
+Eu ajudo fundadores de SaaS com ARR de 1-10 milhões a reconstruir a motion de inbound em torno de sinal, não de volume.
 
-Last year my team cut acquisition cost 62% for three portfolio companies and grew pipeline 3.4x — the full case studies are in Featured.
+No ano passado, minha equipe cortou o custo de aquisição em 62% para três empresas do portfólio e aumentou o pipeline em 3,4x — os estudos de caso completos estão nos Destaques.
 
-What I do: AI-native demand gen. I audit your funnel, rewire the signal layer, and install an always-on content engine that brings the right 50 buyers to you each quarter (instead of 5,000 strangers).
+O que eu faço: geração de demanda nativa em IA. Eu audito seu funil, reconfiguro a camada de sinal e instalo um motor de conteúdo sempre ativo que traz os 50 compradores certos até você a cada trimestre (em vez de 5.000 estranhos).
 
-Outside work: two kids, one dog, bad chess player.
+Fora do trabalho: dois filhos, um cachorro, péssimo jogador de xadrez.
 
-Specialties: demand generation, signal-based marketing, AI content operations, LinkedIn strategy, B2B SaaS, RAG systems.
+Especialidades: geração de demanda, marketing baseado em sinal, operações de conteúdo com IA, estratégia de LinkedIn, SaaS B2B, sistemas RAG.
 
-Want the demand-gen audit I run for new clients? Comment "AUDIT" on my latest post or DM me.
+Quer a auditoria de geração de demanda que eu faço para novos clientes? Comente "AUDITORIA" no meu último post ou me chame no direct.
 ```
 
-**Why this works:**
-- First 265 chars ("Why do most B2B founders burn 40% of their pipeline on bad-fit leads? I help 1-10M ARR SaaS founders rebuild their inbound motion around signal, not volume.") earns the "see more" click
-- Concrete numbers (40%, 62%, 3.4x, 50, 5,000) — not "significant lift"
-- Specialties line packed with search keywords
-- CTA is specific and low-friction
+**Por que funciona:**
+- Os primeiros 265 caracteres ("Por que a maioria dos fundadores B2B queima 40% do pipeline com leads que não têm fit? Eu ajudo fundadores de SaaS com ARR de 1-10 milhões a reconstruir a motion de inbound em torno de sinal, não de volume.") conquistam o clique em "ver mais"
+- Números concretos (40%, 62%, 3,4x, 50, 5.000) — não "aumento significativo"
+- A linha de especialidades carregada de palavras-chave de busca
+- O CTA é específico e de baixo atrito
 
-## Anti-patterns
+## Anti-padrões
 
-- "Passionate thought leader" — empty signal
-- "Buzzwords without substance" — "innovative", "synergy", "disruptor"
-- Third-person corporate speak — "Jane is a seasoned professional with over 15 years..."
-- Wall of text with no formatting (mobile kills it)
-- Starting with "Welcome to my LinkedIn!" or "Hello!"
-- Ending with "Let's connect!" (dead CTA)
+- "Líder de pensamento apaixonado" — sinal vazio
+- "Termos genéricos sem substância" — "inovador", "sinergia", "disruptor"
+- Discurso corporativo em terceira pessoa — "Jane é uma profissional experiente com mais de 15 anos..."
+- Bloco de texto sem formatação (mata no mobile)
+- Começar com "Bem-vindo ao meu LinkedIn!" ou "Olá!"
+- Terminar com "Vamos nos conectar!" (CTA sem vida)
 
 ## Benchmarks
 
-- Optimized About sections: **3.9x more views**
-- Keyword density matching target role: **3x more recruiter impressions**
-- Hook fitting in 265 chars: **2.4x "see more" click rate**
+- Seções Sobre otimizadas: **3,9x mais visualizações**
+- Densidade de palavras-chave alinhada ao cargo-alvo: **3x mais impressões de recrutadores**
+- Gancho cabendo em 265 caracteres: **2,4x mais cliques em "ver mais"**

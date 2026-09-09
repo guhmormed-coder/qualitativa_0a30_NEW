@@ -1,30 +1,33 @@
-"""Thin Pixfaro client for the LinkedIn Skills project.
+"""Cliente Pixfaro enxuto para o projeto LinkedIn Skills.
 
-Image layer (illustration generation). Sits alongside the read layer
-(`apify_client`) and the write layer (`publora_client`) as the third
-integration: generate an illustration, get back a hosted URL, and hand that
-URL straight to Publora's `media_urls` when publishing.
+Camada de imagem (geração de ilustração). Fica ao lado da camada de leitura
+(`apify_client`) e da camada de escrita (`publora_client`) como a terceira
+integração: gera uma ilustração, recebe de volta uma URL hospedada, e
+repassa essa URL diretamente para o `media_urls` da Publora ao publicar.
 
-Auth: PIXFARO_TOKEN env var (or constructor arg). Key format `pf_live_...`.
-Without a token the skills fall back to "manual" mode: they draft the image
-prompt and ask you to generate it yourself and paste the URL.
+Autenticação: variável de ambiente PIXFARO_TOKEN (ou argumento do
+construtor). Formato da chave `pf_live_...`. Sem um token, as skills caem
+para o modo "manual": elas rascunham o prompt da imagem e pedem para você
+gerá-la você mesmo e colar a URL.
 
-Endpoint (OpenAI-SDK-compatible):
+Endpoint (compatível com o SDK da OpenAI):
   POST https://api.pixfaro.com/v1/images/generations
     body: {model, prompt, aspect_ratio "w:h", resolution "1K|2K|4K", overlay}
-    overlay: {text|logo_id, position, opacity, font, color}  # pixel-exact
-             composite, NOT model-generated text — so a cheap base model plus
-             an overlay renders crisp quote-cards / thumbnails at low cost.
-    resp: {id, url, cost, balance_after}   # hosted URL, not base64
+    overlay: {text|logo_id, position, opacity, font, color}  # composição com
+             precisão de pixel, texto NÃO gerado pelo modelo — então um
+             modelo base barato mais um overlay renderiza quote-cards /
+             miniaturas nítidos a baixo custo.
+    resp: {id, url, cost, balance_after}   # URL hospedada, não base64
 
-Models (id / median latency / $ per image):
-  gemini-flash-lite  3.0s   $0.041   (high-volume, cheap)
-  nano-banana-2      10.7s  $0.080   (balanced default)
-  gemini-pro-image   20.8s  $0.164   (premium, text-heavy)
-  gpt-5-image        53.0s  $0.238   (max quality)
+Modelos (id / latência mediana / $ por imagem):
+  gemini-flash-lite  3.0s   $0.041   (alto volume, barato)
+  nano-banana-2      10.7s  $0.080   (padrão equilibrado)
+  gemini-pro-image   20.8s  $0.164   (premium, com muito texto)
+  gpt-5-image        53.0s  $0.238   (qualidade máxima)
 
-Caching: in-process LRU (128 entries, 6h TTL). Pass `force_refresh=True` to
-bypass. Retries on transient 408/429/5xx (3 attempts, exponential backoff).
+Cache: LRU em processo (128 entradas, TTL de 6h). Passe `force_refresh=True`
+para ignorá-lo. Novas tentativas em 408/429/5xx transitórios (3 tentativas,
+backoff exponencial).
 """
 from __future__ import annotations
 import json
@@ -63,8 +66,8 @@ def _retry(attempts: int = 3, base_delay: float = 0.6):
                 try:
                     return fn(*args, **kwargs)
                 except PixfaroError as e:
-                    # Retryable = transient HTTP status OR a network-level failure
-                    # (timeout/reset), both flagged on the exception at raise time.
+                    # Retryable = status HTTP transitório OU falha em nível de
+                    # rede (timeout/reset), ambos sinalizados na exceção no momento em que é levantada.
                     if not getattr(e, "retryable", False) or attempt == attempts - 1:
                         raise
                     last_exc = e
@@ -76,7 +79,7 @@ def _retry(attempts: int = 3, base_delay: float = 0.6):
 
 
 class PixfaroClient:
-    """One method that matters: `generate`. Returns the hosted image URL."""
+    """Um método que importa: `generate`. Retorna a URL da imagem hospedada."""
 
     def __init__(self, api_key: Optional[str] = None, timeout: float = 90.0):
         load_env()
@@ -90,7 +93,7 @@ class PixfaroClient:
         self._session = requests.Session()
         self._cache: "OrderedDict[str, tuple[float, dict]]" = OrderedDict()
 
-    # ---- cache helpers (mirror apify_client) ----
+    # ---- auxiliares de cache (espelha apify_client) ----
     def _cache_get(self, key: str) -> Optional[dict]:
         hit = self._cache.get(key)
         if not hit:
@@ -119,12 +122,13 @@ class PixfaroClient:
         overlay: Optional[dict[str, Any]] = None,
         force_refresh: bool = False,
     ) -> dict[str, Any]:
-        """Generate one illustration. Returns {id, url, cost, balance_after}.
+        """Gera uma ilustração. Retorna {id, url, cost, balance_after}.
 
-        `overlay` is passed through verbatim (e.g.
+        `overlay` é repassado tal como recebido (por exemplo,
         {"text": "@handle", "position": "bottom-right", "opacity": 0.9,
-         "color": "#0A66C2"}). Feed brand fields from the Voice & Brand Profile
-        so every asset carries a consistent handle/logo/color.
+         "color": "#0A66C2"}). Alimente os campos de marca a partir do
+        Perfil de Voz & Marca para que todo asset carregue um
+        handle/logo/cor consistente.
         """
         if not prompt or not prompt.strip():
             raise PixfaroError("prompt cannot be empty")
@@ -162,13 +166,14 @@ class PixfaroClient:
         overlay: Optional[dict[str, Any]] = None,
         force_refresh: bool = False,
     ) -> dict[str, Any]:
-        """Iteratively edit a prior generation. Returns {id, url, cost, ...}.
+        """Edita iterativamente uma geração anterior. Retorna {id, url, cost, ...}.
 
-        `image_id` must be the `img_...` id returned by a previous `generate`
-        (or `edit`) call - hosted URLs are NOT accepted as the source. Omitting
-        `aspect_ratio` keeps the source shape; omitting `resolution` inherits
-        (and bills at) the source tier. Cheaper and more consistent than
-        regenerating from scratch when the user wants "make the sky darker".
+        `image_id` deve ser o id `img_...` retornado por uma chamada anterior
+        de `generate` (ou `edit`) - URLs hospedadas NÃO são aceitas como
+        origem. Omitir `aspect_ratio` mantém o formato de origem; omitir
+        `resolution` herda (e cobra) o nível de origem. Mais barato e mais
+        consistente do que regenerar do zero quando o usuário quer "deixar o
+        céu mais escuro".
         """
         if not image_id or not str(image_id).startswith("img_"):
             raise PixfaroError(
@@ -204,7 +209,7 @@ class PixfaroClient:
 
     @_retry()
     def list_models(self) -> list[dict[str, Any]]:
-        """GET /v1/models — live model catalog + per-tier pricing."""
+        """GET /v1/models — catálogo de modelos ao vivo + preços por nível."""
         url = f"{BASE_URL}/models"
         try:
             r = self._session.get(url, headers=self._headers(), timeout=self.timeout)
@@ -213,7 +218,7 @@ class PixfaroClient:
         out = self._handle(r)
         return out.get("data", out) if isinstance(out, dict) else out
 
-    # ---- internals ----
+    # ---- internos ----
     def _headers(self) -> dict[str, str]:
         return {
             "Authorization": f"Bearer {self.api_key}",
