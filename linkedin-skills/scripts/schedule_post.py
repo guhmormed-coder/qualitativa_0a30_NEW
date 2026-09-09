@@ -1,16 +1,18 @@
 #!/usr/bin/env python3
-"""CLI: schedule an approved LinkedIn post via Publora at 10:00 local time.
+"""CLI: agenda um post aprovado do LinkedIn via Publora às 10:00 horário local.
 
-Usage:
+Uso:
     python scripts/schedule_post.py --file draft.txt --angle <slug> [--source URL ...] [--dry-run]
     python scripts/schedule_post.py --selftest
 
-Schedule rule: today at 10:00 local. If it is already past 10:00, now + 5 min
-(Publora treats a missing scheduledTime as "save as draft", so there is no
-true "post immediately" call, so the nearest thing is a schedule a few minutes out).
+Regra de agendamento: hoje às 10:00 horário local. Se já passou das 10:00,
+agora + 5 min (a Publora trata um scheduledTime ausente como "salvar como
+rascunho", então não existe uma chamada verdadeira de "publicar
+imediatamente"; a alternativa mais próxima é agendar para alguns minutos à frente).
 
-Every successful schedule appends one JSON line to testing/linkedin-routine-log.jsonl
-so the next run can rotate to a different angle. testing/ is gitignored.
+Todo agendamento bem-sucedido acrescenta uma linha JSON a
+testing/linkedin-routine-log.jsonl para que a próxima execução possa
+alternar para um ângulo diferente. testing/ está no gitignore.
 """
 from __future__ import annotations
 
@@ -29,7 +31,7 @@ LEAD_MINUTES = 5
 
 
 def slot(now: datetime) -> datetime:
-    """Today's 10:00 slot in `now`'s timezone, or now+5min if that has passed."""
+    """O horário de 10:00 de hoje no fuso de `now`, ou now+5min se já tiver passado."""
     ten = now.replace(hour=POST_HOUR, minute=0, second=0, microsecond=0)
     return ten if now < ten else now + timedelta(minutes=LEAD_MINUTES)
 
@@ -40,18 +42,18 @@ def selftest() -> int:
     assert slot(early) == datetime(2026, 9, 7, 10, 0, tzinfo=tz)
     late = datetime(2026, 9, 7, 14, 20, tzinfo=tz)
     assert slot(late) == datetime(2026, 9, 7, 14, 25, tzinfo=tz)
-    # 10:00 exactly counts as passed -> nudged forward, never scheduled in the past
+    # 10:00 em ponto conta como já passado -> empurrado para frente, nunca agendado no passado
     assert slot(datetime(2026, 9, 7, 10, 0, tzinfo=tz)) > datetime(2026, 9, 7, 10, 0, tzinfo=tz)
     assert slot(early).astimezone(timezone.utc).isoformat() == "2026-09-07T16:00:00+00:00"
-    print("selftest OK")
+    print("autoteste OK")
     return 0
 
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--file", help="path to the final post text (UTF-8)")
-    ap.add_argument("--angle", default="", help="sub-topic slug used, for rotation logging")
-    ap.add_argument("--source", action="append", default=[], help="source URL/title (repeatable)")
+    ap.add_argument("--file", help="caminho para o texto final do post (UTF-8)")
+    ap.add_argument("--angle", default="", help="slug do sub-tópico usado, para o log de rotação")
+    ap.add_argument("--source", action="append", default=[], help="URL/título da fonte (repetível)")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--selftest", action="store_true")
     args = ap.parse_args()
@@ -59,22 +61,22 @@ def main() -> int:
     if args.selftest:
         return selftest()
     if not args.file:
-        ap.error("--file is required")
+        ap.error("--file é obrigatório")
 
     text = Path(args.file).read_text(encoding="utf-8").strip()
     if not text:
-        print("✗ draft file is empty", file=sys.stderr)
+        print("✗ o arquivo de rascunho está vazio", file=sys.stderr)
         return 2
     if len(text) > 3000:
-        print(f"✗ draft is {len(text)} chars, LinkedIn caps posts at 3000", file=sys.stderr)
+        print(f"✗ o rascunho tem {len(text)} caracteres, o LinkedIn limita posts a 3000", file=sys.stderr)
         return 2
 
     when = slot(datetime.now().astimezone())
     scheduled_utc = when.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-    print(f"→ {len(text)} chars, scheduled {when.isoformat()} (UTC {scheduled_utc})")
+    print(f"→ {len(text)} caracteres, agendado para {when.isoformat()} (UTC {scheduled_utc})")
 
     if args.dry_run:
-        print("(dry-run, nothing scheduled)")
+        print("(dry-run, nada foi agendado)")
         return 0
 
     from dotenv import load_dotenv
@@ -85,8 +87,8 @@ def main() -> int:
 
     backend = active_backend()
     if backend != "publora":
-        print(f"✗ backend is {backend!r}, expected 'publora'. Check PUBLORA_API_KEY "
-              f"and LINKEDIN_PLATFORM_ID in .env", file=sys.stderr)
+        print(f"✗ backend é {backend!r}, esperado 'publora'. Verifique PUBLORA_API_KEY "
+              f"e LINKEDIN_PLATFORM_ID no .env", file=sys.stderr)
         return 2
 
     try:
@@ -97,7 +99,7 @@ def main() -> int:
             scheduled_time=scheduled_utc,
         )
     except Exception as e:
-        print(f"✗ publora schedule failed: {e}", file=sys.stderr)
+        print(f"✗ falha ao agendar na publora: {e}", file=sys.stderr)
         return 1
 
     r = resp or {}
@@ -114,8 +116,8 @@ def main() -> int:
     with LOG_PATH.open("a", encoding="utf-8") as f:
         f.write(json.dumps(entry, ensure_ascii=False) + "\n")
 
-    print(f"✓ scheduled. publora post id: {post_id}")
-    print(f"  raw response: {json.dumps(resp, ensure_ascii=False)[:400]}")
+    print(f"✓ agendado. id do post na publora: {post_id}")
+    print(f"  resposta bruta: {json.dumps(resp, ensure_ascii=False)[:400]}")
     return 0
 
 

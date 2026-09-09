@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Refresh the nested Codex marketplace package from the repo root.
+"""Atualiza o pacote aninhado do marketplace do Codex a partir da raiz do repositório.
 
-Codex marketplace entries must point at a plugin directory below the
-marketplace root. Claude uses the repo root directly. This script keeps the
-hidden Codex package in sync without changing the Claude-facing layout.
+As entradas do marketplace do Codex devem apontar para um diretório de
+plugin abaixo da raiz do marketplace. O Claude usa a raiz do repositório
+diretamente. Este script mantém o pacote oculto do Codex sincronizado sem
+alterar o layout voltado para o Claude.
 """
 from __future__ import annotations
 
@@ -56,7 +57,7 @@ def main() -> None:
     for rel in PATHS_TO_COPY:
         copy_path(ROOT / rel, DEST / rel)
 
-    print(f"Synced Codex marketplace package: {DEST.relative_to(ROOT)}")
+    print(f"Pacote do marketplace do Codex sincronizado: {DEST.relative_to(ROOT)}")
 
 
 if __name__ == "__main__":

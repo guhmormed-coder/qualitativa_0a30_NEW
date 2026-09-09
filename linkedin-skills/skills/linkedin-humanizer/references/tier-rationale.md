@@ -1,165 +1,165 @@
-# Tier Rationale — Why Three Modes Exist
+# Justificativa dos Níveis — Por Que Existem Três Modos
 
-V1 of this humanizer applied every rule equally. We learned that some rules catch real AI output and some catch good human writing. V2 split them into 3 tiers so users can pick which signals to trust. V3 (2026-09) re-sorted the rules inside those tiers on 2026 evidence: see §V3 recalibration at the end.
+A V1 deste humanizador aplicava todas as regras igualmente. Aprendemos que algumas regras pegam saída real de IA e outras pegam boa escrita humana. A V2 as dividiu em 3 níveis para que os usuários pudessem escolher em quais sinais confiar. A V3 (2026-09) reordenou as regras dentro desses níveis com base em evidências de 2026: veja a §recalibração V3 no final.
 
-## Contents
+## Conteúdo
 
-- The core insight
-- Tier 1 - FORENSIC (always on)
-- Tier 2 - STRICT (default on)
-- Tier 3 - AESTHETIC (opt-in only)
-- Recommended default
-- What this tiering rejects
-- V3 recalibration (2026 evidence, with confidence labels)
+- O insight central
+- Nível 1 - FORENSIC (sempre ativo)
+- Nível 2 - STRICT (ativo por padrão)
+- Nível 3 - AESTHETIC (apenas opcional)
+- Padrão recomendado
+- O que essa divisão em níveis rejeita
+- Recalibração V3 (evidências de 2026, com rótulos de confiança)
 
-## The core insight
+## O insight central
 
-AI-detection rules cluster into 3 groups by their relationship to actual AI generation:
+As regras de detecção de IA se agrupam em 3 grupos pela sua relação com a geração real de IA:
 
-1. **Pure leakage** — patterns no human writer ever produces. Catching them is undefendable. (Forensic tier)
-2. **Bad-style overlap** — patterns AI uses heavily that are also bad style for humans. Catching them is defendable on style grounds even when origin is unclear. (Strict tier)
-3. **Good-writing overlap** — patterns AI uses heavily that are also normal in human writing. Catching them blindly flags Dickinson, Lincoln, and every epidemiologist as AI. (Aesthetic tier)
+1. **Vazamento puro** — padrões que nenhum escritor humano jamais produz. Detectá-los é indefensável. (Nível forensic)
+2. **Sobreposição com estilo ruim** — padrões que a IA usa pesadamente e que também são má escrita para humanos. Detectá-los é defensável por motivos de estilo mesmo quando a origem não é clara. (Nível strict)
+3. **Sobreposição com boa escrita** — padrões que a IA usa pesadamente e que também são normais na escrita humana. Detectá-los cegamente sinaliza Dickinson, Lincoln e todo epidemiologista como IA. (Nível aesthetic)
 
-Most humanizer tools mix all three together as one undifferentiated rulebook. That's why their output flattens literary writing while still missing real AI leakage.
+A maioria das ferramentas de humanização mistura os três em um único livro de regras indiferenciado. É por isso que a saída delas achata a escrita literária mas ainda assim perde vazamento real de IA.
 
-## Tier 1 — FORENSIC (always on)
+## Nível 1 — FORENSIC (sempre ativo)
 
-These are real AI signals. Every detector agrees. No human writer produces them. No defense exists.
+Estes são sinais reais de IA. Todo detector concorda. Nenhum escritor humano os produz. Não existe defesa.
 
-### Why they're forensic
+### Por que são forensic
 
-- **oaicite / contentReference / turn0search0**: ChatGPT internal tool tokens that leak when the user copy-pastes raw output without cleanup. No human writes these.
-- **"As of my last update January 2024"**: model-internal disclaimer about training cutoff. Humans don't disclaim their knowledge cutoff.
-- **`[Your Name]` / `2025-XX-XX` / `[Describe X]`**: literal placeholder text from prompt templates that wasn't filled in.
-- **Em dash density above ~1 per 100 words**: the *frequency* signal, not the character itself. Emily Dickinson has 1-2 em dashes in a poem; GPT-4 averaged 4-6 in a LinkedIn post. GPT-5.4 is down to 1.43 per 1,000 words, below the human 3.23, so the character alone proves nothing (see §V3). The old glue habit (3+ in a short post) is still leakage-grade.
+- **oaicite / contentReference / turn0search0**: tokens internos de ferramenta do ChatGPT que vazam quando o usuário copia e cola a saída bruta sem limpeza. Nenhum humano escreve isso.
+- **"Até minha última atualização em janeiro de 2024"**: aviso interno do modelo sobre o corte de treinamento. Humanos não avisam sobre o corte do próprio conhecimento.
+- **`[Your Name]` / `2025-XX-XX` / `[Describe X]`**: texto de placeholder literal de templates de prompt que não foi preenchido.
+- **Densidade de travessão acima de ~1 a cada 100 palavras**: o sinal de *frequência*, não o caractere em si. Emily Dickinson tem 1-2 travessões em um poema; o GPT-4 tinha uma média de 4-6 em um post do LinkedIn. O GPT-5.4 caiu para 1,43 a cada 1.000 palavras, abaixo do 3,23 humano, então o caractere sozinho não prova nada (veja §V3). O antigo hábito de "cola" (3+ em um post curto) ainda é de nível vazamento.
 
-### Citations
+### Citações
 
-- Wikipedia "Signs of AI writing" forensic-rule section: https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing
-- Russell, Karpinska, Iyyer (2025) "People who frequently use ChatGPT are accurate detectors" — empirical confirmation that frequent users spot real leakage with high accuracy.
+- Seção de regras forenses da Wikipedia "Signs of AI writing": https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing
+- Russell, Karpinska, Iyyer (2025) "People who frequently use ChatGPT are accurate detectors" — confirmação empírica de que usuários frequentes identificam vazamento real com alta precisão.
 
-## Tier 2 — STRICT (default on)
+## Nível 2 — STRICT (ativo por padrão)
 
-Corporate-speak. Bad LinkedIn style regardless of who wrote it. AI uses these because the training corpus did. Banning them improves the post even if the writer is human.
+Jargão corporativo. Mau estilo de LinkedIn independentemente de quem escreveu. A IA usa isso porque o corpus de treinamento usava. Baní-los melhora o post mesmo que o autor seja humano.
 
-### Why they're strict
+### Por que são strict
 
-- **The durable 2026 vocabulary (significant, crucial, notably, comprehensive, insights, robust, leverage, foster, landscape, nuanced, streamline, elevate, empower)**: common words LLMs over-select at 2-5x human rate across every 2026 frontier model. They are ordinary English, which is exactly why they survive while "delve" dies. Scored by density: one per paragraph is English, three is a signature.
-- **Grammar markers (nominalisations, "-ing" clause openers)**: "Leveraging our data, we..." runs at 5.3x the human rate. Readers feel the register shift even when they cannot name it.
-- **fundamentally / essentially / ultimately**: filler adverbs that add no information. Strunk & White flagged these in 1918. They were bad style before AI existed.
-- **"in today's fast-paced world"** and the reveal bridges ("The result?", "Here's what", "Stop X, start Y"): openers and pivots that LinkedIn measurably down-ranks (-4.3% to -6.7% reach, vendor data). Removing them improves reach regardless of who wrote them.
-- **Negative parallelism ("X isn't Y, it's Z")**: per Sergey's 2026-04-27 hard ban, now backed by -4.9% reach data. Used by JFK historically, but in 2026 LinkedIn context it reads as ChatGPT in 90% of cases.
-- **Stacked or perfectly parallel triads, and any third triad in a post**: tricolon at 2x expert-human density in 2026 models. The form is innocent; the density and the interchangeable items are the tell. One natural triad stays.
-- **Staccato stacks and reveal bridges** ("Short. Punchy. Done.", "No X. No Y. Just Z.", one-word paragraphs): the top 2026 reader-cited tell, and the signature of every prompt-style humanizer. V2 used to add these. V3 removes them.
+- **O vocabulário durável de 2026 (significant, crucial, notably, comprehensive, insights, robust, leverage, foster, landscape, nuanced, streamline, elevate, empower)**: palavras comuns que LLMs selecionam em excesso a uma taxa 2-5x maior que a humana em todo modelo de fronteira de 2026. São inglês comum, o que é exatamente o motivo pelo qual sobrevivem enquanto "delve" desaparece. Pontuadas por densidade: uma por parágrafo é inglês comum, três é uma assinatura.
+- **Marcadores gramaticais (nominalizações, aberturas de oração em "-ing")**: "Leveraging our data, we..." ocorre a 5,3x a taxa humana. Os leitores sentem a mudança de registro mesmo quando não conseguem nomeá-la.
+- **fundamentally / essentially / ultimately**: advérbios de preenchimento que não acrescentam informação. Strunk & White já sinalizavam isso em 1918. Eram mau estilo antes mesmo da IA existir.
+- **"no mundo acelerado de hoje"** e as pontes de revelação ("The result?", "Here's what", "Stop X, start Y"): aberturas e pivôs que o LinkedIn mensuravelmente rebaixa (-4,3% a -6,7% de alcance, dados de fornecedor). Removê-los melhora o alcance independentemente de quem os escreveu.
+- **Paralelismo negativo ("X não é Y, é Z")**: conforme o banimento rígido do Sergey em 2026-04-27, agora respaldado por dados de -4,9% de alcance. Usado historicamente por JFK, mas no contexto do LinkedIn em 2026 soa como ChatGPT em 90% dos casos.
+- **Tríades empilhadas ou perfeitamente paralelas, e qualquer terceira tríade em um post**: tricolon a 2x a densidade de especialistas humanos em modelos de 2026. A forma é inocente; a densidade e os itens intercambiáveis são o indício. Uma tríade natural permanece.
+- **Empilhamentos staccato e pontes de revelação** ("Short. Punchy. Done.", "No X. No Y. Just Z.", parágrafos de uma única palavra): o principal indício citado por leitores em 2026, e a assinatura de todo humanizador no estilo prompt. A V2 costumava adicioná-los. A V3 os remove.
 
-### The defense (and why we override it)
+### A defesa (e por que a ignoramos)
 
-A reader could argue "leverage" appears in legitimate business writing or "notably" appears in every journal. True, and that is why V3 scores density instead of deleting words: one is left alone. But a paragraph with three of them, on LinkedIn, in 2026, with this audience, signals corporate or AI 90%+ of the time. The cost of rewriting that paragraph is near-zero. The cost of leaving it is a reader assumption that the post is AI-drafted, and possibly a slop report. So strict mode rewrites over-threshold paragraphs by default.
+Um leitor poderia argumentar que "leverage" aparece em escrita de negócios legítima ou que "notably" aparece em toda revista acadêmica. Verdade, e é exatamente por isso que a V3 pontua densidade em vez de excluir palavras: uma é deixada em paz. Mas um parágrafo com três delas, no LinkedIn, em 2026, com este público, sinaliza corporativo ou IA em mais de 90% dos casos. O custo de reescrever esse parágrafo é quase zero. O custo de deixá-lo é a suposição do leitor de que o post foi rascunhado por IA, e possivelmente uma denúncia de slop. Então o modo strict reescreve por padrão os parágrafos acima do limiar.
 
-### Citations
+### Citações
 
 - Juzek & Ward (2025) "Why Does ChatGPT 'Delve' So Much?": https://arxiv.org/abs/2412.11385
 - Kobak et al. (2025) "Excess vocabulary in LLM-assisted biomedical writing", Science Advances 11/27.
-- Wu et al. (2026) cross-model excess-vocabulary replication (GPT-5.5, Claude 4.8, Gemini 3.1).
-- PNAS (2025) on present-participial clause openers and nominalisation rate in LLM prose.
-- arXiv 2604.19768 (2026) on tricolon density across frontier models.
+- Wu et al. (2026) replicação cross-model do excesso de vocabulário (GPT-5.5, Claude 4.8, Gemini 3.1).
+- PNAS (2025) sobre aberturas de oração em particípio presente e taxa de nominalização em prosa de LLM.
+- arXiv 2604.19768 (2026) sobre densidade de tricolon entre modelos de fronteira.
 
-## Tier 3 — AESTHETIC (opt-in only)
+## Nível 3 — AESTHETIC (apenas opcional)
 
-Patterns AI uses but humans use legitimately. Banning them blindly catches Hemingway as AI.
+Padrões que a IA usa mas que humanos usam legitimamente. Baní-los cegamente identifica Hemingway como IA.
 
-### The 5 most controversial rules in this tier
+### As 5 regras mais controversas deste nível
 
-#### Em dashes (the last one under the cap)
-- **Defense**: Emily Dickinson built her poetry on em dashes. Cormac McCarthy uses them throughout *The Road* and *Blood Meridian*. The *New Yorker* has used em dashes as house style since 1925. And in 2026 the frontier models use *fewer* than humans (GPT-5.4: 1.43 per 1,000 words vs. human 3.23). The Economist called it "no longer a reliable sign." 29% of human captions in our own corpus use one.
-- **The real signal isn't the character.** It's frequency above ~1 per 100 words (covered in forensic tier). Below that, self-censoring your dashes is itself the tell of someone trying to look human.
-- **When to use aesthetic mode**: writing for audiences that still treat any dash as suspicious. Otherwise leave the one dash alone, and never replace it with a period (fragment stacking is the worse tell).
+#### Travessões (o último abaixo do teto)
+- **Defesa**: Emily Dickinson construiu sua poesia sobre travessões. Cormac McCarthy os usa ao longo de *The Road* e *Blood Meridian*. A *New Yorker* usa travessões como estilo de casa desde 1925. E em 2026 os modelos de fronteira usam *menos* que humanos (GPT-5.4: 1,43 a cada 1.000 palavras vs. 3,23 humana). A The Economist chamou isso de "não mais um sinal confiável." 29% das legendas humanas no nosso próprio corpus usam um.
+- **O sinal real não é o caractere.** É a frequência acima de ~1 a cada 100 palavras (coberto no nível forensic). Abaixo disso, autocensurar os próprios travessões é, em si, o indício de alguém tentando parecer humano.
+- **Quando usar o modo aesthetic**: escrevendo para públicos que ainda tratam qualquer travessão como suspeito. Fora isso, deixe o travessão único em paz, e nunca o substitua por um ponto final (empilhar fragmentos é o indício pior).
 
-#### Rule of three (the last natural one)
-- **Defense**: Lincoln "of the people, by the people, for the people." Caesar veni vidi vici. Churchill "blood, toil, tears and sweat." Aristotle codified the tricolon in 350 BCE. 26% of top human tweets contain exactly one.
-- **Banning the tricolon bans 2,400 years of speechwriting.**
-- **The real signal**: empty triplets where the three items are interchangeable ("dynamic, vibrant, and innovative"), perfectly parallel triads, and 3+ per post (2x expert-human density in 2026 models). The form is innocent; the density and the hollow content are the tell. Strict mode already scrubs those. Aesthetic mode removes the last natural one.
+#### Regra do três (a última natural)
+- **Defesa**: Lincoln "of the people, by the people, for the people." César veni vidi vici. Churchill "blood, toil, tears and sweat." Aristóteles codificou o tricolon em 350 a.C. 26% dos top tweets humanos contêm exatamente uma.
+- **Banir o tricolon bane 2.400 anos de escrita de discursos.**
+- **O sinal real**: tríades vazias em que os três itens são intercambiáveis ("dynamic, vibrant, and innovative"), tríades perfeitamente paralelas, e 3+ por post (2x a densidade de especialistas humanos em modelos de 2026). A forma é inocente; a densidade e o conteúdo vazio são o indício. O modo strict já remove essas. O modo aesthetic remove a última natural.
 
-#### Passive voice
-- **Defense**: Watson & Crick (1953): *"It has not escaped our notice..."* Joan Didion *"The center was not holding."* Orwell himself used 20%+ passives in his own essays. Scientific, legal, news writing all require passive.
-- **Banning passive flags 60%+ of the *Economist* and *Nature* as AI.**
-- **When to use aesthetic mode**: opinion-writing audiences expecting active voice. Never apply to scientific or legal writing.
+#### Voz passiva
+- **Defesa**: Watson & Crick (1953): *"It has not escaped our notice..."* Joan Didion *"The center was not holding."* O próprio Orwell usava mais de 20% de passivas em seus próprios ensaios. Escrita científica, jurídica e jornalística exigem a passiva.
+- **Banir a passiva sinaliza mais de 60% da *Economist* e da *Nature* como IA.**
+- **Quando usar o modo aesthetic**: públicos de escrita de opinião que esperam voz ativa. Nunca aplicar a escrita científica ou jurídica.
 
 #### "Cultivate" / "vibrant" / "delve" / "tapestry" / "journey"
-- **Defense**: *Cultivate* is George Eliot's signature in Middlemarch. *Vibrant* opens Toni Morrison's Nobel lecture. And the 2023-24 poster words (delve, tapestry, realm, journey) are now decaying: humans avoid them, models are being tuned away from them, and a single "delve" in 2026 is more likely a human joke than a leak (Geng & Trotta 2025).
-- **Banning normal English because LLMs use it confuses signal with corpus.** LLMs use these words because they read every English-language book published since 1500.
-- **The real signal**: density of the durable common-word set ("robust", "foster", "significant", "notably" at 3+ per paragraph), covered in strict tier. Note that "robust" and "foster" moved from aesthetic to strict in V3 because they survived the 2025-26 vocabulary shift; "robust" as a statistical term of art is still exempt.
+- **Defesa**: *Cultivate* é uma assinatura de George Eliot em Middlemarch. *Vibrant* abre a palestra do Nobel de Toni Morrison. E as palavras-cartaz de 2023-24 (delve, tapestry, realm, journey) agora estão em queda: humanos as evitam, os modelos estão sendo ajustados para se afastar delas, e um único "delve" em 2026 é mais provavelmente uma piada humana do que um vazamento (Geng & Trotta 2025).
+- **Banir inglês normal porque LLMs o usam confunde sinal com corpus.** LLMs usam essas palavras porque leram todo livro em língua inglesa publicado desde 1500.
+- **O sinal real**: densidade do conjunto durável de palavras comuns ("robust", "foster", "significant", "notably" a 3+ por parágrafo), coberto no nível strict. Note que "robust" e "foster" passaram de aesthetic para strict na V3 porque sobreviveram à mudança de vocabulário de 2025-26; "robust" como termo técnico estatístico continua isento.
 
-#### Curly quotes / typographer's quotes
-- **Defense**: Curly quotes happen automatically when typing in Word, Google Docs, Pages, or Notes. Em dashes are produced by autocorrect on every Apple device. Calling these AI tells flags anyone who writes in a real word processor.
-- **The real signal**: copy-paste of raw model output where typography wasn't normalized. Strict-mode handles this conversion to straight quotes by default.
+#### Aspas curvas / aspas tipográficas
+- **Defesa**: Aspas curvas acontecem automaticamente ao digitar no Word, Google Docs, Pages ou Notes. Travessões são produzidos por autocorreção em todo dispositivo Apple. Chamar isso de indício de IA sinaliza qualquer pessoa que escreve em um processador de texto de verdade.
+- **O sinal real**: copiar e colar saída bruta de modelo em que a tipografia não foi normalizada. O modo strict já trata essa conversão para aspas retas por padrão.
 
-### Citations
+### Citações
 
 - Stanford HAI / Liang et al. 2023 "AI detectors biased against non-native English writers": https://hai.stanford.edu/news/ai-detectors-biased-against-non-native-english-writers
-- TechCrunch on OpenAI killing its own classifier at 26% accuracy: https://techcrunch.com/2023/07/25/openai-scuttles-ai-written-text-detector-over-low-rate-of-accuracy/
-- Newby v. Adelphi University (Oct 2025): https://www.plagiarismtoday.com/2025/10/14/adelphi-university-sued-over-ai-allegation/
-- Boston Globe "AI didn't kill the em dash" (May 2025)
+- TechCrunch sobre a OpenAI encerrando seu próprio classificador com 26% de precisão: https://techcrunch.com/2023/07/25/openai-scuttles-ai-written-text-detector-over-low-rate-of-accuracy/
+- Newby v. Adelphi University (out 2025): https://www.plagiarismtoday.com/2025/10/14/adelphi-university-sued-over-ai-allegation/
+- Boston Globe "AI didn't kill the em dash" (mai 2025)
 - Algorithmic Bridge / Alberto Romero "In Defense of the Em Dash"
 
-## Recommended default
+## Padrão recomendado
 
-For LinkedIn posts and comments by founders / creators / serious writers in 2026:
+Para posts e comentários de LinkedIn de fundadores / criadores / escritores sérios em 2026:
 
 ```
 linkedin-humanizer --mode strict <text>
 ```
 
-This applies forensic + strict but leaves aesthetic patterns alone. It catches real AI leakage and corporate-speak without flattening the writer's voice. Aesthetic mode is for the rare case where audience-fit demands maximum scrub (e.g., contributing to Wikipedia, posting in an AI-detection-paranoid academic forum).
+Isso aplica forensic + strict mas deixa os padrões aesthetic em paz. Ele pega vazamento real de IA e jargão corporativo sem achatar a voz do escritor. O modo aesthetic é para o caso raro em que a adequação ao público exige limpeza máxima (por exemplo, contribuir para a Wikipedia, postar em um fórum acadêmico paranoico com detecção de IA).
 
-## What this tiering rejects
+## O que essa divisão em níveis rejeita
 
-The previous one-size-fits-all approach pretended every rule had equal weight. That was wrong. A post with `oaicite[^1]` left in is genuinely AI-leaked. A post using "robust" to describe a statistical model is not. Treating them as equally suspicious creates two problems: false positives on legitimate writing, and false confidence that running through the humanizer means a post is "human." This tiering is the honest version.
+A abordagem anterior de tamanho único fingia que toda regra tinha peso igual. Isso estava errado. Um post com `oaicite[^1]` deixado no texto está genuinamente vazado por IA. Um post usando "robust" para descrever um modelo estatístico não está. Tratá-los como igualmente suspeitos cria dois problemas: falsos positivos em escrita legítima, e falsa confiança de que passar pelo humanizador significa que um post é "humano". Essa divisão em níveis é a versão honesta.
 
-## V3 recalibration (2026 evidence, with confidence labels)
+## Recalibração V3 (evidências de 2026, com rótulos de confiança)
 
-Confidence labels: **[strong]** = replicated across 2+ independent 2025-2026 studies or our own length-controlled corpus (X n=445, Threads n=311); **[vendor]** = single platform or vendor dataset; **[weak]** = one study or an expert-panel report.
+Rótulos de confiança: **[strong]** = replicado em 2+ estudos independentes de 2025-2026 ou no nosso próprio corpus com controle de tamanho (X n=445, Threads n=311); **[vendor]** = dataset de uma única plataforma ou fornecedor; **[weak]** = um único estudo ou um relatório de painel de especialistas.
 
-### 1. Detectors are not the target
+### 1. Detectores não são o alvo
 
-GPTZero, Pangram, Turnitin and Originality are trained classifiers keyed on the RLHF instruction-tuning style signature. GPTZero dropped perplexity and burstiness from its score in 2023. Pangram 4 ships a dedicated humanization head. Prompt-style "sound like a real person" rewrites are caught 92-95% of the time (VUB IJEI 2026; Russell 2025) [strong]. Light mechanical rewriting *raises* detectability (arXiv 2603.17522) [weak]. GPTZero states its vocabulary tool is not connected to its score. And LinkedIn-length text (100-300 words) is where every detector is least reliable [strong].
+GPTZero, Pangram, Turnitin e Originality são classificadores treinados calibrados na assinatura de estilo do instruction-tuning do RLHF. O GPTZero abandonou perplexidade e burstiness do seu escore em 2023. O Pangram 4 vem com uma cabeça dedicada de humanização. Reescritas no estilo prompt "soar como uma pessoa de verdade" são pegas em 92-95% dos casos (VUB IJEI 2026; Russell 2025) [strong]. Reescrita mecânica leve *aumenta* a detectabilidade (arXiv 2603.17522) [weak]. O GPTZero afirma que sua ferramenta de vocabulário não está conectada ao seu escore. E texto do tamanho do LinkedIn (100-300 palavras) é onde todo detector é menos confiável [strong].
 
-Consequence: the skill no longer promises to pass any detector, and no rule in this file is justified by "detector X weights it." The two targets that remain real are **expert human readers** (who cite vocabulary 53% and sentence structure 36% of the time when they spot AI text) [weak: expert panel] and **LinkedIn's slop filter** (July 2026 report button; flagged posts lose roughly 40% of views) [vendor].
+Consequência: a skill não promete mais passar em nenhum detector, e nenhuma regra neste arquivo é justificada por "o detector X pondera isso". Os dois alvos que continuam reais são **leitores humanos especializados** (que citam vocabulário 53% e estrutura de frase 36% das vezes ao identificar texto de IA) [weak: painel de especialistas] e o **filtro de slop do LinkedIn** (botão de denúncia de julho de 2026; posts sinalizados perdem cerca de 40% das visualizações) [vendor].
 
-### 2. Vocabulary: density, not deletion
+### 2. Vocabulário: densidade, não exclusão
 
-The conspicuous 2023-24 words (delve, tapestry, realm, intricate, journey, paradigm) are decaying as humans avoid them (Geng & Trotta 2025) [strong]. The durable 2026 markers are common words: significant, crucial, notably, particularly, comprehensive, insights, robust, leverage, foster, landscape, nuanced, multifaceted, holistic, streamline, elevate, empower (Kobak Sci Adv 2025; Wu et al 2026 across GPT-5.5 / Claude 4.8 / Gemini 3.1) [strong]. Plus grammar: nominalisations and present-participial "-ing" clause openers at 5.3x human rate (PNAS 2025) [strong]. Plus a LinkedIn-specific 2026 layer (quietly, matters, compound, signal, "the work", "built different", load-bearing, "doing the heavy lifting", "let that sink in", "that's the real story") [vendor]. Reveal bridges are reach-negative on LinkedIn: "The result?" -4.8%, "It's not X, it's Y" -4.9%, "Stop X, start Y" -6.7%, "Here's what/how" -4.3% [vendor].
+As palavras evidentes de 2023-24 (delve, tapestry, realm, intricate, journey, paradigm) estão em queda conforme os humanos as evitam (Geng & Trotta 2025) [strong]. Os marcadores duráveis de 2026 são palavras comuns: significant, crucial, notably, particularly, comprehensive, insights, robust, leverage, foster, landscape, nuanced, multifaceted, holistic, streamline, elevate, empower (Kobak Sci Adv 2025; Wu et al 2026 entre GPT-5.5 / Claude 4.8 / Gemini 3.1) [strong]. Mais gramática: nominalizações e aberturas de oração em particípio presente "-ing" a 5,3x a taxa humana (PNAS 2025) [strong]. Mais uma camada específica de LinkedIn em 2026 (quietly, matters, compound, signal, "the work", "built different", load-bearing, "doing the heavy lifting", "let that sink in", "that's the real story") [vendor]. Pontes de revelação são negativas para alcance no LinkedIn: "The result?" -4,8%, "It's not X, it's Y" -4,9%, "Stop X, start Y" -6,7%, "Here's what/how" -4,3% [vendor].
 
-Our own LinkedIn corpus agrees on the vocabulary side: AI vocabulary is the one marker consistently reach-negative within-creator (0.74-0.84 author-relative) [strong], so the vocabulary pass stays even though its word list changed.
+Nosso próprio corpus de LinkedIn concorda no lado do vocabulário: vocabulário de IA é o único marcador consistentemente negativo para alcance dentro do mesmo criador (0,74-0,84 relativo ao autor) [strong], então o passo de vocabulário permanece mesmo com a lista de palavras tendo mudado.
 
-Consequence: the signal is density per paragraph. 3+ markers = rewrite the paragraph. 1 = leave it, unless it is a reveal bridge or negative parallelism (single-hit scrub because of the reach data).
+Consequência: o sinal é densidade por parágrafo. 3+ marcadores = reescrever o parágrafo. 1 = deixar, a menos que seja uma ponte de revelação ou paralelismo negativo (limpeza em ocorrência única por causa dos dados de alcance).
 
-### 3. Em dash: capped, not banned
+### 3. Travessão: com teto, não banido
 
-GPT-5.4 emits 1.43 em dashes per 1,000 words, below the human baseline of 3.23. The Economist (2026): "no longer a reliable sign." Isolated em dashes carry no LinkedIn reach penalty [vendor]. 29% of human Instagram captions use one, and 23% of top-creator LinkedIn posts do, at an author-relative ratio of 1.09 (our 2026-09 LinkedIn corpus, n=397) [strong]. Self-censoring your dashes is itself the tell of someone trying to look human.
+O GPT-5.4 emite 1,43 travessões a cada 1.000 palavras, abaixo da referência humana de 3,23. A The Economist (2026): "não mais um sinal confiável." Travessões isolados não carregam penalidade de alcance no LinkedIn [vendor]. 29% das legendas humanas do Instagram usam um, e 23% dos posts de top creators no LinkedIn também, a uma razão relativa ao autor de 1,09 (nosso corpus de LinkedIn de 2026-09, n=397) [strong]. Autocensurar os próprios travessões é, em si, o indício de alguém tentando parecer humano.
 
-Consequence: cap at ~1 per 100 words (1-2 per post). Replace the excess with a comma, colon, parentheses or a rewrite. Never a period, because a split dash creates fragment stacking, which is a worse tell than the dash.
+Consequência: teto de ~1 a cada 100 palavras (1-2 por post). Substitua o excesso por vírgula, dois-pontos, parênteses ou reescrita. Nunca um ponto final, porque um travessão dividido cria empilhamento de fragmentos, o que é um indício pior que o travessão.
 
-### 4. Rule of three: still a tell, at density
+### 4. Regra do três: ainda um indício, em densidade
 
-Tricolon runs at 2x expert-human density across 2026 frontier models (arXiv 2604.19768) [strong]. 26% of top human tweets use exactly one [strong: corpus].
+Tricolon ocorre a 2x a densidade de especialistas humanos entre os modelos de fronteira de 2026 (arXiv 2604.19768) [strong]. 26% dos top tweets humanos usam exatamente uma [strong: corpus].
 
-Consequence: scrub stacked or perfectly parallel triads and any third triad in a post. Leave one natural one with concrete, non-interchangeable items.
+Consequência: remova tríades empilhadas ou perfeitamente paralelas e qualquer terceira tríade em um post. Deixe uma natural com itens concretos e não intercambiáveis.
 
-### 5. Burstiness: restore, do not force
+### 5. Burstiness: restaurar, não forçar
 
-LLM sentence-length SD is about half of human [strong], but no detector scores it, and mechanical long/short alternation is itself a learnable humanizer fingerprint (DAMAGE 2025) [weak]. The top 2026 reader-cited tells are exactly forced rhythm: "Short. Punchy. Done.", "No X. No Y. Just Z.", "All the X. None of the Y.", "Simple. Effective. Easy.", "The result?" reveals, one-word paragraphs ("Still." "Mostly."), pseudo-Socratic "Why? Because." [strong: multiple 2026 tell lists + our corpus]. On LinkedIn specifically, sentence-length variance is not an engagement lever in either direction: our author-normalised corpus (keyword n=205 + 15 top creators n=192, 2026-09) shows within-creator CV ratios of 0.96 / 0.80 / 0.92 across length bands, Spearman -0.06, no length-dependent flip, and a mild uniform-rhythm advantage for one-idea-per-line posts at 112-204 words [strong]. The earlier X/Threads result ("bursty wins on long posts") was an author confound and collapses after normalisation; it applies to sibling platforms, not here.
+O desvio-padrão de comprimento de frase de LLMs é cerca de metade do humano [strong], mas nenhum detector o pontua, e a alternância mecânica de longo/curto é, ela mesma, uma assinatura reconhecível de humanizador (DAMAGE 2025) [weak]. Os principais indícios citados por leitores em 2026 são exatamente o ritmo forçado: "Short. Punchy. Done.", "No X. No Y. Just Z.", "All the X. None of the Y.", "Simple. Effective. Easy.", revelações do tipo "The result?", parágrafos de uma única palavra ("Still." "Mostly."), pseudo-diálogo socrático "Why? Because." [strong: múltiplas listas de indícios de 2026 + nosso corpus]. No LinkedIn especificamente, a variância de comprimento de frase não é uma alavanca de engajamento em nenhum dos dois sentidos: nosso corpus normalizado por autor (palavra-chave n=205 + 15 top creators n=192, 2026-09) mostra razões de CV dentro do mesmo criador de 0,96 / 0,80 / 0,92 entre faixas de comprimento, Spearman -0,06, sem inversão dependente de tamanho, e uma leve vantagem de ritmo uniforme para posts de uma-ideia-por-linha entre 112-204 palavras [strong]. O resultado anterior de X/Threads ("burstiness vence em posts longos") era um fator de confusão de autor e desaparece após a normalização; aplica-se às plataformas irmãs, não aqui.
 
-Consequence: Pass 2 is RHYTHM, not BREAK, and rhythm is not a reach tactic. Its only positive goal is to avoid the mechanical-uniformity tell that expert readers notice (structure = 36% of their judgments): do not leave a paragraph machine-flat, but never manufacture variance. One genuinely long sentence next to a short one is fine; fragment runs are the tell. Fragments capped at 2 per post. Staccato patterns banned. Broetry layout (1-2 sentence paragraphs, blank lines) is fine and mobile-native; fragment-for-drama is the tell.
+Consequência: o Passo 2 é RITMO, não QUEBRA, e o ritmo não é uma tática de alcance. Seu único objetivo positivo é evitar o indício de uniformidade mecânica que leitores especializados percebem (estrutura = 36% dos julgamentos deles): não deixe um parágrafo mecanicamente achatado, mas nunca fabrique variância. Uma frase genuinamente longa ao lado de uma curta está bem; sequências de fragmentos são o indício. Fragmentos limitados a 2 por post. Padrões staccato banidos. O layout tipo "broetry" (parágrafos de 1-2 frases, linhas em branco) está bem e é nativo para mobile; fragmentos por dramaticidade são o indício.
 
-### 6. Fingerprints: concreteness yes, confession no
+### 6. Marcas de autenticidade: concretude sim, confissão não
 
-Concreteness (named entities, dates, what it cost) is a supported human fingerprint: LLM text has lower named-entity density in 3 studies [strong]. An odd-precision number in the first line lifts likes +34% [vendor]. But bare numbers are not a discriminator; LLM news copy uses more numbers than humans [strong]. Inserted hedges and confessions backfire: "performed hesitancy" is 2x more common in LLM text than expert human text; humanizers built on confession cues were caught 100% by expert readers [weak: single study, but the direction is consistent]; sincerity announcements ("let me be honest", "I'll be real", "honestly?") are a named 2026 tell (tropes.fyi "false vulnerability") [vendor]; discovered inauthenticity is the steepest trust loss (Schilke & Reimann 2025) [strong]. A specific, dated, uncomfortable fact stated flat is reach-positive (+4.6% to +10%) [vendor].
+Concretude (entidades nomeadas, datas, quanto custou) é uma marca de autenticidade humana sustentada por evidência: texto de LLM tem menor densidade de entidades nomeadas em 3 estudos [strong]. Um número de precisão incomum na primeira linha eleva curtidas em +34% [vendor]. Mas números soltos não são um diferencial; textos de notícias de LLM usam mais números que humanos [strong]. Hedges e confissões inseridos saem pela culatra: "hesitação encenada" é 2x mais comum em texto de LLM do que em texto humano especializado; humanizadores construídos sobre pistas de confissão foram pegos em 100% dos casos por leitores especializados [weak: estudo único, mas a direção é consistente]; anúncios de sinceridade ("deixa eu ser honesto", "vou ser real", "sinceramente?") são um indício nomeado de 2026 (tropes.fyi "falsa vulnerabilidade") [vendor]; inautenticidade descoberta é a queda de confiança mais acentuada (Schilke & Reimann 2025) [strong]. Um fato específico, datado e desconfortável declarado de forma seca é positivo para alcance (+4,6% a +10%) [vendor].
 
-Consequence: Pass 3 asks for one odd-precision number WITH a named referent, one named entity, and one flat dated uncomfortable fact with no framing sentence. It never inserts hedges or sincerity markers, and Pass 1 strips them when they open or pivot a draft.
+Consequência: o Passo 3 pede um número de precisão incomum COM um referente nomeado, uma entidade nomeada, e um fato datado e desconfortável declarado de forma seca sem frase de introdução. Ele nunca insere hedges ou marcadores de sinceridade, e o Passo 1 os remove quando abrem ou fazem o pivô de um rascunho.
 
-### 7. Over-correction is the new tell
+### 7. A correção excessiva é o novo indício
 
-Humanizer output has its own fingerprint (DAMAGE 2025; the slopotron de-slop skill's own findings) [weak]. "Writing slightly worse on purpose" now reads as a tell. Zero em dashes, zero triads, zero long sentences and a flat, reaction-free tone together read as "processed."
+O resultado do humanizador tem sua própria assinatura (DAMAGE 2025; as próprias descobertas da skill slopotron de-slop) [weak]. "Escrever um pouco pior de propósito" agora se lê como um indício. Zero travessões, zero tríades, zero frases longas e um tom uniformemente achatado sem reação juntos se leem como "processado".
 
-Consequence: Pass 4 SELF-CHECK. Edits proportional to real problems, no fixed quota. When in doubt whether a pattern is the author or the model, leave it.
+Consequência: Passo 4 SELF-CHECK. Edições proporcionais a problemas reais, sem cota fixa. Na dúvida sobre se um padrão é do autor ou do modelo, deixe como está.

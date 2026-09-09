@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-"""CLI: draft + post a LinkedIn comment on any post URL.
+"""CLI: rascunha + publica um comentário do LinkedIn em qualquer URL de post.
 
-Usage:
+Uso:
     python scripts/post_comment.py "<POST_URL>" "<COMMENT_TEXT>" [--reaction INTEREST] [--dry-run]
 
-Flow:
-    1. Parse URL to URN
-    2. Show preview
-    3. Prompt "post? yes/no"
-    4. On yes: react first, pause 10s, post comment
+Fluxo:
+    1. Faz o parse da URL para URN
+    2. Mostra a prévia
+    3. Pergunta "publicar? sim/não"
+    4. Se sim: reage primeiro, pausa 10s, publica o comentário
 """
 from __future__ import annotations
 import argparse
@@ -17,7 +17,7 @@ import sys
 import time
 from pathlib import Path
 
-# Make repo importable without install
+# Torna o repositório importável sem instalação
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from dotenv import load_dotenv
@@ -33,20 +33,20 @@ def main() -> int:
     ap.add_argument("message")
     ap.add_argument("--reaction", default="INTEREST",
                     help="LIKE | PRAISE | EMPATHY | INTEREST | APPRECIATION | ENTERTAINMENT")
-    ap.add_argument("--dry-run", action="store_true", help="Preview only, don't post")
+    ap.add_argument("--dry-run", action="store_true", help="Apenas prévia, não publica")
     ap.add_argument("--reply-to", default=None,
-                    help="Parent comment ID for threaded replies (optional)")
+                    help="ID do comentário pai para respostas em thread (opcional)")
     args = ap.parse_args()
 
     parsed = parse_linkedin_url(args.url)
     if not parsed.get("post_urn"):
-        print(f"✗ Could not parse URN from URL: {args.url}", file=sys.stderr)
+        print(f"✗ Não foi possível extrair a URN da URL: {args.url}", file=sys.stderr)
         return 2
 
     post_urn = parsed["post_urn"]
     platform_id = os.getenv("LINKEDIN_PLATFORM_ID")
     if not platform_id:
-        print("✗ LINKEDIN_PLATFORM_ID not set in .env", file=sys.stderr)
+        print("✗ LINKEDIN_PLATFORM_ID não definido no .env", file=sys.stderr)
         return 2
 
     parent_comment_urn = None
@@ -68,12 +68,12 @@ def main() -> int:
     print()
 
     if args.dry_run:
-        print("(dry-run — nothing posted)")
+        print("(dry-run — nada foi publicado)")
         return 0
 
-    answer = input("Post? [yes/no]: ").strip().lower()
+    answer = input("Publicar? [yes/no]: ").strip().lower()
     if answer not in {"yes", "y", "post"}:
-        print("Cancelled.")
+        print("Cancelado.")
         return 0
 
     client = PubloraClient()
@@ -81,9 +81,9 @@ def main() -> int:
         client.create_reaction(
             post_urn=post_urn, platform_id=platform_id, reaction_type=args.reaction
         )
-        print(f"✓ reacted {args.reaction}")
+        print(f"✓ reagiu com {args.reaction}")
     except Exception as e:
-        print(f"⚠ reaction failed (non-fatal): {e}")
+        print(f"⚠ reação falhou (não fatal): {e}")
 
     time.sleep(10)
 
@@ -94,10 +94,10 @@ def main() -> int:
             platform_id=platform_id,
             parent_comment=parent_comment_urn,
         )
-        print(f"✓ posted comment {resp.get('comment', {}).get('id', '?')}")
+        print(f"✓ comentário publicado {resp.get('comment', {}).get('id', '?')}")
         return 0
     except Exception as e:
-        print(f"✗ comment failed: {e}")
+        print(f"✗ falha ao comentar: {e}")
         return 1
 
 

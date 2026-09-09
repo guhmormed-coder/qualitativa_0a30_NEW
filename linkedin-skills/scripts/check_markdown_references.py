@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""Check Markdown references declared by skill documents.
+"""Verifica as referências Markdown declaradas pelos documentos de skill.
 
-Every backticked path ending in ``.md`` in the root ``SKILL.md``, the shared
-``references/`` tree, and everything under ``skills/`` must resolve either
-relative to the citing document (bare sibling ``post-audit.md``, skill-local
-``references/X.md`` / ``sub-skills/X.md``, nested ``../../../references/X.md``)
-or relative to the repository root (``skills/<skill>/SKILL.md``, ``README.md``).
+Todo caminho entre crases terminado em ``.md`` no ``SKILL.md`` raiz, na
+árvore compartilhada ``references/``, e em tudo sob ``skills/`` deve resolver
+seja em relação ao documento que o cita (irmão simples ``post-audit.md``,
+local à skill ``references/X.md`` / ``sub-skills/X.md``, aninhado
+``../../../references/X.md``) seja em relação à raiz do repositório
+(``skills/<skill>/SKILL.md``, ``README.md``).
 """
 
 from __future__ import annotations
@@ -20,7 +21,7 @@ REFERENCE = re.compile(r"`((?:\.\.?/)*[A-Za-z0-9_.\-]+(?:/[A-Za-z0-9_.\-]+)*\.md
 
 
 def documents() -> list[Path]:
-    """Root SKILL.md, shared root references, and everything under skills/."""
+    """SKILL.md raiz, referências compartilhadas da raiz, e tudo sob skills/."""
     found = [ROOT / "SKILL.md"] if (ROOT / "SKILL.md").is_file() else []
     found += sorted((ROOT / "references").rglob("*.md"))
     found += sorted(SKILLS.rglob("*.md"))
@@ -44,9 +45,9 @@ def main() -> None:
                 broken.append(f"{document.relative_to(ROOT)}: {ref}")
 
     if broken:
-        raise SystemExit("Broken Markdown references:\n" + "\n".join(broken))
+        raise SystemExit("Referências Markdown quebradas:\n" + "\n".join(broken))
 
-    print("All Markdown references resolve.")
+    print("Todas as referências Markdown resolvem corretamente.")
 
 
 if __name__ == "__main__":

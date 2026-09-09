@@ -1,39 +1,42 @@
-# Founder Topics — 2026 Edition
+# Temas para Founders — Edição 2026
 
-A library of 10 content **angles** built for founders. Where `hook-formulas.md`
-gives you the *structure* of a post (how the first lines are shaped), this file
-gives you the *territory* — the specific tensions a founder can mine that a
-marketer, operator, or job-seeker cannot. Each angle is a reusable template you
-fill with your own numbers and story, not a fixed post.
+Uma biblioteca de 10 **ângulos** de conteúdo construídos para founders. Enquanto o
+`hook-formulas.md` fornece a *estrutura* de um post (como as primeiras linhas são
+moldadas), este arquivo fornece o *território* — as tensões específicas que um
+founder pode explorar e que um profissional de marketing, um operador ou um
+candidato a emprego não conseguem. Cada ângulo é um modelo reutilizável que você
+preenche com seus próprios números e sua própria história, não um post fixo.
 
-Use this with `linkedin-post-writer` (pick an angle, then a formula) and with
-`linkedin-content-planner` (a founders-edition pillar set, below).
+Use isto junto com `linkedin-post-writer` (escolha um ângulo, depois uma fórmula) e
+com `linkedin-content-planner` (um conjunto de pilares edição-founders, abaixo).
 
-## Why founders need their own angles
+## Por que founders precisam dos próprios ângulos
 
-Generic LinkedIn advice optimizes for reach. A founder's real constraint is
-almost never reach. It is a small number of high-stakes readers: the next
-investor, the next hire, the design partner who becomes a case study. The angles
-below are chosen because they compound *trust with a narrow audience* rather than
-impressions with a broad one. Reach is a side effect; the relationship is the
-asset.
+O conselho genérico de LinkedIn otimiza para alcance. A real restrição de um founder
+quase nunca é alcance. É um número pequeno de leitores de alto risco: o próximo
+investidor, a próxima contratação, o design partner que vira um case de sucesso. Os
+ângulos abaixo foram escolhidos porque potencializam a *confiança com um público
+restrito*, em vez de impressões com um público amplo. O alcance é um efeito
+colateral; o relacionamento é o ativo.
 
-Every angle lists: the **tension** it taps, **when to reach for it**, the
-**primary goal** (comments / reposts / likes / saves), and the **best-fit hook
-formula** from `hook-formulas.md`. Fill the bracketed slots with your own
-specifics. Never ship the template shape unfilled.
+Cada ângulo lista: a **tensão** que ele explora, **quando** recorrer a ele, o
+**objetivo principal** (comentários / reposts / curtidas / salvamentos) e a
+**fórmula de gancho mais adequada** de `hook-formulas.md`. Preencha os campos entre
+colchetes com suas próprias especificidades. Nunca publique o formato do modelo sem
+preencher.
 
 ---
 
-## A1 — Reprice the Category
+## A1 — Reprecificar a Categoria
 
-**Tension:** Outsiders value you by the box they put you in. Founders lose the
-most value to a lazy label ("agency", "consultancy", "wrapper", "feature").
+**Tensão:** Pessoas de fora avaliam você pela caixa em que te colocam. Founders
+perdem o máximo de valor para um rótulo preguiçoso ("agência", "consultoria",
+"wrapper", "feature").
 
-**When:** Repositioning for investors or premium buyers. Anytime the market
-underrates the *mechanism* behind what you sell.
+**Quando:** Ao reposicionar para investidores ou compradores premium. Sempre que o
+mercado subestima o *mecanismo* por trás do que você vende.
 
-**Goal:** reposts · **Formula:** F10 Contrarian + Historical Receipts, or F2 R.I.P.
+**Objetivo:** reposts · **Fórmula:** F10 Contrarian + Provas Históricas, ou F2 R.I.P.
 
 ```
 Everyone calls what we do {low-status label}.
@@ -48,25 +51,26 @@ Because {the mechanism} means it behaves like {high-status category}:
 {The one-line reframe that changes how it should be valued.}
 ```
 
-**Why it works:** You are not bragging, you are correcting a category error.
-That reads as insight, and the people who care about valuation (investors,
-acquirers, senior operators) share category-correction posts to look sharp.
+**Por que funciona:** Você não está se gabando, está corrigindo um erro de
+categorização. Isso soa como perspicácia, e as pessoas que se importam com
+valuation (investidores, compradores, operadores seniores) compartilham posts de
+correção de categoria para parecerem afiadas.
 
-**Trap:** The mechanism has to be real and specific. "We use AI" is not a
-reprice. "The work compounds into reusable code, so it scales like software, not
-like headcount" is.
+**Armadilha:** O mecanismo precisa ser real e específico. "We use AI" não é uma
+reprecificação. "The work compounds into reusable code, so it scales like
+software, not like headcount" é.
 
 ---
 
-## A2 — Content Became Pipeline
+## A2 — Conteúdo Virou Pipeline
 
-**Tension:** Posting feels like shouting into a void. The truth is that one post
-read by one right person can outweigh a year of reach.
+**Tensão:** Postar parece gritar no vazio. A verdade é que um post lido pela pessoa
+certa pode superar um ano inteiro de alcance.
 
-**When:** You have a concrete story where something you published turned into a
-relationship, a hire, or a deal — especially one that did *not* go viral.
+**Quando:** Você tem uma história concreta em que algo que você publicou virou um
+relacionamento, uma contratação ou um negócio — especialmente uma que *não* viralizou.
 
-**Goal:** likes / comments · **Formula:** F9 Curiosity-Gap or F11 Emotional Cold-Open
+**Objetivo:** curtidas / comentários · **Fórmula:** F9 Lacuna de Curiosidade ou F11 Abertura Emocional a Frio
 
 ```
 {A post / comment / channel} I almost didn't publish turned into {concrete outcome}.
@@ -78,25 +82,25 @@ But one of them was {the role that mattered}. They {what they did next}.
 [What that taught you about what content is actually for.]
 ```
 
-**Why it works:** It quietly reframes "content" as relationship infrastructure,
-which is the founder's real reason to post. It gives permission to people whose
-posts "don't perform" to keep going.
+**Por que funciona:** Reenquadra silenciosamente "conteúdo" como infraestrutura de
+relacionamento, que é o verdadeiro motivo do founder para postar. Dá permissão a
+quem sente que seus posts "não performam" para continuar.
 
-**Trap:** Do not turn it into a flex about the deal size. The point is the
-mechanism (right reader > big reach), not the trophy.
+**Armadilha:** Não transforme isso em ostentação sobre o tamanho do negócio. O
+ponto é o mecanismo (leitor certo > alcance grande), não o troféu.
 
 ---
 
-## A3 — Audience of One
+## A3 — Audiência de Uma Pessoa
 
-**Tension:** Writing for everyone reaches no one. Founders are told to "provide
-value to your audience" when the highest-ROI move is writing for a single named
-person.
+**Tensão:** Escrever para todo mundo não alcança ninguém. Dizem aos founders para
+"entregar valor à sua audiência" quando o movimento de maior ROI é escrever para
+uma única pessoa nomeada.
 
-**When:** You want a specific person or company to notice you. Great as a
-tactical, teach-by-showing post.
+**Quando:** Você quer que uma pessoa ou empresa específica note você. Ótimo como
+um post tático, que ensina mostrando.
 
-**Goal:** saves · **Formula:** F5 Self-Proving Meta or F7 Odd-Precision Money
+**Objetivo:** salvamentos · **Fórmula:** F5 Meta Autocomprovante ou F7 Dinheiro com Precisão Ímpar
 
 ```
 I wrote this post for exactly one person.
@@ -110,26 +114,28 @@ I named {their specific thing}. I referenced {the detail only they would clock}.
 The lesson: a post aimed at one person is read by a hundred. A post aimed at everyone is read by no one.
 ```
 
-**Why it works:** It is a rare tactic stated plainly, so people save it. And it
-models the behavior — a post about writing for one person *is* itself a post that
-some specific reader will feel was written for them.
+**Por que funciona:** É uma tática rara declarada com clareza, então as pessoas
+salvam. E o post modela o próprio comportamento — um post sobre escrever para uma
+pessoa *é*, ele mesmo, um post que algum leitor específico vai sentir que foi
+escrito para ele.
 
-**Trap:** Only publish this after it worked, or run it as an explicit experiment
-("watch me try this"). Claiming a result you did not get is the fastest way to
-lose credibility with the exact narrow audience you want.
+**Armadilha:** Só publique isto depois que funcionar, ou rode como um experimento
+explícito ("watch me try this"). Alegar um resultado que você não obteve é a
+forma mais rápida de perder credibilidade justamente com o público restrito que
+você quer.
 
 ---
 
-## A4 — The Scarce-Shots Math
+## A4 — A Matemática das Poucas Chances
 
-**Tension:** Founders chase impressions when their actual constraint is a tiny
-number of high-stakes attempts. A long sales or fundraising cycle means you get
-two or three real swings, not infinite reach.
+**Tensão:** Founders correm atrás de impressões quando sua restrição real é um
+número minúsculo de tentativas de alto risco. Um ciclo longo de vendas ou de
+captação significa duas ou três chances reais, não alcance infinito.
 
-**When:** Explaining why you optimize differently from creators. Talking to other
-founders about focus.
+**Quando:** Explicando por que você otimiza diferente dos criadores de conteúdo.
+Conversando com outros founders sobre foco.
 
-**Goal:** comments · **Formula:** F10 Contrarian or F4 Time-Anchor Confession
+**Objetivo:** comentários · **Fórmula:** F10 Contrarian ou F4 Confissão Ancorada no Tempo
 
 ```
 My {sales / fundraising} cycle is {N months}. My runway gives me room for {M} of them.
@@ -143,26 +149,26 @@ I started {the targeted move: writing for named accounts, warming specific rooms
 When you have {M} shots, {the principle you now live by}.
 ```
 
-**Why it works:** It reframes the whole reach-vs-relationship debate with a
-number, which invites other founders to argue their own math in the comments.
-Contrarian + concrete = comment engine.
+**Por que funciona:** Reenquadra todo o debate alcance-vs-relacionamento com um
+número, o que convida outros founders a discutirem sua própria matemática nos
+comentários. Contrarian + concreto = motor de comentários.
 
-**Trap:** Keep it about strategy, not despair. "I only get two shots" should land
-as clarity, not panic.
+**Armadilha:** Mantenha o tom estratégico, não de desespero. "I only get two
+shots" deve soar como clareza, não como pânico.
 
 ---
 
-## A5 — The Unglamorous Bet
+## A5 — A Aposta Sem Glamour
 
-**Tension:** The feed celebrates launches and raises. The real founder story is
-usually the boring, unloved thing you took over or stuck with when everyone else
-saw a reason to pass.
+**Tensão:** O feed celebra lançamentos e captações. A história real de um founder
+costuma ser a coisa chata e não amada que você assumiu ou manteve quando todo
+mundo via um motivo para desistir.
 
-**When:** You have a turnaround, an acquisition of something small, or a slow
-compounding win. Especially powerful against a feed full of overnight-success
-theater.
+**Quando:** Você tem uma virada de jogo, a aquisição de algo pequeno ou uma vitória
+lenta e composta. Especialmente forte contra um feed cheio de teatro de sucesso
+da noite para o dia.
 
-**Goal:** reposts · **Formula:** F7 Odd-Precision Money Ledger or F3 Year-over-Year Pivot
+**Objetivo:** reposts · **Fórmula:** F7 Dinheiro com Precisão Ímpar ou F3 Virada Ano a Ano
 
 ```
 {The thing} started at {tiny or broken starting state — a real number}.
@@ -176,25 +182,25 @@ I saw {the one asset nobody was pricing}.
 The unglamorous truth: {the reframe about patience / unloved bets / boring compounding}.
 ```
 
-**Why it works:** Anti-hype is itself a differentiator in 2026. A specific
-starting number ("13 users", "$0 MRR", "a codebase nobody would touch") makes it
-credible, and the maxim close makes it repostable.
+**Por que funciona:** O anti-hype é, em si, um diferencial em 2026. Um número
+inicial específico ("13 users", "$0 MRR", "a codebase nobody would touch") torna
+o post crível, e a máxima de fechamento o torna repostável.
 
-**Trap:** Real numbers only. A vague "we started from nothing" kills it. The
-smaller and odder the starting number, the stronger the post.
+**Armadilha:** Apenas números reais. Um vago "we started from nothing" mata o
+post. Quanto menor e mais estranho o número inicial, mais forte o post.
 
 ---
 
-## A6 — The Limit of Delegation
+## A6 — O Limite da Delegação
 
-**Tension:** Founders can now offload almost everything to agents and hires. But
-there is a core of judgment that cannot be transferred, and pretending otherwise
-produces averaged, forgettable output.
+**Tensão:** Founders hoje podem terceirizar quase tudo para agentes e contratados.
+Mas existe um núcleo de julgamento que não pode ser transferido, e fingir o
+contrário produz resultados médios e esquecíveis.
 
-**When:** You have a real point of view on what AI or a team can and cannot
-absorb. Pairs naturally with building in public.
+**Quando:** Você tem um ponto de vista real sobre o que a IA ou uma equipe
+conseguem e não conseguem absorver. Combina naturalmente com building in public.
 
-**Goal:** comments (reflective register) · **Formula:** F4 Confession or F9 Curiosity-Gap
+**Objetivo:** comentários (registro reflexivo) · **Fórmula:** F4 Confissão ou F9 Lacuna de Curiosidade
 
 ```
 I have delegated {list — drafting, scheduling, research, first-pass everything} to {agents / team}.
@@ -208,25 +214,25 @@ But there is one thing it cannot do: {the un-transferable judgment}.
 Half the meaning was never in the {artifact}. It was in {who decides what matters}. That half does not transfer.
 ```
 
-**Why it works:** It is a genuinely open question in 2026, so people argue it in
-the comments — the good kind of argument, where readers bring their own line
-between what they will and won't hand off.
+**Por que funciona:** É uma pergunta genuinamente em aberto em 2026, então as
+pessoas discutem nos comentários — do jeito bom, em que os leitores trazem a
+própria linha entre o que vão e o que não vão delegar.
 
-**Trap:** Do not resolve it too neatly. The power is in naming a real limit, not
-in selling a tidy answer.
+**Armadilha:** Não resolva isso de forma limpa demais. A força está em nomear um
+limite real, não em vender uma resposta arrumadinha.
 
 ---
 
-## A7 — Designed Serendipity
+## A7 — Serendipidade Projetada
 
-**Tension:** Systems that optimize for a metric converge to sameness. Founders
-who want a distinctive product or voice have to engineer surprise on purpose,
-without tipping into chaos.
+**Tensão:** Sistemas que otimizam para uma métrica convergem para a mesmice.
+Founders que querem um produto ou uma voz distintos precisam engenheirar
+surpresa de propósito, sem cair no caos.
 
-**When:** Product philosophy posts. Explaining why "more optimization" is the
-wrong instinct.
+**Quando:** Posts de filosofia de produto. Explicando por que "mais otimização" é
+o instinto errado.
 
-**Goal:** comments · **Formula:** F10 Contrarian or F5 Self-Proving Meta
+**Objetivo:** comentários · **Fórmula:** F10 Contrarian ou F5 Meta Autocomprovante
 
 ```
 Optimize everything and you get {the averaged, safe, forgettable result}.
@@ -240,25 +246,25 @@ So I built in {a deliberate randomness mechanism} — with one rule: {the constr
 Randomness is not the opposite of a system. Controlled randomness is the system.
 ```
 
-**Why it works:** It is a counter-intuitive product take with a clean maxim.
-Founders and builders debate it because it cuts against the optimize-everything
-default.
+**Por que funciona:** É uma visão de produto contraintuitiva com uma máxima
+limpa. Founders e builders discutem porque contraria o padrão de
+otimizar-tudo.
 
-**Trap:** Give the constraint, not just the chaos. "Add randomness" is naive;
-"add randomness inside these guardrails" is a design principle.
+**Armadilha:** Dê a restrição, não só o caos. "Add randomness" é ingênuo;
+"add randomness inside these guardrails" é um princípio de design.
 
 ---
 
-## A8 — The Evasive-Sentence Test
+## A8 — O Teste da Frase Evasiva
 
-**Tension:** Most output — from people and from AI — is polished, useful, and
-quietly dodges the thing that actually matters. A founder's real edge is refusing
-that.
+**Tensão:** A maior parte do resultado — de pessoas e de IA — é polida, útil, e
+foge discretamente da coisa que realmente importa. A verdadeira vantagem de um
+founder é recusar isso.
 
-**When:** Quality/craft posts. Explaining your standard, your review bar, or what
-makes your product different.
+**Quando:** Posts sobre qualidade/ofício. Explicando seu padrão, sua barra de
+revisão, ou o que torna seu produto diferente.
 
-**Goal:** comments / saves · **Formula:** F4 Confession or F15 Explain-to-Kids
+**Objetivo:** comentários / salvamentos · **Fórmula:** F4 Confissão ou F15 Explicado para Crianças
 
 ```
 There is a kind of sentence that is technically correct and spiritually evasive.
@@ -272,25 +278,25 @@ My test: {the specific question you ask to catch it}.
 It is slower. It is also the whole product.
 ```
 
-**Why it works:** It names a feeling everyone has had but few have articulated,
-which is exactly what earns saves and "this is it" comments. It also signals a
-high bar without bragging.
+**Por que funciona:** Nomeia um sentimento que todo mundo já teve, mas poucos
+articularam, que é exatamente o que gera salvamentos e comentários do tipo
+"this is it". Também sinaliza um padrão alto sem se gabar.
 
-**Trap:** Show the example. Talking about evasive sentences in only abstract
-terms is itself an evasive sentence, and readers will feel it.
+**Armadilha:** Mostre o exemplo. Falar sobre frases evasivas só em termos
+abstratos é, em si, uma frase evasiva, e os leitores vão perceber.
 
 ---
 
-## A9 — The Delegation Line
+## A9 — A Linha da Delegação
 
-**Tension:** A founder now operates through agents that can act under their name.
-Where is the line between what the machine may do as you and what stays human
-forever?
+**Tensão:** Um founder agora opera por meio de agentes que podem agir em seu nome.
+Onde fica a linha entre o que a máquina pode fazer como você e o que permanece
+humano para sempre?
 
-**When:** You have a real policy for this. Strong for anyone building or using AI
-agents in their own workflow.
+**Quando:** Você tem uma política real para isso. Forte para quem constrói ou usa
+agentes de IA no próprio fluxo de trabalho.
 
-**Goal:** comments · **Formula:** F17 Controlled A/B Anecdote (see `hook-formulas.md`)
+**Objetivo:** comentários · **Fórmula:** F17 Anedota A/B Controlada (veja `hook-formulas.md`)
 
 ```
 {An action, done by the machine} → {outcome}.
@@ -307,24 +313,25 @@ It may never {the acts that stay human — apologies, hard news, the real ask}.
 What would you never let an agent do as you?
 ```
 
-**Why it works:** The controlled comparison reads as proof, and the closing
-question is genuinely operational — people answer it with their own line, which
-drives real comments rather than emoji.
+**Por que funciona:** A comparação controlada soa como prova, e a pergunta de
+fechamento é genuinamente operacional — as pessoas respondem com a própria
+linha, o que gera comentários reais em vez de emojis.
 
-**Trap:** The two situations must differ by exactly one variable. If you change
-two things, it is an anecdote, not evidence.
+**Armadilha:** As duas situações precisam diferir por exatamente uma variável. Se
+você mudar duas coisas, vira uma anedota, não uma evidência.
 
 ---
 
-## A10 — The Learning Gate
+## A10 — O Portão de Aprendizado
 
-**Tension:** Scaling a team's public output (advocacy, hiring, sales) without
-either a bottleneck or a brand blowup. Both obvious answers fail.
+**Tensão:** Escalar a produção pública de uma equipe (advocacy, contratação,
+vendas) sem virar um gargalo nem uma crise de marca. As duas respostas óbvias
+falham.
 
-**When:** You have designed, or want to argue for, a governance approach that
-gets lighter over time instead of heavier.
+**Quando:** Você desenhou, ou quer defender, uma abordagem de governança que fica
+mais leve com o tempo em vez de mais pesada.
 
-**Goal:** comments / reposts · **Formula:** F18 False-Binary Dissolve + F20 Diverging-Curves close
+**Objetivo:** comentários / reposts · **Fórmula:** F18 Dissolução do Falso Binarismo + fechamento F20 Curvas Divergentes
 
 ```
 Everyone reaches for one of two answers to {scaling output safely}.
@@ -341,44 +348,47 @@ Month one, {high oversight}. Month six, {low oversight — only the genuinely ne
 A review queue grows with headcount. A learning system shrinks.
 ```
 
-**Why it works:** The false-binary setup earns the third option, and the
-diverging-curves close ("grows vs shrinks") is a quotable maxim that gets
-reshared by operators who feel the pain.
+**Por que funciona:** A montagem do falso binarismo conquista a terceira opção, e
+o fechamento com curvas divergentes ("grows vs shrinks") é uma máxima citável que
+é repostada por operadores que sentem a dor na pele.
 
-**Trap:** The two rejected options must be the ones your reader would actually
-try. A strawman binary reads as a sales trick.
+**Armadilha:** As duas opções rejeitadas precisam ser aquelas que seu leitor
+realmente tentaria. Um binarismo de fachada soa como truque de venda.
 
 ---
 
-## Founders-edition pillar set (for the content planner)
+## Conjunto de pilares edição-founders (para o planejador de conteúdo)
 
-Use these instead of the default Authority / Narrative / Community / Product mix
-when the whole plan is for a founder building trust with investors, hires, and
-design partners. Map each pillar to the angles above.
+Use isto em vez da mistura padrão Autoridade / Narrativa / Comunidade / Produto
+quando todo o plano é para um founder construindo confiança com investidores,
+contratados e design partners. Mapeie cada pilar para os ângulos acima.
 
-| Pillar | Share | Founder angles | Primary goal |
+| Pilar | Participação | Ângulos de founder | Objetivo principal |
 |---|---|---|---|
-| **Conviction** (sharp POV, category, product philosophy) | 30-40% | A1 Reprice, A7 Designed Serendipity, A8 Evasive-Sentence | reposts / comments |
-| **Building in public** (the real, unglamorous work) | 30-40% | A5 Unglamorous Bet, A6 Limit of Delegation, A9 Delegation Line | comments / likes |
-| **The math** (how a founder actually decides) | 15-20% | A4 Scarce-Shots, A10 Learning Gate | comments |
-| **Proof** (relationships and wins, told narrowly) | 10-15% | A2 Content-to-Pipeline, A3 Audience of One | likes / saves |
+| **Convicção** (ponto de vista afiado, categoria, filosofia de produto) | 30-40% | A1 Reprecificar, A7 Serendipidade Projetada, A8 Frase Evasiva | reposts / comentários |
+| **Building in public** (o trabalho real, sem glamour) | 30-40% | A5 Aposta Sem Glamour, A6 Limite da Delegação, A9 Linha da Delegação | comentários / curtidas |
+| **A matemática** (como um founder realmente decide) | 15-20% | A4 Poucas Chances, A10 Portão de Aprendizado | comentários |
+| **Prova** (relacionamentos e vitórias, contados de forma restrita) | 10-15% | A2 Conteúdo-para-Pipeline, A3 Audiência de Uma Pessoa | curtidas / salvamentos |
 
-Guardrails carry over from `../skills/linkedin-content-planner/references/pillars-framework.md`: 3-5 posts/week, no pillar
-above 60%, no formula repeated inside 7 days, and spread the primary goal across
-the week so it never reads as engineered.
+As proteções vêm de `../skills/linkedin-content-planner/references/pillars-framework.md`:
+3-5 posts/semana, nenhum pilar acima de 60%, nenhuma fórmula repetida em 7 dias, e
+distribua o objetivo principal ao longo da semana para que nunca pareça
+engenharia.
 
-## Founder voice notes
+## Notas de voz para founders
 
-- **Numbers over adjectives, always.** A founder audience discounts vague claims
-  harder than any other. `13 users`, `$0 MRR`, `two shots` — the odder and more
-  specific, the more credible.
-- **Vulnerability with a spine.** Show the real failure or limit, but land on
-  clarity, not self-pity. Founders follow founders who are honest *and* still in
-  command of the decision.
-- **No hustle theater.** Skip the 4 a.m. grind cues and the launch confetti.
-  Anti-hype is the 2026 differentiator with a founder/investor audience.
-- **One reader in mind.** Every angle here works better when you write it toward
-  a single named person and let everyone else overhear.
+- **Números em vez de adjetivos, sempre.** Um público de founders descarta
+  afirmações vagas com mais força do que qualquer outro. `13 users`, `$0 MRR`,
+  `two shots` — quanto mais estranho e específico, mais crível.
+- **Vulnerabilidade com espinha dorsal.** Mostre o fracasso ou o limite real, mas
+  pouse em clareza, não em autopiedade. Founders seguem founders que são
+  honestos *e* ainda no comando da decisão.
+- **Nada de teatro de hustle.** Pule os sinais de "acordar às 4h" e a
+  confetti de lançamento. Anti-hype é o diferencial de 2026 com um público de
+  founders/investidores.
+- **Um leitor em mente.** Cada ângulo aqui funciona melhor quando você o escreve
+  pensando em uma única pessoa nomeada e deixa todos os outros ouvirem por cima
+  do ombro.
 
-See root `SKILL.md` §Voice rules for the global rules (no em dashes, capitalize
-names, specific numbers, hook in the first 210 chars).
+Veja o `SKILL.md` raiz §Regras de voz para as regras globais (sem travessões, capitalize
+nomes, números específicos, gancho nos primeiros 210 caracteres).
