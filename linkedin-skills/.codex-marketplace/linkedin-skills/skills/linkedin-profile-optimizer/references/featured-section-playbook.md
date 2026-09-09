@@ -1,77 +1,77 @@
-# Featured Section Playbook
+# Guia da Seção Destaques
 
-## Why it matters
+## Por que importa
 
-- **80% of users leave Featured empty** — filling it well is a free edge
-- Featured content drives **30% longer viewing time** on your profile
-- It's the only section where YOU choose what's shown first — use it
+- **80% dos usuários deixam os Destaques vazios** — preenchê-los bem é uma vantagem gratuita
+- Conteúdo em Destaques gera **30% mais tempo de visualização** no seu perfil
+- É a única seção onde VOCÊ escolhe o que aparece primeiro — use isso a seu favor
 
-## Quality over quantity
+## Qualidade acima de quantidade
 
-**3 strong items > 10 weak ones.** Rotate quarterly.
+**3 itens fortes > 10 fracos.** Faça a rotação trimestralmente.
 
-## Content types allowed
+## Tipos de conteúdo permitidos
 
-- Posts (your own, especially top performers)
-- Articles (LinkedIn native or external)
-- External links (blog posts, newsletter issues, landing pages)
-- PDFs (one-pagers, case studies, checklists)
-- Presentations (decks you've given)
-- Videos (demos, talks, explainers)
+- Posts (seus próprios, especialmente os de melhor desempenho)
+- Artigos (nativos do LinkedIn ou externos)
+- Links externos (posts de blog, edições de newsletter, landing pages)
+- PDFs (materiais de uma página, estudos de caso, checklists)
+- Apresentações (decks que você já usou)
+- Vídeos (demos, palestras, explicativos)
 
-## Custom thumbnails
+## Miniaturas personalizadas
 
-- **Dimensions:** 1200 x 627 px
-- Use **benefit-driven titles**, not generic descriptions
-- ❌ "My blog post about sales" → ✅ "How we cut CAC 62% in 90 days"
-- ❌ "Case study PDF" → ✅ "B2B SaaS pipeline teardown (live client data)"
-- High-contrast background, bold sans-serif text, minimal decoration
+- **Dimensões:** 1200 x 627 px
+- Use **títulos orientados a benefício**, não descrições genéricas
+- ❌ "Meu post de blog sobre vendas" → ✅ "Como cortamos o CAC em 62% em 90 dias"
+- ❌ "PDF de estudo de caso" → ✅ "Desmonte do pipeline de um SaaS B2B (dados reais de cliente)"
+- Fundo de alto contraste, texto sans-serif em negrito, decoração mínima
 
-## Goal-matched content
+## Conteúdo alinhado ao objetivo
 
-### If your goal is clients
+### Se o seu objetivo é clientes
 
-1. **Lead magnet** — free guide, template, or tool that solves one acute problem your ICP has
-2. **Case study with results** — named client + specific metric + before/after
-3. **Calendar booking link** — direct path to a call (Calendly, Cal.com, Savvycal)
+1. **Isca digital** — guia gratuito, template ou ferramenta que resolve um problema agudo do seu ICP
+2. **Estudo de caso com resultados** — cliente nomeado + métrica específica + antes/depois
+3. **Link de agendamento** — caminho direto para uma call (Calendly, Cal.com, Savvycal)
 
-Example:
-- Featured 1: "The 7-question audit I run before taking a client" (PDF)
-- Featured 2: "How we took [Client X] from $40K MRR to $120K in 6 months" (case study)
-- Featured 3: "Book a free pipeline teardown" (calendar link)
+Exemplo:
+- Destaque 1: "As 7 perguntas da auditoria que faço antes de aceitar um cliente" (PDF)
+- Destaque 2: "Como levamos [Cliente X] de US$ 40 mil de MRR para US$ 120 mil em 6 meses" (estudo de caso)
+- Destaque 3: "Agende um diagnóstico de pipeline gratuito" (link de agenda)
 
-### If your goal is job seeking
+### Se o seu objetivo é busca de emprego
 
-1. **Portfolio / personal site** — your best work samples
-2. **Top-performing LinkedIn post** — demonstrates voice + engagement
-3. **Signature project** — a GitHub repo, design case study, or published research
+1. **Portfólio / site pessoal** — suas melhores amostras de trabalho
+2. **Post de melhor desempenho no LinkedIn** — demonstra voz + engajamento
+3. **Projeto de assinatura** — um repositório no GitHub, estudo de caso de design ou pesquisa publicada
 
-Example:
-- Featured 1: "15 projects I shipped this year" (personal site)
-- Featured 2: "Why I rebuilt our data pipeline from scratch" (top post)
-- Featured 3: "Open-source agent framework" (GitHub)
+Exemplo:
+- Destaque 1: "15 projetos que entreguei este ano" (site pessoal)
+- Destaque 2: "Por que reconstruí nosso pipeline de dados do zero" (post principal)
+- Destaque 3: "Framework de agentes open source" (GitHub)
 
-### If your goal is authority
+### Se o seu objetivo é autoridade
 
-1. **Best content piece** — the post or essay you're most proud of
-2. **Media / podcast feature** — external validation
-3. **Newsletter signup** — gets the visitor off LinkedIn and into your owned channel
+1. **Melhor conteúdo** — o post ou ensaio do qual você mais se orgulha
+2. **Participação em mídia / podcast** — validação externa
+3. **Inscrição na newsletter** — tira o visitante do LinkedIn e o leva para o seu canal próprio
 
-Example:
-- Featured 1: "Why SaaS pricing is broken — my 3,000-word teardown" (article)
-- Featured 2: "I was on The Operator Podcast — full episode here" (external)
-- Featured 3: "The Weekly Teardown — join 12K+ subscribers" (newsletter)
+Exemplo:
+- Destaque 1: "Por que o pricing de SaaS está quebrado — meu desmonte de 3.000 palavras" (artigo)
+- Destaque 2: "Estive no The Operator Podcast — episódio completo aqui" (externo)
+- Destaque 3: "The Weekly Teardown — junte-se a mais de 12 mil assinantes" (newsletter)
 
-## Rotation schedule
+## Cronograma de rotação
 
-- **Quarterly audit:** replace any item older than 12 weeks OR that got less engagement than its successor
-- **After a viral post:** pin the viral post within 48 hours while the momentum is live
-- **Before a launch:** rotate Featured to showcase the thing you're launching (lead magnet, waitlist, beta)
+- **Auditoria trimestral:** substitua qualquer item com mais de 12 semanas OU que teve menos engajamento do que o seu sucessor
+- **Depois de um post viral:** fixe o post viral em até 48 horas, enquanto o momentum está vivo
+- **Antes de um lançamento:** gire os Destaques para mostrar o que você está lançando (isca digital, lista de espera, beta)
 
-## Anti-patterns
+## Anti-padrões
 
-- Featuring your current company's corporate blog post (better to feature your own content about it)
-- Generic "About our services" PDF (nobody downloads)
-- A 2019 webinar recording (feels dated)
-- Random "selected writing" — be deliberate, not kitchen-sink
-- Leaving default Featured content from a connection's post
+- Destacar o post do blog corporativo da sua empresa atual (melhor destacar seu próprio conteúdo sobre isso)
+- PDF genérico "Sobre nossos serviços" (ninguém baixa)
+- Gravação de um webinar de 2019 (parece datado)
+- "Textos selecionados" aleatórios — seja deliberado, não uma miscelânea
+- Deixar o conteúdo padrão de Destaques vindo do post de uma conexão

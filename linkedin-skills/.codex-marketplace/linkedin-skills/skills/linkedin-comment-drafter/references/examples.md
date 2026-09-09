@@ -1,9 +1,9 @@
-# Examples — LinkedIn Comment Drafter
+# Exemplos — LinkedIn Comment Drafter
 
-## Example invocation
+## Exemplo de invocação
 
-> User: "Comment on this: https://www.linkedin.com/posts/<author-handle>_activity-<id>"
+> Usuário: "Comente isso: https://www.linkedin.com/posts/<author-handle>_activity-<id>"
 >
-> Skill: [parses URL, fetches post, detects closing question "Seen this in your market?", drafts 3 variants]
+> Skill: [analisa a URL, busca a publicação, detecta a pergunta de fechamento "Você já viu isso no seu mercado?", redige 3 variantes]
 >
-> Skill returns: T2 Answer-the-Closing-Question variant as primary pick, with T1 Missing-Piece as backup, reaction `INTEREST`, one-line rationale, and approval prompt.
+> Skill retorna: variante T2 Responder-a-Pergunta-de-Fechamento como escolha principal, com T1 Peça-Faltante como reserva, reação `INTEREST`, justificativa de uma linha, e prompt de aprovação.

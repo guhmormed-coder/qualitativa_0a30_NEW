@@ -1,48 +1,48 @@
-# Security Policy
+# Política de Segurança
 
-## Supported Versions
+## Versões Suportadas
 
-Only the latest released version of this skill bundle receives security
-updates. Install from the `main` branch or the newest tagged release.
+Somente a versão mais recente lançada deste pacote de skills recebe atualizações
+de segurança. Instale a partir da branch `main` ou do release mais novo com tag.
 
-| Version | Supported |
+| Versão | Suportada |
 | ------- | --------- |
-| latest release | yes |
-| older tags | no |
+| release mais recente | sim |
+| tags antigas | não |
 
-## Reporting a Vulnerability
+## Reportando uma Vulnerabilidade
 
-If you find a security issue in this repository (for example: a skill
-instruction that could be abused for prompt injection, a script that
-mishandles credentials, or an unsafe command pattern), please report it
-privately:
+Se você encontrar um problema de segurança neste repositório (por exemplo: uma
+instrução de skill que possa ser explorada para injeção de prompt, um script que
+manipula credenciais de forma incorreta, ou um padrão de comando inseguro), por favor
+reporte de forma privada:
 
-- **Preferred:** open a private report via
+- **Preferencial:** abra um relatório privado via
   [GitHub Security Advisories](https://github.com/sergebulaev/linkedin-skills/security/advisories/new)
-- **Alternative:** email `s@bulaev.org` with subject `[SECURITY] linkedin-skills`
+- **Alternativa:** envie um e-mail para `s@bulaev.org` com o assunto `[SECURITY] linkedin-skills`
 
-Please include:
+Por favor, inclua:
 
-1. A description of the issue and where it lives (file path, skill name)
-2. Steps to reproduce or a proof of concept
-3. The impact you believe it has
+1. Uma descrição do problema e onde ele está (caminho do arquivo, nome da skill)
+2. Passos para reproduzir ou uma prova de conceito
+3. O impacto que você acredita que ele tem
 
-You can expect an acknowledgement within 72 hours and a fix or a public
-disclosure decision within 14 days.
+Você pode esperar uma confirmação de recebimento em até 72 horas e uma correção ou
+decisão de divulgação pública em até 14 dias.
 
-## Scope notes
+## Notas de escopo
 
-- This bundle never ships hardcoded credentials. API tokens (Apify,
-  Publora) are read from environment variables or `.env` files that are
-  gitignored; see `.env.example`.
-- Scripts in `lib/` and `scripts/` perform HTTP calls only to the Apify,
-  Publora and Pixfaro APIs, and never build a command from remote content.
-  One code path does execute a command: the optional Tier 2 "DIY" backend
-  runs whatever `LINKEDIN_SKILLS_CUSTOM_POSTER` names, via `subprocess`
-  with no shell. That variable is unset by default; anything able to write
-  it gains code execution on the next approved publish, so treat it as a
-  credential.
-- Content fetched from LinkedIn through the Apify read layer is untrusted
-  input to the agent. See `references/untrusted-content.md`.
-- Please do not test vulnerabilities against third-party services
-  (LinkedIn, Apify, Publora) outside their own disclosure programs.
+- Este pacote nunca distribui credenciais fixas no código. Os tokens de API (Apify,
+  Publora) são lidos de variáveis de ambiente ou arquivos `.env` que estão no
+  gitignore; veja `.env.example`.
+- Os scripts em `lib/` e `scripts/` fazem chamadas HTTP apenas para as APIs do Apify,
+  Publora e Pixfaro, e nunca constroem um comando a partir de conteúdo remoto.
+  Um caminho de código realmente executa um comando: o backend opcional "DIY" do Nível 2
+  executa o que quer que `LINKEDIN_SKILLS_CUSTOM_POSTER` nomeie, via `subprocess`
+  sem shell. Essa variável não é definida por padrão; qualquer coisa capaz de
+  defini-la ganha execução de código na próxima publicação aprovada, então trate-a como uma
+  credencial.
+- Conteúdo obtido do LinkedIn pela camada de leitura do Apify é entrada não confiável
+  para o agente. Veja `references/untrusted-content.md`.
+- Por favor, não teste vulnerabilidades contra serviços de terceiros
+  (LinkedIn, Apify, Publora) fora dos seus próprios programas de divulgação.

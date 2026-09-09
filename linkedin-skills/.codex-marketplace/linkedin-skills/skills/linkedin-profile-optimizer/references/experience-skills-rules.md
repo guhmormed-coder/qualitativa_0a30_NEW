@@ -1,135 +1,135 @@
-# Experience, Skills, Custom URL, Recommendations
+# Experiência, Competências, URL Personalizada, Recomendações
 
-## Contents
+## Conteúdo
 
-- Experience bullets
-- Skills
-- Custom URL
-- Recommendations
+- Itens de Experiência
+- Competências
+- URL personalizada
+- Recomendações
 
-## Experience bullets
+## Itens de Experiência
 
-### Formula
-`[Action verb] + [specific metric]`
+### Fórmula
+`[Verbo de ação] + [métrica específica]`
 
-Not: `"Responsible for X"` or `"Managed X"` — these are resume fossils that LinkedIn's NLP ignores.
+Não: `"Responsável por X"` ou `"Gerenciava X"` — são fósseis de currículo que o NLP do LinkedIn ignora.
 
-### Before → After
+### Antes → Depois
 
-| ❌ Before | ✅ After |
+| ❌ Antes | ✅ Depois |
 |---|---|
-| Managed social media accounts | Grew social following by 340% and generated $50K in attributed revenue |
-| Responsible for sales team | Built and led 8-person sales team that exceeded quota by 25% for 6 consecutive quarters |
-| Led product development | Shipped 12 features in 18 months; user retention +47% |
-| Handled client accounts | Retained 23 enterprise accounts worth $2.4M ARR; 94% renewal rate |
-| Worked on marketing | Wrote and shipped the "Pipeline Teardown" series; 18M impressions, 340 qualified leads |
+| Gerenciava contas de redes sociais | Aumentei os seguidores em 340% e gerei US$ 50 mil em receita atribuída |
+| Responsável pela equipe de vendas | Construí e liderei uma equipe de vendas de 8 pessoas que superou a meta em 25% por 6 trimestres consecutivos |
+| Liderava o desenvolvimento de produto | Entreguei 12 funcionalidades em 18 meses; retenção de usuários +47% |
+| Cuidava de contas de clientes | Retive 23 contas enterprise, no valor de US$ 2,4 milhões em ARR; taxa de renovação de 94% |
+| Trabalhava com marketing | Escrevi e publiquei a série "Pipeline Teardown"; 18 milhões de impressões, 340 leads qualificados |
 
-### Action verbs (strong)
+### Verbos de ação (fortes)
 
-Led, Built, Increased, Delivered, Shipped, Cut, Drove, Launched, Grew, Closed, Retained, Rebuilt, Scaled
+Liderei, Construí, Aumentei, Entreguei, Lancei, Cortei, Impulsionei, Iniciei, Cresci, Fechei, Retive, Reconstruí, Escalei
 
-### Action verbs (weak — avoid)
+### Verbos de ação (fracos — evite)
 
-Worked on, Handled, Assisted with, Responsible for, Participated in, Helped with, Was part of
+Trabalhei em, Cuidava de, Auxiliava em, Responsável por, Participava de, Ajudava com, Fazia parte de
 
-### Media attachments
+### Anexos de mídia
 
-Every role should have at least one attached media item:
-- Screenshots of metrics dashboards (anonymized)
-- Links to live projects, articles, demos
-- Case study PDFs
-- Video walkthroughs
+Todo cargo deveria ter pelo menos um item de mídia anexado:
+- Capturas de tela de dashboards de métricas (anonimizadas)
+- Links para projetos ao vivo, artigos, demos
+- PDFs de estudos de caso
+- Vídeos demonstrativos
 
-Roles with media get **2.1x more profile view duration** than text-only roles.
-
----
-
-## Skills
-
-### Volume rules
-
-- **Up to 50 skills** listed (LinkedIn cap)
-- **Pin top 3** at the top of the section
-- **Mirror skills** from target job descriptions if job-seeking
-- **≥1 endorsement per skill** to count in search (skills with 0 endorsements are invisible to recruiters)
-- **5+ skills listed:** **3x more connection requests**
-
-### 2026 high-value skills
-
-Include if genuinely applicable:
-- AI Literacy
-- Data Analysis
-- Project Management
-- Strategic Thinking
-- Communication
-- Cross-functional Collaboration
-- Prompt Engineering
-- Retrieval-Augmented Generation (RAG)
-- Systems Thinking
-
-### Skills hygiene
-
-- Remove skills you haven't used in 3+ years (stale signal)
-- Don't list generic soft skills without evidence ("Leadership", "Teamwork") — back them with roles that prove it
-- If you have conflicting skills across roles (e.g., front-end dev + sales), keep them — LinkedIn tolerates breadth
+Cargos com mídia anexada recebem **2,1x mais tempo de visualização de perfil** do que cargos apenas com texto.
 
 ---
 
-## Custom URL
+## Competências
 
-### The rule
+### Regras de volume
 
-`linkedin.com/in/firstnamelastname`
+- **Até 50 competências** listadas (limite do LinkedIn)
+- **Fixe as 3 principais** no topo da seção
+- **Espelhe as competências** das descrições de vaga-alvo se estiver buscando emprego
+- **≥1 endosso por competência** para contar na busca (competências com 0 endossos ficam invisíveis para recrutadores)
+- **5+ competências listadas:** **3x mais solicitações de conexão**
 
-Never: `linkedin.com/in/firstname-lastname-123abc456`
+### Competências de alto valor em 2026
 
-### How to claim it
+Inclua se genuinamente aplicável:
+- Letramento em IA
+- Análise de Dados
+- Gestão de Projetos
+- Pensamento Estratégico
+- Comunicação
+- Colaboração Multifuncional
+- Engenharia de Prompt
+- Geração Aumentada por Recuperação (RAG)
+- Pensamento Sistêmico
 
-1. LinkedIn → Profile → Edit public profile & URL (top right)
-2. Edit custom URL
-3. Change to `firstnamelastname` (no spaces, no dashes if possible)
+### Higiene das competências
 
-### Why it matters
-
-- **Memorable** — you can say "linkedin.com/in/sergebulaev" in conversation
-- **SEO** — Google ranks canonical URLs higher than hash-tail URLs
-- **Email signatures** — the short URL reads as intentional, not default
+- Remova competências que você não usa há mais de 3 anos (sinal desatualizado)
+- Não liste soft skills genéricas sem evidência ("Liderança", "Trabalho em Equipe") — sustente-as com cargos que as comprovem
+- Se você tem competências conflitantes entre cargos (ex.: dev front-end + vendas), mantenha-as — o LinkedIn tolera amplitude
 
 ---
 
-## Recommendations
+## URL Personalizada
 
-### Why they matter
+### A regra
 
-- Candidates with ≥3 recommendations: **71% more likely to land interviews**
-- Authority profiles with 10+ recent recommendations: **4x trust signal** vs. profiles with 0
+`linkedin.com/in/nomesobrenome`
 
-### How to request (the right way)
+Nunca: `linkedin.com/in/nome-sobrenome-123abc456`
 
-1. **Email or call first** — don't use LinkedIn's generic auto-request
-2. **Ask for specifics** — "about [specific project / skill / outcome]"
-3. **Offer to draft bullets** — make it 2 minutes of their time
-4. **Reciprocate** — write theirs first, then ask
+### Como reivindicá-la
 
-### Template for the ask
+1. LinkedIn → Perfil → Editar perfil público e URL (canto superior direito)
+2. Editar URL personalizada
+3. Altere para `nomesobrenome` (sem espaços, sem hífens se possível)
+
+### Por que importa
+
+- **Memorável** — você consegue falar "linkedin.com/in/sergebulaev" em uma conversa
+- **SEO** — o Google posiciona URLs canônicas melhor do que URLs com hash no final
+- **Assinaturas de e-mail** — a URL curta soa intencional, não padrão
+
+---
+
+## Recomendações
+
+### Por que importam
+
+- Candidatos com ≥3 recomendações: **71% mais chances de conseguir entrevistas**
+- Perfis de autoridade com 10+ recomendações recentes: **4x mais sinal de confiança** em relação a perfis com 0
+
+### Como pedir (do jeito certo)
+
+1. **Fale por e-mail ou ligue primeiro** — não use a solicitação automática genérica do LinkedIn
+2. **Peça especificidade** — "sobre [projeto/competência/resultado específico]"
+3. **Ofereça-se para rascunhar os pontos** — torne isso 2 minutos do tempo da pessoa
+4. **Reciprocidade** — escreva a recomendação da pessoa primeiro, depois peça a sua
+
+### Modelo de pedido
 
 ```
-Hey [Name],
+Oi [Nome],
 
-I'm cleaning up my LinkedIn and hoping you'd be up for a short recommendation.
+Estou organizando meu LinkedIn e queria saber se você toparia escrever uma recomendação curta.
 
-If you're open to it, specifically about:
-- [specific thing you worked on together]
-- [concrete outcome]
-- [skill you demonstrated]
+Se topar, seria ótimo que falasse especificamente sobre:
+- [algo específico que vocês trabalharam juntos]
+- [resultado concreto]
+- [competência que demonstrei]
 
-Happy to draft 2-3 bullets you can edit. Takes you 60 seconds, helps me a ton.
+Fico feliz em rascunhar 2-3 pontos que você pode editar. Leva 60 segundos e me ajuda muito.
 
-Also happy to write yours first if that helps.
+Também fico feliz em escrever a sua primeiro, se ajudar.
 ```
 
-### Rotation
+### Rotação
 
-- Target **3 recommendations per year** from current context
-- After a role change, ask for 1-2 from the old role (not 5 — looks desperate)
-- Diverse contexts matter: colleagues, clients, vendors, direct reports
+- Meta de **3 recomendações por ano** de contextos atuais
+- Depois de trocar de cargo, peça 1-2 do cargo anterior (não 5 — parece desesperado)
+- Contextos diversos importam: colegas, clientes, fornecedores, liderados

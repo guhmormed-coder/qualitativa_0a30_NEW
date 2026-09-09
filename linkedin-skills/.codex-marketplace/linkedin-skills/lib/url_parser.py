@@ -1,27 +1,32 @@
-"""LinkedIn URL → URN parser.
+"""Parser de URL do LinkedIn → URN.
 
-Handles three common shapes:
+Trata três formatos comuns:
 
-1. Post URL (from "Copy link to post"):
+1. URL de post (de "Copiar link para o post"):
    https://www.linkedin.com/posts/SLUG-activity-ACTIVITY_ID-XX
 
-2. Comment URL (from "Copy link to comment"):
+2. URL de comentário (de "Copiar link para o comentário"):
    https://www.linkedin.com/feed/update/urn:li:activity:ACTIVITY_ID?commentUrn=urn%3Ali%3Acomment%3A%28activity%3AACTIVITY_ID%2CCOMMENT_ID%29
 
-3. Share/ugcPost URL:
+3. URL de share/ugcPost:
    https://www.linkedin.com/posts/SLUG-share-SHARE_ID-XX
-   or /feed/update/urn:li:ugcPost:XYZ
+   ou /feed/update/urn:li:ugcPost:XYZ
 
-Returns normalized dict:
+Retorna um dict normalizado:
     {
-      "post_activity_id": "<numeric>" | None,
+      "post_activity_id": "<numérico>" | None,
       "post_urn": "urn:li:activity:<id>" | "urn:li:ugcPost:<id>" | "urn:li:share:<id>",
-      "comment_id": "<numeric>" | None,
+      "comment_id": "<numérico>" | None,
       "comment_urn": "urn:li:comment:(<post_urn>,<comment_id>)" | None,
       "url_type": "post" | "comment" | "unknown",
     }
 
-Note: the activity ID in the URL slug is NOT always the same as the canonical URN used by LinkedIn's backend (ugcPost vs activity vs share). For posting comments, use the post_urn returned here by default. If the direct URN 404s, fall back to resolving via `lib.ApifyClient.fetch_post_comments(post_id=...)` and read the canonical post URN from any existing comment's `post_input` field.
+Nota: o ID de activity no slug da URL NÃO é sempre igual à URN canônica usada
+pelo backend do LinkedIn (ugcPost vs activity vs share). Para publicar
+comentários, use por padrão o post_urn retornado aqui. Se a URN direta
+retornar 404, recorra a resolver via `lib.ApifyClient.fetch_post_comments(post_id=...)`
+e leia a URN canônica do post a partir do campo `post_input` de qualquer
+comentário existente.
 """
 from __future__ import annotations
 import re
@@ -49,7 +54,7 @@ COMMENT_URN_RE = re.compile(
 
 
 def parse_linkedin_url(url: str) -> ParsedLinkedInUrl:
-    """Parse any LinkedIn post or comment URL into structured URNs.
+    """Faz o parse de qualquer URL de post ou comentário do LinkedIn em URNs estruturadas.
 
     >>> p = parse_linkedin_url("https://www.linkedin.com/posts/<author-handle>_activity-<id>")
     >>> p["post_activity_id"]
@@ -68,7 +73,7 @@ def parse_linkedin_url(url: str) -> ParsedLinkedInUrl:
         "url_type": "unknown",
     }
 
-    # Try comment URN first (commentUrn=... query param or path)
+    # Tenta a URN de comentário primeiro (parâmetro de query commentUrn=... ou path)
     m = COMMENT_URN_RE.search(decoded)
     if m:
         kind, post_id, comment_id = m.groups()
@@ -84,7 +89,7 @@ def parse_linkedin_url(url: str) -> ParsedLinkedInUrl:
         out["url_type"] = "comment"
         return out
 
-    # Post URL variants
+    # Variantes de URL de post
     for pattern, kind in [
         (UGCPOST_SLUG_RE, "ugcPost"),
         (SHARE_SLUG_RE, "share"),
@@ -103,10 +108,11 @@ def parse_linkedin_url(url: str) -> ParsedLinkedInUrl:
 
 
 def build_parent_comment_urn(post_urn: str, parent_comment_id: str) -> str:
-    """Format a parentComment URN given a post URN and the top-level comment id.
+    """Formata uma URN de parentComment dados uma URN de post e o id do comentário de topo.
 
-    LinkedIn flattens reply threads to 2 levels: if you're replying to a reply,
-    parentComment should still point to the top-level comment, not the reply.
+    O LinkedIn achata threads de resposta em 2 níveis: se você está
+    respondendo a uma resposta, parentComment ainda deve apontar para o
+    comentário de topo, não para a resposta.
     """
     return f"urn:li:comment:({post_urn},{parent_comment_id})"
 

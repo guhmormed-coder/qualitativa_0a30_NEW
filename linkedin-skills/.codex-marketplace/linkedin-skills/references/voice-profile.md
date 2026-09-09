@@ -1,13 +1,15 @@
-# Voice & Brand Profile
+# Perfil de Voz e Marca
 
-Your voice, niche, and rules in one place. Fill this once (or let
-`linkedin-humanizer` build it from a few of your real posts), and every writing
-skill in this bundle reads it before drafting, so you stop re-explaining who you
-are on every request. This file is yours: edit it freely, keep it as long or
-short as you like. Nothing here is sent anywhere; it just steers the drafts.
+Sua voz, seu nicho e suas regras em um só lugar. Preencha uma vez (ou deixe a
+`linkedin-humanizer` construí-lo a partir de alguns dos seus posts reais), e toda
+skill de redação deste pacote o lê antes de escrever um rascunho, para você parar
+de reexplicar quem você é a cada pedido. Este arquivo é seu: edite-o livremente,
+mantenha-o tão longo ou curto quanto quiser. Nada aqui é enviado a lugar nenhum;
+ele só orienta os rascunhos.
 
-Skills only load this profile when `filled: yes` below. An empty template is
-ignored, so drafts fall back to the generic voice rules until you populate it.
+As skills só carregam este perfil quando `filled: yes` abaixo estiver definido. Um
+modelo vazio é ignorado, então os rascunhos recorrem às regras de voz genéricas até
+você preenchê-lo.
 
 ## Status
 
@@ -15,51 +17,53 @@ ignored, so drafts fall back to the generic voice rules until you populate it.
 - source: template
 - updated: --
 
-## 1. Voice fingerprint
+## 1. Impressão digital de voz
 
-How your writing actually sounds. Be specific; examples beat adjectives.
+Como sua escrita realmente soa. Seja específico; exemplos valem mais que adjetivos.
 
-- Sentence rhythm: (e.g. mostly short, one long every few lines; or steady medium)
-- Signature openers: (lines/phrases you tend to start with)
-- Punctuation habits: (e.g. you use `..` as a soft pause; you never use em dashes)
-- Words and phrases you use a lot:
-- Words and phrases you NEVER use: (banned vocab, cliches you hate)
-- Emoji: (none / one occasionally / which ones)
-- Formatting: (one idea per line? lists? no hashtags?)
+- Ritmo das frases: (ex.: majoritariamente curtas, uma longa a cada poucas linhas; ou média constante)
+- Aberturas características: (linhas/frases com as quais você costuma começar)
+- Hábitos de pontuação: (ex.: você usa `..` como pausa suave; você nunca usa travessões)
+- Palavras e expressões que você usa bastante:
+- Palavras e expressões que você NUNCA usa: (vocabulário banido, clichês que você odeia)
+- Emoji: (nenhum / um ocasionalmente / quais)
+- Formatação: (uma ideia por linha? listas? sem hashtags?)
 
-## 2. Who you are and who you write for
+## 2. Quem você é e para quem você escreve
 
-- You are: (role, what you build/do, one line)
-- Your audience (ICP): (who you want reading and engaging)
-- Your content pillars: (2-4 recurring themes you post about)
+- Você é: (função, o que você constrói/faz, em uma linha)
+- Seu público (ICP): (quem você quer que leia e engaje)
+- Seus pilares de conteúdo: (2-4 temas recorrentes sobre os quais você posta)
 
-## 3. Hard rules (always / never)
+## 3. Regras rígidas (sempre / nunca)
 
-- Always: (e.g. one concrete number per post; first-person; end on a real question)
-- Never: (e.g. no engagement-bait, no "in today's fast-paced world", no naming competitors)
+- Sempre: (ex.: um número concreto por post; primeira pessoa; terminar com uma pergunta de verdade)
+- Nunca: (ex.: sem isca de engajamento, sem "in today's fast-paced world", sem citar concorrentes pelo nome)
 
-## 4. Links and CTA
+## 4. Links e CTA
 
-- Primary link you point people to:
-- Where it goes: (in the first comment, in bio, etc.)
-- Your CTA style: (soft invite / direct ask / none)
+- Link principal para o qual você direciona as pessoas:
+- Onde ele fica: (no primeiro comentário, na bio etc.)
+- Seu estilo de CTA: (convite suave / pedido direto / nenhum)
 
-## 5. Signature examples
+## 5. Exemplos assinatura
 
-Paste 2-4 of your own real lines or short posts that sound most like you. The
-writing skills mirror the rhythm and word choice of these, not a generic voice.
+Cole 2-4 das suas próprias linhas ou posts curtos reais que mais soam como você. As
+skills de redação espelham o ritmo e a escolha de palavras destes exemplos, não uma
+voz genérica.
 
 -
 -
 -
 
-## 6. Brand assets (for illustrations)
+## 6. Ativos de marca (para ilustrações)
 
-Used by the illustration step (`lib.illustrate`) to keep every generated image
-on-brand via a pixel-exact overlay. All optional; leave blank to skip the overlay.
+Usado pela etapa de ilustração (`lib.illustrate`) para manter toda imagem gerada
+alinhada à marca por meio de uma sobreposição pixel a pixel. Todos opcionais; deixe
+em branco para pular a sobreposição.
 
-- Handle to stamp on images: (e.g. @yourname)
-- Brand color (hex): (e.g. #0A66C2)
-- Logo: (path or Pixfaro `logo_id`, if you have one)
-- Overlay position: (e.g. bottom-right)
-- Visual style default: (e.g. minimal flat vector; bold editorial; muted photo)
+- Identificação para marcar nas imagens: (ex.: @seunome)
+- Cor da marca (hex): (ex.: #0A66C2)
+- Logo: (caminho ou `logo_id` do Pixfaro, se você tiver um)
+- Posição da sobreposição: (ex.: canto inferior direito)
+- Estilo visual padrão: (ex.: vetor plano minimalista; editorial arrojado; foto suave)

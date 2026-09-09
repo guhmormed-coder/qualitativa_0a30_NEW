@@ -1,88 +1,88 @@
-# LinkedIn Post Audit Checklist
+# Checklist de Auditoria de Post do LinkedIn
 
-Run every draft through this before publishing. **Any FAIL = fix before posting.**
+Passe todo rascunho por este checklist antes de publicar. **Qualquer FALHA = corrigir antes de postar.**
 
-## Hook (first 3 lines)
+## Gancho (primeiras 3 linhas)
 
-- [ ] Strongest insight is in line 1 (inverted pyramid structure)
-- [ ] Reader would click "see more" — no throat-clearing, no "I want to share..."
-- [ ] First 265 chars earn the mobile expand click (desktop gets 210 chars)
-- [ ] No rhetorical question opener ("Have you ever...?")
-- [ ] No "In today's fast-paced world"
+- [ ] O insight mais forte está na linha 1 (estrutura de pirâmide invertida)
+- [ ] O leitor clicaria em "ver mais" — sem enrolação, sem "quero compartilhar..."
+- [ ] Os primeiros 265 caracteres justificam o clique de expandir no mobile (no desktop são 210 caracteres)
+- [ ] Sem abertura de pergunta retórica ("Você já se perguntou...?")
+- [ ] Sem "No mundo acelerado de hoje"
 
-## Length & format
+## Tamanho e formato
 
-- [ ] 300-400 words (~900-1,300 chars), 20+ short sentences
-- [ ] Line breaks between every 1-2 sentences
-- [ ] At least one **bold** or listed element for scanners
-- [ ] If long-form (1,500-1,900): double line-breaks between ideas
+- [ ] 300-400 palavras (~900-1.300 caracteres), 20+ frases curtas
+- [ ] Quebras de linha a cada 1-2 frases
+- [ ] Ao menos um elemento em **negrito** ou em lista para quem só escaneia
+- [ ] Se for longo (1.500-1.900): quebras de linha duplas entre ideias
 
-## Substance
+## Substância
 
-- [ ] Contains a real, specific moment (date, number, name, failure)
-- [ ] Save-worthy element present: framework, template, checklist, or data point
-- [ ] Not a humble-brag; if celebrating, paired with what broke
-- [ ] At least 1 odd-precision number WITH a named referent (who / what / when / what it cost). A bare number does not count
-- [ ] At least 1 named entity (real person, company, date, city)
-- [ ] At least 1 first-person sensory detail
+- [ ] Contém um momento real e específico (data, número, nome, fracasso)
+- [ ] Presente um elemento que vale a pena salvar: framework, template, checklist ou dado
+- [ ] Não é humble-brag; se estiver celebrando, vem acompanhado do que deu errado
+- [ ] Ao menos 1 número de precisão incomum COM um referente nomeado (quem / o quê / quando / quanto custou). Um número solto não conta
+- [ ] Ao menos 1 entidade nomeada (pessoa real, empresa, data, cidade)
+- [ ] Ao menos 1 detalhe sensorial em primeira pessoa
 
-## Close
+## Fechamento
 
-- [ ] Ends with a genuine open question (not "Comment YES")
-- [ ] No manufactured CTA bait ("tag someone who…", "drop a 🙌")
-- [ ] Specific question beats generic "Thoughts?" by 20-40%
-- [ ] Not "What do you think?" (dead prompt)
+- [ ] Termina com uma pergunta aberta genuína (não "Comente SIM")
+- [ ] Sem isca de CTA fabricada ("marque alguém que...", "solta um 🙌")
+- [ ] Pergunta específica supera o genérico "O que vocês acham?" em 20-40%
+- [ ] Não é "O que você acha?" (prompt morto)
 
-## Algorithm safety
+## Segurança de algoritmo
 
-- [ ] Zero external links in post body (move to first comment if needed)
-- [ ] Not framing LinkedIn as inferior to other platforms
-- [ ] Publishing from personal profile (not company page — 6-8x reach difference)
-- [ ] Publish time matches author's usual slot (audience training)
-- [ ] Not the 2nd post today (360Brew cannibalizes 2+/day)
+- [ ] Zero links externos no corpo do post (mova para o primeiro comentário se necessário)
+- [ ] Não enquadra o LinkedIn como inferior a outras plataformas
+- [ ] Publicando pelo perfil pessoal (não pela página da empresa — diferença de 6-8x no alcance)
+- [ ] Horário de publicação combina com o horário habitual do autor (treinamento de audiência)
+- [ ] Não é o 2º post do dia (o 360Brew canibaliza 2+/dia)
 
-## Post-publish plan (first 90 min)
+## Plano pós-publicação (primeiros 90 min)
 
-- [ ] Author will engage 15-30 min **before** posting (warmup window)
-- [ ] Author replies to every comment within the first hour
-- [ ] No structural edits in first 60 min (typos only)
-- [ ] Author engages with 5+ other posts in the first 30 min after publishing
-- [ ] Seeding: 3-5 self-comments within 15-30 min to create thread depth
+- [ ] O autor vai interagir por 15-30 min **antes** de postar (janela de aquecimento)
+- [ ] O autor responde a todo comentário na primeira hora
+- [ ] Nenhuma edição estrutural nos primeiros 60 min (só erros de digitação)
+- [ ] O autor interage com 5+ outros posts nos primeiros 30 min após publicar
+- [ ] Semeadura: 3-5 autocomentários em 15-30 min para criar profundidade na thread
 
-## AI-tell scrub (see audit-ai-tells.md)
+## Limpeza de indícios de IA (veja audit-ai-tells.md)
 
-- [ ] Passed audit-ai-tells.md auto-fail check (forensic leakage, reveal bridges, negative parallelism)
-- [ ] Em dash density at or under ~1 per 100 words (1-2 per post). Zero is not required; zero everywhere is its own tell
-- [ ] No paragraph with 3+ vocabulary / grammar markers (one marker per paragraph is fine)
-- [ ] No staccato stacks ("Short. Punchy. Done.", "No X. No Y. Just Z."), no one-word paragraphs, at most 2 standalone fragments in the post
-- [ ] At most one natural rule-of-three; no stacked or perfectly parallel triads
-- [ ] No sincerity announcements as opener or pivot ("let me be honest", "I'll be real", "honestly?", "to be direct")
-- [ ] Passed humanizer scrub-rules.md (V3 density rules). Detector scores are not a check: they are noise at this length
+- [ ] Passou na checagem de falha automática do audit-ai-tells.md (vazamento forense, pontes de revelação, paralelismo negativo)
+- [ ] Densidade de travessão em ou abaixo de ~1 a cada 100 palavras (1-2 por post). Zero não é obrigatório; zero em todo lugar é, por si só, um indício
+- [ ] Nenhum parágrafo com 3+ marcadores de vocabulário / gramática (um marcador por parágrafo está bem)
+- [ ] Sem empilhamentos staccato ("Curto. Direto. Pronto.", "Nada de X. Nada de Y. Só Z."), sem parágrafos de uma única palavra, no máximo 2 fragmentos isolados no post
+- [ ] No máximo uma regra do três natural; sem tríades empilhadas ou perfeitamente paralelas
+- [ ] Sem anúncios de sinceridade como abertura ou pivô ("deixa eu ser honesto", "vou ser real", "sinceramente?", "para ser direto")
+- [ ] Passou na limpeza de scrub-rules.md do humanizador (regras de densidade V3). Escores de detector não são uma checagem: são ruído nesse tamanho de texto
 
-## Voice match
+## Compatibilidade de voz
 
-- [ ] Capitalizes all personal names, company names, product names
-- [ ] Matches user's established voice (lowercase sentence starts OK, `..` soft pauses OK, one em dash OK)
-- [ ] One specific, dated, uncomfortable fact stated flat, with no framing sentence around it
-- [ ] Author's reactions and opinions survived the scrub (a uniformly flat tone is a humanizer fingerprint)
-- [ ] Not name-dropping own product more than once
+- [ ] Capitaliza todos os nomes de pessoas, empresas, produtos
+- [ ] Combina com a voz já estabelecida do usuário (inícios de frase em minúsculas OK, pausas suaves com `..` OK, um travessão OK)
+- [ ] Um fato específico, datado e desconfortável declarado de forma seca, sem frase de introdução ao redor
+- [ ] As reações e opiniões do autor sobreviveram à limpeza (um tom uniformemente achatado é uma assinatura de humanizador)
+- [ ] Não cita o próprio produto mais de uma vez
 
-## Edit-safety window
+## Janela de segurança para edição
 
-- [ ] No significant edits planned for first 3 hours (resets distribution)
-- [ ] Structural restructuring >20% of text = reset the algorithm, don't do it
-- [ ] Typo fixes safe after the 90-min momentum window
+- [ ] Nenhuma edição significativa planejada para as primeiras 3 horas (reseta a distribuição)
+- [ ] Reestruturação estrutural de >20% do texto = reseta o algoritmo, não faça isso
+- [ ] Correções de erro de digitação são seguras depois da janela de momentum de 90 min
 
 ---
 
-## Scoring
+## Pontuação
 
-- **Pass:** all items checked, no FAIL
-- **Warning:** 1-3 unchecked — ship with caveats
-- **Fail:** 4+ unchecked OR any Algorithm Safety item fails — rewrite before posting
+- **Aprovado:** todos os itens marcados, nenhuma FALHA
+- **Aviso:** 1-3 itens não marcados — pode publicar com ressalvas
+- **Reprovado:** 4+ itens não marcados OU qualquer item de Segurança de Algoritmo falha — reescreva antes de postar
 
-## When to override the checklist
+## Quando ignorar o checklist
 
-- **Time-critical newsjack:** algorithm safety still mandatory, voice match can be looser
-- **First-ever post in a pillar:** warmup / seeding steps can be skipped once, not twice
-- **Founder confession post:** "not humble-brag" rule can stretch if the vulnerability is central to the thesis
+- **Newsjack urgente (pauta do momento):** segurança de algoritmo continua obrigatória, compatibilidade de voz pode ser mais flexível
+- **Primeiro post de um pilar:** os passos de aquecimento / semeadura podem ser pulados uma vez, não duas
+- **Post de confissão de fundador:** a regra "não humble-brag" pode ser flexibilizada se a vulnerabilidade for central à tese

@@ -1,17 +1,18 @@
 #!/usr/bin/env python3
 """
-Tool: test_detectors.py
-Purpose: Run input text through 5+ AI detectors in parallel and report divergence.
-Usage:
+Ferramenta: test_detectors.py
+Objetivo: Rodar o texto de entrada por 5+ detectores de IA em paralelo e reportar a divergência.
+Uso:
     python test_detectors.py --text "your text here"
     cat draft.txt | python test_detectors.py --stdin
-    python test_detectors.py --text "..." --manual    # paste-mode for detectors with no API
-    python test_detectors.py --text "..." --demo      # offline canned scores (no keys needed)
-Dependencies: requests, python-dotenv (optional)
+    python test_detectors.py --text "..." --manual    # modo colagem para detectores sem API
+    python test_detectors.py --text "..." --demo      # escores fictícios offline (sem chaves necessárias)
+Dependências: requests, python-dotenv (opcional)
 
-The point of this tool is NOT to give a definitive AI-or-not score. It is to
-document how much the detectors disagree. A 50-point spread between detectors
-on the same text is the headline, not any individual score.
+O objetivo desta ferramenta NÃO é dar um escore definitivo de IA-ou-não. É
+documentar o quanto os detectores discordam entre si. Uma dispersão de 50
+pontos entre detectores no mesmo texto é a manchete, não qualquer escore
+individual.
 """
 
 from __future__ import annotations
@@ -40,10 +41,10 @@ except ImportError:
 
 
 # ---------------------------------------------------------------------------
-# Detector implementations
-# Each returns a float 0-100 (% AI probability) or None if unavailable.
-# All implementations are stubs / best-effort — APIs change, keys gate access.
-# When key is missing, the detector returns None and is dropped from the report.
+# Implementações de detector
+# Cada uma retorna um float 0-100 (% de probabilidade de IA) ou None se indisponível.
+# Todas as implementações são stubs / melhor esforço — APIs mudam, chaves limitam o acesso.
+# Quando a chave está ausente, o detector retorna None e é removido do relatório.
 # ---------------------------------------------------------------------------
 
 
@@ -138,7 +139,7 @@ def detect_copyleaks(text: str) -> DetectorResult:
             "no creds (set COPYLEAKS_API_KEY and COPYLEAKS_EMAIL)",
         )
     try:
-        # Step 1: login -> bearer token
+        # Etapa 1: login -> token bearer
         login = requests.post(
             "https://id.copyleaks.com/v3/account/login/api",
             json={"email": email, "key": key},
@@ -147,7 +148,7 @@ def detect_copyleaks(text: str) -> DetectorResult:
         login.raise_for_status()
         token = login.json()["access_token"]
 
-        # Step 2: submit text for AI detection
+        # Etapa 2: enviar texto para detecção de IA
         scan_id = f"detector-test-{abs(hash(text)) % 10**8}"
         r = requests.post(
             f"https://api.copyleaks.com/v2/writer-detector/{scan_id}/check",
@@ -167,10 +168,10 @@ def detect_copyleaks(text: str) -> DetectorResult:
 
 
 # ---------------------------------------------------------------------------
-# Manual paste-mode fallback
-# Some detectors (Writer.com, Scribbr, Turnitin) have no public API.
-# When --manual is set, we prompt the user to open the URL, paste text,
-# read the score back, and type it in.
+# Fallback de modo colagem manual
+# Alguns detectores (Writer.com, Scribbr, Turnitin) não têm API pública.
+# Quando --manual é definido, pedimos ao usuário para abrir a URL, colar o texto,
+# ler o escore de volta, e digitá-lo.
 # ---------------------------------------------------------------------------
 
 MANUAL_DETECTORS = {
@@ -195,12 +196,12 @@ def detect_manual(name: str, url: str, text: str) -> DetectorResult:
 
 
 # ---------------------------------------------------------------------------
-# Verdict logic
+# Lógica de veredito
 # ---------------------------------------------------------------------------
 
 
 def verdict_for_spread(spread: float) -> tuple[str, str]:
-    """Returns (verdict_label, plain_english_translation)."""
+    """Retorna (verdict_label, plain_english_translation)."""
     if spread <= 15:
         return ("CONSENSUS", "detectors agree (still not proof, but consistent)")
     if spread <= 30:
@@ -211,7 +212,7 @@ def verdict_for_spread(spread: float) -> tuple[str, str]:
 
 
 # ---------------------------------------------------------------------------
-# Runner
+# Executor
 # ---------------------------------------------------------------------------
 
 
@@ -225,10 +226,10 @@ API_DETECTORS: list[Callable[[str], DetectorResult]] = [
 
 
 # ---------------------------------------------------------------------------
-# Demo mode — canned, deterministic, offline
-# Generates per-detector scores derived from a hash of the input so the same
-# text always returns the same scores. Spread is intentionally wide to
-# demonstrate the disagreement headline without burning paid API calls.
+# Modo demo — fictício, determinístico, offline
+# Gera escores por detector derivados de um hash da entrada, de forma que o
+# mesmo texto sempre retorne os mesmos escores. A dispersão é intencionalmente
+# ampla para demonstrar a manchete de discordância sem gastar chamadas de API pagas.
 # ---------------------------------------------------------------------------
 
 _DEMO_DETECTORS = ("GPTZero", "Originality.ai", "ZeroGPT", "Sapling", "Copyleaks")
@@ -238,7 +239,7 @@ def run_demo(text: str) -> list[DetectorResult]:
     digest = hashlib.sha256(text.encode("utf-8")).digest()
     results = []
     for i, name in enumerate(_DEMO_DETECTORS):
-        # Map each byte 0-255 to 0-100; pick a different byte per detector.
+        # Mapeia cada byte 0-255 para 0-100; escolhe um byte diferente por detector.
         score = round((digest[i] / 255) * 100, 1)
         results.append(DetectorResult(name, score))
     return results
@@ -250,7 +251,7 @@ def run_parallel(text: str) -> list[DetectorResult]:
         futures = [pool.submit(fn, text) for fn in API_DETECTORS]
         for f in concurrent.futures.as_completed(futures):
             results.append(f.result())
-    # preserve a stable display order
+    # preserva uma ordem de exibição estável
     order = ["GPTZero", "Originality.ai", "ZeroGPT", "Sapling", "Copyleaks"]
     results.sort(key=lambda r: order.index(r.name) if r.name in order else 99)
     return results

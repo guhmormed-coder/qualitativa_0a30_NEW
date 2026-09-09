@@ -1,22 +1,22 @@
-"""Thin Publora REST client for the LinkedIn Skills project.
+"""Cliente REST Publora enxuto para o projeto LinkedIn Skills.
 
-Wraps the Publora API endpoints. As of 2026-05-11 Publora exposes:
-- POST /create-post              (schedule cross-platform post)
-- POST /linkedin-comments        (top-level or reply via parentComment)
-- DELETE /linkedin-comments      (remove a comment we posted)
-- POST /linkedin-reactions       (react to a post or comment)
-- POST /linkedin-reshare         (reshare/repost a post, optional commentary)
+Encapsula os endpoints da API da Publora. Em 2026-05-11 a Publora expõe:
+- POST /create-post              (agendar post multiplataforma)
+- POST /linkedin-comments        (comentário de topo ou resposta via parentComment)
+- DELETE /linkedin-comments      (remover um comentário que publicamos)
+- POST /linkedin-reactions       (reagir a um post ou comentário)
+- POST /linkedin-reshare         (reshare/repost de um post, com commentary opcional)
 
-There is no read-side endpoint at this time (no GET /posts, no list, no
-delete-scheduled-post). Post scheduling is fire-and-forget; cancellation
-must be done in the Publora dashboard.
+Não há endpoint de leitura no momento (sem GET /posts, sem listagem, sem
+delete-scheduled-post). O agendamento de posts é "dispare e esqueça"; o
+cancelamento precisa ser feito no painel da Publora.
 
-Auth header: x-publora-key: sk_...
+Cabeçalho de autenticação: x-publora-key: sk_...
 
-Design note: this client is deliberately minimal. Skills call exactly one
-method per action, after the user has approved a draft rendered via
-`lib/approval.py`. All write methods retry on transient 408/429/5xx via the
-shared retry decorator.
+Nota de design: este cliente é deliberadamente minimalista. As skills chamam
+exatamente um método por ação, depois que o usuário aprovou um rascunho
+renderizado via `lib/approval.py`. Todos os métodos de escrita tentam
+novamente em 408/429/5xx transitórios via o decorador de retry compartilhado.
 """
 from __future__ import annotations
 import os
@@ -37,8 +37,8 @@ RETRYABLE_STATUSES = {408, 429, 500, 502, 503, 504}
 
 
 def _retry(attempts: int = 3, base_delay: float = 0.6):
-    """Retry decorator for HTTP methods. Triggers on 408/429/5xx and on
-    transient network errors. Exponential backoff with jitter."""
+    """Decorador de retry para métodos HTTP. Ativa em 408/429/5xx e em
+    erros transitórios de rede. Backoff exponencial com jitter."""
 
     def decorator(fn):
         def wrapper(*args, **kwargs):
@@ -85,7 +85,7 @@ class PubloraClient:
             }
         )
 
-    # ---- LinkedIn comments ------------------------------------------------
+    # ---- Comentários do LinkedIn -------------------------------------------
 
     def create_comment(
         self,
@@ -95,18 +95,18 @@ class PubloraClient:
         platform_id: str,
         parent_comment: Optional[str] = None,
     ) -> dict[str, Any]:
-        """Post a LinkedIn comment (top-level) or a reply (parent_comment set).
+        """Publica um comentário do LinkedIn (de topo) ou uma resposta (com parent_comment definido).
 
         Args:
             post_urn: urn:li:activity:... | urn:li:ugcPost:... | urn:li:share:...
-            message: up to 1,250 chars; supports @{urn:li:person:ID|Name} mentions
-            platform_id: e.g. "linkedin-fToLopAkEI"
-            parent_comment: urn:li:comment:(POST_URN,COMMENT_ID) for replies.
-                Note: LinkedIn flattens replies to 2 levels; to reply to a reply,
-                use the TOP-level comment URN here, not the reply URN.
+            message: até 1.250 caracteres; suporta menções @{urn:li:person:ID|Name}
+            platform_id: por exemplo, "linkedin-fToLopAkEI"
+            parent_comment: urn:li:comment:(POST_URN,COMMENT_ID) para respostas.
+                Nota: o LinkedIn achata as respostas em 2 níveis; para responder
+                a uma resposta, use aqui a URN do comentário de TOPO, não a URN da resposta.
 
         Returns:
-            Publora response dict with `comment.id`, `comment.commentUrn`, etc.
+            Dict de resposta da Publora com `comment.id`, `comment.commentUrn`, etc.
         """
         if len(message) > 1250:
             raise PubloraError("message exceeds 1,250 char LinkedIn limit")
@@ -137,10 +137,10 @@ class PubloraClient:
         )
         return self._handle(r)
 
-    # ---- LinkedIn reactions -----------------------------------------------
+    # ---- Reações do LinkedIn -----------------------------------------------
 
-    # Valid reaction types per Publora: LIKE, PRAISE, EMPATHY, INTEREST,
-    # APPRECIATION, ENTERTAINMENT. (INSIGHTFUL is NOT valid — map to INTEREST.)
+    # Tipos de reação válidos segundo a Publora: LIKE, PRAISE, EMPATHY, INTEREST,
+    # APPRECIATION, ENTERTAINMENT. (INSIGHTFUL NÃO é válido — mapeie para INTEREST.)
     REACTION_ALIASES = {
         "INSIGHTFUL": "INTEREST",
         "CURIOUS": "INTEREST",
@@ -167,7 +167,7 @@ class PubloraClient:
             },
         )
 
-    # ---- Posts ------------------------------------------------------------
+    # ---- Posts ----------------------------------------------------------------
 
     def create_post(
         self,
@@ -177,14 +177,15 @@ class PubloraClient:
         scheduled_time: Optional[str] = None,
         media_urls: Optional[list[str]] = None,
     ) -> dict[str, Any]:
-        """Create a cross-platform post.
+        """Cria um post multiplataforma.
 
-        `platforms` is a list of platform connection ID STRINGS, e.g.
-        ["linkedin-xxx"]. The Publora /create-post endpoint requires string IDs;
-        passing the old {"platform","platformId"} dict shape returns HTTP 400
-        ("Invalid platform ID format"). For backward compatibility, dict entries
-        are normalized to their "platformId" here. `scheduled_time` is ISO 8601
-        (UTC); if None, the post is created as a draft.
+        `platforms` é uma lista de STRINGS de ID de conexão de plataforma, por
+        exemplo, ["linkedin-xxx"]. O endpoint /create-post da Publora exige IDs
+        em string; passar o formato antigo de dict {"platform","platformId"}
+        retorna HTTP 400 ("Invalid platform ID format"). Por compatibilidade
+        com versões anteriores, entradas em dict são normalizadas aqui para
+        seu "platformId". `scheduled_time` é ISO 8601 (UTC); se None, o post
+        é criado como rascunho.
         """
         norm_platforms = [
             p if isinstance(p, str) else (p.get("platformId") or p.get("platform"))
@@ -200,7 +201,7 @@ class PubloraClient:
             payload["mediaUrls"] = media_urls
         return self._post("/create-post", payload)
 
-    # ---- Reshare (repost) -------------------------------------------------
+    # ---- Reshare (repost) ------------------------------------------------------
 
     def create_reshare(
         self,
@@ -210,18 +211,18 @@ class PubloraClient:
         commentary: Optional[str] = None,
         visibility: str = "PUBLIC",
     ) -> dict[str, Any]:
-        """Reshare (repost) an existing LinkedIn post to the connection's feed.
+        """Refaz o reshare (repost) de um post existente do LinkedIn no feed da conexão.
 
-        `parent` is the URN of the ORIGINAL post and must be
-        `urn:li:share:<id>` or `urn:li:ugcPost:<id>` (NOT `urn:li:activity:<id>`,
-        which the endpoint rejects). Apify's `fetch_post` returns this directly
-        as `shareUrn`; prefer it over converting an activity id, since the two
-        numbers can differ.
+        `parent` é a URN do post ORIGINAL e deve ser `urn:li:share:<id>` ou
+        `urn:li:ugcPost:<id>` (NÃO `urn:li:activity:<id>`, que o endpoint
+        rejeita). O `fetch_post` da Apify retorna isso diretamente como
+        `shareUrn`; prefira-o em vez de converter um activity id, já que os
+        dois números podem divergir.
 
-        `commentary` (<=3000 chars) is the text shown above the reshare ("repost
-        with your thoughts"); omit it for a plain reshare. `visibility` is
-        `PUBLIC` or `CONNECTIONS`. The endpoint returns HTTP 201; the new reshare
-        URN is `result["reshare"]["id"]`.
+        `commentary` (<=3000 caracteres) é o texto mostrado acima do reshare
+        ("repost com seus comentários"); omita para um reshare simples.
+        `visibility` é `PUBLIC` ou `CONNECTIONS`. O endpoint retorna HTTP 201;
+        a nova URN de reshare é `result["reshare"]["id"]`.
         """
         payload: dict[str, Any] = {
             "platformId": platform_id,
@@ -233,7 +234,7 @@ class PubloraClient:
             payload["visibility"] = visibility.upper()
         return self._post("/linkedin-reshare", payload)
 
-    # ---- Internals --------------------------------------------------------
+    # ---- Internos ---------------------------------------------------------
 
     @_retry()
     def _post(self, path: str, json_body: dict[str, Any]) -> dict[str, Any]:

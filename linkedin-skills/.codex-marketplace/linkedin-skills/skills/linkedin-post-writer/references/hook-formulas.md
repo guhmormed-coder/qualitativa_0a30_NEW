@@ -1,3 +1,3 @@
-# Hook formulas
+# Fórmulas de hook
 
-This file moved to root-level `references/hook-formulas.md`. Update your citation.
+Este arquivo foi movido para `references/hook-formulas.md` na raiz. Atualize sua citação.

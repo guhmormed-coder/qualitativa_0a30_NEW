@@ -1,74 +1,74 @@
-# Employee Advocacy — Four Operating Principles
+# Employee Advocacy — Quatro Princípios Operacionais
 
-Source: https://co.actor/use-cases/marketing-teams + 2026 practitioner research
+Fonte: https://co.actor/use-cases/marketing-teams + pesquisa de mercado de 2026
 
-## 1. Scale authentically
+## 1. Escale com autenticidade
 
-Individuals compose in **their own voice**, not corporate language.
+Cada pessoa escreve com **sua própria voz**, não em linguagem corporativa.
 
-- Team-written copy that sounds like the brand = 3x lower engagement than personal voice
-- Use a short voice-capture interview at onboarding (5-10 min) to document each person's tone
-- Don't normalize — keep the variance. The person who curses occasionally stays that way. The one who writes in technical prose stays that way.
+- Textos escritos pelo time que soam como a marca = engajamento 3x menor do que voz pessoal
+- Use uma entrevista curta de captura de voz no onboarding (5-10 min) para documentar o tom de cada pessoa
+- Não normalize — mantenha a variação. Quem xinga ocasionalmente continua assim. Quem escreve em prosa técnica continua assim.
 
-**Litmus test:** if someone reads 5 random posts from your team and can tell which person wrote each one, you're doing it right.
+**Teste decisivo:** se alguém ler 5 posts aleatórios do seu time e conseguir identificar quem escreveu cada um, você está fazendo certo.
 
-## 2. Maintain control
+## 2. Mantenha o controle
 
-Brand guidelines integrated into the workflow. Review step is **optional, not blocking**.
+Diretrizes de marca integradas ao fluxo de trabalho. A etapa de revisão é **opcional, não bloqueante**.
 
-- High-trust roles (VPs, Directors) bypass review entirely
-- Mid-trust roles (Managers, ICs) route to a 4-hour review window
-- New hires default to review, earn bypass after 4 weeks of clean posts
+- Papéis de alta confiança (VPs, Diretores) pulam a revisão por completo
+- Papéis de confiança média (Gerentes, ICs) passam por uma janela de revisão de 4 horas
+- Novas contratações entram por padrão na revisão, ganham a dispensa após 4 semanas de posts sem problemas
 
-**What the review catches:**
-- Factual errors about products / customers
-- Confidential info leaks
-- Regulatory issues (finance, health, disclosure rules)
+**O que a revisão detecta:**
+- Erros factuais sobre produtos / clientes
+- Vazamentos de informação confidencial
+- Questões regulatórias (finanças, saúde, regras de divulgação)
 
-**What the review does NOT change:**
-- Voice, tone, formatting
-- Opinions the team member has about their own work
-- Topic selection (within pillars)
-- Hashtags, emoji
+**O que a revisão NÃO altera:**
+- Voz, tom, formatação
+- Opiniões que o integrante do time tem sobre seu próprio trabalho
+- Seleção de tema (dentro dos pilares)
+- Hashtags, emojis
 
-## 3. Remove friction
+## 3. Remova atrito
 
-Per-post time budget: **5 minutes**. Anything more and the program dies by week 3.
+Orçamento de tempo por post: **5 minutos**. Qualquer coisa além disso e o programa morre até a semana 3.
 
-- AI does heavy lifting: ideation, drafts, visual suggestions
-- Team member reviews, edits, approves, publishes
-- Approval workflow is async and <4h SLA
-- Mobile posting is a first-class path (not desktop-only)
+- A IA faz o trabalho pesado: ideação, rascunhos, sugestões visuais
+- O integrante do time revisa, edita, aprova, publica
+- O fluxo de aprovação é assíncrono e tem SLA <4h
+- Publicar pelo celular é um caminho de primeira classe (não só desktop)
 
-**Math:** 5 min/post × 3 posts/week × 11 people = **2.75 hrs total team time per week** for full program output.
+**Matemática:** 5 min/post × 3 posts/semana × 11 pessoas = **2,75 horas de tempo total do time por semana** para a produção completa do programa.
 
-## 4. Prove ROI
+## 4. Comprove o ROI
 
-Track team reach, engagement, and pipeline impact. Without attribution, the program gets cut at the first budget review.
+Acompanhe alcance do time, engajamento e impacto no pipeline. Sem atribuição, o programa é cortado na primeira revisão de orçamento.
 
-### The 3 KPIs
+### Os 3 KPIs
 
-- **Team reach** — sum of impressions across all creators
-- **Team engagement** — comments + reactions + shares
-- **Pipeline impact** — inbound DMs, meetings booked, closed-won deals with LinkedIn as first-touch
+- **Alcance do time** — soma das impressões de todos os criadores
+- **Engajamento do time** — comentários + reações + compartilhamentos
+- **Impacto no pipeline** — DMs recebidas, reuniões agendadas, negócios fechados com o LinkedIn como primeiro toque
 
-### What NOT to use as primary KPI
+### O que NÃO usar como KPI principal
 
-- Follower count (vanity, slow-moving)
-- Post frequency (effort, not outcome)
-- Hashtag performance (not a business metric)
+- Número de seguidores (vaidade, muda devagar)
+- Frequência de posts (esforço, não resultado)
+- Desempenho de hashtags (não é uma métrica de negócio)
 
 ## Benchmarks (2026)
 
-- Launch → first team post: **14 days** target
-- Active team size: **8-11** members for meaningful output
-- Team output: **70+ posts/week** at 8 members (~10 per person per 4 weeks)
-- Per-post time: **5 min** max
-- Team touchpoints: **40,000/month** at 11 people × 3 posts/week
-- Per-post impression floor: **300** (anything lower, audit profile/hook)
-- Employee vs. brand page: **8x engagement**, **6-8x reach**
+- Lançamento → primeiro post do time: meta de **14 dias**
+- Tamanho de time ativo: **8-11** integrantes para uma produção relevante
+- Produção do time: **70+ posts/semana** com 8 integrantes (~10 por pessoa a cada 4 semanas)
+- Tempo por post: **5 min** no máximo
+- Pontos de contato do time: **40.000/mês** com 11 pessoas × 3 posts/semana
+- Piso de impressões por post: **300** (abaixo disso, audite perfil/gancho)
+- Funcionário vs. página de empresa: **8x engajamento**, **6-8x alcance**
 
-## Example team config
+## Exemplo de configuração de time
 
 ```yaml
 team:

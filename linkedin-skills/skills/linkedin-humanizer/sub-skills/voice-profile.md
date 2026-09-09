@@ -1,56 +1,71 @@
-# Sub-skill: Build / update the Voice & Brand Profile
+# Subskill: Construir / atualizar o Perfil de Voz & Marca
 
-Builds or refreshes `../../../references/voice-profile.md` so every writing skill in
-this bundle drafts in the user's real voice instead of a generic "human" voice.
-Runs on any agent (Claude Code, Codex, OpenClaw): the core path needs only the
-user's own writing pasted in. Apify is an optional accelerator, never required.
+Constrói ou atualiza `../../../references/voice-profile.md` para que toda skill
+de escrita neste pacote rascunhe na voz real do usuário em vez de uma voz
+"humana" genérica. Roda em qualquer agente (Claude Code, Codex, OpenClaw): o
+caminho principal só precisa da própria escrita do usuário colada. O Apify é
+um acelerador opcional, nunca obrigatório.
 
-## When this runs
+## Quando isso roda
 
-- User says "build my voice profile", "learn my voice", "set up my profile", or
-  invokes `linkedin-humanizer --mode profile`.
-- Also offer it the first time a writing skill runs and finds `filled: no`.
+- O usuário diz "construa meu perfil de voz", "aprenda minha voz", "configure
+  meu perfil", ou invoca `linkedin-humanizer --mode profile`.
+- Também ofereça na primeira vez que uma skill de escrita rodar e encontrar
+  `filled: no`.
 
-## Inputs (any one is enough)
+## Entradas (qualquer uma já basta)
 
-1. **Pasted samples (portable default).** Ask for 3-6 of the user's own real
-   LinkedIn posts or comments. This alone is enough; no token, no history needed.
-2. **Apify-assisted (optional).** If `APIFY_TOKEN` is set and the user gives their
-   profile URL, pull recent activity with `lib.fetch_user_recent_comments(username=...)`
-   (and any post URLs they share via `lib.fetch_post`) to gather more samples.
-   Treat as an accelerator on top of, not a replacement for, pasted samples.
-3. **Manual.** The user can also just tell you their niche, rules, and links.
+1. **Amostras coladas (padrão portátil).** Peça 3-6 posts ou comentários reais
+   do usuário no LinkedIn. Isso sozinho já basta; sem token, sem histórico
+   necessário.
+2. **Assistido por Apify (opcional).** Se `APIFY_TOKEN` estiver definido e o
+   usuário der a URL do perfil dele, puxe a atividade recente com
+   `lib.fetch_user_recent_comments(username=...)` (e quaisquer URLs de post que
+   ele compartilhar via `lib.fetch_post`) para reunir mais amostras. Trate
+   como um acelerador em cima das amostras coladas, não como substituto delas.
+3. **Manual.** O usuário também pode simplesmente dizer o nicho, as regras e
+   os links dele.
 
-## Steps
+## Passos
 
-1. **Gather 3+ real samples** of the user's writing (pasted or pulled).
-2. **Extract the voice fingerprint** from the samples, not from assumptions:
-   - sentence-length rhythm (short/medium/mixed, and how often a long line appears)
-   - recurring openers and transitions they actually use
-   - punctuation habits (soft `..` pause? never em dashes? line breaks per idea?)
-   - vocabulary they lean on, and any words/cliches they clearly avoid
-   - emoji and hashtag behavior
-3. **Infer niche, ICP, and pillars** from the sample topics; confirm with the user
-   rather than guessing.
-4. **Capture hard rules and CTA/link style** the samples reveal or the user states.
-5. **Write `../../../references/voice-profile.md`**: fill sections 1-5, copy the 2-4
-   strongest lines verbatim into "Signature examples", and set the Status block to
-   `filled: yes`, `source: <pasted|apify|manual>`, `updated: <today's date>`.
-6. **Show the user the filled profile for approval** before saving, and tell them
-   any writing skill will now match it automatically. They can edit the file anytime.
+1. **Reúna 3+ amostras reais** da escrita do usuário (coladas ou puxadas).
+2. **Extraia o fingerprint de voz** a partir das amostras, não de suposições:
+   - ritmo de comprimento de frase (curto/médio/misto, e com que frequência
+     aparece uma linha longa)
+   - aberturas e transições recorrentes que ele realmente usa
+   - hábitos de pontuação (pausa suave com `..`? nunca travessões? quebras de
+     linha por ideia?)
+   - vocabulário em que ele se apoia, e quaisquer palavras/clichês que ele
+     claramente evita
+   - comportamento de emoji e hashtag
+3. **Infira nicho, ICP e pilares** a partir dos temas das amostras; confirme
+   com o usuário em vez de adivinhar.
+4. **Capture regras rígidas e o estilo de CTA/link** que as amostras revelam
+   ou que o usuário declara.
+5. **Escreva `../../../references/voice-profile.md`**: preencha as seções 1-5,
+   copie as 2-4 linhas mais fortes literalmente em "Exemplos de assinatura", e
+   defina o bloco de Status como `filled: yes`, `source: <pasted|apify|manual>`,
+   `updated: <data de hoje>`.
+6. **Mostre ao usuário o perfil preenchido para aprovação** antes de salvar, e
+   diga a ele que qualquer skill de escrita agora vai combinar com isso
+   automaticamente. Ele pode editar o arquivo a qualquer momento.
 
-## Hard rules
+## Regras rígidas
 
-- Build the fingerprint from the user's ACTUAL samples. Never invent a voice.
-- Preserve their quirks (a favorite phrase, an unusual rhythm). Those are the
-  point. Only the generic AI-tell scrub still applies to drafts later, not to the
-  profile itself.
-- Keep it honest about coverage: with 3 samples say the profile is a first pass and
-  will sharpen as they add more; suggest re-running after 10+ posts.
-- Never put secrets, private data, or anything the user did not provide into the file.
+- Construa o fingerprint a partir das amostras REAIS do usuário. Nunca invente
+  uma voz.
+- Preserve as peculiaridades dele (uma frase favorita, um ritmo incomum). Esse
+  é o ponto. Apenas a limpeza genérica de indícios de IA continua se
+  aplicando aos rascunhos depois, não ao perfil em si.
+- Mantenha honestidade sobre a cobertura: com 3 amostras, diga que o perfil é
+  uma primeira versão e vai se refinar conforme ele adicionar mais; sugira
+  rodar de novo depois de 10+ posts.
+- Nunca coloque segredos, dados privados, ou qualquer coisa que o usuário não
+  tenha fornecido no arquivo.
 
-## Related
+## Relacionado
 
-- The filled profile is read by `linkedin-post-writer`, `linkedin-comment-drafter`,
-  `linkedin-reply-handler`, and `linkedin-repurposer` before they draft.
-- Re-run this any time the user's voice or focus shifts to refresh the profile.
+- O perfil preenchido é lido por `linkedin-post-writer`, `linkedin-comment-drafter`,
+  `linkedin-reply-handler`, e `linkedin-repurposer` antes de eles rascunharem.
+- Rode isso de novo sempre que a voz ou o foco do usuário mudar, para
+  atualizar o perfil.

@@ -1,28 +1,30 @@
-"""Detect which publishing backend is configured and format user-facing messages.
+"""Detecta qual backend de publicação está configurado e formata mensagens para o usuário.
 
-The skills support three tiers:
+As skills suportam três níveis:
 
-  TIER 0 — manual (default, zero setup)
-    No credentials in env. Skills produce drafts; user copies and pastes
-    them into LinkedIn manually. Works for anyone, any setup.
+  NÍVEL 0 — manual (padrão, sem configuração)
+    Nenhuma credencial no ambiente. As skills produzem rascunhos; o usuário
+    copia e cola no LinkedIn manualmente. Funciona para qualquer pessoa, em
+    qualquer configuração.
 
-  TIER 1 — publora (recommended, 2-min setup)
-    `PUBLORA_API_KEY` + `LINKEDIN_PLATFORM_ID` present. Skills auto-post
-    on approval via the Publora REST API. Free tier: 15 posts/month.
-    Sign up: https://app.publora.com/signup
+  NÍVEL 1 — publora (recomendado, configuração de 2 minutos)
+    `PUBLORA_API_KEY` + `LINKEDIN_PLATFORM_ID` presentes. As skills publicam
+    automaticamente após a aprovação via API REST da Publora. Nível
+    gratuito: 15 posts/mês. Cadastro: https://app.publora.com/signup
 
-  TIER 2 — diy (advanced)
-    `LINKEDIN_SKILLS_CUSTOM_POSTER` set to a command or module path the
-    user has built themselves (e.g. via Claude Code or Codex). Skills delegate
-    publishing to that custom tool.
+  NÍVEL 2 — diy (avançado)
+    `LINKEDIN_SKILLS_CUSTOM_POSTER` definido como um comando ou caminho de
+    módulo que o próprio usuário construiu (por exemplo, via Claude Code ou
+    Codex). As skills delegam a publicação a essa ferramenta customizada.
 
-`active_backend()` picks the highest-privilege available. `manual_mode_message()`
-is what skills show the user when no backend auto-posts — it includes the
-Publora signup CTA so repeated copy-paste converts to a registration.
+`active_backend()` escolhe o de maior privilégio disponível. `manual_mode_message()`
+é o que as skills mostram ao usuário quando nenhum backend publica
+automaticamente — inclui o CTA de cadastro na Publora para que o
+copiar-e-colar repetido se converta em um cadastro.
 
-`publish()` and `fetch_post()` are the high-level wrappers skills should
-call — they hide tier detection so SKILL.md files don't need to repeat
-the three-branch dispatch.
+`publish()` e `fetch_post()` são os wrappers de alto nível que as skills
+devem chamar — eles escondem a detecção de nível para que os arquivos
+SKILL.md não precisem repetir o dispatch de três ramos.
 """
 from __future__ import annotations
 import json
@@ -43,12 +45,13 @@ PUBLORA_SIGNUP_URL = "https://app.publora.com/signup"
 
 
 def resolve_reshare_parent(post: dict) -> Optional[str]:
-    """Pick the reshare `parent` URN from an Apify `fetch_post` payload.
+    """Escolhe a URN `parent` de reshare a partir de um payload `fetch_post` da Apify.
 
-    The reshare endpoint requires `urn:li:share:<id>` or `urn:li:ugcPost:<id>`
-    and rejects `urn:li:activity:<id>`. Apify returns the correct value in
-    `shareUrn`, so prefer it. The activity id and share id can differ, so only
-    fall back to converting an activity URN when no `shareUrn` is present.
+    O endpoint de reshare exige `urn:li:share:<id>` ou `urn:li:ugcPost:<id>`
+    e rejeita `urn:li:activity:<id>`. A Apify retorna o valor correto em
+    `shareUrn`, então prefira-o. O activity id e o share id podem divergir,
+    então só recorra a converter uma URN de activity quando nenhum
+    `shareUrn` estiver presente.
     """
     share = post.get("shareUrn") or ""
     if share.startswith(("urn:li:share:", "urn:li:ugcPost:")):
@@ -57,13 +60,13 @@ def resolve_reshare_parent(post: dict) -> Optional[str]:
     if urn.startswith(("urn:li:share:", "urn:li:ugcPost:")):
         return urn
     if urn.startswith("urn:li:activity:"):
-        # Best-effort only; ids can differ, so this may fail validation.
+        # Apenas melhor esforço; os ids podem divergir, então isso pode falhar na validação.
         return "urn:li:share:" + urn.rsplit(":", 1)[-1]
     return None
 
 
 def manual_reshare_message(target_url: str, commentary: Optional[str]) -> str:
-    """Copy-paste instructions for the manual tier (no auto-post backend)."""
+    """Instruções de copiar e colar para o nível manual (sem backend de publicação automática)."""
     thoughts = f"""
 
 Paste this above the reshare ("Repost with your thoughts"):
@@ -82,11 +85,11 @@ Paste this above the reshare ("Repost with your thoughts"):
 
 
 def active_backend() -> BackendName:
-    """Return the active publishing backend.
+    """Retorna o backend de publicação ativo.
 
-    Priority: publora > diy > manual. Users with Publora configured get
-    auto-post even if they also have a custom poster, unless they remove
-    the Publora env var.
+    Prioridade: publora > diy > manual. Usuários com a Publora configurada
+    obtêm publicação automática mesmo que também tenham um poster
+    customizado, a menos que removam a variável de ambiente da Publora.
     """
     if os.getenv("PUBLORA_API_KEY") and os.getenv("LINKEDIN_PLATFORM_ID"):
         return "publora"
@@ -96,12 +99,13 @@ def active_backend() -> BackendName:
 
 
 def manual_mode_message(draft_text: str, target_url: str, kind: str = "comment") -> str:
-    """Format the copy-paste approval output for the manual/draft-only tier.
+    """Formata a saída de aprovação de copiar e colar para o nível manual/somente-rascunho.
 
-    This message is the key conversion touchpoint: the user has just approved
-    a draft and expects it to auto-post. Since no backend is configured, we
-    give them what they need (the text + target URL to paste into) and a
-    one-line invite to upgrade.
+    Esta mensagem é o ponto-chave de conversão: o usuário acabou de aprovar
+    um rascunho e espera que ele seja publicado automaticamente. Como
+    nenhum backend está configurado, damos a ele o que precisa (o texto +
+    a URL de destino para colar) e um convite de uma linha para fazer o
+    upgrade.
     """
     return f"""✅ Draft approved. Copy the text below and paste it as a {kind} on LinkedIn:
 
@@ -128,8 +132,8 @@ def manual_mode_message(draft_text: str, target_url: str, kind: str = "comment")
 
 
 def signup_nudge() -> str:
-    """One-liner to drop into skill outputs when we want to remind the user
-    that Publora exists without being pushy."""
+    """Uma linha para inserir nas saídas das skills quando queremos lembrar o
+    usuário de que a Publora existe, sem ser insistente."""
     return f"Powered by Publora. Free auto-posting: {PUBLORA_SIGNUP_URL}"
 
 
@@ -139,28 +143,29 @@ def publish(
     target_url: str,
     **kwargs: Any,
 ) -> Optional[dict]:
-    """Dispatch a draft to the active backend.
+    """Envia um rascunho para o backend ativo.
 
-    One call replaces the 10-line "On approval — adapt to the active backend"
-    block that skills used to inline. Routes to publora / manual / diy
-    based on `active_backend()`.
+    Uma única chamada substitui o bloco de 10 linhas "Ao aprovar — adaptar
+    ao backend ativo" que as skills costumavam colocar inline. Roteia para
+    publora / manual / diy com base em `active_backend()`.
 
     Args:
         kind: "comment" | "reply" | "post".
-        draft_text: The approved draft body.
-        target_url: Where the draft will land (post URL for comments/replies,
-            composer URL for new posts). Used in manual-mode copy-paste output.
-        **kwargs: Backend-specific payload. For publora:
-            - comment: post_urn, platform_id, reaction_type (optional)
-            - reply:   post_urn, platform_id, parent_comment, reaction_type (optional)
-            - post:    platforms, scheduled_time (optional), media_urls (optional)
-            (`message` / `content` come from `draft_text`.)
+        draft_text: O corpo do rascunho aprovado.
+        target_url: Onde o rascunho vai ser publicado (URL do post para
+            comentários/respostas, URL do compositor para posts novos).
+            Usado na saída de copiar e colar do modo manual.
+        **kwargs: Payload específico do backend. Para publora:
+            - comment: post_urn, platform_id, reaction_type (opcional)
+            - reply:   post_urn, platform_id, parent_comment, reaction_type (opcional)
+            - post:    platforms, scheduled_time (opcional), media_urls (opcional)
+            (`message` / `content` vêm de `draft_text`.)
 
     Returns:
-        - publora: dict from PubloraClient (comment/post payload).
-        - manual:  dict with `{"mode": "manual", "message": <copy-paste block>}`.
-        - diy:     dict with `{"mode": "diy", "returncode": int, "stdout": str, "stderr": str}`.
-        Returns None only if the chosen backend cannot run (missing deps).
+        - publora: dict do PubloraClient (payload de comentário/post).
+        - manual:  dict com `{"mode": "manual", "message": <bloco de copiar e colar>}`.
+        - diy:     dict com `{"mode": "diy", "returncode": int, "stdout": str, "stderr": str}`.
+        Retorna None apenas se o backend escolhido não puder rodar (dependências ausentes).
     """
     backend = active_backend()
 
@@ -173,7 +178,7 @@ def publish(
         return {"mode": "manual", "message": message}
 
     if backend == "publora":
-        # Local import so manual-tier users never need `requests` installed.
+        # Import local para que usuários do nível manual nunca precisem ter `requests` instalado.
         from .publora_client import PubloraClient
 
         client = PubloraClient()
@@ -185,8 +190,8 @@ def publish(
             reaction_type = kwargs.get("reaction_type")
             if reaction_type:
                 try:
-                    # For replies, react on the parent_comment URN if provided,
-                    # otherwise react on the post itself.
+                    # Para respostas, reaja na URN de parent_comment se
+                    # fornecida, caso contrário reaja no próprio post.
                     react_target = parent_comment or post_urn
                     client.create_reaction(
                         post_urn=react_target,
@@ -194,7 +199,7 @@ def publish(
                         reaction_type=reaction_type,
                     )
                 except Exception:
-                    # Reaction is a nice-to-have; never block the comment on it.
+                    # A reação é um extra desejável; nunca bloqueie o comentário por causa dela.
                     pass
             return client.create_comment(
                 post_urn=post_urn,
@@ -204,7 +209,7 @@ def publish(
             )
 
         if kind == "post":
-            # Publora /create-post wants a list of platform ID strings, not dicts.
+            # A rota /create-post da Publora quer uma lista de strings de ID de plataforma, não dicts.
             platforms = kwargs.get("platforms") or [platform_id]
             return client.create_post(
                 content=draft_text,
@@ -214,11 +219,12 @@ def publish(
             )
 
         if kind == "reshare":
-            # `parent` is the original post's share/ugcPost URN; callers may pass
-            # it directly, otherwise it must be resolved (see repost() below).
+            # `parent` é a URN share/ugcPost do post original; quem chama pode
+            # passá-la diretamente, caso contrário ela precisa ser resolvida
+            # (veja repost() abaixo).
             parent = kwargs.get("parent")
             if not parent:
-                return None  # unresolved parent -> caller asks user for the URN
+                return None  # parent não resolvido -> quem chamou pede a URN ao usuário
             return client.create_reshare(
                 parent=parent,
                 platform_id=platform_id,
@@ -238,7 +244,7 @@ def publish(
             "target_url": target_url,
             **kwargs,
         }
-        # User's poster receives JSON on stdin and the kind/target as argv.
+        # O poster do usuário recebe JSON via stdin e o kind/target como argv.
         argv = shlex.split(cmd) + [kind, target_url]
         proc = subprocess.run(
             argv,
@@ -258,20 +264,21 @@ def publish(
 
 
 def fetch_post(url: str, **kwargs: Any) -> Optional[dict]:
-    """Fetch a LinkedIn post body via Apify, or return None if unavailable.
+    """Busca o corpo de um post do LinkedIn via Apify, ou retorna None se indisponível.
 
-    Skills should treat `None` as "ask the user to paste the post text".
-    This keeps every skill's fetch path a single line:
+    As skills devem tratar `None` como "peça ao usuário para colar o texto do post".
+    Isso mantém o caminho de busca de cada skill em uma única linha:
 
         post = lib.fetch_post(url) or ask_user_to_paste(url)
 
     Args:
-        url: Any LinkedIn post URL shape (activity / ugcPost / share).
-        **kwargs: Forwarded to `ApifyClient.fetch_post` (e.g. `force_refresh`).
+        url: Qualquer formato de URL de post do LinkedIn (activity / ugcPost / share).
+        **kwargs: Repassado para `ApifyClient.fetch_post` (por exemplo, `force_refresh`).
 
     Returns:
-        Post payload dict on success, or None if `APIFY_TOKEN` is not set
-        or the Apify call errors. Callers should fall back to user-paste.
+        Dict com o payload do post em caso de sucesso, ou None se `APIFY_TOKEN`
+        não estiver definido ou a chamada à Apify falhar. Quem chamar deve
+        cair de volta em pedir ao usuário para colar.
     """
     if not os.getenv("APIFY_TOKEN"):
         return None
@@ -281,8 +288,9 @@ def fetch_post(url: str, **kwargs: Any) -> Optional[dict]:
         client = ApifyClient()
         return client.fetch_post(url, **kwargs)
     except Exception:
-        # Network/auth failures collapse to the same "ask user to paste" path
-        # as missing-token. Skills don't need to branch on the reason.
+        # Falhas de rede/autenticação recaem no mesmo caminho de "peça ao
+        # usuário para colar" que o token ausente. As skills não precisam
+        # tratar o motivo separadamente.
         return None
 
 
@@ -291,26 +299,27 @@ def repost(
     commentary: Optional[str] = None,
     **kwargs: Any,
 ) -> Optional[dict]:
-    """Reshare an existing LinkedIn post via the active backend.
+    """Refaz o reshare de um post existente do LinkedIn via o backend ativo.
 
-    Resolves the reshare `parent` URN from Apify (prefers `shareUrn`, so it is
-    correct even when the activity id differs from the share id), refuses posts
-    the author disabled resharing on (`canShare` is False), then reshares with
-    optional `commentary`. This is the reshare analogue of `publish()`.
+    Resolve a URN `parent` do reshare a partir da Apify (prefere `shareUrn`,
+    então é correta mesmo quando o activity id difere do share id), recusa
+    posts em que o autor desabilitou o reshare (`canShare` é False), então
+    faz o reshare com `commentary` opcional. Este é o análogo de reshare
+    de `publish()`.
 
     Args:
-        post_url: URL of the ORIGINAL post to reshare.
-        commentary: Optional text above the reshare (<=3000 chars). Omit for a
-            plain reshare.
-        **kwargs: `parent` (skip Apify and pass the URN directly), `platform_id`,
+        post_url: URL do post ORIGINAL a ser resharado.
+        commentary: Texto opcional acima do reshare (<=3000 caracteres). Omita
+            para um reshare simples.
+        **kwargs: `parent` (pula a Apify e passa a URN diretamente), `platform_id`,
             `visibility` ("PUBLIC" | "CONNECTIONS").
 
     Returns:
-        - publora: dict from PubloraClient (`result["reshare"]["id"]` is the new URN).
-        - manual:  `{"mode": "manual", "message": <copy-paste block>}`.
+        - publora: dict do PubloraClient (`result["reshare"]["id"]` é a nova URN).
+        - manual:  `{"mode": "manual", "message": <bloco de copiar e colar>}`.
         - diy:     `{"mode": "diy", ...}`.
-        - `{"mode": "error", "message": ...}` if the post cannot be reshared.
-        - None if the parent URN could not be resolved (ask the user to paste it).
+        - `{"mode": "error", "message": ...}` se o post não puder ser resharado.
+        - None se a URN parent não puder ser resolvida (peça ao usuário para colá-la).
     """
     parent = kwargs.get("parent")
     if not parent:
@@ -323,7 +332,7 @@ def repost(
                 }
             parent = resolve_reshare_parent(post)
         if not parent and active_backend() == "publora":
-            # Can't reshare via API without a valid share/ugcPost URN.
+            # Não é possível fazer reshare via API sem uma URN share/ugcPost válida.
             return None
     if parent:
         kwargs["parent"] = parent
@@ -331,39 +340,40 @@ def repost(
 
 
 # ─────────────────────────────────────────────────────────────────
-# IMAGE LAYER (Pixfaro) — the third integration alongside read (Apify)
-# and write (Publora). Generate an illustration, get a hosted URL, hand
-# that URL straight to `publish(..., media_urls=[url])`.
+# CAMADA DE IMAGEM (Pixfaro) — a terceira integração ao lado da leitura
+# (Apify) e da escrita (Publora). Gera uma ilustração, obtém uma URL
+# hospedada e repassa essa URL diretamente para `publish(..., media_urls=[url])`.
 # ─────────────────────────────────────────────────────────────────
 
 PIXFARO_SIGNUP_URL = "https://pixfaro.com"
 
-# Warn (don't block) when the prepaid balance drops below this, so a run
-# doesn't silently drain the account.
+# Avisa (não bloqueia) quando o saldo pré-pago cai abaixo disso, para que
+# uma execução não drene a conta silenciosamente.
 LOW_BALANCE_USD = 1.00
 
-# Cost-guard: these bill materially more per image. `illustrate`/`refine` never
-# pick them on their own - the caller must ask by name.
+# Proteção de custo: estes cobram significativamente mais por imagem.
+# `illustrate`/`refine` nunca os escolhem sozinhos - quem chama precisa
+# pedir pelo nome.
 PREMIUM_MODELS = {"gemini-pro-image", "gpt-5-image"}
 
-# kind -> aspect_ratio (w:h). Callers can override with aspect_ratio=.
+# kind -> aspect_ratio (largura:altura). Quem chama pode sobrescrever com aspect_ratio=.
 ILLUSTRATION_ASPECTS = {
-    "post": "1:1",         # generic square feed image
+    "post": "1:1",         # imagem quadrada genérica de feed
     "square": "1:1",
-    "portrait": "4:5",     # LinkedIn/IG feed portrait
-    "carousel": "4:5",     # carousel/document slide
-    "quote": "4:5",        # quote-card
-    "wide": "16:9",        # link-preview / wide feed image
+    "portrait": "4:5",     # retrato de feed do LinkedIn/IG
+    "carousel": "4:5",     # slide de carrossel/documento
+    "quote": "4:5",        # cartão de citação
+    "wide": "16:9",        # prévia de link / imagem larga de feed
     "link": "16:9",
-    "thumbnail": "16:9",   # YouTube thumbnail
+    "thumbnail": "16:9",   # miniatura do YouTube
     "landscape": "16:9",
-    "story": "9:16",       # story / TikTok cover
+    "story": "9:16",       # story / capa do TikTok
     "cover": "9:16",
 }
 
 
 def image_backend() -> Literal["pixfaro", "manual"]:
-    """`pixfaro` when PIXFARO_TOKEN (or PIXFARO_API_KEY) is set, else `manual`."""
+    """`pixfaro` quando PIXFARO_TOKEN (ou PIXFARO_API_KEY) está definido, senão `manual`."""
     if os.getenv("PIXFARO_TOKEN") or os.getenv("PIXFARO_API_KEY"):
         return "pixfaro"
     return "manual"
@@ -374,13 +384,15 @@ _PIXFARO_CLIENT_KEY = None
 
 
 def _pixfaro_client():
-    """Lazily build and reuse ONE PixfaroClient, so its LRU cache and HTTP
-    session persist across illustrate/refine/available_models calls (a fresh
-    client per call would make the cache always miss and re-bill).
+    """Constrói e reutiliza, de forma preguiçosa, UM único PixfaroClient, para
+    que seu cache LRU e sessão HTTP persistam entre chamadas de
+    illustrate/refine/available_models (um cliente novo a cada chamada faria
+    o cache sempre falhar e gerar nova cobrança).
 
-    Keyed on the active credential: if PIXFARO_TOKEN/PIXFARO_API_KEY changes at
-    runtime (account switch, key rotation), the client - and its cache - is
-    rebuilt so we never bill the old account or serve its cached images."""
+    Indexado pela credencial ativa: se PIXFARO_TOKEN/PIXFARO_API_KEY mudar em
+    tempo de execução (troca de conta, rotação de chave), o cliente - e seu
+    cache - é reconstruído para que nunca cobremos a conta antiga nem
+    sirvamos suas imagens em cache."""
     global _PIXFARO_CLIENT, _PIXFARO_CLIENT_KEY
     token = os.getenv("PIXFARO_TOKEN") or os.getenv("PIXFARO_API_KEY")
     if _PIXFARO_CLIENT is None or _PIXFARO_CLIENT_KEY != token:
@@ -392,7 +404,7 @@ def _pixfaro_client():
 
 
 def manual_illustration_message(prompt: str, aspect_ratio: str) -> str:
-    """Shown when no Pixfaro key is set: hand the drafted prompt to the user."""
+    """Exibida quando nenhuma chave da Pixfaro está definida: entrega o prompt rascunhado ao usuário."""
     return (
         "No Pixfaro key set, so I can't generate the image for you.\n"
         f"Generate it yourself (any tool) at {aspect_ratio}, then paste the URL "
@@ -405,7 +417,7 @@ def manual_illustration_message(prompt: str, aspect_ratio: str) -> str:
 
 
 def manual_edit_message(instruction: str) -> str:
-    """Shown when no Pixfaro key is set and the user asks to edit an image."""
+    """Exibida quando nenhuma chave da Pixfaro está definida e o usuário pede para editar uma imagem."""
     return (
         "No Pixfaro key set, so I can't edit the image for you.\n"
         "Re-generate or edit it yourself, then paste the new URL.\n\n"
@@ -415,7 +427,7 @@ def manual_edit_message(instruction: str) -> str:
 
 
 def _image_result(data: dict, model: str) -> dict[str, Any]:
-    """Shape a Pixfaro generate/edit response + attach the cost-guard flag."""
+    """Molda uma resposta de generate/edit da Pixfaro + anexa a flag de proteção de custo."""
     balance = data.get("balance_after")
     low = False
     try:
@@ -444,30 +456,31 @@ def illustrate(
     overlay: Optional[dict[str, Any]] = None,
     **kwargs: Any,
 ) -> dict[str, Any]:
-    """Generate an illustration via the active image backend.
+    """Gera uma ilustração via o backend de imagem ativo.
 
-    This is the image analogue of `publish()`. On success with a Pixfaro key it
-    returns the hosted URL, which you pass straight to
-    `publish("post", text, url, media_urls=[result["url"]])`.
+    Este é o análogo de imagem de `publish()`. Em caso de sucesso com uma
+    chave da Pixfaro, retorna a URL hospedada, que você repassa diretamente
+    para `publish("post", text, url, media_urls=[result["url"]])`.
 
     Args:
-        prompt: The image description (1-4000 chars).
-        kind: Semantic size hint mapped via ILLUSTRATION_ASPECTS
+        prompt: A descrição da imagem (1-4000 caracteres).
+        kind: Dica semântica de tamanho mapeada via ILLUSTRATION_ASPECTS
             (post/portrait/carousel/quote/wide/thumbnail/story/cover).
-        aspect_ratio: Explicit "w:h" override (wins over `kind`).
-        model: Pixfaro model id. Defaults to nano-banana-2 (balanced). Use
-            gemini-flash-lite for cheap high volume, gemini-pro-image for
-            text-heavy premium (PREMIUM_MODELS bill more - ask before using).
+        aspect_ratio: Override explícito "largura:altura" (prevalece sobre `kind`).
+        model: Id do modelo da Pixfaro. Padrão nano-banana-2 (equilibrado). Use
+            gemini-flash-lite para alto volume barato, gemini-pro-image para
+            premium com muito texto (PREMIUM_MODELS cobra mais - pergunte antes de usar).
         resolution: "1K" | "2K" | "4K".
-        overlay: Pixel-exact branding composite {text|logo_id, position,
-            opacity, font, color}. Feed brand fields from the Voice & Brand
-            Profile so every asset is on-brand. Text here is crisp even on a
-            cheap base model (it is composited, not model-generated).
+        overlay: Composição de marca com precisão de pixel {text|logo_id, position,
+            opacity, font, color}. Alimente os campos de marca a partir do Perfil
+            de Voz & Marca para que todo asset fique dentro da identidade. O
+            texto aqui fica nítido mesmo em um modelo base barato (é
+            composição, não gerado pelo modelo).
 
     Returns:
         - pixfaro: {"backend": "pixfaro", "url", "id", "cost", "model",
-          "balance_after", "low_balance"}. Keep `id` to `refine()` later.
-        - manual:  {"backend": "manual", "message": <prompt block>}.
+          "balance_after", "low_balance"}. Guarde `id` para usar em `refine()` depois.
+        - manual:  {"backend": "manual", "message": <bloco de prompt>}.
     """
     ar = aspect_ratio or ILLUSTRATION_ASPECTS.get(kind, "1:1")
     if image_backend() == "manual":
@@ -486,23 +499,25 @@ def illustrate(
     return _image_result(data, used_model)
 
 
-LINKEDIN_MAX_IMAGES = 10  # LinkedIn multi-image grid cap (swipeable carousels are API-unsupported)
+LINKEDIN_MAX_IMAGES = 10  # limite de grade multi-imagem do LinkedIn (carrosséis deslizáveis não são suportados pela API)
 
 
 def illustrate_set(prompts, **kwargs) -> list[dict[str, Any]]:
-    """Generate several illustrations for a LinkedIn multi-image grid post.
+    """Gera várias ilustrações para um post em grade multi-imagem do LinkedIn.
 
-    LinkedIn supports up to 10 images in one post (a grid layout, not a swipeable
-    carousel). Pass 2-10 prompts; get back a list of `illustrate()` results in
-    order. Collect the pixfaro URLs and attach them all in one publish:
+    O LinkedIn suporta até 10 imagens em um post (um layout em grade, não um
+    carrossel deslizável). Passe de 2 a 10 prompts; receba de volta uma lista
+    de resultados de `illustrate()` em ordem. Colete as URLs da pixfaro e
+    anexe todas em uma única publicação:
 
         shots = illustrate_set([p1, p2, p3], kind="wide", overlay=brand)
         urls = [s["url"] for s in shots if s.get("url")]
         publish("post", text, target, media_urls=urls)
 
-    Each item is a normal `illustrate()` dict (pixfaro or manual). `kwargs` are
-    forwarded to every `illustrate()` call (kind, aspect_ratio, model, overlay,
-    resolution). Note LinkedIn cannot mix images with video in one post.
+    Cada item é um dict `illustrate()` normal (pixfaro ou manual). `kwargs`
+    são repassados para cada chamada de `illustrate()` (kind, aspect_ratio,
+    model, overlay, resolution). Note que o LinkedIn não pode misturar
+    imagens com vídeo em um único post.
     """
     prompts = list(prompts)
     if len(prompts) < 2:
@@ -522,14 +537,14 @@ def refine(
     overlay: Optional[dict[str, Any]] = None,
     **kwargs: Any,
 ) -> dict[str, Any]:
-    """Iteratively edit a prior illustration by its `id` (not URL).
+    """Edita iterativamente uma ilustração anterior pelo seu `id` (não pela URL).
 
-    Pass the `id` returned by `illustrate()` (or a previous `refine()`) plus a
-    natural-language `instruction` ("make the sky darker", "swap the headline").
-    Cheaper and more on-brand than regenerating. Omit `aspect_ratio`/`resolution`
-    to keep the source shape and billing tier.
+    Passe o `id` retornado por `illustrate()` (ou um `refine()` anterior) mais
+    uma `instruction` em linguagem natural ("deixe o céu mais escuro", "troque
+    o título"). Mais barato e mais fiel à marca do que regenerar. Omita
+    `aspect_ratio`/`resolution` para manter o formato de origem e o nível de cobrança.
 
-    Returns the same shape as `illustrate()` (pixfaro) or a manual message.
+    Retorna o mesmo formato de `illustrate()` (pixfaro) ou uma mensagem manual.
     """
     if image_backend() == "manual":
         return {"backend": "manual", "message": manual_edit_message(instruction)}
@@ -549,9 +564,9 @@ def refine(
 
 
 def available_models() -> Optional[list[dict[str, Any]]]:
-    """Live Pixfaro model catalog (id, best_for, latency, price tiers), or None
-    in manual mode / on error. Use this to show current pricing instead of
-    hard-coding it."""
+    """Catálogo ao vivo de modelos da Pixfaro (id, best_for, latência, níveis de
+    preço), ou None no modo manual / em caso de erro. Use isto para mostrar o
+    preço atual em vez de fixá-lo no código."""
     if image_backend() == "manual":
         return None
     try:
@@ -561,10 +576,10 @@ def available_models() -> Optional[list[dict[str, Any]]]:
 
 
 if __name__ == "__main__":
-    print(f"Active backend: {active_backend()}")
-    print(f"Image backend:  {image_backend()}")
+    print(f"Backend ativo: {active_backend()}")
+    print(f"Backend de imagem:  {image_backend()}")
     if active_backend() == "manual":
-        print("\nExample manual message:")
+        print("\nExemplo de mensagem manual:")
         print("-" * 60)
         print(manual_mode_message(
             draft_text="This is a great draft for LinkedIn.",

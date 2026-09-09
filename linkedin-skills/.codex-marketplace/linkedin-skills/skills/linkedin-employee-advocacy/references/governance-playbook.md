@@ -1,125 +1,125 @@
-# Governance Playbook — What to review, what not to, SLA
+# Playbook de Governança — O que revisar, o que não revisar, SLA
 
-The fastest way to kill an advocacy program is a 24-hour review queue. The fastest way to embarrass the company is no review at all. This playbook is the middle path.
+A forma mais rápida de matar um programa de advocacy é uma fila de revisão de 24 horas. A forma mais rápida de constranger a empresa é não ter revisão nenhuma. Este playbook é o caminho do meio.
 
-## Contents
+## Conteúdo
 
-- Core principle: review the risk surface, trust the voice surface
-- The 3-tier review queue
-- SLA commitments
-- What reviewers must NEVER edit
-- What reviewers MUST flag
-- Reviewer scorecard
-- Rolling 30-day audit
-- Bypass for incidents
-- Tooling expectations (not requirements)
+- Princípio central: revise a superfície de risco, confie na superfície de voz
+- A fila de revisão em 3 níveis
+- Compromissos de SLA
+- O que os revisores NUNCA devem editar
+- O que os revisores DEVEM sinalizar
+- Placar do revisor
+- Auditoria contínua de 30 dias
+- Bypass para incidentes
+- Expectativas de ferramental (não requisitos)
 
-## Core principle: review the risk surface, trust the voice surface
+## Princípio central: revise a superfície de risco, confie na superfície de voz
 
-Every post has two things in it:
+Todo post tem duas coisas nele:
 
-- **Risk surface:** specific claims, customer names, product roadmap commitments, regulated-industry guidance, financial figures, competitor mentions.
-- **Voice surface:** opinion, narrative, hook style, sentence rhythm, emoji usage, vulnerability.
+- **Superfície de risco:** afirmações específicas, nomes de clientes, compromissos de roadmap de produto, orientação para setores regulados, números financeiros, menções a concorrentes.
+- **Superfície de voz:** opinião, narrativa, estilo de gancho, ritmo das frases, uso de emoji, vulnerabilidade.
 
-Review the risk surface. Never review the voice surface. If you correct someone's voice, they stop posting; the program dies in 6 weeks.
+Revise a superfície de risco. Nunca revise a superfície de voz. Se você corrige a voz de alguém, essa pessoa para de postar; o programa morre em 6 semanas.
 
-## The 3-tier review queue
+## A fila de revisão em 3 níveis
 
-### Tier A — No review (auto-publish)
+### Nível A — Sem revisão (publicação automática)
 
-- Comments on third-party posts
-- Reposts with a 1-2 sentence personal angle
-- Posts where the team member is sharing a personal lesson, story, or opinion with no claims about specific customers, financials, roadmap, or competitors
-- Polls, except when the answers would constitute roadmap or pricing signal
+- Comentários em posts de terceiros
+- Reposts com uma opinião pessoal de 1-2 frases
+- Posts em que o integrante do time compartilha uma lição pessoal, história ou opinião sem afirmações sobre clientes específicos, finanças, roadmap ou concorrentes
+- Enquetes, exceto quando as respostas constituiriam um sinal de roadmap ou de preço
 
-**Estimated coverage:** 70-80% of advocacy content.
+**Cobertura estimada:** 70-80% do conteúdo de advocacy.
 
-### Tier B — Voice-capture review (24h SLA, async)
+### Nível B — Revisão de captura de voz (SLA de 24h, assíncrona)
 
-- Posts that name a customer (even publicly-known one)
-- Posts that reference a specific number from internal data (revenue, retention, churn, ARR, conversion rate)
-- Posts that critique a named competitor
-- Posts that announce something we haven't announced yet
+- Posts que nomeiam um cliente (mesmo que publicamente conhecido)
+- Posts que citam um número específico de dados internos (receita, retenção, churn, ARR, taxa de conversão)
+- Posts que criticam um concorrente nomeado
+- Posts que anunciam algo que ainda não anunciamos
 
-**Reviewer:** a marketing IC with brand authority (not a manager). One reviewer per 5-10 advocates.
-**Action:** check the named entity is OK to mention publicly, check the number is releasable, check the timing. Almost never edit voice.
+**Revisor:** um IC de marketing com autoridade de marca (não um gerente). Um revisor para cada 5-10 advogados de marca.
+**Ação:** verificar se a entidade nomeada pode ser mencionada publicamente, verificar se o número pode ser divulgado, verificar o timing. Quase nunca editar a voz.
 
-**Estimated coverage:** 15-25% of advocacy content.
+**Cobertura estimada:** 15-25% do conteúdo de advocacy.
 
-### Tier C — Legal / exec review (48h SLA)
+### Nível C — Revisão jurídica / executiva (SLA de 48h)
 
-- Posts about a regulated topic (HIPAA, SOX, GDPR, CCPA, securities, medical claims)
-- Posts that could be read as forward-looking statements (revenue guidance, M&A, fundraising)
-- Posts about an ongoing dispute, lawsuit, or PR incident
-- Posts that name a customer where contractual confidentiality is a question
+- Posts sobre um tema regulado (HIPAA, SOX, GDPR, CCPA, valores mobiliários, alegações médicas)
+- Posts que poderiam ser lidos como declarações prospectivas (projeção de receita, fusões e aquisições, captação de recursos)
+- Posts sobre uma disputa em curso, processo judicial ou incidente de relações públicas
+- Posts que nomeiam um cliente cuja confidencialidade contratual é uma questão em aberto
 
-**Reviewer:** General Counsel + at least one C-level (depending on topic).
+**Revisor:** Jurídico + pelo menos um C-level (dependendo do tema).
 
-**Estimated coverage:** <5% of advocacy content.
+**Cobertura estimada:** <5% do conteúdo de advocacy.
 
-## SLA commitments
+## Compromissos de SLA
 
-| Tier | SLA target | What "miss" means |
+| Nível | Meta de SLA | O que significa "perder o prazo" |
 |---|---|---|
-| A | 0 minutes (auto) | n/a |
-| B | 24 business hours | Author can publish if no response by hour 24 (silent-approval rule) |
-| C | 48 business hours | Author must wait for explicit go/no-go |
+| A | 0 minutos (automático) | n/a |
+| B | 24 horas úteis | O autor pode publicar se não houver resposta até a hora 24 (regra de aprovação silenciosa) |
+| C | 48 horas úteis | O autor precisa esperar pelo sinal verde/vermelho explícito |
 
-Silent approval at Tier B is what makes the program survive. If you can't commit to 24h, you can't run an advocacy program; pick a longer SLA and accept the lower volume.
+A aprovação silenciosa no Nível B é o que faz o programa sobreviver. Se você não consegue se comprometer com 24h, não pode rodar um programa de advocacy; escolha um SLA mais longo e aceite o volume menor.
 
-## What reviewers must NEVER edit
+## O que os revisores NUNCA devem editar
 
-- Lowercase sentence starts (signature voice)
-- `..` as soft pause
-- Sentence fragments
-- First-person stakes / vulnerability
-- The hook (rewriting the hook = rewriting the post)
-- Specific numbers that the author personally witnessed (vs internal-only metrics)
-- Cadence (timing is the author's call)
+- Início de frase em minúscula (voz de assinatura)
+- `..` como pausa suave
+- Frases fragmentadas
+- Vulnerabilidade / riscos em primeira pessoa
+- O gancho (reescrever o gancho = reescrever o post)
+- Números específicos que o autor testemunhou pessoalmente (vs. métricas apenas internas)
+- Cadência (o timing é escolha do autor)
 
-If a reviewer does any of this, the author's next 3 posts will be sanitized corporate boilerplate, and they'll quietly stop after 4 weeks.
+Se um revisor fizer qualquer coisa disso, os próximos 3 posts do autor serão um discurso corporativo higienizado, e ele vai parar silenciosamente em 4 semanas.
 
-## What reviewers MUST flag
+## O que os revisores DEVEM sinalizar
 
-- Customer name without confirmed permission
-- Specific revenue / retention / churn figures from internal dashboards
-- Product capability claims that aren't currently shipped
-- Financial guidance, even directional ("we're growing fast" implies growth → potentially material)
-- Specific competitor allegations (factual or not)
-- Any mention of a current employee by name without their consent
-- Anything that mentions an ongoing legal matter
+- Nome de cliente sem permissão confirmada
+- Números específicos de receita / retenção / churn vindos de dashboards internos
+- Alegações sobre capacidade de produto que ainda não foi lançada
+- Orientação financeira, mesmo que direcional ("estamos crescendo rápido" sugere crescimento → potencialmente material)
+- Alegações específicas contra concorrentes (factuais ou não)
+- Qualquer menção a um funcionário atual pelo nome sem o consentimento dele
+- Qualquer coisa que mencione uma questão jurídica em curso
 
-## Reviewer scorecard
+## Placar do revisor
 
-Track these per reviewer to keep the program healthy:
+Acompanhe isto por revisor para manter o programa saudável:
 
-| Metric | Healthy | Warning |
+| Métrica | Saudável | Alerta |
 |---|---|---|
-| Tier-B SLA hit rate | >90% | <75% |
-| Tier-B edits per post | <0.5 | >2 |
-| Voice-rule violations introduced by reviewer | 0 | any |
-| Author-reported review-friction (quarterly survey) | <2/10 | >4/10 |
+| Taxa de cumprimento do SLA do Nível B | >90% | <75% |
+| Edições por post no Nível B | <0,5 | >2 |
+| Violações de regra de voz introduzidas pelo revisor | 0 | qualquer |
+| Atrito de revisão relatado pelo autor (pesquisa trimestral) | <2/10 | >4/10 |
 
-Reviewer who scores Warning on any line gets coached or rotated.
+O revisor que fica em Alerta em qualquer linha recebe coaching ou é rotacionado.
 
-## Rolling 30-day audit
+## Auditoria contínua de 30 dias
 
-Once a month, sample 10% of Tier-A (auto-publish) posts and verify they were genuinely Tier A. Look for:
+Uma vez por mês, amostre 10% dos posts do Nível A (publicação automática) e verifique se eram realmente Nível A. Procure por:
 
-- Customer names that should have been Tier B
-- Specific numbers that should have been Tier B
-- Competitor mentions that should have been Tier B
+- Nomes de clientes que deveriam ter sido Nível B
+- Números específicos que deveriam ter sido Nível B
+- Menções a concorrentes que deveriam ter sido Nível B
 
-If audit reveals more than 2 misclassifications per 100 sampled, tighten the Tier-A definition. If it reveals fewer than 1 per 1,000, loosen it (you're over-reviewing).
+Se a auditoria revelar mais de 2 classificações erradas a cada 100 amostradas, aperte a definição do Nível A. Se revelar menos de 1 a cada 1.000, afrouxe-a (você está revisando demais).
 
-## Bypass for incidents
+## Bypass para incidentes
 
-In an active PR / outage incident, all Tier-A auto-publish is suspended for 5-7 days for the affected team. Communications routes through the designated incident-comms voice only. Resume Tier A once the incident-comms team gives the all-clear.
+Durante um incidente ativo de RP / instabilidade, toda publicação automática do Nível A é suspensa por 5-7 dias para o time afetado. A comunicação passa a fluir exclusivamente pela voz designada de comunicação de incidentes. Retome o Nível A assim que o time de comunicação de incidentes der o sinal verde.
 
-## Tooling expectations (not requirements)
+## Expectativas de ferramental (não requisitos)
 
-- A queue tool (Slack channel, Notion DB, dedicated platform) where Tier-B drafts land with reviewer assignment
-- A keyword pre-filter that auto-tags drafts as B/C based on customer-name list, competitor list, regulated-keyword list
-- An audit log of every Tier-B/C decision with reviewer + timestamp
+- Uma ferramenta de fila (canal do Slack, base do Notion, plataforma dedicada) onde os rascunhos do Nível B chegam com o revisor designado
+- Um pré-filtro por palavra-chave que marca automaticamente rascunhos como B/C com base em lista de nomes de clientes, lista de concorrentes, lista de palavras-chave reguladas
+- Um log de auditoria de toda decisão de Nível B/C com revisor + timestamp
 
-The program can run on a Slack channel + spreadsheet. It does not need a dedicated SaaS.
+O programa pode rodar com um canal do Slack + planilha. Não precisa de um SaaS dedicado.

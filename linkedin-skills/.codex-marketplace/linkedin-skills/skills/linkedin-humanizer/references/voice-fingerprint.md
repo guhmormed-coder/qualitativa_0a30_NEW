@@ -1,62 +1,62 @@
-# Voice Fingerprint — Preserving the user's voice while scrubbing
+# Voice Fingerprint — Preservando a voz do usuário durante a limpeza
 
-The humanizer is destructive by design. Every pass deletes or substitutes tokens. That's fine for AI tells. It's a bug for the user's actual voice.
+O humanizador é destrutivo por design. Todo passo exclui ou substitui tokens. Isso é bom para indícios de IA. É um bug para a voz real do usuário.
 
-This file lists the signals to preserve, even when they overlap with rules in `scrub-rules.md`.
+Este arquivo lista os sinais a preservar, mesmo quando se sobrepõem a regras em `scrub-rules.md`.
 
-## Contents
+## Conteúdo
 
-- Preserve unconditionally (do NOT scrub these)
-- Preserve when sample voice is provided
-- Conflict resolution
-- How to build a voice fingerprint from samples (sketch)
-- Examples
-- Don't fabricate
+- Preserve incondicionalmente (NÃO limpe isto)
+- Preserve quando uma amostra de voz for fornecida
+- Resolução de conflito
+- Como construir um fingerprint de voz a partir de amostras (esboço)
+- Exemplos
+- Não invente
 
 ---
 
-## Preserve unconditionally (do NOT scrub these)
+## Preserve incondicionalmente (NÃO limpe isto)
 
-These are voice signatures, not AI tells. Leave them alone in every tier including `--mode all`.
+Estas são assinaturas de voz, não indícios de IA. Deixe-as em paz em todos os níveis, incluindo `--mode all`.
 
-| Pattern | Why it's voice, not AI |
+| Padrão | Por que é voz, não IA |
 |---|---|
-| Lowercase sentence starts (`closed our seed on a tuesday...`) | Users like Serge use this as a deliberate cadence cue. Capitalizing flattens their voice. |
-| `..` as a soft pause | This is the humanizer's officially-blessed alternative to em dash. Removing it has nowhere to go. |
-| Sentence fragments (`Worth it.`, `Every time.`, `Not even close.`) | Pass 2 ADDS fragments. Don't remove the ones already there. |
-| Contractions (`don't`, `it's`, `you're`, `we're`) | Mandatory for natural rhythm. Scrubbing curly apostrophes is fine; expanding contractions is not. |
-| First-person sensory detail (`my hands shook`, `the room went quiet`) | Pass 3 demands these. Never strip. |
-| Specific numbers (`$47k`, `9:14am`, `47 days`) | Pass 3 demands these. Never strip. |
-| Named entities (`HubSpot`, `Tuesday morning`, brand names) | Pass 3 demands these. Capitalize properly per non-negotiable rule. |
-| Self-correction within a paragraph (`actually no`, `correction:`) | Burstiness signal. Real humans circle back. |
+| Inícios de frase em minúsculas (`fechamos nosso seed numa terça...`) | Usuários como o Serge usam isso como uma deixa de cadência deliberada. Capitalizar achata a voz deles. |
+| `..` como pausa suave | Esta é a alternativa oficialmente abençoada pelo humanizador ao travessão. Removê-la não tem para onde ir. |
+| Fragmentos de frase (`Valeu a pena.`, `Toda vez.`, `Nem perto.`) | O Passo 2 ADICIONA fragmentos. Não remova os que já existem. |
+| Contrações (`don't`, `it's`, `you're`, `we're`) | Obrigatórias para ritmo natural. Limpar aspas curvas está bem; expandir contrações não. |
+| Detalhe sensorial em primeira pessoa (`minhas mãos tremeram`, `a sala ficou em silêncio`) | O Passo 3 exige isso. Nunca remova. |
+| Números específicos (`R$ 47 mil`, `9h14`, `47 dias`) | O Passo 3 exige isso. Nunca remova. |
+| Entidades nomeadas (`HubSpot`, `terça de manhã`, nomes de marca) | O Passo 3 exige isso. Capitalize corretamente conforme a regra inegociável. |
+| Autocorreção dentro de um parágrafo (`na verdade não`, `correção:`) | Sinal de burstiness. Humanos de verdade voltam atrás. |
 
 ---
 
-## Preserve when sample voice is provided
+## Preserve quando uma amostra de voz for fornecida
 
-If the user passes optional `target_voice_samples` (their last 5-10 LinkedIn posts), extract:
+Se o usuário passar `target_voice_samples` opcionais (seus últimos 5-10 posts do LinkedIn), extraia:
 
-1. **Sentence-length distribution.** If they routinely write 4-6 word sentences, don't force 12+ word "minimum lengths" on Pass 2.
-2. **Vocabulary fingerprint.** Words they use 3+ times across samples are part of their voice — even if those words appear on the strict blacklist. Flag for user review rather than auto-substituting.
-3. **Punctuation habits.** Some users use `...` instead of `..`, or unbroken comma chains. Match the dominant pattern.
-4. **Opener patterns.** If they always start with a number (`47 days ago`, `$2M ARR`) or a name (`Jake said`), preserve that template.
-5. **Closer patterns.** If they always close with a single fragment + period (no question), don't force a question CTA.
+1. **Distribuição de comprimento de frase.** Se ele costuma escrever frases de 4-6 palavras, não force "comprimentos mínimos" de 12+ palavras no Passo 2.
+2. **Fingerprint de vocabulário.** Palavras que ele usa 3+ vezes nas amostras fazem parte da voz dele — mesmo que essas palavras estejam na lista negra strict. Sinalize para revisão do usuário em vez de substituir automaticamente.
+3. **Hábitos de pontuação.** Alguns usuários usam `...` em vez de `..`, ou cadeias de vírgula ininterruptas. Combine com o padrão dominante.
+4. **Padrões de abertura.** Se ele sempre começa com um número (`há 47 dias`, `R$ 2 mi de ARR`) ou um nome (`Jake disse`), preserve esse template.
+5. **Padrões de fechamento.** Se ele sempre fecha com um único fragmento + ponto final (sem pergunta), não force um CTA de pergunta.
 
 ---
 
-## Conflict resolution
+## Resolução de conflito
 
-When a scrub rule fires on a token that's also in the user's voice fingerprint:
+Quando uma regra de limpeza dispara em um token que também está no fingerprint de voz do usuário:
 
-| Tier | Behavior |
+| Nível | Comportamento |
 |---|---|
-| Forensic | Always scrub. Forensic rules catch model leakage; if the user's voice fingerprint contains `oaicite` it's because they pasted AI output. |
-| Strict | Flag for user review. Don't auto-substitute. The user gets to decide. |
-| Aesthetic | Skip the rule entirely. Aesthetic rules already explicitly tolerate human-writer defenses. |
+| Forensic | Sempre limpar. Regras forenses pegam vazamento de modelo; se o fingerprint de voz do usuário contém `oaicite` é porque ele colou saída de IA. |
+| Strict | Sinalizar para revisão do usuário. Não substitua automaticamente. O usuário decide. |
+| Aesthetic | Pule a regra por completo. Regras aesthetic já toleram explicitamente defesas de escritor humano. |
 
 ---
 
-## How to build a voice fingerprint from samples (sketch)
+## Como construir um fingerprint de voz a partir de amostras (esboço)
 
 ```python
 from collections import Counter
@@ -77,42 +77,42 @@ def build_voice_fingerprint(samples: list[str]) -> dict:
     }
 ```
 
-The skill should call this on `target_voice_samples` before running Pass 1.
+A skill deve chamar isso em `target_voice_samples` antes de executar o Passo 1.
 
 ---
 
-## Examples
+## Exemplos
 
-### Example 1 — `..` as soft pause (preserve)
+### Exemplo 1 — `..` como pausa suave (preservar)
 
-Input: `closed our seed.. then everything broke`
+Entrada: `fechamos nosso seed.. daí tudo desmoronou`
 
-Wrong (scrubs the `..`): `closed our seed. then everything broke`
+Errado (limpa o `..`): `fechamos nosso seed. daí tudo desmoronou`
 
-Right (preserve): `closed our seed.. then everything broke`
+Certo (preservar): `fechamos nosso seed.. daí tudo desmoronou`
 
-The `..` is on the explicit preserve list. Period substitution is for `--`, not `..`.
+O `..` está na lista explícita de preservação. A substituição por ponto final é para `--`, não para `..`.
 
-### Example 2 — lowercase start (preserve)
+### Exemplo 2 — início em minúscula (preservar)
 
-Input: `closed our seed on a tuesday morning at 9:14am`
+Entrada: `fechamos nosso seed numa terça de manhã às 9h14`
 
-Wrong (capitalizes): `Closed our seed on a Tuesday morning at 9:14am`
+Errado (capitaliza): `Fechamos nosso seed numa Terça de manhã às 9h14`
 
-Right (preserve `closed`, capitalize `Tuesday`): `closed our seed on a Tuesday morning at 9:14am`
+Certo (preservar `fechamos`, capitalizar `Terça`): `fechamos nosso seed numa Terça de manhã às 9h14`
 
-The non-negotiable rule says capitalize NAMES — Tuesday is a proper noun in date context, but the sentence-initial `closed` stays lowercase per voice rule.
+A regra inegociável diz para capitalizar NOMES — Terça é um substantivo próprio em contexto de data, mas o `fechamos` no início da frase permanece em minúscula por regra de voz.
 
-### Example 3. Voice-fingerprint vocabulary collision (flag, don't substitute)
+### Exemplo 3. Colisão de vocabulário do fingerprint de voz (sinalizar, não substituir)
 
-User samples contain `harness` 4 times across 6 posts (clearly part of their voice — they work in horse-training tech).
+As amostras do usuário contêm `harness` 4 vezes em 6 posts (claramente parte da voz dele — ele trabalha com tecnologia de treinamento de cavalos).
 
-Strict tier scrub rule says: `harness → use`.
+A regra de limpeza do nível strict diz: `harness → use`.
 
-Right behavior: flag for user review. Output: `[VOICE-CONFLICT: 'harness' is in your voice fingerprint (4 uses in past samples) but matches strict-tier scrub. Keep or substitute?]`
+Comportamento correto: sinalizar para revisão do usuário. Saída: `[CONFLITO-DE-VOZ: 'harness' está no seu fingerprint de voz (4 usos em amostras passadas) mas corresponde à limpeza do nível strict. Manter ou substituir?]`
 
 ---
 
-## Don't fabricate
+## Não invente
 
-The non-negotiable rule (SKILL.md line: "Never introduce facts that weren't in the input") overrides voice-fingerprint matching. If a sample contains specific numbers, do NOT carry those numbers into a different post. Only use numbers the current input already supplies.
+A regra inegociável (SKILL.md linha: "Nunca introduza fatos que não estavam na entrada") tem precedência sobre a correspondência do fingerprint de voz. Se uma amostra contém números específicos, NÃO carregue esses números para um post diferente. Use apenas números que a entrada atual já fornece.

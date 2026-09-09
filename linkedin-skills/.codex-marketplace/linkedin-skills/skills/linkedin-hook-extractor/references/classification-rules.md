@@ -1,36 +1,36 @@
-# Hook Formula Classification Rules
+# Regras de Classificação de Fórmulas de Gancho
 
-Features extracted from a post and how they map to formulas.
+Características extraídas de um post e como elas mapeiam para as fórmulas.
 
-## Feature extraction
+## Extração de características
 
-### Hook features (first 2 lines)
-- `anaphora_count`: number of parallel "X can Y" style lines at the top
-- `leads_with_number`: does line 1 start with a dollar figure or stat?
-- `question_hook`: is line 1 a question?
-- `confession_phrase`: "I stopped", "I was wrong", "for years I"
-- `obituary_phrase`: "R.I.P.", "dying since", "cause of death"
-- `time_anchor`: "{N} {days|months|years} ago"
-- `year_over_year`: "In {2024|2025}, I ... In {2025|2026}, I'm"
-- `curiosity_gap`: short incomplete tease (<8 words, no noun specified)
-- `free_reversal`: "I charge X. Today it's free."
-- `public_commitment`: "For the next 24 hours, I will"
+### Características do gancho (primeiras 2 linhas)
+- `anaphora_count`: número de linhas paralelas no estilo "X pode Y" no topo
+- `leads_with_number`: a linha 1 começa com um valor em dinheiro ou estatística?
+- `question_hook`: a linha 1 é uma pergunta?
+- `confession_phrase`: "Eu parei de", "Eu estava errado", "durante anos eu"
+- `obituary_phrase`: "R.I.P.", "morrendo desde", "causa da morte"
+- `time_anchor`: "{N} {dias|meses|anos} atrás"
+- `year_over_year`: "Em {2024|2025}, eu ... Em {2025|2026}, eu estou"
+- `curiosity_gap`: provocação curta e incompleta (<8 palavras, sem substantivo especificado)
+- `free_reversal`: "Eu cobro X. Hoje é de graça."
+- `public_commitment`: "Nas próximas 24 horas, eu vou"
 
-### Body features
-- `has_numbered_list`: 1., 2., 3., ... with ≥4 items
-- `has_dated_receipts`: multiple "{Month Year} — {event}" lines
-- `has_ledger`: line-item dollar amounts (non-rounded)
-- `has_teardown`: screenshot references or annotations
-- `has_checklist`: named steps with instructions
+### Características do corpo
+- `has_numbered_list`: 1., 2., 3., ... com ≥4 itens
+- `has_dated_receipts`: múltiplas linhas do tipo "{Mês Ano} — {evento}"
+- `has_ledger`: valores em dinheiro item a item (não arredondados)
+- `has_teardown`: referências ou anotações a capturas de tela
+- `has_checklist`: passos nomeados com instruções
 
-### Close features
-- `mirror_question`: "What's your {last→this} pivot?"
-- `identity_reframe`: "If you're X, you already lost"
-- `commitment_close`: "If I'm wrong, I owe you a post"
-- `soft_offer`: "Connect + DM me for X"
-- `comment_gate`: "Comment KEYWORD below"
+### Características do fechamento
+- `mirror_question`: "Qual é o seu pivô de {ano anterior→este ano}?"
+- `identity_reframe`: "Se você é X, você já perdeu"
+- `commitment_close`: "Se eu estiver errado, eu te devo um post"
+- `soft_offer`: "Conecte-se + me chame no DM para X"
+- `comment_gate`: "Comente PALAVRA-CHAVE abaixo"
 
-## Mapping features → formulas
+## Mapeamento de características → fórmulas
 
 ```python
 FORMULA_RULES = {
@@ -77,7 +77,7 @@ FORMULA_RULES = {
 }
 ```
 
-## Confidence scoring
+## Pontuação de confiança
 
 ```python
 def score_formula(post_features: dict, rules: dict) -> float:
@@ -85,13 +85,13 @@ def score_formula(post_features: dict, rules: dict) -> float:
     if required_met < len(rules["required"]):
         return 0.0
     boost = sum(1 for b in rules["boost"] if post_features.get(b))
-    return 1.0 + 0.15 * boost  # cap at 1.6
+    return 1.0 + 0.15 * boost  # limite de 1.6
 ```
 
-Return top 2 formulas with score > 0.8.
+Retornar as 2 melhores fórmulas com pontuação > 0.8.
 
-## Edge cases
+## Casos extremos
 
-- **Hybrid hooks:** when a post mixes two formulas (e.g., F4 confession + F3 year-over-year), return both with split confidence.
-- **Narrative-only posts:** if no structural hook fires, classify as "free-form narrative" and skip formula assignment.
-- **Non-English:** skip classification, return structural breakdown only.
+- **Ganchos híbridos:** quando um post mistura duas fórmulas (ex.: F4 confissão + F3 ano-a-ano), retornar ambas com a confiança dividida.
+- **Posts apenas narrativos:** se nenhum gancho estrutural é disparado, classificar como "narrativa livre" e pular a atribuição de fórmula.
+- **Não em inglês:** pular a classificação, retornar apenas o detalhamento estrutural.

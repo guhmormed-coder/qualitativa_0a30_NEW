@@ -1,77 +1,77 @@
-# LinkedIn Engagement Metrics Taxonomy
+# Taxonomia de Métricas de Engajamento do LinkedIn
 
-Three distinct measurement layers — don't mix them in one report.
+Três camadas de medição distintas — não as misture em um único relatório.
 
-## Per-post metrics (content quality signal)
+## Métricas por post (sinal de qualidade de conteúdo)
 
-Use to decide **what to write more of**.
+Use para decidir **sobre o que escrever mais**.
 
-- Impressions
-- Engagement rate: `(reactions + comments + shares) / impressions`
-- Comments (depth signal — weighted higher than reactions in 360Brew)
-- Shares / reposts
-- Profile views attributed to post
-- Save rate (highest-value signal — 5x a like)
-- Dwell time (>3 sec threshold)
-- "See more" expand rate
+- Impressões
+- Taxa de engajamento: `(reactions + comments + shares) / impressions`
+- Comentários (sinal de profundidade — com peso maior que reações no 360Brew)
+- Compartilhamentos / reposts
+- Visualizações de perfil atribuídas ao post
+- Taxa de salvamento (sinal de maior valor — 5x uma curtida)
+- Tempo de permanência (limiar de >3 seg)
+- Taxa de expansão do "see more"
 
-## Account-level metrics (growth signal)
+## Métricas de nível de conta (sinal de crescimento)
 
-Use to decide **whether the overall strategy is working**.
+Use para decidir **se a estratégia geral está funcionando**.
 
-- Follower growth (weekly delta)
-- Connection request volume
-- Profile views (7d / 30d trend, not absolute)
-- Search appearances
-- Profile search impressions by keyword
-- Post-to-follower conversion rate
+- Crescimento de seguidores (delta semanal)
+- Volume de pedidos de conexão
+- Visualizações de perfil (tendência de 7d / 30d, não valor absoluto)
+- Aparições em buscas
+- Impressões de busca de perfil por palavra-chave
+- Taxa de conversão post-para-seguidor
 
-## Team-level metrics (program signal)
+## Métricas de nível de equipe (sinal de programa)
 
-Use to decide **staffing, incentives, and program expansion**.
+Use para decidir **sobre alocação de equipe, incentivos e expansão do programa**.
 
-- Total team reach (sum of impressions across all creators)
-- Total team engagement
-- Individual contribution rank (leaderboard)
-- Active creators / total team (participation rate)
-- ROI attribution: inbound leads / meetings sourced from content
-- Pipeline velocity change after program launch
+- Alcance total da equipe (soma das impressões de todos os criadores)
+- Engajamento total da equipe
+- Ranking de contribuição individual (leaderboard)
+- Criadores ativos / total da equipe (taxa de participação)
+- Atribuição de ROI: leads/reuniões de entrada originados do conteúdo
+- Mudança na velocidade do pipeline após o lançamento do programa
 
-## Business metrics (bottom-line)
+## Métricas de negócio (resultado final)
 
-Use to defend the program budget.
+Use para defender o orçamento do programa.
 
-- Inbound DMs sourced from LinkedIn
-- Meetings booked where LinkedIn was first-touch
-- Closed-won deals with LinkedIn attribution
-- Talent applications sourced from content
-- Partnership conversations sparked in comments
+- DMs de entrada originadas do LinkedIn
+- Reuniões marcadas cujo primeiro toque veio do LinkedIn
+- Negócios fechados com atribuição ao LinkedIn
+- Candidaturas de talentos originadas do conteúdo
+- Conversas de parceria iniciadas em comentários
 
-## Wrong ways to measure
+## Formas erradas de medir
 
-**Don't do:**
-- Report follower count as primary KPI (vanity, slow-moving)
-- Average engagement rate across the whole program (hides outliers both ways)
-- Post frequency (effort, not outcome)
-- Hashtag performance (not a business metric in 2026)
-- Compare different creators on the same KPI without adjusting for audience size
+**Não faça:**
+- Reportar o número de seguidores como KPI principal (métrica de vaidade, evolui devagar)
+- Fazer média da taxa de engajamento em todo o programa (esconde outliers para os dois lados)
+- Frequência de posts (mede esforço, não resultado)
+- Desempenho de hashtag (não é uma métrica de negócio em 2026)
+- Comparar criadores diferentes no mesmo KPI sem ajustar pelo tamanho da audiência
 
-## Dashboard specs
+## Especificações de dashboard
 
-### Weekly content review (Friday, 20 min)
-- Top 3 posts this week by engagement rate
-- Top 3 posts by save rate (save-worthy = evergreen material)
-- Any posts that underperformed baseline by 50%+ (investigate)
-- Author-reply rate within first 60 min
+### Revisão semanal de conteúdo (sexta-feira, 20 min)
+- Top 3 posts da semana por taxa de engajamento
+- Top 3 posts por taxa de salvamento (o que vale a pena salvar = material perene)
+- Posts que ficaram 50%+ abaixo da linha de base (investigar)
+- Taxa de resposta do autor na primeira 1 hora
 
-### Monthly program review (end of month)
-- Team reach delta vs previous month
-- Active creators vs total (participation %)
-- Inbound signal volume (DMs + comment-replies from new prospects)
-- Cost per touchpoint (tool + team time / total impressions)
+### Revisão mensal do programa (fim do mês)
+- Delta de alcance da equipe vs. mês anterior
+- Criadores ativos vs. total (% de participação)
+- Volume de sinais de entrada (DMs + respostas de comentários de novos prospects)
+- Custo por ponto de contato (ferramenta + tempo de equipe / total de impressões)
 
-### Quarterly strategy review
-- ROI attribution: which program investments drove measurable pipeline?
-- Pillar performance: which content pillars drove the highest engagement AND pipeline?
-- Voice calibration: has the team's collective voice drifted?
-- Team expansion / contraction decisions
+### Revisão trimestral de estratégia
+- Atribuição de ROI: quais investimentos do programa geraram pipeline mensurável?
+- Desempenho por pilar: quais pilares de conteúdo geraram o maior engajamento E pipeline?
+- Calibração de voz: a voz coletiva da equipe se desviou?
+- Decisões de expansão / contração da equipe

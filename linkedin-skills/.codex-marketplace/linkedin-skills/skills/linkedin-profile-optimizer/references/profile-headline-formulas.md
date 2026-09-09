@@ -1,67 +1,67 @@
-# Profile Headline Formulas
+# Fórmulas de Headline de Perfil
 
-**Character limit:** 220. Use all of them.
+**Limite de caracteres:** 220. Use todos eles.
 
-## The formula
+## A fórmula
 
 ```
-[What You Do] | [Who You Help] [Achieve What Result]
+[O que você faz] | [Quem você ajuda] [Que resultado alcança]
 ```
 
-Three parts separated by `|`. Each part does one job:
-- **What You Do** — your actual function, not your title
-- **Who You Help** — the specific audience
-- **Achieve What Result** — the concrete outcome
+Três partes separadas por `|`. Cada parte cumpre uma função:
+- **O que você faz** — sua função real, não seu cargo
+- **Quem você ajuda** — o público específico
+- **Que resultado alcança** — o resultado concreto
 
-## Rules
+## Regras
 
-1. **Lead with value, not title.** "Helping B2B founders book 40% more demos" beats "VP of Marketing".
-2. **Be specific about who you help.** "B2B SaaS founders 1-10M ARR" beats "business owners".
-3. **Include keywords recruiters search for.** Search-matched headlines appear in 3x more recruiter results.
-4. **No filler adjectives.** Cut "passionate", "driven", "results-oriented".
-5. **Capitalize names, products, companies** — "Claude", "HubSpot", "Co.Actor".
+1. **Lidere com valor, não com cargo.** "Ajudo fundadores B2B a agendar 40% mais demos" supera "VP de Marketing".
+2. **Seja específico sobre quem você ajuda.** "Fundadores de SaaS B2B com ARR de 1-10 milhões" supera "donos de negócio".
+3. **Inclua palavras-chave que recrutadores buscam.** Headlines alinhadas à busca aparecem em 3x mais resultados de recrutadores.
+4. **Sem adjetivos de enchimento.** Corte "apaixonado", "determinado", "orientado a resultados".
+5. **Use maiúsculas em nomes, produtos, empresas** — "Claude", "HubSpot", "Co.Actor".
 
-## Before → After
+## Antes → Depois
 
-### For a marketer
+### Para um profissional de marketing
 
-- ❌ "Marketing Manager at Company X"
-- ✅ "Helping B2B SaaS companies close 40% more deals | Sales Director at TechCorp"
+- ❌ "Gerente de Marketing na Empresa X"
+- ✅ "Ajudo empresas de SaaS B2B a fechar 40% mais negócios | Diretor de Vendas na TechCorp"
 
-### For a founder
+### Para um fundador
 
-- ❌ "Founder & CEO"
-- ✅ "Building tools that help creators monetize | Founder at CreatorLab"
+- ❌ "Fundador e CEO"
+- ✅ "Construo ferramentas que ajudam criadores a monetizar | Fundador da CreatorLab"
 
-### For a consultant
+### Para um consultor
 
-- ❌ "Marketing Consultant"
-- ✅ "I help service businesses get clients without ads | Marketing Consultant"
+- ❌ "Consultor de Marketing"
+- ✅ "Ajudo empresas de serviço a conseguir clientes sem anúncios | Consultor de Marketing"
 
-### For a developer
+### Para um desenvolvedor
 
-- ❌ "Senior Software Engineer"
-- ✅ "Shipping AI agents for B2B ops teams | Senior Engineer at StackCo"
+- ❌ "Engenheiro de Software Sênior"
+- ✅ "Construo agentes de IA para times de operações B2B | Engenheiro Sênior na StackCo"
 
-### For an executive
+### Para um executivo
 
-- ❌ "CTO | VP Engineering | Technology Leader"
-- ✅ "Helping fintechs scale past $100M ARR | CTO at PaymentCo"
+- ❌ "CTO | VP de Engenharia | Líder de Tecnologia"
+- ✅ "Ajudo fintechs a escalar além de US$ 100 milhões em ARR | CTO na PaymentCo"
 
-## Anti-patterns (auto-fail)
+## Anti-padrões (reprovação automática)
 
-- "Passionate thought leader" — empty signal
-- "Driven professional" — empty
-- "10+ years of experience in..." — nobody searches this
-- All-caps headlines
-- Emoji chains (🚀🔥💡) — read as low-effort
-- Generic "Open to Work" framing (move that to the banner badge, not headline)
+- "Líder de pensamento apaixonado" — sinal vazio
+- "Profissional determinado" — vazio
+- "Mais de 10 anos de experiência em..." — ninguém busca por isso
+- Headlines em caixa alta
+- Sequências de emoji (🚀🔥💡) — soam como pouco esforço
+- Enquadramento genérico de "Aberto a Oportunidades" (mova isso para o selo do banner, não para a headline)
 
-## Search-keyword placement
+## Posicionamento de palavras-chave de busca
 
-LinkedIn search indexes the headline heavily. If you want to appear in search for a role or topic:
-- Include the target role noun ("CTO", "Head of Marketing", "AI Consultant")
-- Include the target industry ("B2B SaaS", "Healthcare IT", "FinTech")
-- Include your specialty keyword ("RAG", "agentic workflows", "demand gen")
+A busca do LinkedIn indexa fortemente a headline. Se você quer aparecer na busca por um cargo ou tema:
+- Inclua o substantivo do cargo-alvo ("CTO", "Head de Marketing", "Consultor de IA")
+- Inclua o setor-alvo ("SaaS B2B", "TI para Saúde", "FinTech")
+- Inclua sua palavra-chave de especialidade ("RAG", "workflows agênticos", "geração de demanda")
 
-Profiles with 5+ target keywords in the headline + About: **3x more recruiter search impressions**.
+Perfis com 5+ palavras-chave-alvo na headline + Sobre: **3x mais impressões em buscas de recrutadores**.

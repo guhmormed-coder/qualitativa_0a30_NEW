@@ -1,80 +1,80 @@
-# 5 Reply Templates for Thread Continuations
+# 5 Templates de Resposta para Continuação de Thread
 
-## R1 — Answer-Their-Question
+## R1 — Responder-a-Pergunta-Deles
 
-**When:** counterpart ends with a direct question.
+**Quando:** a outra pessoa termina com uma pergunta direta.
 
-**Skeleton:**
+**Esqueleto:**
 ```
-[Name] [direct answer in 1 sentence].
+[Nome] [resposta direta em 1 frase].
 
-[one concrete practice, number, or lived example that backs the answer].
+[uma prática concreta, número, ou exemplo vivido que sustente a resposta].
 ```
 
-**Example (Serge replying to the post author asking "How are you building that conviction muscle with your team?"):**
-> conviction doesn't build in meetings, it builds when you ship what you argued for and find out within a week whether the customer actually cared.
+**Exemplo (Serge respondendo ao autor da publicação, que perguntou "Como você está construindo esse músculo de convicção com sua equipe?"):**
+> convicção não se constrói em reuniões, se constrói quando você entrega o que defendeu e descobre em uma semana se o cliente realmente se importou.
 >
-> our default now.. if a team member can't turn an opinion into something shippable in two or three days, we park the opinion until they can.
+> nosso padrão agora.. se um membro da equipe não consegue transformar uma opinião em algo entregável em dois ou três dias, colocamos a opinião em espera até que consiga.
 
 ---
 
-## R2 — Concede-Then-Sharpen
+## R2 — Conceder-e-Depois-Afiar
 
-**When:** counterpart pushed back on your original comment.
+**Quando:** a outra pessoa contestou seu comentário original.
 
-**Skeleton:**
+**Esqueleto:**
 ```
-fair point on [what they conceded]. where I'd still push is [narrow slice].
+ponto justo em [o que eles concederam]. onde eu ainda contestaria é [fatia estreita].
 
-[one specific case that makes your push-back sharper].
-```
-
----
-
-## R3 — Extend-Their-Thesis
-
-**When:** counterpart agreed or extended; you take it one layer further.
-
-**Skeleton:**
-```
-[Name] the piece that compounds is [new angle their take enables].
-
-[concrete example of where that compounding is visible now].
+[um caso específico que torna sua contestação mais afiada].
 ```
 
 ---
 
-## R4 — Share-Lived-Experience
+## R3 — Estender-a-Tese-Deles
 
-**When:** the thread is theoretical and you have a real operational story.
+**Quando:** a outra pessoa concordou ou estendeu; você leva um nível mais fundo.
 
-**Skeleton:**
+**Esqueleto:**
 ```
-[Name] we hit this exact thing last [timeframe]. [what broke, one line].
+[Nome] a peça que se acumula é [novo ângulo que a visão deles permite].
 
-[the fix, or the thing you're still trying]. [one honest caveat].
-```
-
----
-
-## R5 — Ask-Back
-
-**When:** counterpart's position is under-specified and their answer would help you both.
-
-**Skeleton:**
-```
-[Name] before I dig in.. what's the [missing piece] in your framing?
-
-if [scenario A], I'd answer [X]. if [scenario B], closer to [Y]. which side are you standing in?
+[exemplo concreto de onde esse acúmulo é visível agora].
 ```
 
 ---
 
-## Universal rules
+## R4 — Compartilhar-Experiência-Vivida
 
-- 150-300 chars. Tighter than top-level comments.
-- Capitalize the counterpart's first name (sign of respect).
-- Lead with a word that's not "thanks" unless there's a specific reason to acknowledge the favor.
-- Em dashes capped (a reply is short, so at most one); use `..` for soft pauses.
-- Single line-break between sentence 1 and sentence 2 for mobile scan.
-- Match reaction to the tone: APPRECIATION for earned compliments, INTEREST for intellectual engagement, EMPATHY for personal moments.
+**Quando:** a thread é teórica e você tem uma história operacional real.
+
+**Esqueleto:**
+```
+[Nome] passamos exatamente por isso no último [período]. [o que quebrou, em uma linha].
+
+[a solução, ou o que você ainda está tentando]. [uma ressalva honesta].
+```
+
+---
+
+## R5 — Perguntar-de-Volta
+
+**Quando:** a posição da outra pessoa está pouco especificada e a resposta dela ajudaria os dois.
+
+**Esqueleto:**
+```
+[Nome] antes de eu entrar a fundo.. qual é a [peça faltante] no seu enquadramento?
+
+se [cenário A], eu responderia [X]. se [cenário B], mais perto de [Y]. de que lado você está?
+```
+
+---
+
+## Regras universais
+
+- 150-300 caracteres. Mais enxuto que comentários de nível superior.
+- Capitalize o primeiro nome da outra pessoa (sinal de respeito).
+- Comece com uma palavra que não seja "obrigado", a menos que haja um motivo específico para reconhecer o favor.
+- Travessões limitados (uma resposta é curta, então no máximo um); use `..` para pausas suaves.
+- Uma quebra de linha entre a frase 1 e a frase 2 para facilitar a leitura no celular.
+- Combine a reação com o tom: APPRECIATION para elogios merecidos, INTEREST para engajamento intelectual, EMPATHY para momentos pessoais.

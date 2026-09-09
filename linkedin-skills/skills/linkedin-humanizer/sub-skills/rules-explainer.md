@@ -1,84 +1,84 @@
-# LinkedIn Rules Explainer
+# Explicador de Regras do LinkedIn
 
-The educational backbone for the humanizer package. Every rule in `linkedin-humanizer` came from somewhere — Wikipedia's "Signs of AI writing" taxonomy, OriginalityAI's heuristics, GPTZero's stylometry, or 2026 LinkedIn-specific patterns. Some are real forensics (a `[oaicite:0]` marker is undefendable). Some are corporate-speak bans the user wants out for taste reasons. Some are aesthetic overreach — patterns Lincoln, Dickinson, and Didion built careers on, now flagged because GPT-4 happens to use them too.
+A base educacional do pacote humanizador. Toda regra em `linkedin-humanizer` veio de algum lugar — a taxonomia "Signs of AI writing" da Wikipedia, as heurísticas da OriginalityAI, a estilometria do GPTZero, ou padrões específicos de LinkedIn de 2026. Algumas são forenses de verdade (um marcador `[oaicite:0]` é indefensável). Algumas são banimentos de jargão corporativo que o usuário quer fora por questão de estilo. Algumas são exagero estético — padrões sobre os quais Lincoln, Dickinson e Didion construíram carreiras, agora sinalizados porque o GPT-4 também os usa.
 
-This skill answers a simple question: **for any given rule, is the AI-tell verdict forensic, strict, or aesthetic — and how strong is the defense?**
+Esta skill responde a uma pergunta simples: **para qualquer regra dada, o veredito de indício de IA é forensic, strict ou aesthetic — e quão forte é a defesa?**
 
-## When to use
+## Quando usar
 
-- Defending a stylistic choice that a detector flagged ("but Emily Dickinson uses em dashes")
-- Arguing the controversial post about AI-rule overreach
-- Auditing humanizer output before applying a rewrite
-- Teaching a team which rules are real signals vs which are taste calls
-- Reviewing a false positive from OriginalityAI / GPTZero / Pangram
+- Defender uma escolha estilística que um detector sinalizou ("mas a Emily Dickinson usa travessões")
+- Argumentar o post polêmico sobre o exagero das regras de IA
+- Auditar a saída do humanizador antes de aplicar uma reescrita
+- Ensinar uma equipe quais regras são sinais reais vs. quais são só questão de gosto
+- Revisar um falso positivo da OriginalityAI / GPTZero / Pangram
 
-## Input
+## Entrada
 
-Either:
-- A specific rule name ("em dashes", "rule of three", "robust")
-- A flagged passage from a detector
-- A request to walk the full taxonomy
+Uma das opções:
+- O nome de uma regra específica ("travessões", "regra do três", "robust")
+- Um trecho sinalizado por um detector
+- Um pedido para percorrer a taxonomia completa
 
-## Output
+## Saída
 
-For each rule:
-- **The rule** (what gets flagged)
-- **Tier** (forensic / strict / aesthetic)
-- **One-line summary** (why it's flagged)
-- **Famous human writer** who uses this pattern (with example)
-- **Defense strength** (low / medium / high)
-- **Citation** (when available)
+Para cada regra:
+- **A regra** (o que é sinalizado)
+- **Nível** (forensic / strict / aesthetic)
+- **Resumo em uma linha** (por que é sinalizada)
+- **Escritor humano famoso** que usa esse padrão (com exemplo)
+- **Força da defesa** (baixa / média / alta)
+- **Citação** (quando disponível)
 
-## The three tiers
+## Os três níveis
 
-### Forensic — real AI signals, undefendable
+### Forensic — sinais reais de IA, indefensáveis
 
-These are leakage from the model itself or the prompt template. No human writer ever produces them by accident. If the humanizer flags one, accept the rewrite.
+São vazamento do próprio modelo ou do template de prompt. Nenhum escritor humano os produz por acidente. Se o humanizador sinalizar um, aceite a reescrita.
 
-Examples: `oaicite` markers, `contentReference` tokens, `turn0search0` artifacts, knowledge-cutoff disclaimers ("As of my last update January 2022..."), Mad-Libs blanks, phrasal templates with literal `[Your Name]` placeholders.
+Exemplos: marcadores `oaicite`, tokens `contentReference`, artefatos `turn0search0`, avisos de corte de conhecimento ("Até minha última atualização em janeiro de 2022..."), lacunas estilo Mad-Libs, templates fraseológicos com placeholders literais `[Your Name]`.
 
-**Defense strength: zero.** Citation: Wikipedia "Signs of AI writing".
+**Força da defesa: zero.** Citação: Wikipedia "Signs of AI writing".
 
-### Strict — corporate-speak, easy to ban for taste
+### Strict — jargão corporativo, fácil de banir por questão de gosto
 
-These are real human patterns, but they're patterns the user explicitly wants out. The rule isn't "this proves AI wrote it" — it's "I find this voice cheap and want it gone." Defending these is possible but pointless inside a brand voice that has already rejected them.
+São padrões humanos reais, mas são padrões que o usuário explicitamente quer fora. A regra não é "isso prova que a IA escreveu" — é "eu acho essa voz barata e quero que suma". Defender esses padrões é possível, mas inútil dentro de uma voz de marca que já os rejeitou.
 
-Examples: leverage / utilize / harness / delve / foster / cultivate, filler adverbs (fundamentally, essentially, ultimately), filler openers ("In today's fast-paced world"), cliché closers ("What do you think?"), negative parallelism ("X isn't Y, it's Z").
+Exemplos: leverage / utilize / harness / delve / foster / cultivate, advérbios de preenchimento (fundamentally, essentially, ultimately), aberturas de preenchimento ("No mundo acelerado de hoje"), fechamentos clichê ("O que você acha?"), paralelismo negativo ("X não é Y, é Z").
 
-**Defense strength: medium** (someone could defend "leverage" as 1980s management vocabulary). **Brand-voice strength: zero** — the user banned them.
+**Força da defesa: média** (alguém poderia defender "leverage" como vocabulário de gestão dos anos 1980). **Força na voz de marca: zero** — o usuário os baniu.
 
-### Aesthetic — overreach, defendable
+### Aesthetic — exagero, defensável
 
-These are patterns flagged because LLMs happen to use them, not because they signal AI. Famous human writers built careers on them. Detectors over-fire on these and produce false positives — see Stanford HAI / Liang et al. (2023) showing detectors are biased against non-native English writers, and the Adelphi University lawsuit over an AI false-positive accusation.
+São padrões sinalizados porque LLMs os usam, não porque sinalizam IA. Escritores humanos famosos construíram carreiras sobre eles. Detectores disparam em excesso sobre eles e produzem falsos positivos — veja Stanford HAI / Liang et al. (2023) mostrando que detectores são tendenciosos contra escritores não nativos de inglês, e o processo da Universidade Adelphi sobre uma acusação de falso positivo de IA.
 
-Examples: a single em dash (Emily Dickinson, Cormac McCarthy), the rule of three (Lincoln, Caesar, Churchill), passive voice (Watson & Crick, Joan Didion, all scientific writing), the word "robust" (a century of epidemiology and engineering papers), curly quotes (automatic in Word/Pages, New Yorker house style since 1925).
+Exemplos: um único travessão (Emily Dickinson, Cormac McCarthy), a regra do três (Lincoln, César, Churchill), voz passiva (Watson & Crick, Joan Didion, toda a escrita científica), a palavra "robust" (um século de epidemiologia e engenharia), aspas curvas (automáticas no Word/Pages, estilo de casa da New Yorker desde 1925).
 
-**Defense strength: high.** These are the rules Sergey's controversial post is built on.
+**Força da defesa: alta.** Estas são as regras sobre as quais o post polêmico do Sergey se apoia.
 
-## Non-negotiable rules
+## Regras inegociáveis
 
-- Don't conflate tiers. A `[oaicite]` marker and a single em dash are not the same kind of evidence.
-- When defending, name the writer and give the example. "Lincoln" is weaker than "Lincoln, Gettysburg Address, 1863: 'of the people, by the people, for the people'."
-- Cite when available. Stanford HAI and the OpenAI classifier shutdown are the strongest external receipts.
-- Don't defend a rule the user has personally banned (em dashes in his own voice, even though Dickinson used them). Brand voice overrides aesthetic defense.
+- Não confunda níveis. Um marcador `[oaicite]` e um único travessão não são o mesmo tipo de evidência.
+- Ao defender, nomeie o escritor e dê o exemplo. "Lincoln" é mais fraco que "Lincoln, Discurso de Gettysburg, 1863: 'of the people, by the people, for the people'."
+- Cite quando disponível. Stanford HAI e o desligamento do classificador da OpenAI são os comprovantes externos mais fortes.
+- Não defenda uma regra que o usuário baniu pessoalmente (travessões na própria voz dele, mesmo que Dickinson os tenha usado). A voz de marca tem precedência sobre a defesa estética.
 
-## Example
+## Exemplo
 
-> **Input:** "OriginalityAI flagged my post for using 'robust' — should I rewrite?"
+> **Entrada:** "A OriginalityAI sinalizou meu post por usar 'robust' — devo reescrever?"
 >
-> **Output:**
-> Tier: aesthetic. The word "robust" has been used by epidemiologists, engineers, and statisticians for over a century — it has a precise meaning ("insensitive to assumption violations") that no synonym carries. OriginalityAI flags it because GPT-4 over-uses it, not because it signals AI. Defense strength: high.
+> **Saída:**
+> Nível: aesthetic. A palavra "robust" é usada por epidemiologistas, engenheiros e estatísticos há mais de um século — tem um significado preciso ("insensível a violações de premissas") que nenhum sinônimo carrega. A OriginalityAI a sinaliza porque o GPT-4 a usa em excesso, não porque ela sinaliza IA. Força da defesa: alta.
 >
-> Recommendation: keep "robust" if you're describing a statistical model, a system architecture, or an immune response. Rewrite to "solid" only if you're using it as generic praise — that's the corporate-speak overuse the humanizer is actually targeting.
+> Recomendação: mantenha "robust" se você estiver descrevendo um modelo estatístico, uma arquitetura de sistema, ou uma resposta imune. Reescreva para "sólido" apenas se estiver usando como elogio genérico — esse é o exagero corporativo que o humanizador está de fato mirando.
 >
-> Citation: Wikipedia "Signs of AI writing" lists "robust" under AI vocabulary; Stanford HAI shows detectors over-fire on technical English.
+> Citação: Wikipedia "Signs of AI writing" lista "robust" sob vocabulário de IA; Stanford HAI mostra que detectores disparam em excesso sobre inglês técnico.
 
-## Files
+## Arquivos
 
-- `../references/rules-explainer.md` — full table of all 15 rules organized by tier, with famous-writer examples and citations
+- `../references/rules-explainer.md` — tabela completa de todas as 15 regras organizadas por nível, com exemplos de escritores famosos e citações
 
-## Related skills
+## Skills relacionadas
 
-- `linkedin-humanizer` — applies the rules (this skill explains them)
-- `post-audit.md` (sibling) — flags rules in a draft
-- `detector-tester.md` (sibling) — runs OriginalityAI / GPTZero / Pangram against drafts
+- `linkedin-humanizer` — aplica as regras (esta skill as explica)
+- `post-audit.md` (irmã) — sinaliza regras em um rascunho
+- `detector-tester.md` (irmã) — roda OriginalityAI / GPTZero / Pangram contra rascunhos

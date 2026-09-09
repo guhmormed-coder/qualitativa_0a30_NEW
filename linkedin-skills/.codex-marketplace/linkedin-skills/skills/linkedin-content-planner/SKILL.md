@@ -1,130 +1,130 @@
 ---
 name: linkedin-content-planner
-description: Generate a 7-day LinkedIn content plan from a theme, audience, and pillars. Produces per-day post pillar, format, hook type, CTA, posting time, daily comment targets, and a weekly inbound-readiness check. Use when the user wants to plan a week or month of content, not draft a single post.
+description: Gera um plano de conteúdo de 7 dias para o LinkedIn a partir de um tema, público e pilares. Produz, por dia, o pilar do post, formato, tipo de gancho, CTA, horário de publicação, metas diárias de comentários, e uma checagem semanal de prontidão para inbound. Use quando o usuário quiser planejar uma semana ou um mês de conteúdo, não redigir um único post.
 ---
 
 # LinkedIn Content Planner
 
-Produce a 7-day LinkedIn plan built around the 3-pillar discipline (Authority 40-50%, Personal Narrative 30-40%, Community 20-30%). Optionally adds a Product/Offer pillar at 10-15%.
+Produza um plano de 7 dias para o LinkedIn construído em torno da disciplina dos 3 pilares (Autoridade 40-50%, Narrativa Pessoal 30-40%, Comunidade 20-30%). Opcionalmente adiciona um pilar de Produto/Oferta em 10-15%.
 
-## When to use
+## Quando usar
 
-- User asks "plan my week" or "what should I post this week"
-- User wants to escape ad-hoc shipping and establish rhythm
-- Before a launch week (user needs product-pillar alignment)
+- O usuário pede "planeje minha semana" ou "o que devo postar essa semana"
+- O usuário quer sair da publicação ad-hoc e estabelecer um ritmo
+- Antes de uma semana de lançamento (o usuário precisa de alinhamento com o pilar de produto)
 
-## Input
+## Entrada
 
-- **Theme** (optional): e.g., "AI agents shipping in production", "first 6 months of Co.Actor"
-- **Audience description:** e.g., "B2B founders, AI ops leaders, marketing VPs"
-- **Pillar mix** (optional): defaults to 40% Authority / 30% Narrative / 20% Community / 10% Product
-- **Posting days** (optional): defaults to Tue/Wed/Thu/Fri (4 posts)
-- **Voice samples** (optional): paths to past posts for voice calibration
+- **Tema** (opcional): ex.: "agentes de IA em produção", "primeiros 6 meses da Co.Actor"
+- **Descrição do público:** ex.: "fundadores B2B, líderes de operações de IA, VPs de marketing"
+- **Mix de pilares** (opcional): padrão de 40% Autoridade / 30% Narrativa / 20% Comunidade / 10% Produto
+- **Dias de publicação** (opcional): padrão de Ter/Qua/Qui/Sex (4 posts)
+- **Amostras de voz** (opcional): caminhos para posts anteriores para calibração de voz
 
-## Output
+## Saída
 
-A markdown plan with:
+Um plano em markdown com:
 
-### 7-day calendar
+### Calendário de 7 dias
 
-| Day | Time | Pillar | Format | Hook formula | 1-line angle | CTA type | Goal |
+| Dia | Horário | Pilar | Formato | Fórmula de gancho | Ângulo em 1 linha | Tipo de CTA | Objetivo |
 |---|---|---|---|---|---|---|---|
-| Mon | — | (commenting day) | — | — | — | — | — |
-| Tue | 8:00 AM local | Authority | Text | F7 Odd-Precision Money | "What 3 months of agent ops costs" | Question close | Saves |
-| Wed | 9:30 AM local | Narrative | Text | F4 Time-Anchor Confession | "Why I stopped publishing for 4 weeks" | Mirror question | Comments |
-| Thu | 8:00 AM local | Community | Text | F14 Named Gratitude | "The 3 people who shaped our launch" | Tag + thanks | Reposts |
-| Fri | 9:00 AM local | Narrative | Text | F11 Emotional Cold-Open | "The night our first deploy failed" | Soft close | Likes |
-| Sat/Sun | — | (off) | — | — | — | — | — |
+| Seg | — | (dia de comentários) | — | — | — | — | — |
+| Ter | 8:00 no horário local | Autoridade | Texto | F7 Odd-Precision Money | "Quanto custam 3 meses de operação de agentes" | Fechamento com pergunta | Salvamentos |
+| Qua | 9:30 no horário local | Narrativa | Texto | F4 Time-Anchor Confession | "Por que parei de publicar por 4 semanas" | Pergunta-espelho | Comentários |
+| Qui | 8:00 no horário local | Comunidade | Texto | F14 Named Gratitude | "As 3 pessoas que moldaram nosso lançamento" | Marcação + agradecimento | Compartilhamentos |
+| Sex | 9:00 no horário local | Narrativa | Texto | F11 Emotional Cold-Open | "A noite em que nosso primeiro deploy falhou" | Fechamento suave | Curtidas |
+| Sáb/Dom | — | (sem post) | — | — | — | — | — |
 
-The Goal column spans saves / comments / reposts / likes across the four posts, satisfying the Goal mix check below.
+A coluna Objetivo cobre salvamentos / comentários / compartilhamentos / curtidas ao longo dos quatro posts, satisfazendo a checagem de mix de objetivos abaixo.
 
-### Daily comment targets
+### Metas diárias de comentários
 
-For each posting day:
-- **3-5 creators to engage** (names or archetypes: "peer founders at 5-20k", "VCs with AI thesis", "BigCo CTOs")
-- **Comment pattern** to apply (first-commenter, data-first, answer-their-question)
-- **Target count:** 10-20 substantive comments per day
+Para cada dia de publicação:
+- **3-5 criadores para engajar** (nomes ou arquétipos: "fundadores pares com 5-20 mil seguidores", "VCs com tese em IA", "CTOs de grandes empresas")
+- **Padrão de comentário** a aplicar (primeiro-a-comentar, dados-primeiro, responder-a-pergunta-deles)
+- **Meta de quantidade:** 10-20 comentários substantivos por dia
 
-### Weekly inbound-readiness check
+### Checagem semanal de prontidão para inbound
 
-- [ ] At least 1 vulnerability post (Narrative)
-- [ ] At least 1 receipt/data post (Authority)
-- [ ] At least 1 soft offer or CTA-driving post
-- [ ] Comment strategy includes 70% peers, 20% aspirational, 10% prospects
-- [ ] No pillar >60% of the week's posts
-- [ ] No duplicate formula used twice in the same week
-- [ ] Goal mix spread: not every post chases the same reaction (see Goal mix below)
+- [ ] Pelo menos 1 post de vulnerabilidade (Narrativa)
+- [ ] Pelo menos 1 post de prova/dado (Autoridade)
+- [ ] Pelo menos 1 post de oferta suave ou que gere CTA
+- [ ] A estratégia de comentários inclui 70% pares, 20% aspiracionais, 10% prospects
+- [ ] Nenhum pilar acima de 60% dos posts da semana
+- [ ] Nenhuma fórmula duplicada duas vezes na mesma semana
+- [ ] Distribuição de objetivos: nem todo post busca a mesma reação (ver Mix de objetivos abaixo)
 
-## Rules
+## Regras
 
-- **3 pillars minimum, 5 maximum.** More than 5 dilutes signal.
-- **3-5 posts per week.** 6+/week triggers cannibalization signal in 360Brew.
-- **10-20 comments/day** on other creators. Comments drive more inbound than posts.
-- **Tue/Wed/Thu** top for B2B. Avoid Fri after 2 PM, Sat/Sun (B2B 30-50% reach cut).
-- **One format per pillar per week.** Don't stack 3 text posts for Authority — vary.
-- **Product/Offer pillar max 1 post/week.** Overuse kills trust.
+- **Mínimo de 3 pilares, máximo de 5.** Mais de 5 dilui o sinal.
+- **3-5 posts por semana.** 6+ por semana dispara sinal de canibalização no 360Brew.
+- **10-20 comentários/dia** em outros criadores. Comentários geram mais inbound do que posts.
+- **Ter/Qua/Qui** são os melhores para B2B. Evite sexta após as 14h, sábado/domingo (corte de alcance de 30-50% no B2B).
+- **Um formato por pilar por semana.** Não empilhe 3 posts de texto para Autoridade — varie.
+- **Pilar Produto/Oferta com no máximo 1 post/semana.** O uso excessivo mata a confiança.
 
-## Formula → pillar mapping
+## Mapeamento fórmula → pilar
 
-| Pillar | Preferred formulas |
+| Pilar | Fórmulas preferidas |
 |---|---|
-| Authority | F7 Odd-Precision Money, F10 Contrarian Historical, F8 Paid-vs-Free, F5 Self-Proving Meta, F15 Explain-to-Kids |
-| Narrative | F4 Time-Anchor Confession, F3 Year-over-Year Pivot, F9 Curiosity-Gap, F11 Emotional Cold-Open, F16 Status-Strip |
-| Community | F6 Comment-Gate (use sparingly), F12 Permission Slip, F14 Named Gratitude, poll posts, spotlight mentions |
-| Product/Offer | F2 R.I.P. Obituary (when pivoting category), F1 Anaphora (when framing product as fix), F13 Bait-and-Switch (upgrade announcements) |
+| Autoridade | F7 Odd-Precision Money, F10 Contrarian Historical, F8 Paid-vs-Free, F5 Self-Proving Meta, F15 Explain-to-Kids |
+| Narrativa | F4 Time-Anchor Confession, F3 Year-over-Year Pivot, F9 Curiosity-Gap, F11 Emotional Cold-Open, F16 Status-Strip |
+| Comunidade | F6 Comment-Gate (usar com moderação), F12 Permission Slip, F14 Named Gratitude, posts de enquete, menções em destaque |
+| Produto/Oferta | F2 R.I.P. Obituary (ao pivotar de categoria), F1 Anaphora (ao enquadrar o produto como solução), F13 Bait-and-Switch (anúncios de upgrade) |
 
-## Founders edition (alternative pillar set)
+## Edição para fundadores (conjunto de pilares alternativo)
 
-When the whole plan is for a **founder** building trust with investors, hires, and design partners, swap the default pillar mix for the founder set from `../../references/founder-topics.md`. It maps each pillar to founder **angles** (A1-A10) instead of generic topics, and leans on the structural formulas F17-F20.
+Quando o plano inteiro é para um **fundador** construindo confiança com investidores, contratações e parceiros de design, substitua o mix de pilares padrão pelo conjunto de fundadores de `../../references/founder-topics.md`. Ele mapeia cada pilar para **ângulos** de fundador (A1-A10) em vez de tópicos genéricos, e se apoia nas fórmulas estruturais F17-F20.
 
-| Pillar | Share | Founder angles | Preferred formulas |
+| Pilar | Participação | Ângulos de fundador | Fórmulas preferidas |
 |---|---|---|---|
-| **Conviction** (POV, category, product philosophy) | 30-40% | A1 Reprice, A7 Designed Serendipity, A8 Evasive-Sentence | F10, F18, F5 |
-| **Building in public** (the real, unglamorous work) | 30-40% | A5 Unglamorous Bet, A6 Limit of Delegation, A9 Delegation Line | F7, F4, F17 |
-| **The math** (how a founder actually decides) | 15-20% | A4 Scarce-Shots, A10 Learning Gate | F10, F18, F20 |
-| **Proof** (relationships and wins, told narrowly) | 10-15% | A2 Content-to-Pipeline, A3 Audience of One | F9, F11, F5 |
+| **Convicção** (ponto de vista, categoria, filosofia de produto) | 30-40% | A1 Reprice, A7 Designed Serendipity, A8 Evasive-Sentence | F10, F18, F5 |
+| **Construindo em público** (o trabalho real, sem glamour) | 30-40% | A5 Unglamorous Bet, A6 Limit of Delegation, A9 Delegation Line | F7, F4, F17 |
+| **A matemática** (como um fundador realmente decide) | 15-20% | A4 Scarce-Shots, A10 Learning Gate | F10, F18, F20 |
+| **Prova** (relacionamentos e vitórias, contados com moderação) | 10-15% | A2 Content-to-Pipeline, A3 Audience of One | F9, F11, F5 |
 
-Same guardrails apply: 3-5 posts/week, no pillar above 60%, no formula repeated inside 7 days, spread the goal across the week. Ask the user "founder plan or general plan?" when the audience is a founder building a company, and default to this set if they say founder.
+As mesmas salvaguardas se aplicam: 3-5 posts/semana, nenhum pilar acima de 60%, nenhuma fórmula repetida dentro de 7 dias, distribuir o objetivo ao longo da semana. Pergunte ao usuário "plano de fundador ou plano geral?" quando o público for um fundador construindo uma empresa, e use este conjunto por padrão se ele disser fundador.
 
-## Goal mix (balance the week, not just the pillars)
+## Mix de objetivos (equilibrar a semana, não só os pilares)
 
-Every formula earns a primary reaction: comments, reposts, likes, or saves (see `../../references/hook-formulas.md` "Engagement-goal split"). A week that is all comment-bait or all repost-bait reads as engineered and flattens reach. Spread the goals across the week:
+Cada fórmula gera uma reação primária: comentários, compartilhamentos, curtidas ou salvamentos (veja `../../references/hook-formulas.md` "Divisão de objetivo de engajamento"). Uma semana inteira só de isca-de-comentário ou só de isca-de-compartilhamento soa artificial e achata o alcance. Distribua os objetivos ao longo da semana:
 
-| Goal | Formulas | Weekly target |
+| Objetivo | Fórmulas | Meta semanal |
 |---|---|---|
-| Comments | F4, F10, F12, F9 | at least 1 |
-| Reposts | F14, F2, F8 | at least 1 |
-| Likes | F11, F13, F16 | at least 1 |
-| Saves | F15, F7, F8 | at least 1 |
+| Comentários | F4, F10, F12, F9 | pelo menos 1 |
+| Compartilhamentos | F14, F2, F8 | pelo menos 1 |
+| Curtidas | F11, F13, F16 | pelo menos 1 |
+| Salvamentos | F15, F7, F8 | pelo menos 1 |
 
-## Steps
+## Passos
 
-1. Gather inputs. Ask user for theme, audience, pillar preferences if not provided.
-2. Validate pillar mix sums to 100%; warn if any pillar >60%.
-3. For each posting day, pick:
-   - Pillar (rotate to match mix)
-   - Formula from that pillar's bank (don't repeat within 7 days)
-   - Format (alternating text / carousel / poll per pillar rules)
-   - Specific angle (user provides or skill generates)
-   - Posting time (audience-timezone aware)
-4. For each posting day, add 3-5 comment targets with suggested pattern.
-5. Run inbound-readiness check; flag anything missing.
-6. Return as markdown + optional JSON for Notion/Airtable import.
+1. Coletar as entradas. Perguntar ao usuário sobre tema, público, preferências de pilares se não fornecidos.
+2. Validar que o mix de pilares soma 100%; avisar se algum pilar passar de 60%.
+3. Para cada dia de publicação, escolher:
+   - Pilar (girar para corresponder ao mix)
+   - Fórmula do banco daquele pilar (não repetir dentro de 7 dias)
+   - Formato (alternando texto / carrossel / enquete conforme as regras de cada pilar)
+   - Ângulo específico (o usuário fornece ou o skill gera)
+   - Horário de publicação (considerando o fuso horário do público)
+4. Para cada dia de publicação, adicionar 3-5 alvos de comentário com padrão sugerido.
+5. Rodar a checagem de prontidão para inbound; sinalizar o que estiver faltando.
+6. Retornar como markdown + JSON opcional para importação no Notion/Airtable.
 
-## Example
+## Exemplo
 
-See `references/example-plan-week.md` for a filled-in 7-day plan.
+Veja `references/example-plan-week.md` para um plano de 7 dias resolvido.
 
-## Files
+## Arquivos
 
-- `SKILL.md` — this file
-- `references/example-plan-week.md` — worked example
-- `references/pillars-framework.md` — the 3-pillar discipline explained
-- `../../references/founder-topics.md` — founders-edition angle library (A1-A10) and founder pillar set
+- `SKILL.md` — este arquivo
+- `references/example-plan-week.md` — exemplo resolvido
+- `references/pillars-framework.md` — a disciplina dos 3 pilares explicada
+- `../../references/founder-topics.md` — biblioteca de ângulos da edição para fundadores (A1-A10) e conjunto de pilares de fundador
 
-## Related skills
+## Skills relacionados
 
-- `linkedin-post-writer` — generate each day's draft from the plan
-- `linkedin-comment-drafter` — execute the daily comment targets
-- `linkedin-thread-monitor` — track inbound from the comment strategy
-- `linkedin-engager-analytics` — segment audience on each post
+- `linkedin-post-writer` — gere o rascunho de cada dia a partir do plano
+- `linkedin-comment-drafter` — execute as metas diárias de comentários
+- `linkedin-thread-monitor` — acompanhe o inbound gerado pela estratégia de comentários
+- `linkedin-engager-analytics` — segmente o público em cada post

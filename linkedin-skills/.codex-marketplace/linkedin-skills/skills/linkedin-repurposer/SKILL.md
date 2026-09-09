@@ -1,75 +1,75 @@
 ---
 name: linkedin-repurposer
-description: 'Repurpose existing content into a native LinkedIn post. Take a tweet, thread, YouTube video, blog, or newsletter and rebuild it for LinkedIn: re-hook before the fold, expand to the 900 to 1300 char sweet spot, add whitespace and a CTA, move links to the first comment, run the humanizer, publish via Publora on approval. Not for writing from scratch (use linkedin-post-writer), not for auditing a draft (use linkedin-humanizer --mode audit).'
+description: 'Reaproveita conteúdo já existente em um post nativo para o LinkedIn. Pega um tweet, thread, vídeo do YouTube, blog ou newsletter e reconstrói para o LinkedIn: refaz o gancho antes do corte, expande para o ponto ideal de 900 a 1300 caracteres, adiciona espaçamento em branco e um CTA, move links para o primeiro comentário, roda o humanizer, publica via Publora após aprovação. Não é para escrever do zero (use linkedin-post-writer), nem para auditar um rascunho (use linkedin-humanizer --mode audit).'
 ---
 
 # LinkedIn Repurposer
 
-Turn something you already made into a post that reads like it was written for LinkedIn. Repurposing is not copy-paste. A tweet that flew on X will flop pasted into LinkedIn: too short, no whitespace, wrong rhythm, and a link in the body that tanks your reach.
+Transforme algo que você já criou em um post que soa como se tivesse sido escrito para o LinkedIn. Reaproveitar não é copiar e colar. Um tweet que bombou no X vai fracassar se colado direto no LinkedIn: curto demais, sem espaçamento em branco, ritmo errado, e um link no corpo que derruba seu alcance.
 
-This skill transforms, it does not generate. It reads your source, keeps the idea, and rebuilds the delivery for LinkedIn's 2026 algorithm.
+Este skill transforma, não gera. Ele lê a sua fonte, mantém a ideia, e reconstrói a entrega para o algoritmo de 2026 do LinkedIn.
 
-## When to use
+## Quando usar
 
-- "Turn this tweet / thread into a LinkedIn post"
-- "Repurpose my YouTube video / blog / newsletter for LinkedIn"
-- "This worked on Threads, adapt it for LinkedIn"
-- "I have a rough idea in another format, make it native here"
+- "Transforme esse tweet / thread em um post do LinkedIn"
+- "Reaproveite meu vídeo do YouTube / blog / newsletter para o LinkedIn"
+- "Isso funcionou no Threads, adapte para o LinkedIn"
+- "Tenho uma ideia bruta em outro formato, torne-a nativa aqui"
 
-Not for a blank-page draft (use `linkedin-post-writer`) and not for reviewing a finished LinkedIn draft (use `linkedin-humanizer --mode audit`).
+Não é para um rascunho em página em branco (use `linkedin-post-writer`) e não é para revisar um rascunho de LinkedIn já pronto (use `linkedin-humanizer --mode audit`).
 
-## How it works
+## Como funciona
 
-**Voice profile first (all drafts).** If `../../references/voice-profile.md` has `filled: yes`, load it and match the user's voice fingerprint, hard rules, and CTA/link style throughout. If it is not filled, mention once that `linkedin-humanizer --mode profile` can learn their voice from a few posts, then proceed with the generic voice rules.
+**Perfil de voz primeiro (todos os rascunhos).** Se `../../references/voice-profile.md` tiver `filled: yes`, carregue-o e siga a impressão digital de voz do usuário, as regras rígidas, e o estilo de CTA/link ao longo de todo o processo. Se não estiver preenchido, mencione uma vez que `linkedin-humanizer --mode profile` pode aprender a voz do usuário a partir de alguns posts, e então prossiga com as regras de voz genéricas.
 
-1. **Take the source.** Any format: a tweet or thread, a video or script, a blog paragraph, a caption, a transcript, a bullet list, a link to read. Ask for the source and the goal (comments / reposts / likes / saves) if not given.
-2. **Extract the spine.** Strip the source platform's shell and pull out the one claim, story, or number worth keeping. Repurposing fails when it keeps the words instead of the point.
-3. **Re-hook for LinkedIn.** The hook must land in the first 210 characters, before the "...see more" fold. The source's hook rarely survives; write a new first line using one of the 16 formulas in `../../references/hook-formulas.md`, picked by the goal.
-4. **Expand to LinkedIn length.** X compresses; LinkedIn breathes. Grow the spine into the 900 to 1300 char sweet spot: short paragraphs, double line breaks between ideas, one concrete detail per beat. A dense tweet becomes 4 to 6 short paragraphs, not a wall.
-5. **Add the LinkedIn shape.** Whitespace between ideas, a moment of real stakes or vulnerability (pure-insight posts do not land in 2026), and one clear closing question or CTA.
-6. **Fix links and artifacts.** Move any external link to the first comment (in-body links suppress reach). Strip off-platform artifacts: hashtag walls, "link in bio", "smash subscribe", X @-handles, "as I tweeted" throat-clearing. 0 to 2 hashtags at the end.
-7. **Humanizer pass.** Run the scrub: 2026 AI vocab by density, em dashes above the cap (about one per 100 words), stacked rule-of-three triads, generic openers and reveal bridges. Keep the user's real numbers and named entities from the source.
-8. **Approval card.** Show: source -> LinkedIn mapping (what became what), formula used, char count, suggested posting window (Tue/Wed/Thu 7:30 to 9:00 AM local), the link-in-first-comment note.
-9. **On approval.** Publish via `lib.publish(kind="post", draft_text=<approved>, target_url="https://www.linkedin.com/post/new/", platforms=[{"platform":"linkedin","platformId":<id>}], scheduled_time=<iso_or_None>)`. The wrapper handles Publora / manual / diy routing.
+1. **Pegue a fonte.** Qualquer formato: um tweet ou thread, um vídeo ou roteiro, um parágrafo de blog, uma legenda, uma transcrição, uma lista com marcadores, um link para leitura. Pergunte pela fonte e pelo objetivo (comentários / compartilhamentos / curtidas / salvamentos) se não for informado.
+2. **Extraia a espinha dorsal.** Retire a casca da plataforma de origem e puxe a única afirmação, história ou número que vale a pena manter. O reaproveitamento fracassa quando mantém as palavras em vez do ponto principal.
+3. **Refaça o gancho para o LinkedIn.** O gancho precisa aterrissar nos primeiros 210 caracteres, antes do corte "...ver mais". O gancho da fonte raramente sobrevive; escreva uma nova primeira linha usando uma das 16 fórmulas em `../../references/hook-formulas.md`, escolhida de acordo com o objetivo.
+4. **Expanda para o comprimento do LinkedIn.** O X comprime; o LinkedIn respira. Faça a espinha dorsal crescer até o ponto ideal de 900 a 1300 caracteres: parágrafos curtos, quebras de linha duplas entre ideias, um detalhe concreto por momento. Um tweet denso vira 4 a 6 parágrafos curtos, não um bloco de texto.
+5. **Adicione a forma do LinkedIn.** Espaçamento em branco entre ideias, um momento de risco real ou vulnerabilidade (posts de puro insight não engajam em 2026), e uma pergunta de fechamento clara ou CTA.
+6. **Corrija links e artefatos.** Mova qualquer link externo para o primeiro comentário (links no corpo suprimem o alcance). Remova artefatos fora da plataforma: muros de hashtags, "link na bio", "aperte inscrever-se", @-handles do X, introduções do tipo "como eu tuitei". 0 a 2 hashtags no final.
+7. **Passagem pelo humanizer.** Rode a limpeza: vocabulário de IA de 2026 por densidade, travessões acima do limite (cerca de um a cada 100 palavras), tríades empilhadas em regra-de-três, aberturas genéricas e pontes de revelação. Mantenha os números reais e as entidades nomeadas do usuário vindos da fonte.
+8. **Cartão de aprovação.** Mostre: mapeamento fonte → LinkedIn (o que virou o quê), fórmula usada, contagem de caracteres, janela de publicação sugerida (Ter/Qua/Qui 7:30 às 9:00 da manhã no horário local), a observação sobre link-no-primeiro-comentário.
+9. **Após a aprovação.** Publique via `lib.publish(kind="post", draft_text=<approved>, target_url="https://www.linkedin.com/post/new/", platforms=[{"platform":"linkedin","platformId":<id>}], scheduled_time=<iso_or_None>)`. O wrapper cuida do roteamento Publora / manual / diy.
 
-## Native-fit rules (source -> LinkedIn)
+## Regras de adequação nativa (fonte → LinkedIn)
 
-- **Tweet -> LinkedIn:** expand, do not paste. One tweet is a hook; grow the argument underneath it with whitespace.
-- **X thread -> LinkedIn:** unroll into one flowing post, not a numbered list. Keep the best line as the hook.
-- **YouTube video / script -> LinkedIn:** lead with the payoff, then the story of how you got there. Link the video in the first comment.
-- **Blog / newsletter -> LinkedIn:** pick the single most quotable claim as the hook, then the one story that proves it. Do not summarize the whole piece.
-- **Instagram / TikTok caption -> LinkedIn:** strip emoji density and hashtag blocks; add the professional stakes LinkedIn rewards.
+- **Tweet → LinkedIn:** expanda, não cole. Um tweet é um gancho; faça o argumento crescer por baixo dele com espaçamento em branco.
+- **Thread do X → LinkedIn:** desenrole em um único post fluido, não em uma lista numerada. Mantenha a melhor linha como o gancho.
+- **Vídeo/roteiro do YouTube → LinkedIn:** lidere com a recompensa, depois conte a história de como você chegou lá. Coloque o link do vídeo no primeiro comentário.
+- **Blog/newsletter → LinkedIn:** escolha a única afirmação mais citável como o gancho, depois a única história que a comprova. Não resuma a peça inteira.
+- **Legenda do Instagram/TikTok → LinkedIn:** remova a densidade de emojis e os blocos de hashtags; adicione o risco profissional que o LinkedIn recompensa.
 
-## Hard rules
+## Regras rígidas
 
-Global voice rules: see root `SKILL.md` §Voice rules. Additional skill-specific rules:
+Regras globais de voz: veja `SKILL.md` §Voice rules na raiz. Regras adicionais específicas deste skill:
 
-- Keep the source's **claim and facts** intact. Repurposing changes the delivery, never the meaning or the numbers.
-- The hook must land in the first 210 characters, before the fold.
-- Never paste the source and trim. Rebuild the hook, length, and rhythm from the spine.
-- No external link in the post body. Offer to put it in the first comment.
-- Include at least one moment of real stakes or vulnerability. Keep the source's real numbers and named entities.
-- Do not name-drop the user's product as self-promo. One natural mention max.
+- Mantenha a **afirmação e os fatos** da fonte intactos. Reaproveitar muda a entrega, nunca o significado ou os números.
+- O gancho precisa aterrissar nos primeiros 210 caracteres, antes do corte.
+- Nunca cole a fonte e apenas apare. Reconstrua o gancho, o comprimento e o ritmo a partir da espinha dorsal.
+- Nenhum link externo no corpo do post. Ofereça colocá-lo no primeiro comentário.
+- Inclua pelo menos um momento de risco real ou vulnerabilidade. Mantenha os números reais e as entidades nomeadas da fonte.
+- Não mencione o produto do usuário como autopromoção. No máximo uma menção natural.
 
-## Anti-patterns (skill will refuse)
+## Anti-padrões (o skill vai recusar)
 
-- Copy-pasting the source with light edits (that is not repurposing).
-- Keeping the source platform's artifacts ("link in bio", "smash subscribe", hashtag walls).
-- Shipping a tweet-length post with no whitespace or expansion.
-- All-caps first line ("THIS CHANGED EVERYTHING").
-- Em dashes above the cap (more than about one per 100 words), or an em dash swapped for a period.
-- Rule-of-three lists without receipts.
-- "leverage", "fundamentally", "game-changer", "deep dive".
-- External links in the body.
-- Meta throat-clearing ("I originally posted this on...").
+- Copiar e colar a fonte com edições leves (isso não é reaproveitamento).
+- Manter os artefatos da plataforma de origem ("link na bio", "aperte inscrever-se", muros de hashtags).
+- Publicar um post do tamanho de um tweet sem espaçamento em branco ou expansão.
+- Primeira linha toda em maiúsculas ("ISSO MUDOU TUDO").
+- Travessões acima do limite (mais de cerca de um a cada 100 palavras), ou um travessão trocado por um ponto final.
+- Listas de regra-de-três sem provas.
+- "leverage" (alavancar), "fundamentalmente", "revolucionário" (game-changer), "mergulho profundo" (deep dive).
+- Links externos no corpo.
+- Introduções meta ("originalmente postei isso em...").
 
-## Resources
+## Recursos
 
-- `../../references/hook-formulas.md` - the 16 formula skeletons to re-hook with
-- `../../references/algorithm-heuristics.md` - 2026 posting rules (timing, format, length)
+- `../../references/hook-formulas.md` - os 16 esqueletos de fórmula para refazer o gancho
+- `../../references/algorithm-heuristics.md` - regras de publicação de 2026 (horário, formato, comprimento)
 
-## Related skills
+## Skills relacionados
 
-- `linkedin-post-writer` - write a fresh post from scratch
-- `linkedin-humanizer` - scrub AI tells, plus `--mode audit` to review the result
-- `linkedin-hook-extractor` - reverse-engineer a hook from a post you admire
+- `linkedin-post-writer` - escreva um post novo do zero
+- `linkedin-humanizer` - remova marcas de IA, além de `--mode audit` para revisar o resultado
+- `linkedin-hook-extractor` - faça engenharia reversa de um gancho a partir de um post que você admira

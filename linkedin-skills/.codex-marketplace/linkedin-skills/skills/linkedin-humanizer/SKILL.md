@@ -1,174 +1,174 @@
 ---
 name: linkedin-humanizer
-description: 'Remove the AI tells human readers and LinkedIn''s AI-slop filter react to in a post or comment: 2026 vocabulary by paragraph density, reveal bridges, staccato fragments, stacked triads, performed sincerity. Tiered rewriter (forensic / strict / aesthetic / all) plus `--mode audit` pass-fail review and `--mode profile` voice profile builder. Not for beating AI detectors (no edit reliably does). Keywords: humanize, de-AI, reads like ChatGPT, AI slop, scrub AI tells, review this draft, audit before posting.'
+description: 'Remove os indícios de IA aos quais leitores humanos e o filtro anti-"AI slop" do LinkedIn reagem em um post ou comentário: vocabulário de 2026 por densidade de parágrafo, pontes de revelação, fragmentos staccato, tríades empilhadas, sinceridade encenada. Reescritor em camadas (forensic / strict / aesthetic / all) além de uma revisão pass-fail em `--mode audit` e um construtor de perfil de voz em `--mode profile`. Não serve para enganar detectores de IA (nenhuma edição faz isso de forma confiável). Palavras-chave: humanizar, de-AI, parece ChatGPT, AI slop, remover indícios de IA, revisar este rascunho, auditar antes de publicar.'
 ---
 
 # LinkedIn Humanizer V3
 
-Rewrites any text to remove the AI tells that human readers notice and that LinkedIn's "AI slop" filter reacts to. Based on Wikipedia's "Signs of AI writing" taxonomy, the 2025-2026 stylometry literature, and our own length-controlled corpus. **V3 (2026-09):** recalibrated on 2026 evidence. Vocabulary is scored by density, em dashes are capped instead of banned, forced rhythm is now a tell instead of a fix, and there is an over-correction guard.
+Reescreve qualquer texto para remover os indícios de IA que leitores humanos percebem e aos quais o filtro de "AI slop" do LinkedIn reage. Baseado na taxonomia "Signs of AI writing" da Wikipedia, na literatura de estilometria de 2025-2026 e no nosso próprio corpus com controle de tamanho. **V3 (2026-09):** recalibrado com evidências de 2026. O vocabulário agora é pontuado por densidade, os travessões passam a ter um teto em vez de serem banidos, o ritmo forçado agora é um indício em vez de uma correção, e há uma proteção contra correção excessiva.
 
-**What this skill does not do:** it does not make text "pass" GPTZero, Pangram, Turnitin or Originality. Those are trained classifiers keyed on the instruction-tuning style signature; prompt-style "sound like a real person" rewrites are caught 92-95% of the time (VUB IJEI 2026, Russell 2025), and light mechanical rewriting raises detectability (arXiv 2603.17522). No post-hoc edit reliably beats a Pangram-class detector, and detector scores on LinkedIn-length text (100-300 words) are noise. The real value is elsewhere: expert human readers cite vocabulary (53%) and sentence structure (36%) as what gives AI text away, and LinkedIn's July 2026 slop-report button costs a flagged post roughly 40% of its views. This skill removes what those readers and that filter react to.
+**O que esta skill não faz:** ela não faz o texto "passar" no GPTZero, Pangram, Turnitin ou Originality. Esses são classificadores treinados calibrados na assinatura de estilo do instruction-tuning; reescritas no estilo "soar como uma pessoa de verdade" são pegas em 92-95% dos casos (VUB IJEI 2026, Russell 2025), e reescritas mecânicas leves aumentam a detectabilidade (arXiv 2603.17522). Nenhuma edição feita depois do fato supera de forma confiável um detector de classe Pangram, e os escores de detector em textos do tamanho do LinkedIn (100-300 palavras) são ruído. O valor real está em outro lugar: leitores humanos experientes citam vocabulário (53%) e estrutura de frase (36%) como o que denuncia texto de IA, e o botão de denúncia de slop do LinkedIn, lançado em julho de 2026, custa a um post sinalizado cerca de 40% de suas visualizações. Esta skill remove o que esses leitores e esse filtro percebem.
 
-## What changed in V3
+## O que mudou na V3
 
-Evidence tier in brackets: [strong] = replicated across 2+ independent 2025-2026 studies or our own length-controlled corpus; [vendor] = single platform or vendor dataset; [weak] = one study or expert-panel report.
+Nível de evidência entre colchetes: [strong] = replicado em 2+ estudos independentes de 2025-2026 ou no nosso próprio corpus com controle de tamanho; [vendor] = dataset de uma única plataforma ou fornecedor; [weak] = um único estudo ou relatório de painel de especialistas.
 
-- **Vocabulary moved from a delete-list to density scoring.** The 2023-24 words (delve, tapestry, realm, journey) are decaying as humans avoid them [strong: Geng & Trotta 2025]. The durable 2026 markers are common words (significant, crucial, notably, comprehensive, insights, robust, leverage, foster, landscape, nuanced, streamline, elevate) plus grammar: nominalisations and "-ing" clause openers at 5.3x human rate [strong: Kobak Sci Adv 2025; Wu et al 2026; PNAS 2025]. AI vocabulary is also the one marker consistently reach-negative on LinkedIn in our own corpus (0.74-0.84 author-relative) [strong]. One marker in a paragraph is not a verdict. Three or more is.
-- **Em dash is no longer a tell.** GPT-5.4 emits 1.43 per 1,000 words, below the 3.23 human baseline; 29% of human captions and 23% of top-creator LinkedIn posts in our corpus use one (author-relative ratio 1.09) [strong]. Zero em dashes is now its own tell (the writer is trying to look human). New rule: cap at about 1 per 100 words, replace excess with comma, colon, parentheses or a rewrite. Never a period.
-- **Forced burstiness is the #1 2026 tell, not the fix.** LLM sentence-length variance is half of human [strong], but detectors do not score it, mechanical long/short alternation is a learnable humanizer fingerprint [weak: DAMAGE 2025], and on LinkedIn sentence-length variance is not an engagement lever in either direction (our corpus, n=397, within-creator: null to slightly negative) [strong]. "Short. Punchy. Done.", "No X. No Y. Just Z.", one-word paragraphs and "The result?" reveals are the current top tells. Pass 2 is now RHYTHM, not BREAK: fix machine-flat rhythm, never manufacture variance.
-- **Rule of three is still a tell, at density.** Tricolon runs at 2x expert-human rate across 2026 frontier models [strong: arXiv 2604.19768]. Stacked, perfectly parallel triads and 3+ per post get scrubbed. One natural triple stays (26% of top human tweets have one).
-- **Fingerprint injection was half wrong.** Named entities and concreteness are supported [strong: lower entity density in LLM text across 3 studies]; an odd-precision number with a referent in line 1 lifts likes 34% [vendor]. Bare numbers are not a discriminator, and inserted hedges and confessions backfire: performed hesitancy is 2x more common in LLM text than expert human text, and sincerity announcements ("let me be honest") are a named 2026 tell [strong: tropes.fyi false vulnerability; Schilke & Reimann 2025]. Pass 3 now asks for a flat, dated, uncomfortable fact instead.
-- **Over-correction guard.** Humanizer output has its own fingerprint; "writing slightly worse on purpose" now reads as a tell [weak: DAMAGE 2025; slopotron]. Pass 4 checks whether Passes 1-3 introduced the very patterns they were meant to remove. Edits are proportional to real problems. When in doubt, leave it.
+- **O vocabulário deixou de ser uma lista de exclusão e passou a ser pontuado por densidade.** As palavras de 2023-24 (delve, tapestry, realm, journey) estão em queda porque os humanos passaram a evitá-las [strong: Geng & Trotta 2025]. Os marcadores duráveis de 2026 são palavras comuns (significant, crucial, notably, comprehensive, insights, robust, leverage, foster, landscape, nuanced, streamline, elevate) mais marcadores gramaticais: nominalizações e aberturas de oração em "-ing" a uma taxa 5,3x maior que a humana [strong: Kobak Sci Adv 2025; Wu et al 2026; PNAS 2025]. O vocabulário de IA também é o único marcador consistentemente negativo para alcance no LinkedIn no nosso próprio corpus (0,74-0,84 relativo ao autor) [strong]. Um marcador em um parágrafo não é um veredito. Três ou mais, é.
+- **O travessão (em dash) deixou de ser um indício.** O GPT-5.4 emite 1,43 por 1.000 palavras, abaixo da referência humana de 3,23; 29% das legendas humanas e 23% dos posts de top creators no LinkedIn no nosso corpus usam um (razão relativa ao autor de 1,09) [strong]. Zero travessões agora é, por si só, um indício (o autor está tentando parecer humano). Nova regra: teto de cerca de 1 a cada 100 palavras; o excesso é substituído por vírgula, dois-pontos, parênteses ou reescrita. Nunca por um ponto final.
+- **O ritmo forçado é o indício nº 1 de 2026, não a correção.** A variância de comprimento de frase de LLMs é metade da humana [strong], mas os detectores não pontuam isso, a alternância mecânica de longo/curto é uma assinatura reconhecível de humanizador [weak: DAMAGE 2025], e no LinkedIn a variância de comprimento de frase não é uma alavanca de engajamento em nenhum dos dois sentidos (nosso corpus, n=397, dentro do mesmo criador: de nulo a levemente negativo) [strong]. "Curto. Direto. Pronto.", "Nada de X. Nada de Y. Só Z.", parágrafos de uma única palavra e revelações do tipo "E o resultado?" são os principais indícios atuais. O Passo 2 agora é RITMO, não QUEBRA: corrigir o ritmo mecanicamente uniforme, nunca fabricar variância.
+- **A regra do três continua sendo um indício, em densidade.** Sequências de tricolon aparecem a 2x a taxa de especialistas humanos nos modelos de fronteira de 2026 [strong: arXiv 2604.19768]. Tríades empilhadas, perfeitamente paralelas e 3+ por post são removidas. Uma tríade natural única permanece (26% dos top tweets humanos têm uma).
+- **A injeção de "fingerprints" (marcas de autenticidade) estava parcialmente errada.** Entidades nomeadas e concretude são sustentadas por evidência [strong: menor densidade de entidades em texto de LLM em 3 estudos]; um número de precisão incomum com um referente na primeira linha eleva curtidas em 34% [vendor]. Números soltos não são um diferencial, e hedges e confissões inseridos saem pela culatra: hesitação encenada é 2x mais comum em texto de LLM do que em texto humano especializado, e anúncios de sinceridade ("deixa eu ser honesto") são um indício nomeado de 2026 [strong: falsa vulnerabilidade do tropes.fyi; Schilke & Reimann 2025]. O Passo 3 agora pede um fato seco, datado e desconfortável, em vez disso.
+- **Proteção contra correção excessiva.** O resultado do humanizador tem sua própria assinatura; "escrever um pouco pior de propósito" agora se lê como um indício [weak: DAMAGE 2025; slopotron]. O Passo 4 verifica se os Passos 1-3 introduziram exatamente os padrões que deveriam remover. As edições são proporcionais a problemas reais. Na dúvida, deixe como está.
 
-See `sub-skills/rules-explainer.md` for per-rule justification, defenses, and citations, and `references/tier-rationale.md` §V3 for the evidence.
+Veja `sub-skills/rules-explainer.md` para justificativa por regra, defesas e citações, e `references/tier-rationale.md` §V3 para as evidências.
 
-## When to use
+## Quando usar
 
-- Before publishing any AI-drafted post or comment (rewrite mode)
-- Pre-publish review of a finished draft (audit mode, see `sub-skills/post-audit.md`)
-- When a draft feels off and you can't pinpoint why
+- Antes de publicar qualquer post ou comentário rascunhado por IA (modo reescrita)
+- Revisão pré-publicação de um rascunho finalizado (modo audit, veja `sub-skills/post-audit.md`)
+- Quando um rascunho parece estranho e você não consegue apontar por quê
 
-## Input
+## Entrada
 
-Any text (post, comment, reply, DM). Optional: target voice samples (past human posts by the user).
+Qualquer texto (post, comentário, resposta, DM). Opcional: amostras da voz-alvo (posts humanos anteriores do usuário).
 
-## Output
+## Saída
 
-- Rewritten text with AI tells removed
-- Diff showing what changed and why
-- Per-paragraph tell density (markers per paragraph; 3+ triggered a rewrite)
-- Reader-read confidence: "reads human", "mixed", "reads AI" (this is a reader-tell estimate, not a detector score)
-- Tier applied (which mode was used)
+- Texto reescrito com os indícios de IA removidos
+- Diff mostrando o que mudou e por quê
+- Densidade de indícios por parágrafo (marcadores por parágrafo; 3+ dispara uma reescrita)
+- Confiança de leitura do leitor: "lê como humano", "misto", "lê como IA" (isso é uma estimativa de percepção do leitor, não um escore de detector)
+- Nível aplicado (qual modo foi usado)
 
-## Modes
+## Modos
 
 ```bash
-# Default: forensic + strict (recommended for LinkedIn)
+# Padrão: forensic + strict (recomendado para LinkedIn)
 linkedin-humanizer <text>
 
-# Forensic only: minimum-touch, just kill the leakage
+# Apenas forensic: toque mínimo, só elimina o vazamento
 linkedin-humanizer --mode forensic <text>
 
-# Strict: forensic + density-scored 2026 vocabulary, reveal bridges, staccato (the LinkedIn-default config)
+# Strict: forensic + vocabulário de 2026 pontuado por densidade, pontes de revelação, staccato (a config padrão para LinkedIn)
 linkedin-humanizer --mode strict <text>
 
-# Aesthetic: strict + style rules (single natural triads, passive voice, defendable vocab)
-# Use when target audience is Wikipedia editors / academic readers / AI-tell hunters
+# Aesthetic: strict + regras de estilo (tríades naturais únicas, voz passiva, vocabulário defensável)
+# Use quando o público-alvo são editores da Wikipedia / leitores acadêmicos / caçadores de indícios de IA
 linkedin-humanizer --mode aesthetic <text>
 
-# All: every rule. Maximum scrub. Will flatten literary writing and trip the Pass 4 guard.
+# All: todas as regras. Limpeza máxima. Vai achatar escrita literária e disparar a proteção do Passo 4.
 linkedin-humanizer --mode all <text>
 
-# Audit: detection-only pass-fail review. No rewrite.
-# Runs the 2026 algorithm checklist: length, hook, CTA, structure, AI tells.
-# Returns Blockers + Warnings + suggested fixes. See sub-skills/post-audit.md.
+# Audit: revisão pass-fail apenas de detecção. Sem reescrita.
+# Executa o checklist do algoritmo 2026: tamanho, gancho, CTA, estrutura, indícios de IA.
+# Retorna Bloqueios + Avisos + correções sugeridas. Veja sub-skills/post-audit.md.
 linkedin-humanizer --mode audit <text>
 
-# Profile: build/update the user's Voice & Brand Profile so every writing
-# skill drafts in their real voice. Learns from 3-6 pasted posts (portable, no
-# token) or, if APIFY_TOKEN is set, from pulled activity. Writes
-# ../../references/voice-profile.md. See sub-skills/voice-profile.md.
+# Profile: constrói/atualiza o Perfil de Voz & Marca do usuário para que toda skill de
+# escrita rascunhe na voz real dele. Aprende com 3-6 posts colados (portátil, sem
+# token) ou, se APIFY_TOKEN estiver definido, com atividade puxada. Escreve
+# ../../references/voice-profile.md. Veja sub-skills/voice-profile.md.
 linkedin-humanizer --mode profile
 ```
 
-## The four passes
+## Os quatro passos
 
-### Pass 1: SCRUB (score, then delete or replace)
+### Passo 1: SCRUB (pontuar, depois excluir ou substituir)
 
-The scrub pass applies tiered catalogs to delete or replace AI tells. The unit of judgement is the **paragraph, not the word**: count markers per paragraph, rewrite the paragraph at 3+, leave a single marker alone unless it is a reveal bridge or forensic leakage. Full regex source, replacement maps, and detection functions live in `references/scrub-rules.md`; load that file when actually executing the scrub.
+O passo de limpeza aplica catálogos em camadas para excluir ou substituir indícios de IA. A unidade de julgamento é o **parágrafo, não a palavra**: conte marcadores por parágrafo, reescreva o parágrafo a partir de 3+, deixe um único marcador em paz a menos que seja uma ponte de revelação ou vazamento forense. O código-fonte completo dos regex, os mapas de substituição e as funções de detecção estão em `references/scrub-rules.md`; carregue esse arquivo ao executar a limpeza de fato.
 
-**FORENSIC tier** (always on): real model leakage no human produces. Covers AI tool markers (oaicite, contentReference, turn0search0, attached_file, grok_card), knowledge-cutoff disclaimers ("As of my last update..."), phrasal templates ([Your Name], 2025-XX-XX), em dash density above 1 per 100 words, and outline-formula closers ("Despite its X... Looking ahead...").
+**Nível FORENSIC** (sempre ativo): vazamento real de modelo que nenhum humano produz. Cobre marcadores de ferramenta de IA (oaicite, contentReference, turn0search0, attached_file, grok_card), avisos de corte de conhecimento ("Até minha última atualização..."), templates fraseológicos ([Your Name], 2025-XX-XX), densidade de travessão acima de 1 a cada 100 palavras, e fechamentos em fórmula de outline ("Apesar de seu X... Olhando para frente...").
 
-**STRICT tier** (default on): what readers and the slop filter react to. Covers punctuation normalization (curly to straight quotes, `--` to a comma or rewrite; excess em dashes to comma, colon or parentheses, never a period), the durable 2026 vocabulary set scored by density (significant, crucial, notably, particularly, comprehensive, insights, robust, leverage, foster, landscape, nuanced, multifaceted, holistic, streamline, elevate, empower), grammatical markers (nominalisations, sentence-opening "-ing" clauses), the 2026 LinkedIn layer (quietly, matters, compound, signal, "the work", "built different", load-bearing, "doing the heavy lifting", "let that sink in", "that's the real story"), reveal bridges measured reach-negative ("The result?" -4.8%, "It's not X, it's Y" -4.9%, "Stop X, start Y" -6.7%, "Here's what/how" -4.3%), all 6 forms of negative parallelism, stacked or perfectly parallel triads and any 3rd triad in a post, and cliché closer tells ("What do you think?", "Tag someone who needs this").
+**Nível STRICT** (ativo por padrão): o que os leitores e o filtro de slop percebem. Cobre normalização de pontuação (aspas curvas para retas, `--` para vírgula ou reescrita; excesso de travessões para vírgula, dois-pontos ou parênteses, nunca um ponto final), o conjunto durável de vocabulário de 2026 pontuado por densidade (significant, crucial, notably, particularly, comprehensive, insights, robust, leverage, foster, landscape, nuanced, multifaceted, holistic, streamline, elevate, empower), marcadores gramaticais (nominalizações, aberturas de frase com oração em "-ing"), a camada 2026 do LinkedIn (quietly, matters, compound, signal, "the work", "built different", load-bearing, "doing the heavy lifting", "let that sink in", "that's the real story"), pontes de revelação medidas como negativas para alcance ("The result?" -4,8%, "It's not X, it's Y" -4,9%, "Stop X, start Y" -6,7%, "Here's what/how" -4,3%), todas as 6 formas de paralelismo negativo, tríades empilhadas ou perfeitamente paralelas e qualquer 3ª tríade em um post, e indícios de fechamento clichê ("What do you think?", "Tag someone who needs this").
 
-**AESTHETIC tier** (opt-in only, will flatten literary writing): patterns AI uses but humans use legitimately. Covers the one remaining natural triad, decaying 2023-24 vocabulary that is now mostly harmless (delve, tapestry, realm, intricate, journey, paradigm), defendable normal English (cultivate, vibrant, garner, showcase, underscore), and passive voice (academic-writing defense ignored).
+**Nível AESTHETIC** (apenas opcional, vai achatar escrita literária): padrões que a IA usa mas que humanos também usam legitimamente. Cobre a única tríade natural remanescente, o vocabulário de 2023-24 em queda que hoje é majoritariamente inofensivo (delve, tapestry, realm, intricate, journey, paradigm), inglês normal defensável (cultivate, vibrant, garner, showcase, underscore), e voz passiva (a defesa da escrita acadêmica é ignorada).
 
-### Pass 2: RHYTHM (restore natural variance)
+### Passo 2: RHYTHM (restaurar a variância natural)
 
-Detectors do not score burstiness, and on LinkedIn sentence-length variance is not an engagement lever in either direction. What readers do notice is the mechanical-uniformity tell (every sentence the same length, machine-flat; structure is 36% of expert judgments) and, worse, the staged variance that second-generation humanizers add. So Pass 2 has two jobs: fix rhythm only where it reads machine-flat, and remove manufactured variance everywhere. It never adds variance as a tactic.
+Os detectores não pontuam burstiness (irregularidade de ritmo), e no LinkedIn a variância de comprimento de frase não é uma alavanca de engajamento em nenhum dos dois sentidos. O que os leitores de fato percebem é o indício de uniformidade mecânica (toda frase com o mesmo tamanho, mecanicamente achatada; estrutura é 36% dos julgamentos de especialistas) e, pior, a variância encenada que humanizadores de segunda geração adicionam. Então o Passo 2 tem duas funções: corrigir o ritmo apenas onde ele soa mecanicamente achatado, e remover variância fabricada em todo lugar. Ele nunca adiciona variância como tática.
 
-- Per paragraph: one genuinely long sentence (25+ words, with a subordinate clause that does real work) next to a short one is fine and is what human variance looks like. Two or three mid-length sentences in a row are also fine. Edit only when every sentence in the paragraph runs the same length and reads flat, and then edit one sentence, not the paragraph.
-- Standalone fragments: at most 2 per post, total. "Worth it." once is a voice quirk. Three in a post is a pattern.
-- Banned outright (rewrite as full sentences): "The X? Y." reveals; "No X. No Y. Just Z."; "All the X. None of the Y."; "Simple. Effective. Easy." adjective stacks; one-word paragraphs ("Still." "Mostly." "Exactly."); pseudo-Socratic Q&A ("Why? Because..."); "Short. Punchy. Done." staccato runs. Fragment runs are the tell.
-- Layout is not rhythm. One or two sentences per paragraph with blank lines between them is mobile-native LinkedIn formatting and stays (our corpus shows a mild uniform-rhythm advantage for that one-idea-per-line format at 112-204 words). Fragment-for-drama inside those paragraphs is the tell. Keep the layout, fix the sentences.
-- Length note: on LinkedIn our corpus (n=397, author-normalised) shows sentence-length variance is not an engagement lever (null to slightly negative within-creator, no length-dependent flip). The short-form "don't force variance" rule applies to sibling platforms (Threads, short X); here it applies at every length.
-- Break perfect parallel structures with one asymmetric sentence, once. Never alternate long/short/long/short across a post; that seesaw is the humanizer fingerprint.
+- Por parágrafo: uma frase genuinamente longa (25+ palavras, com uma oração subordinada que cumpre uma função real) ao lado de uma curta é normal e é como a variância humana se parece. Duas ou três frases de comprimento médio seguidas também estão bem. Edite apenas quando toda frase do parágrafo tiver o mesmo comprimento e soar achatada, e então edite uma frase, não o parágrafo inteiro.
+- Fragmentos isolados: no máximo 2 por post, no total. "Valeu a pena." uma vez é uma peculiaridade de voz. Três em um post é um padrão.
+- Banido terminantemente (reescrever como frases completas): revelações do tipo "O X? Y."; "Nada de X. Nada de Y. Só Z."; "Tudo de X. Nada de Y."; empilhamentos de adjetivos como "Simples. Eficaz. Fácil."; parágrafos de uma única palavra ("Ainda." "Quase." "Exatamente."); pseudo-diálogo socrático ("Por quê? Porque..."); sequências staccato como "Curto. Direto. Pronto.". Sequências de fragmentos são o indício.
+- Layout não é ritmo. Uma ou duas frases por parágrafo com linhas em branco entre elas é a formatação nativa para mobile do LinkedIn e permanece (nosso corpus mostra uma leve vantagem de ritmo uniforme para esse formato de uma-ideia-por-linha entre 112-204 palavras). Fragmentos por dramaticidade dentro desses parágrafos é o indício. Mantenha o layout, corrija as frases.
+- Nota sobre extensão: no LinkedIn nosso corpus (n=397, normalizado por autor) mostra que a variância de comprimento de frase não é uma alavanca de engajamento (de nula a levemente negativa dentro do mesmo criador, sem inversão dependente de tamanho). A regra de "não force variância" das plataformas irmãs de formato curto (Threads, X curto) se aplica aqui em qualquer extensão.
+- Quebre estruturas perfeitamente paralelas com uma frase assimétrica, uma vez. Nunca alterne longo/curto/longo/curto ao longo de um post; esse vaivém é a assinatura do humanizador.
 
-Target: Flesch reading ease >55. No sentence-length variance target. The check is "does any paragraph read machine-flat, and did I add a staccato pattern," not a number.
+Meta: facilidade de leitura Flesch >55. Não há meta de variância de comprimento de frase. O teste é "algum parágrafo soa mecanicamente achatado, e eu adicionei um padrão staccato", não um número.
 
-### Pass 3: ADD (human fingerprints)
+### Passo 3: ADD (marcas de autenticidade humana)
 
-Require at least:
-- One odd-precision number WITH a named referent: who, what, when, or what it cost ("$4,730 in Vercel overages, March invoice", not "$5k" and not "significant costs"). A bare number is not a fingerprint; LLM news copy uses more numbers than humans do. The referent is what carries the signal.
-- One named entity (real person, company, date, city, tool)
-- One first-person sensory detail
-- One contradiction or self-correction, stated as a fact ("I predicted 3 months. It took 11."), not framed
-- One specific, dated, uncomfortable fact stated flat, with no framing sentence before or after it. Not "I'll be honest, this hurt: we lost the client." Just "We lost Carta as a client on 14 Feb." The fact carries the vulnerability. A framing sentence converts it into performed sincerity, which readers now read as the tell.
+Exija pelo menos:
+- Um número de precisão incomum COM um referente nomeado: quem, o quê, quando, ou quanto custou ("R$ 4.730 em excedentes na Vercel, fatura de março", não "R$ 5 mil" e não "custos significativos"). Um número solto não é uma marca de autenticidade; textos de notícias gerados por LLM usam mais números do que humanos. O referente é o que carrega o sinal.
+- Uma entidade nomeada (pessoa real, empresa, data, cidade, ferramenta)
+- Um detalhe sensorial em primeira pessoa
+- Uma contradição ou autocorreção, declarada como fato ("Eu previ 3 meses. Levou 11."), não emoldurada
+- Um fato específico, datado e desconfortável declarado de forma seca, sem frase de introdução antes ou depois. Não "Vou ser sincero, isso doeu: perdemos o cliente." Apenas "Perdemos a Carta como cliente em 14 de fevereiro." O fato carrega a vulnerabilidade. Uma frase de introdução transforma isso em sinceridade encenada, o que os leitores hoje reconhecem como o indício.
 
-Forbidden as openers or pivots (sincerity announcements, a named 2026 tell): "let me be honest", "I'll be real", "honestly?", "to be direct", "the honest version is", "honest caveat", "real talk", "I'll say the quiet part", "can I be vulnerable for a second", "unpopular opinion:" as a preface to a popular one. Also forbidden as insertions: hedges the author did not write ("perhaps", "I might be wrong but", "it seems"). Performed hesitancy is 2x more common in LLM text than in expert human text; adding it makes the draft read more AI, not less.
+Proibido como aberturas ou pivôs (anúncios de sinceridade, um indício nomeado de 2026): "deixa eu ser honesto", "vou ser real", "sinceramente?", "para ser direto", "a versão honesta é", "ressalva honesta", "falando sério", "vou dizer a parte quieta em voz alta", "posso ser vulnerável por um segundo", "opinião impopular:" como prefácio de uma opinião popular. Também proibido como inserções: hedges que o autor não escreveu ("talvez", "posso estar errado, mas", "parece que"). Hesitação encenada é 2x mais comum em texto de LLM do que em texto humano especializado; adicioná-la faz o rascunho soar mais como IA, não menos.
 
-Varied sentence length is Pass 2's job. Do not add rhythm here.
+Variar o comprimento de frase é função do Passo 2. Não adicione ritmo aqui.
 
-If the input lacks these, ask the user for a specific number, name, or moment to plug in. Don't fabricate.
+Se a entrada não tiver esses elementos, peça ao usuário um número, nome ou momento específico para inserir. Não invente.
 
-### Pass 4: SELF-CHECK (over-correction guard)
+### Passo 4: SELF-CHECK (proteção contra correção excessiva)
 
-Humanizer output has its own fingerprint. Before returning, re-read the result once and answer three questions:
+O resultado do humanizador tem sua própria assinatura. Antes de retornar, releia o resultado uma vez e responda três perguntas:
 
-(a) Did Pass 2 create staccato stacks, "The result?" reveal bridges, one-word paragraphs, or a long/short/long/short seesaw? If yes, merge fragments back into full sentences.
-(b) Did Pass 3 add a framed confession, a sincerity announcement, or a hedge the author never wrote? If yes, strip the frame and keep only the flat fact, or remove the insertion.
-(c) Did scrubbing flatten the author's voice: uniform tone, no reaction, no concrete detail left, every em dash gone, every triad gone, every long sentence chopped? If yes, restore what the author had. Zero em dashes and zero triads is a tell in its own right.
+(a) O Passo 2 criou empilhamentos staccato, pontes de revelação do tipo "E o resultado?", parágrafos de uma única palavra, ou um vaivém longo/curto/longo/curto? Se sim, funda os fragmentos de volta em frases completas.
+(b) O Passo 3 adicionou uma confissão emoldurada, um anúncio de sinceridade, ou um hedge que o autor nunca escreveu? Se sim, remova a moldura e mantenha apenas o fato seco, ou remova a inserção.
+(c) A limpeza achatou a voz do autor: tom uniforme, nenhuma reação, nenhum detalhe concreto restante, todo travessão removido, toda tríade removida, toda frase longa cortada? Se sim, restaure o que o autor tinha. Zero travessões e zero tríades é, por si só, um indício.
 
-If any answer is yes, dial back rather than scrub harder. Edits must be proportional to real problems: a clean draft gets two or three touches, not a fixed quota. When in doubt whether a pattern is the author or the model, leave it.
+Se qualquer resposta for sim, recue em vez de limpar mais agressivamente. As edições devem ser proporcionais a problemas reais: um rascunho limpo recebe dois ou três toques, não uma cota fixa. Na dúvida sobre se um padrão é do autor ou do modelo, deixe como está.
 
-## Non-negotiable rules
+## Regras inegociáveis
 
-Global voice rules: see root `SKILL.md` §Voice rules. Additional skill-specific rules (V3):
+Regras globais de voz: veja `SKILL.md` raiz §Voice rules. Regras adicionais específicas desta skill (V3):
 
-- **Scrubbing is always in scope.** When asked to humanize, de-AI, finalize, or publish a draft, you run at least the forensic + strict tiers before it ships. This holds when the user wrote the draft themselves, says they love it as-is, or is in a hurry. Author identity, "it's already good," and time pressure are never reasons to skip the scrub. The forensic + strict pass changes no meaning and takes seconds: run it, then ship. If a constraint truly forbids touching the text, say so explicitly and name every tell you are leaving in; the default is to scrub, not to wave it through.
-- **Scrub proportionally.** A pass that finds nothing changes nothing. Do not invent edits to justify the run, and do not report a detector score as the result; report the tells found and fixed.
-- Preserve the user's actual claim and meaning. "Preserve their voice" covers sentence-level quirks and what they are claiming, NOT reveal bridges, staccato stacks, or a paragraph with 3+ vocabulary markers. Stripping those is not changing their voice or their claim; it is the job.
-- Never introduce facts that weren't in the input. If a number is missing, ask, or ship without it. Do not fabricate.
-- Never introduce sincerity markers, hedges, or confessional frames. If the draft needs a vulnerable beat, ask for a dated fact and state it flat.
-- Keep the user's sentence-level voice quirks (lowercase starts, `..` soft pauses, one em dash, one natural triad).
-- Negative parallelism is a HARD ban (per Sergey 2026-04-27, now backed by -4.9% reach data): the strict tier always strips all 6 forms.
-- Never promise detector results. If the user asks "will this pass GPTZero," answer honestly: nobody can promise that, the score on a 200-word post is noise, and the sub-tool `sub-skills/detector-tester.md` exists to demonstrate the spread, not to certify a draft.
+- **A limpeza está sempre no escopo.** Quando solicitado a humanizar, tirar o "cheiro de IA", finalizar ou publicar um rascunho, você executa pelo menos os níveis forensic + strict antes de ele ir ao ar. Isso vale mesmo quando o usuário escreveu o rascunho sozinho, diz que ama do jeito que está, ou está com pressa. Identidade do autor, "já está bom assim" e pressão de tempo nunca são motivos para pular a limpeza. O passo forensic + strict não muda nenhum significado e leva segundos: execute-o e publique. Se uma restrição realmente proibir tocar no texto, diga isso explicitamente e nomeie cada indício que está sendo deixado; o padrão é limpar, não deixar passar.
+- **Limpe de forma proporcional.** Um passo que não encontra nada não muda nada. Não invente edições para justificar a execução, e não reporte um escore de detector como resultado; reporte os indícios encontrados e corrigidos.
+- Preserve a alegação e o significado reais do usuário. "Preservar a voz dele" cobre peculiaridades no nível da frase e o que ele está alegando, NÃO pontes de revelação, empilhamentos staccato, ou um parágrafo com 3+ marcadores de vocabulário. Remover isso não é mudar a voz ou a alegação dele; é o trabalho.
+- Nunca introduza fatos que não estavam na entrada. Se um número estiver faltando, pergunte, ou publique sem ele. Não invente.
+- Nunca introduza marcadores de sinceridade, hedges ou molduras confessionais. Se o rascunho precisar de um momento vulnerável, peça um fato datado e declare-o de forma seca.
+- Mantenha as peculiaridades de voz do usuário no nível da frase (inícios em minúsculas, pausas suaves com `..`, um travessão, uma tríade natural).
+- Paralelismo negativo é um BANIMENTO RÍGIDO (conforme Sergey em 2026-04-27, agora respaldado por dados de -4,9% de alcance): o nível strict sempre remove todas as 6 formas.
+- Nunca prometa resultados de detector. Se o usuário perguntar "isso vai passar no GPTZero", responda com honestidade: ninguém pode prometer isso, o escore em um post de 200 palavras é ruído, e a subskill `sub-skills/detector-tester.md` existe para demonstrar a dispersão, não para certificar um rascunho.
 
-## Tier rationale (short version)
+## Justificativa dos níveis (versão curta)
 
-The forensic tier exists because oaicite tokens, knowledge-cutoff disclaimers, and Mad-Libs blanks are pure model leakage that no human writer ever produces. Catching them is undefendable. The strict tier exists because the durable 2026 markers (common words at 3+ per paragraph, reveal bridges, staccato stacks, stacked triads) are exactly what expert readers cite when they spot AI text and what LinkedIn's slop filter reacts to, so stripping them improves the post even if the writer is human. The aesthetic tier exists because a single natural triad, passive voice, and the decaying 2023-24 vocabulary appear in AI output but also appear in Lincoln, every epidemiologist, and every book printed since 1500. Banning them blindly catches Hemingway as AI. Run aesthetic mode only when audience-fit demands it.
+O nível forensic existe porque tokens oaicite, avisos de corte de conhecimento e lacunas estilo Mad-Libs são vazamento puro de modelo que nenhum escritor humano jamais produz. Detectá-los é indefensável. O nível strict existe porque os marcadores duráveis de 2026 (palavras comuns a 3+ por parágrafo, pontes de revelação, empilhamentos staccato, tríades empilhadas) são exatamente o que leitores especializados citam quando identificam texto de IA e o que o filtro de slop do LinkedIn detecta, então removê-los melhora o post mesmo que o autor seja humano. O nível aesthetic existe porque uma única tríade natural, voz passiva e o vocabulário em queda de 2023-24 aparecem em saídas de IA mas também aparecem em Lincoln, em todo epidemiologista, e em todo livro impresso desde 1500. Baní-los cegamente identifica Hemingway como IA. Execute o modo aesthetic apenas quando a adequação ao público exigir.
 
-For per-rule justification and famous human defenders, see `sub-skills/rules-explainer.md` (and the rule index at `references/rules-explainer.md`). For the V3 evidence and confidence labels, see `references/tier-rationale.md` §V3.
+Para justificativa por regra e defensores humanos famosos, veja `sub-skills/rules-explainer.md` (e o índice de regras em `references/rules-explainer.md`). Para as evidências e rótulos de confiança da V3, veja `references/tier-rationale.md` §V3.
 
-For the unreliability of AI detectors generally (61.3% false positive on TOEFL essays per Stanford 2023; 92-95% catch rate on prompt-style humanizers per VUB 2026), see `sub-skills/detector-tester.md`. Run it via `python3 scripts/test_detectors.py --text "..." --demo` (offline) or with paid keys configured in `scripts/detectors.env.example`. It documents disagreement; it does not certify drafts.
+Para a falta de confiabilidade dos detectores de IA em geral (61,3% de falso positivo em redações do TOEFL segundo Stanford 2023; taxa de captura de 92-95% em humanizadores no estilo prompt segundo VUB 2026), veja `sub-skills/detector-tester.md`. Execute-o via `python3 scripts/test_detectors.py --text "..." --demo` (offline) ou com chaves pagas configuradas em `scripts/detectors.env.example`. Ele documenta a discordância; não certifica rascunhos.
 
-For emoji-pattern detection (lightbulb, rocket, sparkles signature), see `sub-skills/emoji-detector.md` and the per-emoji frequency table at `references/emoji-patterns.md`.
+Para detecção de padrão de emoji (assinatura lâmpada, foguete, brilhos), veja `sub-skills/emoji-detector.md` e a tabela de frequência por emoji em `references/emoji-patterns.md`.
 
-## Example
+## Exemplo
 
-See `references/examples.md` for worked examples.
+Veja `references/examples.md` para exemplos trabalhados.
 
-## Files
+## Arquivos
 
-- `SKILL.md` — this file (rewrite scrubber + audit-mode entry)
-- `references/scrub-rules.md` — full regex patterns by tier, density scoring, rhythm rules
-- `references/voice-fingerprint.md` — how to preserve user voice while scrubbing
-- `references/tier-rationale.md` — long-form per-rule justification plus the V3 evidence section
-- `references/rules-explainer.md` — machine-readable index of every rule with citations
-- `references/emoji-patterns.md` — AI-correlated emoji frequency table
-- `references/detector-list.md` — supported AI detectors with API endpoints and accuracy notes
-- `references/audit-ai-tells.md` — blacklist + regex used in audit mode
-- `references/audit-checklist.md` — 20-point pre-publish checklist with thresholds
-- `references/audit-examples.md` — worked audit examples
-- `sub-skills/post-audit.md` — pre-publish audit workflow (detection-only, no rewrite)
-- `sub-skills/rules-explainer.md` — when to defend a flagged rule (em dash, rule of three, passive voice)
-- `sub-skills/emoji-detector.md` — scan / score / suggest workflow for emoji density
-- `sub-skills/detector-tester.md` — run text through 5 AI detectors in parallel and report disagreement
-- `sub-skills/voice-profile.md` — build/update the user's Voice & Brand Profile (`--mode profile`); the filled `../../references/voice-profile.md` is then read by every writing skill so drafts match the user's real voice
-- `scripts/test_detectors.py` — runs the parallel detector test (supports `--demo` for offline mode)
-- `scripts/requirements.txt` — Python deps for the detector script (`requests`, `python-dotenv`)
-- `scripts/detectors.env.example` — template for the 5 detector API keys
+- `SKILL.md` — este arquivo (limpador de reescrita + entrada do modo audit)
+- `references/scrub-rules.md` — padrões regex completos por nível, pontuação de densidade, regras de ritmo
+- `references/voice-fingerprint.md` — como preservar a voz do usuário durante a limpeza
+- `references/tier-rationale.md` — justificativa longa por regra, mais a seção de evidências da V3
+- `references/rules-explainer.md` — índice legível por máquina de cada regra com citações
+- `references/emoji-patterns.md` — tabela de frequência de emoji correlacionado com IA
+- `references/detector-list.md` — detectores de IA suportados com endpoints de API e notas de precisão
+- `references/audit-ai-tells.md` — lista negra + regex usados no modo audit
+- `references/audit-checklist.md` — checklist de 20 pontos pré-publicação com limites
+- `references/audit-examples.md` — exemplos trabalhados de auditoria
+- `sub-skills/post-audit.md` — fluxo de auditoria pré-publicação (apenas detecção, sem reescrita)
+- `sub-skills/rules-explainer.md` — quando defender uma regra sinalizada (travessão, regra do três, voz passiva)
+- `sub-skills/emoji-detector.md` — fluxo de varredura / pontuação / sugestão para densidade de emoji
+- `sub-skills/detector-tester.md` — roda o texto por 5 detectores de IA em paralelo e reporta a discordância
+- `sub-skills/voice-profile.md` — constrói/atualiza o Perfil de Voz & Marca do usuário (`--mode profile`); o `../../references/voice-profile.md` preenchido é então lido por toda skill de escrita para que os rascunhos combinem com a voz real do usuário
+- `scripts/test_detectors.py` — executa o teste de detector em paralelo (suporta `--demo` para modo offline)
+- `scripts/requirements.txt` — dependências Python para o script de detector (`requests`, `python-dotenv`)
+- `scripts/detectors.env.example` — template para as 5 chaves de API de detector
 
-## Related skills
+## Skills relacionadas
 
-- `linkedin-post-writer` — generates drafts that already pass the humanizer
+- `linkedin-post-writer` — gera rascunhos que já passam pelo humanizador

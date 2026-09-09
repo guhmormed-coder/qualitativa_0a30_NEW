@@ -1,90 +1,90 @@
 ---
 name: linkedin-profile-optimizer
-description: 'Audit and rewrite a LinkedIn profile end-to-end for 2026: headline, About 7-step, Featured, banner, photo, Experience metrics, Skills, custom URL, recommendations. Triggers on "review my profile", "rewrite my headline", "fix my About", "optimize banner", "profile audit", "LinkedIn bio". Converts resume-style profiles to ones that convert 3-5x better.'
+description: 'Audita e reescreve um perfil do LinkedIn de ponta a ponta para 2026: headline, Sobre em 7 etapas, Destaques, banner, foto, métricas de Experiência, Competências, URL personalizada, recomendações. Aciona com "revise meu perfil", "reescreva minha headline", "corrija meu Sobre", "otimize o banner", "auditoria de perfil", "bio do LinkedIn". Converte perfis no estilo currículo em perfis que convertem de 3 a 5 vezes mais.'
 ---
 
-# LinkedIn Profile Optimizer
+# Otimizador de Perfil do LinkedIn
 
-Audit the nine components of a LinkedIn profile (photo, banner, headline, About, Featured, Experience, Skills, custom URL, recommendations) against 2026 best practices, then rewrite each section that needs it. Optimized profiles get ~3.9x more views and convert visitors 3-5x better than default/resume-style profiles.
+Audite os nove componentes de um perfil do LinkedIn (foto, banner, headline, Sobre, Destaques, Experiência, Competências, URL personalizada, recomendações) em relação às melhores práticas de 2026 e reescreva cada seção que precisar. Perfis otimizados recebem cerca de 3,9x mais visualizações e convertem visitantes de 3 a 5x melhor do que perfis padrão/no estilo currículo.
 
-## When to use
+## Quando usar
 
-- User pastes their LinkedIn profile URL and asks for an audit
-- User wants to rewrite their headline, About section, or Featured section
-- User is launching a content strategy and needs the profile to match
-- Any of: "review my profile", "fix my headline", "optimize bio", "profile audit", "LinkedIn optimization"
+- O usuário cola a URL do perfil do LinkedIn e pede uma auditoria
+- O usuário quer reescrever a headline, a seção Sobre ou a seção Destaques
+- O usuário está lançando uma estratégia de conteúdo e precisa que o perfil esteja alinhado
+- Qualquer um destes: "revise meu perfil", "corrija minha headline", "otimize minha bio", "auditoria de perfil", "otimização de LinkedIn"
 
-## Input
+## Entrada
 
-- Profile URL (or screenshots of sections)
-- Goal: **clients** / **job seeking** / **authority** — Featured and CTA vary by goal
-- Optional: draft content to grade against the existing profile
+- URL do perfil (ou capturas de tela das seções)
+- Objetivo: **clientes** / **busca de emprego** / **autoridade** — Destaques e CTA variam conforme o objetivo
+- Opcional: conteúdo em rascunho para avaliar em relação ao perfil existente
 
-## Output
+## Saída
 
-A structured audit + rewrite in this shape:
+Uma auditoria estruturada + reescrita neste formato:
 
-1. **Scorecard** (9 sections, pass/fail/needs-work)
-2. **Priority fixes** (ranked by impact)
-3. **Before → After rewrites** for each failing section
-4. **Expected uplift** (based on benchmark data)
+1. **Placar** (9 seções, aprovado/reprovado/precisa melhorar)
+2. **Correções prioritárias** (classificadas por impacto)
+3. **Reescritas Antes → Depois** para cada seção reprovada
+4. **Ganho esperado** (com base em dados de referência)
 
-## Steps
+## Etapas
 
-1. **Intake.** Collect profile state + goal. Flag missing sections.
-2. **Score each of 9 sections** against the checklist (see references/).
-3. **Rewrite headline** using `[What You Do] | [Who You Help] [Achieve What Result]` — fit all 220 chars.
-4. **Rebuild About** with 7-step structure; verify first **265-275 chars** hook before "see more".
-5. **Curate Featured** (3 strong items) matched to the goal:
-   - **Clients:** lead magnet + case study with results + calendar link
-   - **Job seeking:** portfolio + best work samples + top-performing post
-   - **Authority:** best content + media/podcast features + newsletter signup
-6. **Rewrite Experience bullets** as `action verb + specific metric`. Add 5+ skills per role. Pin top 3 skills.
-7. **Claim custom URL** (linkedin.com/in/firstnamelastname, not the `-123abc456` default).
-8. **Draft recommendation requests** with specifics ("about [project/skill]") — don't send LinkedIn's generic template.
-9. **Deliver before/after diff** + expected uplift (3.9x views, 3-5x conversion, 71% more likely to land interviews).
+1. **Levantamento.** Colete o estado do perfil + objetivo. Sinalize seções ausentes.
+2. **Avalie cada uma das 9 seções** em relação ao checklist (ver references/).
+3. **Reescreva a headline** usando `[O que você faz] | [Quem você ajuda] [Que resultado alcança]` — preencha todos os 220 caracteres.
+4. **Reconstrua o Sobre** com a estrutura de 7 etapas; verifique se os primeiros **265-275 caracteres** prendem a atenção antes do "ver mais".
+5. **Selecione os Destaques** (3 itens fortes) alinhados ao objetivo:
+   - **Clientes:** isca digital + estudo de caso com resultados + link de agenda
+   - **Busca de emprego:** portfólio + melhores amostras de trabalho + post de melhor desempenho
+   - **Autoridade:** melhor conteúdo + participações em mídia/podcast + inscrição na newsletter
+6. **Reescreva os itens de Experiência** como `verbo de ação + métrica específica`. Adicione 5+ competências por cargo. Fixe as 3 principais competências.
+7. **Reivindique a URL personalizada** (linkedin.com/in/nomesobrenome, não o padrão `-123abc456`).
+8. **Redija pedidos de recomendação** com especificidades ("sobre [projeto/competência]") — não envie o modelo genérico do LinkedIn.
+9. **Entregue o comparativo antes/depois** + o ganho esperado (3,9x mais visualizações, 3-5x mais conversão, 71% mais chances de conseguir entrevistas).
 
-## Nine-component scorecard
+## Placar dos nove componentes
 
-| # | Section | Pass criteria (2026) |
+| # | Seção | Critério de aprovação (2026) |
 |---|---------|----------------------|
-| 1 | **Photo** | ≥400x400, face fills 60% of frame, <3 years old, natural light, slight smile |
-| 2 | **Banner** | 1584x396, text in right 2/3, high contrast, includes value prop + CTA, tests well on mobile |
-| 3 | **Headline** | Uses all 220 chars; format `[What You Do] | [Who You Help] [Result]` |
-| 4 | **About** | 200-300 words, first-person, 7-step structure, hook in first 265-275 chars |
-| 5 | **Featured** | 3 items, matched to goal, custom 1200x627 thumbnails |
-| 6 | **Experience** | Every bullet = `action verb + metric`, 5+ skills per role, media attached |
-| 7 | **Skills** | 50 listed, top 3 pinned, mirrors target job descriptions, ≥1 endorsement each |
-| 8 | **Custom URL** | `linkedin.com/in/firstnamelastname` (not the default hash) |
-| 9 | **Recommendations** | At least 3 recent, specific (not generic), from diverse contexts |
+| 1 | **Foto** | ≥400x400, rosto preenche 60% do quadro, <3 anos, luz natural, sorriso leve |
+| 2 | **Banner** | 1584x396, texto nos 2/3 direitos, alto contraste, inclui proposta de valor + CTA, funciona bem no mobile |
+| 3 | **Headline** | Usa todos os 220 caracteres; formato `[O que você faz] | [Quem você ajuda] [Resultado]` |
+| 4 | **Sobre** | 200-300 palavras, primeira pessoa, estrutura de 7 etapas, gancho nos primeiros 265-275 caracteres |
+| 5 | **Destaques** | 3 itens, alinhados ao objetivo, miniaturas personalizadas de 1200x627 |
+| 6 | **Experiência** | Todo item = `verbo de ação + métrica`, 5+ competências por cargo, mídia anexada |
+| 7 | **Competências** | 50 listadas, top 3 fixadas, espelha as descrições de vaga-alvo, ≥1 endosso cada |
+| 8 | **URL personalizada** | `linkedin.com/in/nomesobrenome` (não o hash padrão) |
+| 9 | **Recomendações** | Pelo menos 3 recentes, específicas (não genéricas), de contextos diversos |
 
-## Key benchmarks (from co.actor research)
+## Principais benchmarks (da pesquisa da co.actor)
 
-- Optimized About sections: **3.9x more views**
-- 5+ listed skills: **3x more connection requests**
-- Comprehensive profile: **71% more likely to land interviews**
-- Featured section content: **30% longer viewing time**
-- Personal founder profile vs company page: **315% more engagement, 270% more conversions**
+- Seções Sobre otimizadas: **3,9x mais visualizações**
+- 5+ competências listadas: **3x mais solicitações de conexão**
+- Perfil completo: **71% mais chances de conseguir entrevistas**
+- Conteúdo na seção Destaques: **30% mais tempo de visualização**
+- Perfil pessoal de fundador vs. página de empresa: **315% mais engajamento, 270% mais conversões**
 
-## Hard rules
+## Regras rígidas
 
-Global voice rules: see root `SKILL.md` §Voice rules. Additional skill-specific rules:
+Regras globais de voz: ver `SKILL.md` raiz §Regras de voz. Regras adicionais específicas desta skill:
 
-- First person ("I help...") never third person ("Jane is a passionate...")
-- Never "passionate thought leader" / "driven professional" / "results-oriented" (profile-specific AI vocab)
-- Avoid wall-of-text. Use line breaks in About section
-- 80% of users leave Featured empty. Filling it is a free edge
+- Primeira pessoa ("eu ajudo...") nunca terceira pessoa ("Jane é uma apaixonada...")
+- Nunca "líder de pensamento apaixonado" / "profissional determinado" / "orientado a resultados" (vocabulário de IA específico de perfil)
+- Evite bloco de texto. Use quebras de linha na seção Sobre
+- 80% dos usuários deixam os Destaques vazios. Preenchê-los é uma vantagem gratuita
 
-## Reference files
+## Arquivos de referência
 
-- `references/profile-headline-formulas.md` — 220-char formula + before/after examples
-- `references/about-section-templates.md` — 7-step structure with character budgets
-- `references/featured-section-playbook.md` — goal-matched content types
-- `references/banner-photo-specs.md` — dimensions, composition, mobile test
-- `references/experience-skills-rules.md` — bullet rewriting + skills strategy + custom URL + recommendations
+- `references/profile-headline-formulas.md` — fórmula de 220 caracteres + exemplos de antes/depois
+- `references/about-section-templates.md` — estrutura de 7 etapas com orçamento de caracteres
+- `references/featured-section-playbook.md` — tipos de conteúdo alinhados ao objetivo
+- `references/banner-photo-specs.md` — dimensões, composição, teste no mobile
+- `references/experience-skills-rules.md` — reescrita de itens + estratégia de competências + URL personalizada + recomendações
 
-## Related skills
+## Skills relacionadas
 
-- `linkedin-content-planner` — post pillars should echo the profile's headline/About thesis
-- `linkedin-post-writer` — Featured section rotates quarterly; pin your flagship post
-- `linkedin-humanizer` — scrub profile copy for the same AI tells we scrub from posts
+- `linkedin-content-planner` — os pilares de post devem ecoar a tese da headline/Sobre do perfil
+- `linkedin-post-writer` — a seção Destaques gira trimestralmente; fixe seu post principal
+- `linkedin-humanizer` — limpe o texto do perfil dos mesmos sinais de IA que removemos dos posts

@@ -1,79 +1,79 @@
-# LinkedIn Post Audit
+# Auditoria de Post do LinkedIn
 
-Run any post draft through the 2026 heuristic checklist. Catches AI tells, timing/format issues, length violations, and structural weaknesses before publishing.
+Passa qualquer rascunho de post pelo checklist heurístico de 2026. Pega indícios de IA, problemas de timing/formato, violações de tamanho e fraquezas estruturais antes de publicar.
 
-## When to use
+## Quando usar
 
-- Before publishing a hand-written or AI-drafted post
-- When `linkedin-post-writer` finishes a draft (auto-invoked)
-- When a recent post didn't land and the user wants a post-mortem
+- Antes de publicar um post escrito à mão ou rascunhado por IA
+- Quando o `linkedin-post-writer` termina um rascunho (invocado automaticamente)
+- Quando um post recente não decolou e o usuário quer um post-mortem
 
-## Input
+## Entrada
 
-- A post draft (plain text)
-- Optional: target audience, scheduled time, format (text / carousel / video / image)
+- Um rascunho de post (texto simples)
+- Opcional: público-alvo, horário agendado, formato (texto / carrossel / vídeo / imagem)
 
-## Output
+## Saída
 
-- **Pass/Fail** header
-- **Blockers** (must fix before publishing): em dash density over the cap, paragraphs at 3+ AI markers, reveal bridges, external links in body
-- **Warnings** (ship-risky): staccato stacks, sincerity markers, missing referenced numbers, generic close
-- **Score estimates:** per-paragraph tell density, approximate first-hour reach fit. No detector score: on 100-300 word text those are noise and the skill does not promise to beat them
-- **Suggested fixes:** inline rewrites for each issue
-- **Timing recommendation:** best window given audience
+- Cabeçalho de **Aprovado/Reprovado**
+- **Bloqueios** (precisam ser corrigidos antes de publicar): densidade de travessão acima do teto, parágrafos com 3+ marcadores de IA, pontes de revelação, links externos no corpo
+- **Avisos** (arriscados para publicar): empilhamentos staccato, marcadores de sinceridade, números de referência ausentes, fechamento genérico
+- **Estimativas de escore:** densidade de indício por parágrafo, ajuste aproximado de alcance na primeira hora. Sem escore de detector: em textos de 100-300 palavras eles são ruído e a skill não promete superá-los
+- **Correções sugeridas:** reescritas inline para cada problema
+- **Recomendação de timing:** melhor janela dado o público
 
-## Checks
+## Checagens
 
-### Blockers (auto-fail)
-1. Em dash density above ~1 per 100 words (1-2 per post); en dash between clauses; double dash. A single em dash is not a blocker
-2. External link in body (not in first comment)
-3. Post exceeds 3,000 chars (LinkedIn hard limit)
-4. Opens with "In today's fast-paced world...", a reveal bridge ("Here's what", "Stop X, start Y"), or a sincerity announcement ("Let me be honest")
-5. Ends with "What do you think?", "Thoughts?", "Let that sink in."
-6. Any paragraph with 3+ vocabulary / grammar markers, or any negative-parallelism / "The result?" reveal bridge (see `../references/audit-ai-tells.md`)
-7. Frames LinkedIn as inferior in a LinkedIn post (algo penalty)
+### Bloqueios (falha automática)
+1. Densidade de travessão acima de ~1 a cada 100 palavras (1-2 por post); meia-risca entre orações; travessão duplo. Um único travessão não é um bloqueio
+2. Link externo no corpo (não no primeiro comentário)
+3. Post excede 3.000 caracteres (limite rígido do LinkedIn)
+4. Abre com "No mundo acelerado de hoje...", uma ponte de revelação ("Here's what", "Stop X, start Y"), ou um anúncio de sinceridade ("Deixa eu ser honesto")
+5. Termina com "O que você acha?", "Pensamentos?", "Deixe isso te marcar."
+6. Qualquer parágrafo com 3+ marcadores de vocabulário / gramática, ou qualquer ponte de revelação de paralelismo negativo / "E o resultado?" (veja `../references/audit-ai-tells.md`)
+7. Enquadra o LinkedIn como inferior dentro de um post do LinkedIn (penalidade do algoritmo)
 
-### Warnings (flag with suggested fix)
-8. Hook doesn't fit in first 210 chars (mobile `…see more` cutoff)
-9. Length outside 900-1,300 sweet spot (or 1,500-1,900 for long-form with breaks)
-10. A paragraph that reads machine-flat (4+ sentences all the same length, no clause doing work). Flag that paragraph only; sentence-length variance is not a reach lever on LinkedIn, so never suggest adding variance as a tactic
-11. No odd-precision number with a named referent (a bare number does not clear this)
-12. No named entity
-13. No first-person sensory detail
-14. Stacked or perfectly parallel rule-of-three, or 3+ triads in the post (one natural triad passes)
-15. More than 2 hashtags
-16. User's own product named more than once
-17. Missing reaction-prompting moment: a specific, dated, uncomfortable fact stated flat, or an opinion with stakes. A framed confession ("I'll be honest, this hurt") does not clear this; the frame is the tell
-18. Passive voice >10%
-18a. Staccato stacks ("Short. Punchy. Done.", "No X. No Y. Just Z.", "All the X. None of the Y."), one-word paragraphs, more than 2 standalone fragments, or a long/short/long/short seesaw
-18b. Hedging stack or sincerity marker mid-post ("perhaps", "it seems", "honestly?", "real talk")
-18c. Over-scrubbed: uniformly flat tone, zero em dashes and zero triads in a long post, no reaction or opinion anywhere
-19. First line is not a complete standalone hook (it needs line 2 to make sense). 2026 corpus: every top post front-loads a full hook before the fold.
-20. No blank line after the hook / wall-of-text open. Winners use heavy whitespace: one idea per line, blank line after the hook.
-21. Emoji sprinkled mid-text in a narrative post, or more than 2-3 total in prose. Top posts front-load 1-2 meaningful emoji; serious/contrarian posts use zero. Exempt: structured glossary/list formats (e.g. F15 Explain-to-Kids) where one emoji anchors each line on purpose.
-22. Comment-gate ("comment X and I'll DM you...") in a post whose goal is thought leadership. Organic top performers use zero hard comment-gates; only flag-clear when the post's goal is list-building (then F6 is intentional).
-23. No clear primary goal: the post chases comments, reposts, likes, and saves all at once. Pick one (see `../../../references/hook-formulas.md` "Engagement-goal split").
+### Avisos (sinalizar com correção sugerida)
+8. O gancho não cabe nos primeiros 210 caracteres (corte de "…ver mais" no mobile)
+9. Tamanho fora do ponto ideal de 900-1.300 (ou 1.500-1.900 para formato longo com quebras)
+10. Um parágrafo que soa mecanicamente achatado (4+ frases todas do mesmo tamanho, nenhuma oração cumprindo função). Sinalize apenas esse parágrafo; variância de comprimento de frase não é uma alavanca de alcance no LinkedIn, então nunca sugira adicionar variância como tática
+11. Sem número de precisão incomum com referente nomeado (um número solto não resolve isso)
+12. Sem entidade nomeada
+13. Sem detalhe sensorial em primeira pessoa
+14. Regra do três empilhada ou perfeitamente paralela, ou 3+ tríades no post (uma tríade natural passa)
+15. Mais de 2 hashtags
+16. O próprio produto do usuário citado mais de uma vez
+17. Falta um momento que provoque reação: um fato específico, datado e desconfortável declarado de forma seca, ou uma opinião com risco envolvido. Uma confissão emoldurada ("vou ser honesto, isso doeu") não resolve isso; a moldura é o indício
+18. Voz passiva >10%
+18a. Empilhamentos staccato ("Curto. Direto. Pronto.", "Nada de X. Nada de Y. Só Z.", "Tudo de X. Nada de Y."), parágrafos de uma única palavra, mais de 2 fragmentos isolados, ou um vaivém longo/curto/longo/curto
+18b. Empilhamento de hedge ou marcador de sinceridade no meio do post ("talvez", "parece que", "sinceramente?", "falando sério")
+18c. Limpeza excessiva: tom uniformemente achatado, zero travessões e zero tríades em um post longo, nenhuma reação ou opinião em lugar nenhum
+19. A primeira linha não é um gancho autônomo completo (precisa da linha 2 para fazer sentido). Corpus de 2026: todo top post carrega um gancho completo antes da dobra.
+20. Sem linha em branco depois do gancho / abertura em bloco de texto. Os vencedores usam bastante espaço em branco: uma ideia por linha, linha em branco depois do gancho.
+21. Emoji espalhado no meio do texto em um post narrativo, ou mais de 2-3 no total em prosa. Os top posts carregam 1-2 emojis significativos no início; posts sérios/contrarian usam zero. Isento: formatos estruturados de glossário/lista (ex.: F15 Explicar-para-Crianças) em que um emoji ancora cada linha de propósito.
+22. Portão de comentário ("comente X e eu te mando DM...") em um post cujo objetivo é liderança de pensamento. Os top performers orgânicos usam zero portões de comentário rígidos; só sinalize claramente quando o objetivo do post for construção de lista (nesse caso o F6 é intencional).
+23. Sem objetivo primário claro: o post persegue comentários, republicações, curtidas e salvamentos ao mesmo tempo. Escolha um (veja `../../../references/hook-formulas.md` "Engagement-goal split").
 
-### Info (neutral notes)
-24. Suggested posting time given audience
-25. Format recommendation (text / carousel / video) given topic
-26. Similar-hook detection: if this post's first 100 chars match a recent post
+### Info (notas neutras)
+24. Horário de publicação sugerido dado o público
+25. Recomendação de formato (texto / carrossel / vídeo) dado o tema
+26. Detecção de gancho similar: se os primeiros 100 caracteres deste post combinam com um post recente
 
-## Steps
+## Passos
 
-1. Parse draft into sentences, paragraphs, first-210-char hook.
-2. Run each blocker check; collect failures.
-3. If any blockers, return **FAIL** with specific fix suggestions; optionally offer auto-rewrite.
-4. If no blockers, run warnings.
-5. Report per-paragraph tell density (markers per paragraph, em dashes per 100 words, fragment count, triad count). Do not estimate a detector score.
-6. Return structured report.
+1. Divida o rascunho em frases, parágrafos, gancho dos primeiros 210 caracteres.
+2. Rode cada checagem de bloqueio; colete as falhas.
+3. Se houver bloqueios, retorne **REPROVADO** com sugestões de correção específicas; opcionalmente ofereça reescrita automática.
+4. Se não houver bloqueios, rode os avisos.
+5. Reporte a densidade de indício por parágrafo (marcadores por parágrafo, travessões por 100 palavras, contagem de fragmentos, contagem de tríades). Não estime um escore de detector.
+6. Retorne o relatório estruturado.
 
-## Example
+## Exemplo
 
-See `../references/audit-examples.md` for worked examples.
+Veja `../references/audit-examples.md` para exemplos trabalhados.
 
 
-## Related skills
+## Skills relacionadas
 
-- `linkedin-humanizer` — aggressive rewrite if audit fails
-- `linkedin-post-writer` — regenerate draft using a proven formula
+- `linkedin-humanizer` — reescrita agressiva se a auditoria falhar
+- `linkedin-post-writer` — regenerar rascunho usando uma fórmula comprovada

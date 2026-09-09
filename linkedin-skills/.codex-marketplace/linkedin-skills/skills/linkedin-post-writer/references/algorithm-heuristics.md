@@ -1,3 +1,3 @@
-# Algorithm heuristics
+# Heurísticas de algoritmo
 
-This file moved to root-level `references/algorithm-heuristics.md`. Update your citation.
+Este arquivo foi movido para `references/algorithm-heuristics.md` na raiz. Atualize sua citação.

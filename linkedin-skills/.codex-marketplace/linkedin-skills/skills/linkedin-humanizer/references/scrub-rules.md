@@ -1,25 +1,25 @@
-# Scrub Rules — V3 Tiered (Regex + Replacements + Density)
+# Regras de Limpeza — V3 em Camadas (Regex + Substituições + Densidade)
 
-V3 (2026-09): rules recalibrated on 2026 evidence. Vocabulary is scored by **density per paragraph**, not deleted per word. Em dashes are **capped**, not banned. Forced rhythm is a tell, not a fix. See SKILL.md for tier philosophy and `tier-rationale.md` §V3 for the evidence.
+V3 (2026-09): regras recalibradas com evidências de 2026. O vocabulário é pontuado por **densidade por parágrafo**, não excluído por palavra. Travessões têm **teto**, não são banidos. Ritmo forçado é um indício, não uma correção. Veja o SKILL.md para a filosofia dos níveis e `tier-rationale.md` §V3 para as evidências.
 
-## Contents
+## Conteúdo
 
-- Density scoring (how every vocabulary rule is applied)
-- TIER: FORENSIC (always on)
-- TIER: STRICT (default on)
-- TIER: AESTHETIC (opt-in only)
-- Pass 2 - Rhythm restoration (all tiers)
-- Pass 3 - Forbidden insertions (sincerity markers, hedges)
-- Cliché opener / closer detection (strict tier)
-- Preserve these (user voice, don't scrub)
-- Comment-reply scrub (when replying to commenters on your own post)
-- Announcement-opener scrub (strict tier)
+- Pontuação por densidade (como cada regra de vocabulário é aplicada)
+- NÍVEL: FORENSIC (sempre ativo)
+- NÍVEL: STRICT (ativo por padrão)
+- NÍVEL: AESTHETIC (apenas opcional)
+- Passo 2 - Restauração de ritmo (todos os níveis)
+- Passo 3 - Inserções proibidas (marcadores de sinceridade, hedges)
+- Detecção de abertura / fechamento clichê (nível strict)
+- Preserve isto (voz do usuário, não limpe)
+- Limpeza de resposta a comentário (ao responder comentaristas no seu próprio post)
+- Limpeza de abertura de anúncio (nível strict)
 
 ---
 
-## Density scoring (how every vocabulary rule is applied)
+## Pontuação por densidade (como cada regra de vocabulário é aplicada)
 
-The cluster principle: expert readers spot AI text from clusters of markers, not from any single word. One "notably" in a paragraph is English. "Notably", "comprehensive" and a nominalisation in the same paragraph is a signature.
+O princípio do agrupamento: leitores especializados identificam texto de IA por agrupamentos de marcadores, não por uma única palavra. Um "notably" em um parágrafo é inglês comum. "Notably", "comprehensive" e uma nominalização no mesmo parágrafo é uma assinatura.
 
 ```python
 def score_paragraph(paragraph: str, markers: dict) -> dict:
@@ -43,19 +43,19 @@ def score_paragraph(paragraph: str, markers: dict) -> dict:
     return {"hits": hits, "count": n, "action": action}
 ```
 
-Rules of application:
-- Score forensic markers separately: one hit = delete, no density threshold.
-- Post-level counts also matter for two patterns: triads (3+ per post = scrub down to one) and standalone fragments (3+ per post = merge back, see Pass 2).
-- Never replace a word with a synonym from the same list. "Leverage" to "harness" is not a fix.
-- When you rewrite a paragraph, rewrite it in the author's register (check `voice-fingerprint.md`), not in "plain" register. Plainness at uniform temperature is itself a fingerprint.
+Regras de aplicação:
+- Pontue os marcadores forenses separadamente: uma ocorrência = exclui, sem limiar de densidade.
+- Contagens no nível do post também importam para dois padrões: tríades (3+ por post = reduzir para uma) e fragmentos isolados (3+ por post = fundir de volta, veja o Passo 2).
+- Nunca substitua uma palavra por um sinônimo da mesma lista. "Leverage" por "harness" não é uma correção.
+- Ao reescrever um parágrafo, reescreva no registro do autor (confira `voice-fingerprint.md`), não em registro "neutro". Neutralidade em temperatura uniforme é, em si, uma assinatura.
 
 ---
 
-## TIER: FORENSIC (always on)
+## NÍVEL: FORENSIC (sempre ativo)
 
-Real model leakage. No human writer ever produces these. Every detector agrees. No defense exists.
+Vazamento real de modelo. Nenhum escritor humano jamais produz isso. Todo detector concorda. Não existe defesa.
 
-### AI tool markers (delete entirely + flag)
+### Marcadores de ferramenta de IA (excluir por completo + sinalizar)
 
 ```python
 FORENSIC_MARKERS = [
@@ -69,7 +69,7 @@ FORENSIC_MARKERS = [
 ]
 ```
 
-### Knowledge-cutoff disclaimers (delete sentence)
+### Avisos de corte de conhecimento (excluir a frase)
 
 ```python
 CUTOFF_DISCLAIMERS = [
@@ -81,7 +81,7 @@ CUTOFF_DISCLAIMERS = [
 ]
 ```
 
-### Phrasal templates (flag for user fill, do NOT auto-fill)
+### Templates fraseológicos (sinalizar para o usuário preencher, NÃO preencher automaticamente)
 
 ```python
 PHRASAL_TEMPLATES = [
@@ -95,9 +95,9 @@ PHRASAL_TEMPLATES = [
 ]
 ```
 
-### Em dash DENSITY (cap: about 1 per 100 words)
+### DENSIDADE de travessão (teto: cerca de 1 a cada 100 palavras)
 
-The character is not a tell. GPT-5.4 emits 1.43 em dashes per 1,000 words, below the human baseline of 3.23; 29% of human Instagram captions and 23% of top-creator LinkedIn posts in our corpus use one (author-relative ratio 1.09, i.e. not a reliable tell on LinkedIn). Zero em dashes in a post that wanted one is the tell of someone trying to look human. What is still forensic is the old GPT-4 glue habit: 3+ in a short post.
+O caractere não é um indício. O GPT-5.4 emite 1,43 travessões a cada 1.000 palavras, abaixo da referência humana de 3,23; 29% das legendas humanas do Instagram e 23% dos posts de top creators no LinkedIn no nosso corpus usam um (razão relativa ao autor de 1,09, ou seja, não é um indício confiável no LinkedIn). Zero travessões em um post que pedia um é o indício de alguém tentando parecer humano. O que ainda é forense é o antigo hábito de "cola" do GPT-4: 3+ em um post curto.
 
 ```python
 def em_dash_excess(text: str) -> int:
@@ -116,7 +116,7 @@ def em_dash_excess(text: str) -> int:
 # NEVER a period. "X. Y." from a split dash creates fragment stacking, which is a worse tell than the dash.
 ```
 
-### Outline-formula closers (flag)
+### Fechamentos em fórmula de outline (sinalizar)
 
 ```python
 OUTLINE_CLOSERS = [
@@ -130,11 +130,11 @@ OUTLINE_CLOSERS = [
 
 ---
 
-## TIER: STRICT (default on)
+## NÍVEL: STRICT (ativo por padrão)
 
-What expert human readers cite when they spot AI text (vocabulary 53%, sentence structure 36%) and what LinkedIn's slop filter reacts to. All vocabulary and grammar lists below go through `score_paragraph()`; reveal bridges and negative parallelism are scrubbed on a single hit.
+O que leitores humanos especializados citam quando identificam texto de IA (vocabulário 53%, estrutura de frase 36%) e o que o filtro de slop do LinkedIn percebe. Todas as listas de vocabulário e gramática abaixo passam por `score_paragraph()`; pontes de revelação e paralelismo negativo são removidos em uma única ocorrência.
 
-### Punctuation
+### Pontuação
 
 ```python
 STRICT_PUNCT = [
@@ -147,9 +147,9 @@ STRICT_PUNCT = [
 # ~1 per 100 words is replaced, and the replacement is comma / colon / parentheses / rewrite, never a period.
 ```
 
-### Vocabulary: durable 2026 markers (density-scored)
+### Vocabulário: marcadores duráveis de 2026 (pontuados por densidade)
 
-The 2023-24 list (delve, tapestry, realm) is decaying because humans now avoid those words. The durable markers are common words LLMs over-select at 2-5x human rate across GPT-5.5, Claude 4.8 and Gemini 3.1 (Kobak Sci Adv 2025; Wu et al 2026). They are ordinary English, so one per paragraph is fine. Three in a paragraph is a signature.
+A lista de 2023-24 (delve, tapestry, realm) está em queda porque os humanos agora evitam essas palavras. Os marcadores duráveis são palavras comuns que os LLMs selecionam em excesso a uma taxa 2-5x maior que a humana entre GPT-5.5, Claude 4.8 e Gemini 3.1 (Kobak Sci Adv 2025; Wu et al 2026). São inglês comum, então um por parágrafo está bem. Três em um parágrafo é uma assinatura.
 
 ```python
 STRICT_VOCAB_2026 = {
@@ -187,7 +187,7 @@ STRICT_ADVERB_FILLER = {
 }
 ```
 
-### Grammar markers (density-scored; the 2026 structural signature)
+### Marcadores gramaticais (pontuados por densidade; a assinatura estrutural de 2026)
 
 ```python
 GRAMMAR_MARKERS = {
@@ -204,9 +204,9 @@ GRAMMAR_MARKERS = {
 # Fix for nominalisation: use the verb. "the implementation of the new flow" → "when we implemented the new flow"
 ```
 
-### 2026 LinkedIn layer (density-scored)
+### Camada 2026 do LinkedIn (pontuada por densidade)
 
-Words and phrases that were human LinkedIn idiom in 2024 and are model idiom in 2026. Each counts as one marker; the phrases in the second block are scrubbed on a single hit because they are also reach-negative.
+Palavras e frases que eram gíria humana de LinkedIn em 2024 e são gíria de modelo em 2026. Cada uma conta como um marcador; as frases no segundo bloco são removidas em uma única ocorrência porque também são negativas para alcance.
 
 ```python
 LINKEDIN_LAYER_2026 = [
@@ -223,7 +223,7 @@ LINKEDIN_LAYER_2026 = [
 ]
 ```
 
-### Reveal bridges (single hit = replace; measured reach-negative on LinkedIn)
+### Pontes de revelação (uma ocorrência = substituir; medidas como negativas para alcance no LinkedIn)
 
 ```python
 REVEAL_BRIDGES = [
@@ -237,7 +237,7 @@ REVEAL_BRIDGES = [
 # Fix: delete the bridge and let the next sentence stand. It was the point anyway.
 ```
 
-### Negative parallelism (full coverage per 2026-04-27 ban; now also -4.9% reach)
+### Paralelismo negativo (cobertura total conforme banimento de 2026-04-27; agora também -4,9% de alcance)
 
 ```python
 NEG_PARALLEL_PATTERNS = [
@@ -258,9 +258,9 @@ NEG_PARALLEL_PATTERNS = [
 # Always flag for user review since meaning preservation needs human judgment.
 ```
 
-### Rule of three (strict at density; one natural triad is allowed)
+### Regra do três (strict em densidade; uma tríade natural é permitida)
 
-Tricolon runs at 2x expert-human density across 2026 frontier models (arXiv 2604.19768). The tell is the stacked or perfectly parallel triad and the repeat, not the form: 26% of top human tweets contain exactly one.
+Sequências de tricolon ocorrem a 2x a densidade de especialistas humanos entre os modelos de fronteira de 2026 (arXiv 2604.19768). O indício é a tríade empilhada ou perfeitamente paralela e a repetição, não a forma: 26% dos top tweets humanos contêm exatamente uma.
 
 ```python
 def detect_triads(text: str) -> list:
@@ -292,7 +292,7 @@ HOLLOW_ADJECTIVES = {"dynamic", "vibrant", "innovative", "faster", "cheaper", "b
                      "effective", "easy", "bold", "clear", "focused", "scalable", "powerful"}
 ```
 
-### Phrase-level cleanup
+### Limpeza no nível de frase
 
 ```python
 STRICT_PHRASES = [
@@ -314,11 +314,11 @@ STRICT_PHRASES = [
 
 ---
 
-## TIER: AESTHETIC (opt-in only)
+## NÍVEL: AESTHETIC (apenas opcional)
 
-Patterns AI uses but humans use legitimately, plus the 2023-24 vocabulary that is now decaying and mostly harmless. Apply only when audience demands it. Will flatten literary writing and will trip the Pass 4 guard.
+Padrões que a IA usa mas que humanos também usam legitimamente, mais o vocabulário de 2023-24 que hoje está em queda e é majoritariamente inofensivo. Aplicar apenas quando o público exigir. Vai achatar escrita literária e vai disparar a proteção do Passo 4.
 
-### Aesthetic vocabulary (decaying 2023-24 set + defendable normal English)
+### Vocabulário aesthetic (conjunto em queda de 2023-24 + inglês normal defensável)
 
 ```python
 AESTHETIC_VOCAB_REPLACE = {
@@ -346,7 +346,7 @@ AESTHETIC_VOCAB_REPLACE = {
 }
 ```
 
-### Em dashes (aesthetic: scrub the last one too)
+### Travessões (aesthetic: remove o último também)
 
 ```python
 # Strict leaves ~1 per 100 words. Aesthetic removes the remaining one(s) for audiences that
@@ -358,14 +358,14 @@ AESTHETIC_PUNCT_STRIP = [
 ]
 ```
 
-### Rule of three (the last natural one)
+### Regra do três (a última natural)
 
 ```python
 # Strict leaves one natural triad per post. Aesthetic breaks it into 2 or 4 items.
 # Defense: Lincoln, Caesar, Churchill. Apply only when the audience hunts for tells.
 ```
 
-### Passive voice
+### Voz passiva
 
 ```python
 # Defense: scientific writing, news leads, legal writing all require passive.
@@ -381,9 +381,9 @@ PASSIVE_TARGETS = [
 
 ---
 
-## Pass 2 — Rhythm restoration (all tiers)
+## Passo 2 — Restauração de ritmo (todos os níveis)
 
-Replaces V2's `enforce_burstiness()`. Detectors do not score burstiness (GPTZero dropped it in 2023). On LinkedIn, sentence-length variance is not an engagement lever in either direction: our author-normalised corpus (keyword n=205 + top-creator n=192, 2026-09) shows within-creator ratios of 0.96 / 0.80 / 0.92 across length bands, Spearman -0.06, and a mild uniform-rhythm advantage for one-idea-per-line posts at 112-204 words. The earlier X/Threads finding ("bursty wins on long posts") was an author confound and does not transfer. What readers do notice is machine-flat uniformity (structure = 36% of expert judgments) and, worse, staged variance: mechanical long/short alternation is a learnable humanizer fingerprint (DAMAGE 2025). So: fix rhythm only where it reads machine-flat, remove manufactured variance everywhere, never add variance as a tactic.
+Substitui o `enforce_burstiness()` da V2. Detectores não pontuam burstiness (o GPTZero abandonou isso em 2023). No LinkedIn, a variância de comprimento de frase não é uma alavanca de engajamento em nenhum dos dois sentidos: nosso corpus normalizado por autor (palavra-chave n=205 + top creators n=192, 2026-09) mostra razões dentro do mesmo criador de 0,96 / 0,80 / 0,92 entre faixas de comprimento, Spearman -0,06, e uma leve vantagem de ritmo uniforme para posts de uma-ideia-por-linha entre 112-204 palavras. A descoberta anterior de X/Threads ("burstiness vence em posts longos") era um fator de confusão de autor e não se transfere. O que os leitores de fato percebem é a uniformidade mecânica (estrutura = 36% dos julgamentos de especialistas) e, pior, a variância encenada: alternância mecânica de longo/curto é uma assinatura reconhecível de humanizador (DAMAGE 2025). Então: corrija o ritmo apenas onde soar mecanicamente achatado, remova variância fabricada em todo lugar, nunca adicione variância como tática.
 
 ```python
 STACCATO_TELLS = [
@@ -439,13 +439,13 @@ def restore_rhythm(text: str) -> str:
     return "\n\n".join(paragraphs)
 ```
 
-Layout vs rhythm: 1-2 sentence paragraphs with blank lines between them are LinkedIn's mobile-native layout and are **not** touched by this pass. A paragraph that is one full 22-word sentence is layout. A paragraph that is "Still." is fragment-for-drama. The pass edits sentences, never the blank lines.
+Layout vs ritmo: parágrafos de 1-2 frases com linhas em branco entre eles são o layout nativo para mobile do LinkedIn e **não** são tocados por este passo. Um parágrafo que é uma única frase completa de 22 palavras é layout. Um parágrafo que é "Ainda." é fragmento por dramaticidade. O passo edita frases, nunca as linhas em branco.
 
-Length note: on LinkedIn our corpus shows sentence-length variance is not an engagement lever (null-to-slightly-negative within-creator); the short-form "don't force variance" rule applies to sibling platforms (Threads, short X). Here it applies at every length.
+Nota sobre extensão: no LinkedIn nosso corpus mostra que a variância de comprimento de frase não é uma alavanca de engajamento (de nula a levemente negativa dentro do mesmo criador); a regra de "não force variância" das plataformas de formato curto se aplica em Threads e X curto. Aqui ela se aplica em qualquer extensão.
 
-## Pass 3 — Forbidden insertions (sincerity markers, hedges)
+## Passo 3 — Inserções proibidas (marcadores de sinceridade, hedges)
 
-Pass 3 adds concreteness only (a referenced odd-precision number, a named entity, a flat dated fact). It never adds these, and Pass 1 strict removes them when the draft already has them as an opener or pivot:
+O Passo 3 adiciona apenas concretude (um número de precisão incomum com referente, uma entidade nomeada, um fato datado e seco). Ele nunca adiciona o que segue, e o Passo 1 strict remove quando o rascunho já os tem como abertura ou pivô:
 
 ```python
 SINCERITY_MARKERS = [
@@ -459,7 +459,7 @@ SINCERITY_MARKERS = [
 # A flat dated uncomfortable fact with no frame is reach-POSITIVE (+4.6% to +10%, vendor data).
 ```
 
-## Cliché opener / closer detection (strict tier)
+## Detecção de abertura / fechamento clichê (nível strict)
 
 ```python
 OPENER_TELLS = [
@@ -485,42 +485,42 @@ CLOSER_TELLS = [
 ]
 ```
 
-## Preserve these (user voice, don't scrub)
+## Preserve isto (voz do usuário, não limpe)
 
-- Lowercase sentence starts (Serge's signature)
-- `..` as soft pause (not em dash)
-- One or two sentence fragments used intentionally ("Worth it.", "Every time.") - the cap is 2 per post, not 0
-- One em dash per ~100 words. Do not push the count to zero; zero is below the human baseline
-- One natural rule-of-three with concrete, non-interchangeable items
-- One genuinely long sentence per paragraph, even if a style guide would split it
-- Contractions (don't, it's, you're)
-- Specific numbers with referents and named entities (add MORE, never remove)
-- First-person sensory details
-- The author's reactions and opinions, including a blunt one. Flat tone across a whole post is a humanizer fingerprint
-- A single common-word marker in a paragraph ("notably", "robust" as a term of art). One is not a verdict
+- Inícios de frase em minúsculas (assinatura do Serge)
+- `..` como pausa suave (não travessão)
+- Um ou dois fragmentos de frase usados intencionalmente ("Valeu a pena.", "Toda vez.") - o teto é 2 por post, não 0
+- Um travessão a cada ~100 palavras. Não force a contagem a zero; zero está abaixo da referência humana
+- Uma regra do três natural com itens concretos e não intercambiáveis
+- Uma frase genuinamente longa por parágrafo, mesmo que um guia de estilo a dividisse
+- Contrações (don't, it's, you're)
+- Números específicos com referentes e entidades nomeadas (adicione MAIS, nunca remova)
+- Detalhes sensoriais em primeira pessoa
+- As reações e opiniões do autor, incluindo uma direta. Tom achatado ao longo de todo o post é uma assinatura de humanizador
+- Um único marcador de palavra comum em um parágrafo ("notably", "robust" como termo técnico). Um não é um veredito
 
-## Comment-reply scrub (when replying to commenters on your own post)
+## Limpeza de resposta a comentário (ao responder comentaristas no seu próprio post)
 
-**Forbidden author replies** (signal low quality, downrank the thread):
+**Respostas de autor proibidas** (sinalizam baixa qualidade, rebaixam a thread):
 
-- "Great point!"
-- "Thanks!"
+- "Ótimo ponto!"
+- "Obrigado!"
 - "100%"
-- "Well said."
+- "Bem dito."
 - "🙌"
-- "So true."
+- "Isso mesmo."
 
-**Required:** every author reply must contain at least one of:
-- A new concrete detail not in the original post
-- A specific name (person, company, tool)
-- A follow-up question that invites thread depth
+**Obrigatório:** toda resposta do autor deve conter ao menos um dos seguintes:
+- Um novo detalhe concreto que não estava no post original
+- Um nome específico (pessoa, empresa, ferramenta)
+- Uma pergunta de acompanhamento que convide profundidade na thread
 
-## Announcement-opener scrub (strict tier)
+## Limpeza de abertura de anúncio (nível strict)
 
-Replace these patterns with the concrete moment that prompted the post:
+Substitua estes padrões pelo momento concreto que motivou o post:
 
-- "I'm excited to announce" → describe what actually happened, in order
-- "I'm thrilled to share" → just share it, no preamble
-- "Honored to be mentioned" → what did you do to earn the mention?
-- "Delighted to be featured" → lead with the insight, not the feature
-- "Let me be honest" / "I'll be real" → delete the announcement; state the dated fact that follows it, flat
+- "Estou animado para anunciar" → descreva o que realmente aconteceu, em ordem
+- "Estou empolgado para compartilhar" → apenas compartilhe, sem preâmbulo
+- "Honrado por ser mencionado" → o que você fez para merecer a menção?
+- "Encantado por ser destacado" → comece pelo insight, não pelo destaque
+- "Deixa eu ser honesto" / "Vou ser real" → exclua o anúncio; declare o fato datado que vem depois, de forma seca

@@ -1,204 +1,204 @@
-# AI-Tell Rules: Tier-Classified Reference
+# Regras de Indícios de IA: Referência Classificada por Nível
 
-Fifteen rules from the `linkedin-humanizer` package, sorted by what kind of evidence each one actually represents.
+Quinze regras do pacote `linkedin-humanizer`, ordenadas pelo tipo de evidência que cada uma realmente representa.
 
-**Tiers:**
-- **Forensic** - real AI signal, undefendable. The model or its template leaked.
-- **Strict** - real human pattern, but the user banned it for taste. Defending it inside this brand voice is pointless.
-- **Aesthetic** - pattern flagged because LLMs use it, not because it signals AI. Famous human writers built careers on these.
+**Níveis:**
+- **Forensic** - sinal real de IA, indefensável. O modelo ou seu template vazou.
+- **Strict** - padrão humano real, mas o usuário o baniu por questão de estilo. Defendê-lo dentro desta voz de marca não faz sentido.
+- **Aesthetic** - padrão sinalizado porque LLMs o usam, não porque sinaliza IA. Escritores humanos famosos construíram carreiras sobre isso.
 
-**Defense strength:** how well the rule survives a "but a human wrote that" challenge. Low = the rule wins. High = the writer wins.
+**Força da defesa:** o quanto a regra sobrevive a um desafio do tipo "mas um humano escreveu isso". Baixa = a regra vence. Alta = o escritor vence.
 
-## Contents
+## Conteúdo
 
-- Tier 1 - Forensic (real AI signals)
-- Tier 2 - Strict (corporate-speak, easy ban)
-- Tier 3 - Aesthetic (overreach, defendable)
-- Summary table
-- Key citations
-
----
-
-## Tier 1 - Forensic (real AI signals)
-
-### Rule 1. `oaicite` / `contentReference` / `turn0search0` markers
-
-- **Tier:** forensic
-- **Why flagged:** These are internal tokens from OpenAI's tool-use scaffold (citation pills, search-result handles). They appear when someone copy-pastes from ChatGPT without cleaning the output. No human types `:contentReference[oaicite:0]{index=0}` by hand.
-- **Famous human user:** none. Zero recorded cases.
-- **Defense strength:** zero
-- **Citation:** Wikipedia, "Signs of AI writing" - https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing
-
-### Rule 2. Knowledge-cutoff disclaimers
-
-- **Tier:** forensic
-- **Why flagged:** Phrases like "As of my last update in January 2022..." or "I don't have access to real-time information..." are GPT-3.5/4 training-cutoff boilerplate. A human would write "as of last year" or just give the date.
-- **Famous human user:** none.
-- **Defense strength:** zero
-- **Citation:** Wikipedia "Signs of AI writing"; TechCrunch on OpenAI's discontinued classifier - https://techcrunch.com/2023/07/25/openai-scuttles-ai-written-text-detector-over-low-rate-of-accuracy/
-
-### Rule 3. Phrasal templates left unfilled
-
-- **Tier:** forensic
-- **Why flagged:** Visible scaffolding like `[Your Name]`, `2025-XX-XX`, `[Describe section X]`, `[Insert metric here]`. These are prompt-template artifacts where the human forgot to fill the slot.
-- **Famous human user:** none.
-- **Defense strength:** zero
-- **Citation:** Wikipedia "Signs of AI writing"
-
-### Rule 4. Mad-Libs blanks
-
-- **Tier:** forensic
-- **Why flagged:** Adjacent to rule 3. Sentences like "I [verb] the [noun] every [time period]" or "The result was a [adjective] [outcome]." These come from instruction-tuned outputs where the model echoed the prompt structure instead of resolving it.
-- **Famous human user:** none.
-- **Defense strength:** zero
-- **Citation:** Wikipedia "Signs of AI writing"
-
-### Rule 5. Em dash overuse - above ~1 per 100 words (3+ in a short post)
-
-- **Tier:** forensic (at the overuse threshold)
-- **Why flagged:** A single em dash is a stylistic choice (see rule 11). But three or more em dashes in a 200-word LinkedIn post was one of the strongest stylometric signals GPT-4 emitted: the model glued clauses where a human would split into two sentences. V3 keeps the density cap (~1 per 100 words, 1-2 per post) and replaces only the excess, with a comma, colon or parentheses, never a period.
-- **Famous human user:** Emily Dickinson is the famous defense, but Dickinson used em dashes in poetry across hundreds of poems - not three in a single 200-word business post. Density matters.
-- **Defense strength:** low (at the overuse threshold). The single-use defense (rule 11) is high; the overuse case is forensic.
-- **Citation:** Wikipedia "Signs of AI writing"; GPT-5.4 corpus rate 1.43 per 1,000 words vs. human 3.23 (2026)
+- Nível 1 - Forensic (sinais reais de IA)
+- Nível 2 - Strict (jargão corporativo, banimento fácil)
+- Nível 3 - Aesthetic (exagero, defensável)
+- Tabela-resumo
+- Citações-chave
 
 ---
 
-## Tier 2 - Strict (corporate-speak, easy ban)
+## Nível 1 - Forensic (sinais reais de IA)
 
-### Rule 6. AI vocabulary: leverage, utilize, harness, delve, foster, cultivate
+### Regra 1. Marcadores `oaicite` / `contentReference` / `turn0search0`
 
-- **Tier:** strict
-- **Why flagged:** Each of these has a one-syllable Anglo-Saxon equivalent (use, use, use, look, build, grow). LLMs over-use the Latinate version because RLHF training samples skewed corporate. Humans use them too - but the user has banned them in his own voice for taste.
-- **Famous human user:** any McKinsey deck, any HBR article from 1995-2015. "Leverage" was the management-consulting verb of the 1990s.
-- **Defense strength:** medium in the abstract, **zero inside this brand voice** - the user explicitly rejected this register.
-- **Citation:** Wikipedia "Signs of AI writing" lists all six under AI vocabulary
+- **Nível:** forensic
+- **Por que é sinalizado:** São tokens internos do scaffold de uso de ferramentas da OpenAI (pílulas de citação, handles de resultado de busca). Aparecem quando alguém copia e cola do ChatGPT sem limpar a saída. Nenhum humano digita `:contentReference[oaicite:0]{index=0}` manualmente.
+- **Usuário humano famoso:** nenhum. Zero casos registrados.
+- **Força da defesa:** zero
+- **Citação:** Wikipedia, "Signs of AI writing" - https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing
 
-### Rule 7. Filler adverbs: fundamentally, essentially, ultimately, crucially
+### Regra 2. Avisos de corte de conhecimento
 
-- **Tier:** strict
-- **Why flagged:** These are sentence-opener crutches that add no information. "Fundamentally, the issue is X" reduces to "the issue is X." LLMs use them as soft hedges; the user wants them deleted.
-- **Famous human user:** academic philosophy papers (Daniel Dennett uses "fundamentally" constantly). Academic register is fine in academia, not in a LinkedIn post.
-- **Defense strength:** medium in academic prose, **zero in this voice**.
-- **Citation:** Wikipedia "Signs of AI writing"
+- **Nível:** forensic
+- **Por que é sinalizado:** Frases como "Até minha última atualização em janeiro de 2022..." ou "Não tenho acesso a informações em tempo real..." são boilerplate de corte de treinamento do GPT-3.5/4. Um humano escreveria "no ano passado" ou simplesmente daria a data.
+- **Usuário humano famoso:** nenhum.
+- **Força da defesa:** zero
+- **Citação:** Wikipedia "Signs of AI writing"; TechCrunch sobre o classificador descontinuado da OpenAI - https://techcrunch.com/2023/07/25/openai-scuttles-ai-written-text-detector-over-low-rate-of-accuracy/
 
-### Rule 8. Filler openers: "In today's fast-paced world", "In the age of AI"
+### Regra 3. Templates fraseológicos deixados sem preencher
 
-- **Tier:** strict
-- **Why flagged:** These are pure throat-clearing. The post hasn't started yet. LLMs deploy them because the training data is full of corporate blog intros that did the same thing.
-- **Famous human user:** every LinkedIn ghost-writer from 2015-2022. The pattern predates GPT.
-- **Defense strength:** low. Even before AI, copywriting style guides killed these openers.
-- **Citation:** Wikipedia "Signs of AI writing"; Ann Handley, *Everybody Writes* (2014) on opener filler
+- **Nível:** forensic
+- **Por que é sinalizado:** Andaimes visíveis como `[Your Name]`, `2025-XX-XX`, `[Describe section X]`, `[Insert metric here]`. São artefatos de template de prompt em que o humano esqueceu de preencher o campo.
+- **Usuário humano famoso:** nenhum.
+- **Força da defesa:** zero
+- **Citação:** Wikipedia "Signs of AI writing"
 
-### Rule 9. Cliché closers: "What do you think?", "Tag someone who needs this"
+### Regra 4. Lacunas estilo Mad-Libs
 
-- **Tier:** strict
-- **Why flagged:** Generic engagement bait. LinkedIn's algorithm explicitly penalizes engagement bait under its 2024+ heuristics, and these closers signal the post wasn't written for a specific reader.
-- **Famous human user:** every LinkedInfluencer 2016-2022. Pre-dates AI.
-- **Defense strength:** low. Even pre-AI, the algorithm hated them.
-- **Citation:** LinkedIn engagement-bait policy (in-app community guidelines); Wikipedia "Signs of AI writing"
+- **Nível:** forensic
+- **Por que é sinalizado:** Próxima da regra 3. Frases como "Eu [verbo] o [substantivo] a cada [período de tempo]" ou "O resultado foi um [adjetivo] [resultado]." Vêm de saídas ajustadas por instrução em que o modelo ecoou a estrutura do prompt em vez de resolvê-la.
+- **Usuário humano famoso:** nenhum.
+- **Força da defesa:** zero
+- **Citação:** Wikipedia "Signs of AI writing"
 
-### Rule 10. Negative parallelism: "X isn't Y, it's Z"
+### Regra 5. Uso excessivo de travessão - acima de ~1 a cada 100 palavras (3+ em um post curto)
 
-- **Tier:** strict (Sergey's hard ban)
-- **Why flagged:** "It's not a bug, it's a feature" / "It's not what you say, it's how you say it." LLMs over-deploy this because RLHF reward models favor it as quotable. The user has explicitly banned it as a personal pattern - too clean, too pat, no friction.
-- **Famous human user:** every TED talk 2010-2020. Tony Robbins, Simon Sinek. The pattern is real human rhetoric, but the user rejected it.
-- **Defense strength:** medium in oratory, **zero in this voice** (hard ban).
-- **Citation:** Wikipedia "Signs of AI writing" under "negative parallelism"
-
----
-
-## Tier 3 - Aesthetic (overreach, defendable)
-
-### Rule 11. Em dashes - single use
-
-- **Tier:** aesthetic
-- **Why flagged:** Leftover 2023-24 folklore. In 2026 the frontier models emit fewer em dashes than humans (GPT-5.4: 1.43 per 1,000 words vs. human 3.23) and The Economist called the dash "no longer a reliable sign." The signal only exists above ~1 per 100 words (rule 5). Zero dashes across a long post is now itself the tell of someone trying to look human.
-- **Famous human users:**
-  - **Emily Dickinson** - built her entire poetic style on em dashes. "Because I could not stop for Death - / He kindly stopped for me -" (1863). Roughly 1,800 poems, em dashes throughout.
-  - **Cormac McCarthy** - uses em dashes in *Blood Meridian*, *The Road*, *No Country for Old Men*. McCarthy famously refuses quotation marks; em dashes do dialogue work.
-  - **Joan Didion**, *The Year of Magical Thinking* (2005) - em dashes for parenthetical grief.
-- **Defense strength:** high (single use). The overuse threshold (3+ in a short post) flips to forensic - see rule 5.
-- **Citation:** Stanford HAI / Liang et al. (2023) on detector bias - https://hai.stanford.edu/news/ai-detectors-biased-against-non-native-english-writers ; TechCrunch on OpenAI classifier shutdown for low accuracy - https://techcrunch.com/2023/07/25/openai-scuttles-ai-written-text-detector-over-low-rate-of-accuracy/
-
-### Rule 12. Rule of three
-
-- **Tier:** aesthetic for the one natural triad; strict for stacked / perfectly parallel triads and any third triad in a post
-- **Why flagged:** Triadic structure ("X, Y, and Z") runs at 2x expert-human density across 2026 frontier models (arXiv 2604.19768). The tell is the density and the interchangeable items, not the form: 26% of top human tweets contain exactly one.
-- **Famous human users:**
-  - **Lincoln**, Gettysburg Address, 1863: "of the people, by the people, for the people."
-  - **Julius Caesar**, 47 BCE: *veni, vidi, vici* - "I came, I saw, I conquered."
-  - **Winston Churchill**, House of Commons, 13 May 1940: "blood, toil, tears and sweat" (technically four, but the cadence is built on threes throughout the speech).
-  - **Thomas Jefferson**, Declaration of Independence, 1776: "life, liberty, and the pursuit of happiness."
-  - **Aristotle**, *Rhetoric*, 4th century BCE - formally identified the rule of three as a foundational rhetorical device.
-- **Defense strength:** high. This is 2,400 years of human rhetoric. Flagging it as AI is detector overreach.
-- **Citation:** Aristotle, *Rhetoric*, Book III; Stanford HAI on detector false positives
-
-### Rule 13. Passive voice
-
-- **Tier:** aesthetic
-- **Why flagged:** GPT-4 over-uses passive constructions. Humanizers strip them by default. But passive voice has legitimate uses - agent-obscuring, formal register, scientific neutrality.
-- **Famous human users:**
-  - **Watson & Crick**, *Nature*, 25 April 1953: "It has not escaped our notice that the specific pairing we have postulated immediately suggests a possible copying mechanism for the genetic material." Pure passive understatement - the most famous sentence in 20th-century biology.
-  - **Joan Didion**, *Slouching Towards Bethlehem* (1968) - uses passive deliberately for narrative distance.
-  - **The entire scientific literature** - passive voice is journal house style for a reason. "The samples were treated with..." is correct; "We treated the samples with..." reads as informal.
-- **Defense strength:** high in technical/scientific contexts, medium in business writing. Don't strip passive in a research summary.
-- **Citation:** Watson & Crick, *Nature* 171:737-738 (1953); Wikipedia "Signs of AI writing" notes passive voice as flagged but contested
-
-### Rule 14. AI vocabulary: "robust"
-
-- **Tier:** aesthetic
-- **Why flagged:** Lumped in with leverage/utilize/harness in OriginalityAI's vocabulary list.
-- **Famous human users:**
-  - **Every epidemiologist for a century** - "robust" has a precise statistical meaning: insensitive to assumption violations. "A robust estimator" is a 1960s term of art (Peter J. Huber, *Robust Statistics*, 1964).
-  - **Software engineers** - "robust system" means tolerant of edge cases. Replacing it with "solid" loses meaning.
-  - **Immunologists** - "robust immune response" is standard vocabulary in *Nature* and *Cell*.
-- **Defense strength:** high in technical writing, medium in business writing. Keep "robust" if it's doing technical work; replace with "solid" only when it's generic praise.
-- **Citation:** Peter J. Huber, "Robust Estimation of a Location Parameter," *Annals of Mathematical Statistics* (1964); Stanford HAI on detector bias against technical English
-
-### Rule 15. Curly quotes ("smart quotes")
-
-- **Tier:** aesthetic
-- **Why flagged:** Some detectors weight `"` `"` `'` `'` as AI signal because LLM outputs preserve them and human typing usually produces straight `"` and `'`.
-- **Famous human users:**
-  - **Microsoft Word**, **Google Docs**, **Apple Pages** - all auto-convert straight quotes to curly by default. Anyone typing in those tools produces curly quotes without thinking.
-  - **The New Yorker** - house style since 1925 mandates curly quotes. Every published piece uses them.
-  - **Every traditionally typeset book since the invention of moveable type** - curly quotes are correct typography. Straight quotes are an ASCII compromise.
-- **Defense strength:** high. Flagging curly quotes as AI is detector incompetence - it's flagging Microsoft Word's defaults.
-- **Citation:** *The Chicago Manual of Style*, 17th ed., §6.115 on quotation marks; Adelphi University lawsuit illustrating cost of false positives - https://www.plagiarismtoday.com/2025/10/14/adelphi-university-sued-over-ai-allegation/
+- **Nível:** forensic (no limiar de excesso)
+- **Por que é sinalizado:** Um único travessão é uma escolha estilística (veja a regra 11). Mas três ou mais travessões em um post de 200 palavras no LinkedIn foi um dos sinais estilométricos mais fortes que o GPT-4 emitia: o modelo colava orações onde um humano dividiria em duas frases. A V3 mantém o teto de densidade (~1 a cada 100 palavras, 1-2 por post) e substitui apenas o excesso, por vírgula, dois-pontos ou parênteses, nunca por um ponto final.
+- **Defensora humana famosa:** Emily Dickinson é a defesa famosa, mas Dickinson usou travessões em poesia ao longo de centenas de poemas - não três em um único post comercial de 200 palavras. Densidade importa.
+- **Força da defesa:** baixa (no limiar de excesso). A defesa de uso único (regra 11) é alta; o caso de excesso é forensic.
+- **Citação:** Wikipedia "Signs of AI writing"; taxa do corpus GPT-5.4 de 1,43 a cada 1.000 palavras vs. 3,23 humana (2026)
 
 ---
 
-## Summary table
+## Nível 2 - Strict (jargão corporativo, banimento fácil)
 
-| # | Rule | Tier | Defense | Famous defender |
+### Regra 6. Vocabulário de IA: leverage, utilize, harness, delve, foster, cultivate
+
+- **Nível:** strict
+- **Por que é sinalizado:** Cada uma dessas palavras tem um equivalente anglo-saxão de uma sílaba (use, use, use, look, build, grow). LLMs usam em excesso a versão de origem latina porque as amostras de treinamento RLHF pendem para o corporativo. Humanos também as usam - mas o usuário as baniu da própria voz por questão de estilo.
+- **Usuário humano famoso:** qualquer apresentação da McKinsey, qualquer artigo da HBR de 1995-2015. "Leverage" foi o verbo da consultoria de gestão dos anos 1990.
+- **Força da defesa:** média em abstrato, **zero dentro desta voz de marca** - o usuário rejeitou explicitamente esse registro.
+- **Citação:** Wikipedia "Signs of AI writing" lista todas as seis sob vocabulário de IA
+
+### Regra 7. Advérbios de preenchimento: fundamentally, essentially, ultimately, crucially
+
+- **Nível:** strict
+- **Por que é sinalizado:** São muletas de abertura de frase que não acrescentam informação. "Fundamentalmente, a questão é X" se reduz a "a questão é X." LLMs os usam como hedges suaves; o usuário quer que sejam excluídos.
+- **Usuário humano famoso:** artigos acadêmicos de filosofia (Daniel Dennett usa "fundamentally" constantemente). O registro acadêmico está bem na academia, não em um post do LinkedIn.
+- **Força da defesa:** média em prosa acadêmica, **zero nesta voz**.
+- **Citação:** Wikipedia "Signs of AI writing"
+
+### Regra 8. Aberturas de preenchimento: "No mundo acelerado de hoje", "Na era da IA"
+
+- **Nível:** strict
+- **Por que é sinalizado:** São pura enrolação. O post ainda nem começou. LLMs as usam porque os dados de treinamento estão cheios de introduções de blog corporativo que faziam a mesma coisa.
+- **Usuário humano famoso:** todo ghost-writer de LinkedIn de 2015-2022. O padrão é anterior ao GPT.
+- **Força da defesa:** baixa. Mesmo antes da IA, guias de estilo de copywriting já matavam essas aberturas.
+- **Citação:** Wikipedia "Signs of AI writing"; Ann Handley, *Everybody Writes* (2014) sobre aberturas de preenchimento
+
+### Regra 9. Fechamentos clichê: "O que você acha?", "Marque alguém que precisa ver isso"
+
+- **Nível:** strict
+- **Por que é sinalizado:** Isca de engajamento genérica. O algoritmo do LinkedIn penaliza explicitamente isca de engajamento sob suas heurísticas de 2024+, e esses fechamentos sinalizam que o post não foi escrito para um leitor específico.
+- **Usuário humano famoso:** todo influenciador do LinkedIn de 2016-2022. Anterior à IA.
+- **Força da defesa:** baixa. Mesmo antes da IA, o algoritmo já odiava isso.
+- **Citação:** política de isca de engajamento do LinkedIn (diretrizes de comunidade no app); Wikipedia "Signs of AI writing"
+
+### Regra 10. Paralelismo negativo: "X não é Y, é Z"
+
+- **Nível:** strict (banimento rígido do Sergey)
+- **Por que é sinalizado:** "Não é um bug, é uma funcionalidade" / "Não é o que você diz, é como você diz." LLMs usam isso em excesso porque os modelos de recompensa do RLHF favorecem por ser citável. O usuário baniu explicitamente isso como padrão pessoal - limpo demais, arrumado demais, sem atrito.
+- **Usuário humano famoso:** toda palestra do TED de 2010-2020. Tony Robbins, Simon Sinek. O padrão é retórica humana real, mas o usuário o rejeitou.
+- **Força da defesa:** média em oratória, **zero nesta voz** (banimento rígido).
+- **Citação:** Wikipedia "Signs of AI writing" sob "negative parallelism"
+
+---
+
+## Nível 3 - Aesthetic (exagero, defensável)
+
+### Regra 11. Travessões - uso único
+
+- **Nível:** aesthetic
+- **Por que é sinalizado:** Folclore remanescente de 2023-24. Em 2026 os modelos de fronteira emitem menos travessões que humanos (GPT-5.4: 1,43 a cada 1.000 palavras vs. 3,23 humana) e a The Economist chamou o travessão de "não mais um sinal confiável". O sinal só existe acima de ~1 a cada 100 palavras (regra 5). Zero travessões em um post longo agora é, por si só, o indício de alguém tentando parecer humano.
+- **Usuários humanos famosos:**
+  - **Emily Dickinson** - construiu todo o seu estilo poético sobre travessões. "Because I could not stop for Death - / He kindly stopped for me -" (1863). Cerca de 1.800 poemas, travessões por toda parte.
+  - **Cormac McCarthy** - usa travessões em *Blood Meridian*, *The Road*, *No Country for Old Men*. McCarthy é famoso por recusar aspas; os travessões fazem o trabalho do diálogo.
+  - **Joan Didion**, *The Year of Magical Thinking* (2005) - travessões para luto parentético.
+- **Força da defesa:** alta (uso único). O limiar de excesso (3+ em um post curto) vira forensic - veja a regra 5.
+- **Citação:** Stanford HAI / Liang et al. (2023) sobre viés de detector - https://hai.stanford.edu/news/ai-detectors-biased-against-non-native-english-writers ; TechCrunch sobre o desligamento do classificador da OpenAI por baixa precisão - https://techcrunch.com/2023/07/25/openai-scuttles-ai-written-text-detector-over-low-rate-of-accuracy/
+
+### Regra 12. Regra do três
+
+- **Nível:** aesthetic para a única tríade natural; strict para tríades empilhadas / perfeitamente paralelas e qualquer terceira tríade em um post
+- **Por que é sinalizado:** A estrutura triádica ("X, Y, e Z") ocorre a 2x a densidade de especialistas humanos entre os modelos de fronteira de 2026 (arXiv 2604.19768). O indício é a densidade e os itens intercambiáveis, não a forma: 26% dos top tweets humanos contêm exatamente uma.
+- **Usuários humanos famosos:**
+  - **Lincoln**, Discurso de Gettysburg, 1863: "of the people, by the people, for the people."
+  - **Júlio César**, 47 a.C.: *veni, vidi, vici* - "vim, vi, venci."
+  - **Winston Churchill**, Câmara dos Comuns, 13 de maio de 1940: "blood, toil, tears and sweat" (tecnicamente quatro, mas a cadência é construída em três ao longo de todo o discurso).
+  - **Thomas Jefferson**, Declaração de Independência, 1776: "life, liberty, and the pursuit of happiness."
+  - **Aristóteles**, *Retórica*, século IV a.C. - identificou formalmente a regra do três como um dispositivo retórico fundamental.
+- **Força da defesa:** alta. São 2.400 anos de retórica humana. Sinalizar isso como IA é exagero de detector.
+- **Citação:** Aristóteles, *Retórica*, Livro III; Stanford HAI sobre falsos positivos de detector
+
+### Regra 13. Voz passiva
+
+- **Nível:** aesthetic
+- **Por que é sinalizado:** O GPT-4 usa construções passivas em excesso. Humanizadores as removem por padrão. Mas a voz passiva tem usos legítimos - ocultar o agente, registro formal, neutralidade científica.
+- **Usuários humanos famosos:**
+  - **Watson & Crick**, *Nature*, 25 de abril de 1953: "It has not escaped our notice that the specific pairing we have postulated immediately suggests a possible copying mechanism for the genetic material." Puro understatement passivo - a frase mais famosa da biologia do século XX.
+  - **Joan Didion**, *Slouching Towards Bethlehem* (1968) - usa a passiva deliberadamente para distância narrativa.
+  - **Toda a literatura científica** - a voz passiva é estilo de casa dos periódicos por um motivo. "As amostras foram tratadas com..." é correto; "Nós tratamos as amostras com..." soa informal.
+- **Força da defesa:** alta em contextos técnicos/científicos, média em escrita de negócios. Não remova a passiva em um resumo de pesquisa.
+- **Citação:** Watson & Crick, *Nature* 171:737-738 (1953); Wikipedia "Signs of AI writing" observa a voz passiva como sinalizada mas contestada
+
+### Regra 14. Vocabulário de IA: "robust"
+
+- **Nível:** aesthetic
+- **Por que é sinalizado:** Agrupado com leverage/utilize/harness na lista de vocabulário da OriginalityAI.
+- **Usuários humanos famosos:**
+  - **Todo epidemiologista há um século** - "robust" tem um significado estatístico preciso: insensível a violações de premissas. "Um estimador robusto" é um termo técnico dos anos 1960 (Peter J. Huber, *Robust Statistics*, 1964).
+  - **Engenheiros de software** - "sistema robusto" significa tolerante a casos extremos. Substituir por "sólido" perde o significado.
+  - **Imunologistas** - "resposta imune robusta" é vocabulário padrão em *Nature* e *Cell*.
+- **Força da defesa:** alta em escrita técnica, média em escrita de negócios. Mantenha "robust" se estiver cumprindo função técnica; substitua por "sólido" apenas quando for elogio genérico.
+- **Citação:** Peter J. Huber, "Robust Estimation of a Location Parameter," *Annals of Mathematical Statistics* (1964); Stanford HAI sobre viés de detector contra inglês técnico
+
+### Regra 15. Aspas curvas ("smart quotes")
+
+- **Nível:** aesthetic
+- **Por que é sinalizado:** Alguns detectores ponderam `"` `"` `'` `'` como sinal de IA porque saídas de LLM preservam esses caracteres e a digitação humana geralmente produz aspas retas `"` e `'`.
+- **Usuários humanos famosos:**
+  - **Microsoft Word**, **Google Docs**, **Apple Pages** - todos convertem automaticamente aspas retas em curvas por padrão. Qualquer pessoa digitando nessas ferramentas produz aspas curvas sem pensar.
+  - **The New Yorker** - estilo de casa desde 1925 exige aspas curvas. Toda matéria publicada as usa.
+  - **Todo livro tipografado tradicionalmente desde a invenção dos tipos móveis** - aspas curvas são a tipografia correta. Aspas retas são um compromisso ASCII.
+- **Força da defesa:** alta. Sinalizar aspas curvas como IA é incompetência de detector - é sinalizar os padrões do Microsoft Word.
+- **Citação:** *The Chicago Manual of Style*, 17ª ed., §6.115 sobre aspas; processo da Universidade Adelphi ilustrando o custo de falsos positivos - https://www.plagiarismtoday.com/2025/10/14/adelphi-university-sued-over-ai-allegation/
+
+---
+
+## Tabela-resumo
+
+| # | Regra | Nível | Defesa | Defensor famoso |
 |---|------|------|---------|------------------|
-| 1 | `oaicite` markers | forensic | zero | none |
-| 2 | Knowledge-cutoff disclaimers | forensic | zero | none |
-| 3 | Phrasal templates `[Your Name]` | forensic | zero | none |
-| 4 | Mad-Libs blanks | forensic | zero | none |
-| 5 | Em dash overuse (above ~1 per 100 words) | forensic | low | none at this density |
-| 6 | leverage / utilize / harness / delve / foster / cultivate | strict | medium | McKinsey decks |
-| 7 | fundamentally / essentially / ultimately / crucially | strict | medium | Daniel Dennett |
-| 8 | "In today's fast-paced world" | strict | low | LinkedIn ghosts 2015-2022 |
-| 9 | "What do you think?" / "Tag someone" | strict | low | Influencer playbook |
-| 10 | "X isn't Y, it's Z" | strict | medium | TED talks |
-| 11 | Em dash (single use) | aesthetic | high | Dickinson, McCarthy, Didion |
-| 12 | Rule of three (one natural) / stacked or 3+ per post | aesthetic / strict | high / low | Lincoln, Caesar, Churchill, Aristotle |
-| 13 | Passive voice | aesthetic | high | Watson & Crick, Didion, all science |
-| 14 | "robust" | aesthetic | high | Huber 1964, all epidemiology |
-| 15 | Curly quotes | aesthetic | high | Word/Pages defaults, New Yorker |
+| 1 | Marcadores `oaicite` | forensic | zero | nenhum |
+| 2 | Avisos de corte de conhecimento | forensic | zero | nenhum |
+| 3 | Templates fraseológicos `[Your Name]` | forensic | zero | nenhum |
+| 4 | Lacunas estilo Mad-Libs | forensic | zero | nenhum |
+| 5 | Uso excessivo de travessão (acima de ~1 a cada 100 palavras) | forensic | baixa | nenhum nessa densidade |
+| 6 | leverage / utilize / harness / delve / foster / cultivate | strict | média | apresentações da McKinsey |
+| 7 | fundamentally / essentially / ultimately / crucially | strict | média | Daniel Dennett |
+| 8 | "No mundo acelerado de hoje" | strict | baixa | ghost-writers do LinkedIn 2015-2022 |
+| 9 | "O que você acha?" / "Marque alguém" | strict | baixa | manual de influenciador |
+| 10 | "X não é Y, é Z" | strict | média | palestras do TED |
+| 11 | Travessão (uso único) | aesthetic | alta | Dickinson, McCarthy, Didion |
+| 12 | Regra do três (uma natural) / empilhada ou 3+ por post | aesthetic / strict | alta / baixa | Lincoln, César, Churchill, Aristóteles |
+| 13 | Voz passiva | aesthetic | alta | Watson & Crick, Didion, toda a ciência |
+| 14 | "robust" | aesthetic | alta | Huber 1964, toda a epidemiologia |
+| 15 | Aspas curvas | aesthetic | alta | padrões do Word/Pages, New Yorker |
 
 ---
 
-## Key citations
+## Citações-chave
 
-- **Stanford HAI / Liang et al. (2023)** - AI detectors are biased against non-native English writers. Single most-cited paper for "detectors over-fire on aesthetic patterns." https://hai.stanford.edu/news/ai-detectors-biased-against-non-native-english-writers
-- **TechCrunch (25 July 2023)** - OpenAI shut down its own AI-text classifier, citing low rate of accuracy. The company that built GPT couldn't reliably detect GPT. https://techcrunch.com/2023/07/25/openai-scuttles-ai-written-text-detector-over-low-rate-of-accuracy/
-- **Wikipedia, "Signs of AI writing"** - community-maintained taxonomy. Source for forensic markers (oaicite, knowledge-cutoff) and the strict vocabulary list. https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing
-- **Adelphi University lawsuit (Oct 2025)** - student sued the university after a false-positive AI accusation. The legal cost of trusting detectors on aesthetic signals. https://www.plagiarismtoday.com/2025/10/14/adelphi-university-sued-over-ai-allegation/
+- **Stanford HAI / Liang et al. (2023)** - detectores de IA são tendenciosos contra escritores não nativos de inglês. O artigo mais citado para "detectores disparam em excesso sobre padrões estéticos." https://hai.stanford.edu/news/ai-detectors-biased-against-non-native-english-writers
+- **TechCrunch (25 de julho de 2023)** - a OpenAI desligou seu próprio classificador de texto de IA, citando baixa taxa de precisão. A empresa que construiu o GPT não conseguia detectar o GPT de forma confiável. https://techcrunch.com/2023/07/25/openai-scuttles-ai-written-text-detector-over-low-rate-of-accuracy/
+- **Wikipedia, "Signs of AI writing"** - taxonomia mantida pela comunidade. Fonte para marcadores forenses (oaicite, corte de conhecimento) e a lista de vocabulário strict. https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing
+- **Processo da Universidade Adelphi (out 2025)** - estudante processou a universidade depois de uma acusação de IA em falso positivo. O custo legal de confiar em detectores sobre sinais estéticos. https://www.plagiarismtoday.com/2025/10/14/adelphi-university-sued-over-ai-allegation/
 
 ---
 
-**Last Updated:** 2026-04-25
-**Maintained By:** Claude Code and Codex, for Sergey Bulaev
-**Purpose:** Educational backbone for the controversial post arguing that AI-writing rules are forensic in some cases and aesthetic overreach in others.
+**Última atualização:** 2026-04-25
+**Mantido por:** Claude Code e Codex, para Sergey Bulaev
+**Propósito:** Base educacional para o post polêmico argumentando que as regras de escrita-por-IA são forenses em alguns casos e exagero estético em outros.

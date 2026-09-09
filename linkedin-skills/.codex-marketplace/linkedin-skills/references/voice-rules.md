@@ -1,16 +1,16 @@
-# Voice Rules for Comments
+# Regras de Voz para Comentários
 
-## Hard rules
+## Regras rígidas
 
-1. **Em dashes (`—`) capped at about 1 per 100 words** (so 0-1 in a comment, 1-2 in a post). The character is no longer a tell (2026 models use fewer than humans); the density is. Replace the excess with a comma, colon or parentheses, never a period. No en dashes (`–`) between clauses, no double dashes (`--`).
-2. **Use `..` as soft pause** when you'd reach for a second em dash. Feels human, matches the author's own rhythm.
-3. **Capitalize personal names, company names, product names** (HubSpot, Claude, etc.). Lowercase reads as disrespectful.
-4. **Sentence starts can be lowercase** (natural voice), but names inside are always capitalized.
-5. **Don't mention the user's own product by name** in comments on third-party posts. Describe what they do instead ("our AI content system", "the platform we're building").
+1. **Travessões (`—`) limitados a cerca de 1 a cada 100 palavras** (ou seja, 0-1 em um comentário, 1-2 em um post). O caractere em si já não é um indício (os modelos de 2026 usam menos travessões que humanos); o que importa é a densidade. Substitua o excesso por vírgula, dois-pontos ou parênteses, nunca por um ponto final. Nada de meia-risca (`–`) entre orações, nem de travessão duplo (`--`).
+2. **Use `..` como pausa suave** quando você recorreria a um segundo travessão. Soa mais humano e acompanha o ritmo próprio do autor.
+3. **Capitalize nomes de pessoas, empresas e produtos** (HubSpot, Claude etc.). Escrever em minúsculas soa desrespeitoso.
+4. **O início da frase pode ficar em minúscula** (voz natural), mas os nomes dentro do texto são sempre capitalizados.
+5. **Não mencione o produto do próprio usuário pelo nome** em comentários em posts de terceiros. Descreva o que ele faz em vez disso ("nosso sistema de conteúdo com IA", "a plataforma que estamos construindo").
 
-## Vocabulary blacklist
+## Lista negra de vocabulário
 
-Never use in comments:
+Nunca use em comentários:
 - leverage, utilize, facilitate, streamline, robust, seamless, delve, navigate, unlock, harness, foster, cultivate
 - fundamentally, essentially, ultimately, crucially, notably
 - landscape, ecosystem, paradigm, realm, tapestry, journey
@@ -18,28 +18,28 @@ Never use in comments:
 - "In today's fast-paced world"
 - "Game-changer", "deep dive", "at the end of the day"
 
-## Structure
+## Estrutura
 
-- 200-350 chars. Two short paragraphs max. Line break between them.
-- One concrete number or named entity per comment minimum.
-- One line that could be screenshot and quoted standalone.
-- Never end with "What do you think?" — dead prompt. End with a specific question or a clean landing.
+- 200-350 caracteres. No máximo dois parágrafos curtos. Quebra de linha entre eles.
+- No mínimo um número concreto ou uma entidade nomeada por comentário.
+- Uma frase que possa ser capturada em print e citada isoladamente.
+- Nunca termine com "What do you think?" — gatilho morto. Termine com uma pergunta específica ou um fechamento limpo.
 
-## Anti-patterns
+## Antipadrões
 
-- Thesis restatement ("so true, AI is changing everything")
-- Generic praise ("great insight!", "love this")
-- Overused openers: "This.", "100%", "Couldn't agree more"
-- Rule of three ("faster, cheaper, better")
-- Passive voice over 10% of clauses
+- Reafirmação da tese ("so true, AI is changing everything")
+- Elogio genérico ("great insight!", "love this")
+- Aberturas batidas: "This.", "100%", "Couldn't agree more"
+- Regra dos três ("faster, cheaper, better")
+- Voz passiva em mais de 10% das orações
 
-## Algorithmic Scoring Criteria (NLP-level)
+## Critérios de pontuação algorítmica (nível NLP)
 
-LinkedIn's ranker runs NLP on comments and rewards:
+O ranqueador do LinkedIn roda NLP sobre os comentários e recompensa:
 
-- **Depth** — comments with ≥12 words and multiple sentence structures
-- **New keywords** — introduce at least one noun/concept NOT already in the parent post
-- **Questions** — end with one that invites a sub-thread
-- **Sub-thread sparks** — comments that generate replies from the author AND other commenters count as a strong signal
+- **Profundidade** — comentários com ≥12 palavras e múltiplas estruturas de frase
+- **Palavras-chave novas** — introduzir pelo menos um substantivo/conceito que NÃO esteja no post original
+- **Perguntas** — terminar com uma pergunta que convide a uma subthread
+- **Gatilhos de subthread** — comentários que geram respostas do autor do post E de outros comentaristas contam como um sinal forte
 
-**Before submitting, check:** does your comment add at least one noun/concept not already in the post? If no, rewrite.
+**Antes de enviar, verifique:** seu comentário adiciona pelo menos um substantivo/conceito que ainda não está no post? Se não, reescreva.

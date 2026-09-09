@@ -1,15 +1,15 @@
-# Examples — LinkedIn Hook Extractor
+# Exemplos — LinkedIn Hook Extractor
 
-## Example
+## Exemplo
 
-> **Input:** `https://www.linkedin.com/posts/dharmesh_every-b2b-software-company-is-or-should-activity-7448808898326654978-iW20`
+> **Entrada:** `https://www.linkedin.com/posts/dharmesh_every-b2b-software-company-is-or-should-activity-7448808898326654978-iW20`
 
-> **Output:**
-> - **Formula:** F10 Contrarian + Historical Receipts (confidence 0.72). Secondary: F5 Self-Proving Meta (0.28).
-> - **Hook (first 210 chars):** "Every B2B software company is (or should be) building an agentic version of their product."
-> - **Body:** single bold claim → 3 paragraphs of reasoning → specific list of product changes required
-> - **Close:** implicit call to action ("Seen this play out in your market yet?")
-> - **Blank template:**
+> **Saída:**
+> - **Fórmula:** F10 Contrarian + Historical Receipts (confiança 0.72). Secundária: F5 Self-Proving Meta (0.28).
+> - **Gancho (primeiros 210 caracteres):** "Every B2B software company is (or should be) building an agentic version of their product."
+> - **Corpo:** uma afirmação ousada → 3 parágrafos de raciocínio → lista específica de mudanças de produto necessárias
+> - **Fechamento:** chamada para ação implícita ("Seen this play out in your market yet?")
+> - **Template em branco:**
 >   ```
 >   Every {category} {bold claim}.
 >
@@ -19,4 +19,4 @@
 >
 >   {Closing question that invites reader to take a side}
 >   ```
-> - **Cautions:** none (post is clean)
+> - **Cuidados:** nenhum (o post está limpo)

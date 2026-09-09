@@ -1,205 +1,205 @@
-# 2026 LinkedIn Posting Heuristics
+# Heurísticas de Postagem no LinkedIn 2026
 
-Based on 360Brew paper (arXiv 2501.16450), AuthoredUp 2026 reach data, Trust Insights Q1 2026 guide, and Social Media Today reporting on Gyanda Sachdeva's anti-pod measures.
+Baseado no artigo do 360Brew (arXiv 2501.16450), dados de alcance da AuthoredUp 2026, guia Trust Insights Q1 2026, e reportagem do Social Media Today sobre as medidas anti-pod de Gyanda Sachdeva.
 
-## Contents
+## Sumário
 
-- Timing
-- Format reach multipliers (relative to single image)
-- Length
+- Horário
+- Multiplicadores de alcance por formato (em relação a imagem única)
+- Comprimento
 - Hashtags
-- Link placement
-- Signal weights (reported; not officially confirmed)
-- First 60 minutes
-- Penalties
-- Native articles
-- 2026 AuthoredUp format benchmarks (absolute engagement rates)
-- Native video rules
-- Hook cutoff (device-specific)
-- Close mechanics
-- Save ratio absolute case
-- Engagement benchmarks by follower count
-- Comment-weight math (reach multipliers)
-- Pod / pattern detection (avoid)
-- External-link penalty (expanded)
-- Edit-safety window
-- Post-publish engagement windows
-- Pre-publish checklist
+- Posicionamento de link
+- Pesos de sinal (reportados; não confirmados oficialmente)
+- Primeiros 60 minutos
+- Penalidades
+- Artigos nativos
+- Benchmarks de formato da AuthoredUp 2026 (taxas de engajamento absolutas)
+- Regras de vídeo nativo
+- Corte do gancho (específico por dispositivo)
+- Mecânica de fechamento
+- Caso absoluto da taxa de salvamento
+- Benchmarks de engajamento por número de seguidores
+- Matemática de peso de comentário (multiplicadores de alcance)
+- Detecção de pod / padrão (evitar)
+- Penalidade de link externo (expandida)
+- Janela de segurança para edição
+- Janelas de engajamento pós-publicação
+- Checklist pré-publicação
 
-## Timing
+## Horário
 
-| Audience | Best window (local) |
+| Audiência | Melhor janela (horário local) |
 |---|---|
-| US B2B / founders | Tue 8:00 AM ET, Wed 10:00 AM ET |
-| EU decision-makers | Tue/Wed 7:00-8:30 AM CET |
-| Global mixed | Tue/Wed/Thu 7:30-9:00 AM, audience timezone |
+| B2B / founders dos EUA | Ter 8:00 ET, Qua 10:00 ET |
+| Tomadores de decisão da UE | Ter/Qua 7:00-8:30 CET |
+| Global misto | Ter/Qua/Qui 7:30-9:00, fuso horário da audiência |
 
-Avoid: Mon before 9 AM, Fri after 2 PM, Sat/Sun (30-50% reach cut for B2B).
+Evite: seg antes das 9h, sex após as 14h, sáb/dom (corte de 30-50% no alcance para B2B).
 
-## Format reach multipliers (relative to single image)
+## Multiplicadores de alcance por formato (em relação a imagem única)
 
-| Format | Multiplier |
+| Formato | Multiplicador |
 |---|---|
-| Document carousel (PDF) | 1.7-2.3x |
-| Native video (<90s, captioned, vertical 9:16) | 1.4-1.8x |
-| Text-only | 1.0-1.3x |
-| Poll | 1.1x |
-| Single image | 1.0x (baseline) |
-| External link in body | 0.4-0.6x |
+| Carrossel em documento (PDF) | 1.7-2.3x |
+| Vídeo nativo (<90s, legendado, vertical 9:16) | 1.4-1.8x |
+| Só texto | 1.0-1.3x |
+| Enquete | 1.1x |
+| Imagem única | 1.0x (linha de base) |
+| Link externo no corpo | 0.4-0.6x |
 
-## Length
+## Comprimento
 
-- Sweet spot: **900-1,300 chars** (~150-220 words)
-- Hook cutoff: **first 210 chars** (mobile "… see more" line)
-- Long-form (1,500-1,900) works only with line breaks every 1-2 sentences and narrative payoff
-- Avoid <400 chars unless you're an established voice with punchy observations
+- Ponto ideal: **900-1,300 chars** (~150-220 palavras)
+- Corte do gancho: **primeiros 210 caracteres** (linha do "… see more" no mobile)
+- Formato longo (1,500-1,900) só funciona com quebra de linha a cada 1-2 frases e recompensa narrativa
+- Evite <400 caracteres, a menos que você seja uma voz já estabelecida com observações certeiras
 
 ## Hashtags
 
-- **0 hashtags** performs equal to or better than 5+ in 2026 (360Brew uses semantic embeddings, not tag matching)
-- **1-3 niche hashtags** (<50k posts) give marginal lift (~5%)
-- **5+ hashtags** correlate with spammy-account patterns (negative signal)
-- Placement: end of post, never mid-sentence
+- **0 hashtags** tem desempenho igual ou melhor que 5+ em 2026 (o 360Brew usa embeddings semânticos, não correspondência de tags)
+- **1-3 hashtags de nicho** (<50k posts) dão um ganho marginal (~5%)
+- **5+ hashtags** correlacionam com padrões de conta spam (sinal negativo)
+- Posicionamento: no final do post, nunca no meio de uma frase
 
-## Link placement
+## Posicionamento de link
 
-- **Link in first comment:** ~2.1x impressions vs in-body link
-- **In-body:** suppressed 40-60%
-- **Workaround phrasing:** "Source below ↓", "Dropped the piece in comments"
+- **Link no primeiro comentário:** ~2.1x impressões vs. link no corpo
+- **No corpo:** suprimido em 40-60%
+- **Formulação alternativa:** "Source below ↓", "Dropped the piece in comments"
 
-## Signal weights (reported; not officially confirmed)
+## Pesos de sinal (reportados; não confirmados oficialmente)
 
-- Save = **5x a like**, 2x a comment
-- In-depth comment (paragraph-length) > one-word reaction by 4x
-- Comment-to-comment threading (user↔user replies) = strong quality signal
-- Dwell time sweet spot: **31-60 seconds**
-- "See More" expand + fast abandon (<3s) = clickbait penalty
-- First 1-2 sentences scored for topic relevance before user scrolls
+- Salvamento = **5x uma curtida**, 2x um comentário
+- Comentário aprofundado (tamanho de parágrafo) > reação de uma palavra por 4x
+- Encadeamento comentário-a-comentário (respostas usuário↔usuário) = forte sinal de qualidade
+- Ponto ideal de tempo de permanência: **31-60 segundos**
+- Expansão de "See More" + abandono rápido (<3s) = penalidade de clickbait
+- As primeiras 1-2 frases são pontuadas por relevância de tópico antes de o usuário rolar a tela
 
-## First 60 minutes
+## Primeiros 60 minutos
 
-- 60-90 min "Momentum Window" determines 80% of total reach
-- Author reply to every comment within 90 min = required to hit the ceiling
-- If 3+ substantive comments arrive in first 30 min, post gets second testing boost
+- A "Janela de Momentum" de 60-90 min determina 80% do alcance total
+- Resposta do autor a todo comentário em até 90 min = necessário para atingir o teto
+- Se 3+ comentários substantivos chegarem nos primeiros 30 min, o post ganha um impulso extra de teste
 
-## Penalties
+## Penalidades
 
-- Comment pods: **97% detection accuracy** (third-party claim, unconfirmed). Penalty: shadowban 3-14 days, reach cut 60-90%.
-- TOS change: "We may limit how many comments a member can make in a time period."
-- Recycled reply templates on own post: lexical-similarity detection downranks.
-- Over-posting: 2+ posts/day triggers cannibalization signal (360Brew deprioritizes accounts posting 2+/day).
+- Pods de comentários: **97% de precisão de detecção** (alegação de terceiros, não confirmada). Penalidade: shadowban de 3-14 dias, corte de alcance de 60-90%.
+- Mudança nos Termos de Uso: "We may limit how many comments a member can make in a time period."
+- Templates de resposta reciclados no próprio post: a detecção de similaridade lexical rebaixa o ranking.
+- Excesso de postagem: 2+ posts/dia dispara um sinal de canibalização (o 360Brew desprioriza contas que postam 2+/dia).
 
-## Native articles
+## Artigos nativos
 
-- Lift is real but modest: ~1.2-1.4x vs regular text post
-- Long-tail SEO via Google indexing (bonus)
-- Use for evergreen/reference; not for timely takes
+- O ganho é real, mas modesto: ~1.2-1.4x vs. post de texto comum
+- SEO de cauda longa via indexação do Google (bônus)
+- Use para material perene/de referência; não para opiniões do momento
 
-## 2026 AuthoredUp format benchmarks (absolute engagement rates)
+## Benchmarks de formato da AuthoredUp 2026 (taxas de engajamento absolutas)
 
-| Format | Engagement rate / reach |
+| Formato | Taxa de engajamento / alcance |
 |---|---|
-| Multi-image (3-4 personal photos) | **6.60%** engagement rate (highest of all formats) |
-| Carousel (doc post, 6-9 slides, <12 words/slide) | ~6x engagement, ~4x reach vs text-only |
-| Poll | +206% reach vs average post |
-| Single image | 0.7x (now underperforms text-only by ~30%) |
-| Native video (30-90s, captioned) | reach -35% YoY in 2026; still viable with strong hook |
+| Múltiplas imagens (3-4 fotos pessoais) | **6.60%** de taxa de engajamento (a mais alta de todos os formatos) |
+| Carrossel (post em documento, 6-9 slides, <12 palavras/slide) | ~6x engajamento, ~4x alcance vs. só-texto |
+| Enquete | +206% de alcance vs. post médio |
+| Imagem única | 0.7x (agora tem desempenho ~30% abaixo do só-texto) |
+| Vídeo nativo (30-90s, legendado) | alcance -35% ano a ano em 2026; ainda viável com um gancho forte |
 
-## Native video rules
+## Regras de vídeo nativo
 
-- Length: **30-90 seconds**
-- Captions mandatory (85% of users watch without sound)
-- **Native upload only** — YouTube links kill reach
-- Hook visually in first 3 seconds
-- Vertical 9:16, not landscape
+- Duração: **30-90 segundos**
+- Legendas obrigatórias (85% dos usuários assistem sem som)
+- **Apenas upload nativo** — links do YouTube matam o alcance
+- Gancho visual nos primeiros 3 segundos
+- Vertical 9:16, não paisagem
 
-## Hook cutoff (device-specific)
+## Corte do gancho (específico por dispositivo)
 
-- Desktop: ~210 chars before "…see more"
-- **Mobile: ~140 chars before "…see more"**
-- Write for the 140-char mobile line; the desktop window is a bonus.
+- Desktop: ~210 caracteres antes do "…see more"
+- **Mobile: ~140 caracteres antes do "…see more"**
+- Escreva para a linha de 140 caracteres do mobile; a janela do desktop é um bônus.
 
-## Close mechanics
+## Mecânica de fechamento
 
-- Specific closing question (e.g., "What's your experience with X?") boosts engagement **20-40%** vs generic "Thoughts?"
-- Name the topic inside the CTA — generic CTAs don't trigger replies.
+- Uma pergunta de fechamento específica (ex.: "What's your experience with X?") aumenta o engajamento em **20-40%** vs. um genérico "Thoughts?"
+- Nomeie o tópico dentro do CTA — CTAs genéricos não geram respostas.
 
-## Save ratio absolute case
+## Caso absoluto da taxa de salvamento
 
-- 200 saves ≈ **4x the reach** of 1,000 likes
-- Checklists, frameworks, and templates are save-bait — optimize for save, not like.
+- 200 salvamentos ≈ **4x o alcance** de 1,000 curtidas
+- Checklists, frameworks e templates são isca de salvamento — otimize para salvamento, não para curtida.
 
-## Engagement benchmarks by follower count
+## Benchmarks de engajamento por número de seguidores
 
-| Follower count | Expected engagement rate |
+| Número de seguidores | Taxa de engajamento esperada |
 |---|---|
 | 1K-5K | 4-8% |
 | 5K-10K | 3-5% |
 | 10K-50K | 2-4% |
 | 50K+ | 1-3% |
 
-Use to calibrate whether a post underperformed or is within band before blaming the algorithm.
+Use para calibrar se um post teve desempenho abaixo do esperado ou está dentro da faixa antes de culpar o algoritmo.
 
-## Comment-weight math (reach multipliers)
+## Matemática de peso de comentário (multiplicadores de alcance)
 
-- Comments weigh **~3x more than likes** for reach
-- Posts with back-and-forth conversation: **3x reach** of posts with passive engagement
-- Posts where the author replies to commenters: **2x+ distribution**
-- Author-replied comments count as a **fresh ranker signal each time**
+- Comentários pesam **~3x mais que curtidas** para o alcance
+- Posts com conversa de ida e volta: **3x o alcance** de posts com engajamento passivo
+- Posts em que o autor responde aos comentaristas: **2x+ de distribuição**
+- Comentários respondidos pelo autor contam como um **sinal de ranqueamento novo a cada vez**
 
-## Pod / pattern detection (avoid)
+## Detecção de pod / padrão (evitar)
 
-Triggers for suppression:
-- 15+ comments landing within a 90-second window
-- Same accounts engaging at the same clock minute daily (e.g., 9:01 AM)
-- Identical like/comment pattern across every post
+Gatilhos de supressão:
+- 15+ comentários chegando em uma janela de 90 segundos
+- As mesmas contas engajando no mesmo minuto do relógio todo dia (ex.: 9:01 da manhã)
+- Padrão idêntico de curtida/comentário em todos os posts
 
-Observed real consequence: one creator dropped from 8,500 to 340 impressions overnight after pod detection.
+Consequência real observada: um criador caiu de 8,500 para 340 impressões da noite para o dia após detecção de pod.
 
-**Templated bait vs. genuine prompts (2026 consensus):**
-- LinkedIn's official enforcement targets **automation and coordinated pods** (VP Product Gyanda Sachdeva, via Social Media Today), plus 2025 per-account comment rate limits, not organic CTAs per se
-- Van der Blom's Algorithm Insights 2026 (~1.3M posts): **semantic quality and depth of comment threads now outweigh raw count**. Three distinct professional perspectives beat ten "great post!" replies
-- Keyword-only templated triggers ("Comment YES", "Like for Part 2", bare "What do you think?") are broadly reported as detectable and down-ranked; a **specific, experience-anchored question** ("What's the worst rollback you had to do in production?") is the safe replacement
-- Curiosity-gap openers are **not** bait: the "see more" click remains one of the strongest positive signals. Earning attention with the hook is distinct from asking for a reflexive action
-- Circulating penalty percentages (e.g., "-60% for bait") propagate blog-to-blog without traceable primary studies, so treat them as directional
+**Isca templada vs. estímulos genuínos (consenso de 2026):**
+- A aplicação oficial do LinkedIn tem como alvo **automação e pods coordenados** (VP de Produto Gyanda Sachdeva, via Social Media Today), além dos limites de taxa de comentários por conta de 2025, não CTAs orgânicos em si
+- O Algorithm Insights 2026 de van der Blom (~1.3M de posts): **qualidade semântica e profundidade das threads de comentários agora superam a contagem bruta**. Três perspectivas profissionais distintas superam dez respostas de "great post!"
+- Gatilhos templados só com palavra-chave ("Comment YES", "Like for Part 2", um "What do you think?" seco) são amplamente reportados como detectáveis e rebaixados; uma **pergunta específica, ancorada em experiência** ("What's the worst rollback you had to do in production?") é a substituição segura
+- Aberturas de lacuna de curiosidade **não são** isca: o clique em "see more" continua sendo um dos sinais positivos mais fortes. Conquistar atenção com o gancho é diferente de pedir uma ação reflexiva
+- Percentuais de penalidade que circulam por aí (ex.: "-60% for bait") se espalham de blog em blog sem estudos primários rastreáveis, então trate-os como direcionais
 
-**Recovery times:**
-- From pod detection: **6-8 weeks**
-- Already-credible account cold start: ~1 week
-- New account cold start: 30-60 days
+**Tempos de recuperação:**
+- De detecção de pod: **6-8 semanas**
+- Cold start de conta já credível: ~1 semana
+- Cold start de conta nova: 30-60 dias
 
-## External-link penalty (expanded)
+## Penalidade de link externo (expandida)
 
-- External links in post body: **~60% reach reduction** (move to first comment)
-- Engagement-bait CTAs ("Agree? Comment below!") now **actively suppressed**, not just ignored
-- **Viewer tolerance score:** if users scroll past your posts without dwelling, distribution progressively collapses even for followers
+- Links externos no corpo do post: **~60% de redução de alcance** (mova para o primeiro comentário)
+- CTAs de isca de engajamento ("Agree? Comment below!") agora **suprimidos ativamente**, não apenas ignorados
+- **Índice de tolerância do espectador:** se os usuários rolam a tela além dos seus posts sem se deter, a distribuição colapsa progressivamente até mesmo entre seguidores
 
-## Edit-safety window
+## Janela de segurança para edição
 
-- Edits within first **3 hours** trigger a re-evaluation
-- Structural restructuring (>20% of text changed) **resets distribution entirely**
-- Typo fixes safe after the 90-min momentum window
+- Edições nas primeiras **3 horas** disparam uma reavaliação
+- Reestruturação estrutural (>20% do texto alterado) **reseta a distribuição por completo**
+- Correções de erros de digitação são seguras depois da janela de momentum de 90 min
 
-## Post-publish engagement windows
+## Janelas de engajamento pós-publicação
 
-| Phase | Window | Action |
+| Fase | Janela | Ação |
 |---|---|---|
-| Warm-up | 15 min **BEFORE** publishing | Leave 3-5 substantive comments on others' posts |
-| Critical | First 30 min AFTER publishing | Reply to every comment within minutes |
-| Seeding | 15-30 min after posting | Leave 3-5 bonus comments on your own post to create thread depth |
-| Visibility bump | Reply within 1st hour | +35% visibility lift |
+| Aquecimento | 15 min **ANTES** de publicar | Deixe 3-5 comentários substantivos em posts de outras pessoas |
+| Crítica | Primeiros 30 min APÓS publicar | Responda a todo comentário em minutos |
+| Semeadura | 15-30 min após postar | Deixe 3-5 comentários extras no seu próprio post para criar profundidade de thread |
+| Impulso de visibilidade | Resposta na 1ª hora | +35% de aumento de visibilidade |
 
-## Pre-publish checklist
+## Checklist pré-publicação
 
-- [ ] Hook fits in first 210 chars
-- [ ] Em dashes capped at about one per 100 words (never swap one for a period); no en dashes (`–`) or double dashes (`--`)
-- [ ] No AI vocabulary blacklist (leverage, fundamentally, delve, etc.)
-- [ ] At least 1 specific number per 100 words
-- [ ] At least 1 named entity (person, company, product)
-- [ ] At least 1 first-person concrete detail (what you saw, did, said)
-- [ ] No external links in body
-- [ ] 0-2 hashtags at end
-- [ ] Length 900-1,300 for medium, 1,500-1,900 for long
-- [ ] Line breaks between ideas, not every sentence
-- [ ] One moment of real vulnerability or stakes
-- [ ] Close is a question OR a clean landing (not "what do you think?")
+- [ ] O gancho cabe nos primeiros 210 caracteres
+- [ ] Travessões limitados a cerca de um a cada 100 palavras (nunca troque um por um ponto final); nada de meia-risca (`–`) ou travessão duplo (`--`)
+- [ ] Nenhuma palavra da lista negra de vocabulário de IA (leverage, fundamentally, delve etc.)
+- [ ] Pelo menos 1 número específico a cada 100 palavras
+- [ ] Pelo menos 1 entidade nomeada (pessoa, empresa, produto)
+- [ ] Pelo menos 1 detalhe concreto em primeira pessoa (o que você viu, fez, disse)
+- [ ] Nenhum link externo no corpo do post
+- [ ] 0-2 hashtags no final
+- [ ] Comprimento de 900-1,300 para médio, 1,500-1,900 para longo
+- [ ] Quebras de linha entre ideias, não a cada frase
+- [ ] Um momento de vulnerabilidade real ou de risco genuíno
+- [ ] O fechamento é uma pergunta OU um encerramento limpo (não "what do you think?")

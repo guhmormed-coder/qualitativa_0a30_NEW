@@ -1,69 +1,69 @@
-# Team Cadence Matrix — Realistic posting & comment volume by role and seniority
+# Matriz de Cadência do Time — Volume realista de posts e comentários por papel e senioridade
 
-Use this matrix to set per-person targets that survive contact with calendars. The numbers below assume a 40-hour week; halve them for part-time. All cadences are **per-week** unless stated otherwise.
+Use esta matriz para definir metas por pessoa que sobrevivam ao contato com a agenda real. Os números abaixo assumem uma semana de 40 horas; divida por dois para meio período. Todas as cadências são **por semana**, salvo indicação contrária.
 
-## Why role + seniority
+## Por que papel + senioridade
 
-A founder posting 5x/week is signaling "this is my channel." A senior IC posting 5x/week is leaking attention away from delivery work. Cadence has to be set so each person has a sustainable surplus, not a debt.
+Um fundador postando 5x/semana está sinalizando "este é o meu canal". Um IC sênior postando 5x/semana está vazando atenção que deveria ir para a entrega do trabalho. A cadência precisa ser definida para que cada pessoa tenha uma folga sustentável, não um débito.
 
-## The matrix
+## A matriz
 
-| Role | Seniority | Posts/wk | Comments/wk | Reposts /wk | Time budget /wk |
+| Papel | Senioridade | Posts/sem | Comentários/sem | Reposts/sem | Orçamento de tempo/sem |
 |---|---|---|---|---|---|
-| Founder / CEO | n/a | 3-5 | 30-60 | 2-3 | 3-5 hr |
-| CMO / VP Marketing | senior | 2-3 | 20-40 | 1-2 | 2-3 hr |
-| Director (Marketing / Sales / Product) | senior | 1-2 | 15-25 | 1-2 | 1.5-2 hr |
-| IC Marketing (content / brand) | senior | 2-3 | 15-30 | 1-2 | 2-3 hr |
-| IC Marketing | mid | 1-2 | 10-20 | 1 | 1-2 hr |
-| IC Marketing | junior | 1 | 5-15 | 1 | 1 hr |
-| IC Sales (AE / SDR) | senior | 1-2 | 25-50 | 1 | 1.5-2 hr |
-| IC Sales | mid | 1 | 15-30 | 1 | 1 hr |
-| IC Sales | junior | 0-1 | 10-20 | 0-1 | 0.5-1 hr |
-| IC Product / Engineering | senior | 1 | 5-10 | 1 | 1 hr |
-| IC Product / Engineering | mid | 0-1 | 3-8 | 0-1 | 0.5 hr |
-| IC Customer Success | senior | 1 | 10-20 | 1 | 1 hr |
-| IC Customer Success | mid | 0-1 | 5-15 | 0-1 | 0.5-1 hr |
+| Fundador / CEO | n/a | 3-5 | 30-60 | 2-3 | 3-5 h |
+| CMO / VP de Marketing | sênior | 2-3 | 20-40 | 1-2 | 2-3 h |
+| Diretor (Marketing / Vendas / Produto) | sênior | 1-2 | 15-25 | 1-2 | 1,5-2 h |
+| IC de Marketing (conteúdo / marca) | sênior | 2-3 | 15-30 | 1-2 | 2-3 h |
+| IC de Marketing | pleno | 1-2 | 10-20 | 1 | 1-2 h |
+| IC de Marketing | júnior | 1 | 5-15 | 1 | 1 h |
+| IC de Vendas (AE / SDR) | sênior | 1-2 | 25-50 | 1 | 1,5-2 h |
+| IC de Vendas | pleno | 1 | 15-30 | 1 | 1 h |
+| IC de Vendas | júnior | 0-1 | 10-20 | 0-1 | 0,5-1 h |
+| IC de Produto / Engenharia | sênior | 1 | 5-10 | 1 | 1 h |
+| IC de Produto / Engenharia | pleno | 0-1 | 3-8 | 0-1 | 0,5 h |
+| IC de Customer Success | sênior | 1 | 10-20 | 1 | 1 h |
+| IC de Customer Success | pleno | 0-1 | 5-15 | 0-1 | 0,5-1 h |
 
-## Reading the table
+## Como ler a tabela
 
-- **Posts/wk** is original content (text, carousel, poll, video). Reposts and "thoughts on this" reshares don't count.
-- **Comments/wk** is substantive comments on posts by people outside the team — peer founders, prospects, aspirational creators. Internal team comments don't count.
-- **Reposts/wk** is amplification of a teammate's post (with a 1-2 sentence personal angle, not bare reshare).
-- **Time budget** assumes the program supplies prompts, voice-capture, and humanizer-passed drafts. Without that scaffolding, double the budget.
+- **Posts/sem** é conteúdo original (texto, carrossel, enquete, vídeo). Reposts e reshares do tipo "minha opinião sobre isso" não contam.
+- **Comentários/sem** são comentários substantivos em posts de pessoas fora do time — fundadores pares, prospects, criadores de referência. Comentários internos do time não contam.
+- **Reposts/sem** é a amplificação do post de um colega de time (com uma opinião pessoal de 1-2 frases, não um reshare seco).
+- **Orçamento de tempo** assume que o programa fornece prompts, captura de voz e rascunhos já passados pelo humanizer. Sem esse suporte, dobre o orçamento.
 
-## Floor and ceiling rules
+## Regras de piso e teto
 
-- **Floor:** any seat below 1 post/week + 5 comments/week is not "on the program" and doesn't count toward team reach. Either skip them or pair them with someone who is.
-- **Ceiling:** no IC should be at 5+ posts/week. That's a content-creator role, not an advocate role. If they want that, change their job title.
-- **Founders are the only seat where the ceiling can stretch** to 5 posts/week, because LinkedIn's algorithm rewards founder voice ~6x company-page reach.
+- **Piso:** qualquer vaga abaixo de 1 post/semana + 5 comentários/semana não está "no programa" e não conta para o alcance do time. Ou pule essas pessoas ou as junte com alguém que está.
+- **Teto:** nenhum IC deveria estar em 5+ posts/semana. Isso é um papel de criador de conteúdo, não de advocate. Se a pessoa quiser isso, mude o cargo dela.
+- **Fundadores são a única vaga em que o teto pode se estender** até 5 posts/semana, porque o algoritmo do LinkedIn recompensa a voz de fundador com ~6x o alcance de página de empresa.
 
-## Cadence ramp-up (first 60 days)
+## Ramp-up de cadência (primeiros 60 dias)
 
-Don't start any seat at the steady-state target. Ramp:
+Não comece nenhuma vaga já na meta de regime permanente. Faça o ramp:
 
-| Week | All seats post at | All seats comment at |
+| Semana | Todas as vagas postam em | Todas as vagas comentam em |
 |---|---|---|
-| 1-2 | 0 | 5/wk (just engage) |
-| 3-4 | 1/wk (a single low-stakes "intro" post) | 8-10/wk |
-| 5-8 | 50% of steady-state target | 75% of steady-state target |
-| 9+ | Steady-state | Steady-state |
+| 1-2 | 0 | 5/sem (só engajar) |
+| 3-4 | 1/sem (um único post de "apresentação", de baixo risco) | 8-10/sem |
+| 5-8 | 50% da meta de regime permanente | 75% da meta de regime permanente |
+| 9+ | Regime permanente | Regime permanente |
 
-Rationale: voice calibration takes 2-3 weeks. Posting at full cadence before voice is calibrated creates a cleanup tax later.
+Justificativa: a calibração de voz leva de 2-3 semanas. Postar em cadência total antes de a voz estar calibrada cria uma "dívida de limpeza" depois.
 
-## When to adjust
+## Quando ajustar
 
-Down-shift when:
-- Engagement rate (reactions+comments / impressions) drops below 2% for 3 consecutive weeks
-- Author replies to their own thread within 60 minutes drops below 60%
-- Seat is consistently missing >25% of weekly target
+Reduza quando:
+- A taxa de engajamento (reações+comentários / impressões) cair abaixo de 2% por 3 semanas consecutivas
+- Respostas do autor ao próprio thread em até 60 minutos caírem abaixo de 60%
+- A vaga estiver consistentemente perdendo mais de 25% da meta semanal
 
-Up-shift when:
-- Author-reply-to-comment ratio is above 30% (high audience interest)
-- Profile views are growing >10% week-over-week
-- Inbound DMs from posts cross 2/week
+Aumente quando:
+- A proporção de resposta do autor a comentários estiver acima de 30% (alto interesse da audiência)
+- Visualizações de perfil crescerem mais de 10% semana a semana
+- DMs recebidas a partir de posts ultrapassarem 2/semana
 
-## Out-of-band events
+## Eventos fora do padrão
 
-- **Conference / event week:** suspend cadence for the team going. Replace with shared event recap on the team's slowest day the following week.
-- **Crisis week** (PR issue, outage): only the designated incident comm voice posts. Everyone else is in comment mode for 5-7 days.
-- **Hiring sprint:** Talent Acquisition can spike to 4-5 posts/week temporarily. Other seats stay at baseline.
+- **Semana de conferência / evento:** suspenda a cadência do time que está participando. Substitua por um recapitulativo compartilhado do evento no dia mais tranquilo do time na semana seguinte.
+- **Semana de crise** (problema de RP, instabilidade): só a voz designada de comunicação de incidentes posta. Todo o resto fica em modo de comentário por 5-7 dias.
+- **Sprint de contratação:** o time de Aquisição de Talentos pode picar para 4-5 posts/semana temporariamente. As demais vagas ficam na base.

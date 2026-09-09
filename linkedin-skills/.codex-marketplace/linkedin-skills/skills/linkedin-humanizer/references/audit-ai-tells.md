@@ -1,53 +1,53 @@
-# AI Tells — Complete Blacklist (V3, 2026-09)
+# Indícios de IA — Lista Negra Completa (V3, 2026-09)
 
-Scored the way readers read: by density per paragraph, not per word. One marker in a paragraph is English. Three is a signature. The exceptions that fail on a single hit are listed as such.
+Pontuado da forma como os leitores leem: por densidade por parágrafo, não por palavra. Um marcador em um parágrafo é apenas inglês (ou português) comum. Três é uma assinatura. As exceções que falham em uma única ocorrência estão listadas como tal.
 
-## Contents
+## Conteúdo
 
-- Punctuation (regex)
-- Vocabulary markers (density-scored)
-- Phrase blacklist (single hit)
-- Opening-line tells
-- Closing-line tells
-- Structural tells
-- 2026 dos-and-donts blockers (auto-fail)
-- Attention budget
-- Regex patterns (for audit implementation)
+- Pontuação (regex)
+- Marcadores de vocabulário (pontuados por densidade)
+- Lista negra de frases (ocorrência única)
+- Indícios de linha de abertura
+- Indícios de linha de fechamento
+- Indícios estruturais
+- Bloqueios de dos-and-donts de 2026 (falha automática)
+- Orçamento de atenção
+- Padrões regex (para implementação de auditoria)
 
-## Punctuation (regex)
+## Pontuação (regex)
 
-| Pattern | Why | Fix |
+| Padrão | Motivo | Correção |
 |---|---|---|
-| `\u2014` (em dash `—`) above ~1 per 100 words (1-2 per post) | Density tell, not a character tell. GPT-5.4 uses fewer than humans; 23% of top-creator LinkedIn posts contain one (author-relative ratio 1.09, not a tell). 3+ in a short post is the old GPT-4 glue habit | Replace only the excess: `,` or `:` or `( )` or a rewrite. Never `.` (fragment stacking is worse) |
-| `\u2014` at zero across a 300+ word post that reads as if it wanted one | Below the human baseline; reads as dash self-censoring | Leave one in |
-| `\u2013` (en dash `–`) between clauses | Same family | Replace with `,`; number ranges stay |
-| `--` | Same family | Replace with `,` or rewrite |
-| `\u201C\u201D` (curly quotes) | Copy-paste artifact | Convert to `"` |
+| `—` (travessão `—`) acima de ~1 a cada 100 palavras (1-2 por post) | Indício de densidade, não de caractere. O GPT-5.4 usa menos que humanos; 23% dos posts de top creators no LinkedIn no nosso corpus contêm um (razão relativa ao autor de 1,09, não é um indício). 3+ em um post curto é o antigo hábito de "cola" do GPT-4 | Substitua apenas o excesso: `,` ou `:` ou `( )` ou uma reescrita. Nunca `.` (empilhar fragmentos é pior) |
+| `—` em zero ao longo de um post de 300+ palavras que soa como se quisesse um | Abaixo da referência humana; soa como autocensura do travessão | Deixe um |
+| `–` (meia-risca `–`) entre orações | Mesma família | Substitua por `,`; intervalos numéricos permanecem |
+| `--` | Mesma família | Substitua por `,` ou reescreva |
+| `“”` (aspas curvas) | Artefato de copiar e colar | Converta para `"` |
 
-## Vocabulary markers (density-scored)
+## Marcadores de vocabulário (pontuados por densidade)
 
-Count per paragraph. **3+ = rewrite the paragraph. 2 = replace the weakest. 1 = leave it.** AI vocabulary is the one marker that is consistently reach-negative on LinkedIn in our own corpus (0.74-0.84 author-relative), so this pass stays even though the word list changed.
+Conte por parágrafo. **3+ = reescreva o parágrafo. 2 = substitua o mais fraco. 1 = deixe.** O vocabulário de IA é o único marcador consistentemente negativo para alcance no LinkedIn no nosso próprio corpus (0,74-0,84 relativo ao autor), então esse passo permanece mesmo com a lista de palavras tendo mudado.
 
-**Durable 2026 set (common words, 2-5x human rate across GPT-5.5 / Claude 4.8 / Gemini 3.1):** significant, crucial, notably, particularly, comprehensive, insights, robust, leverage, foster, landscape, nuanced, multifaceted, holistic, streamline, elevate, empower
+**Conjunto durável de 2026 (palavras comuns, taxa 2-5x humana entre GPT-5.5 / Claude 4.8 / Gemini 3.1):** significant, crucial, notably, particularly, comprehensive, insights, robust, leverage, foster, landscape, nuanced, multifaceted, holistic, streamline, elevate, empower
 
-**Older corporate verbs (weaker but still cited by readers):** utilize, facilitate, harness, unlock, navigate, seamless, ecosystem
+**Verbos corporativos mais antigos (sinal mais fraco, mas ainda citados pelos leitores):** utilize, facilitate, harness, unlock, navigate, seamless, ecosystem
 
-**Filler adverbs:** fundamentally, essentially, ultimately, crucially, notably, particularly
+**Advérbios de preenchimento:** fundamentally, essentially, ultimately, crucially, notably, particularly
 
-**Grammar markers:** sentence-opening "-ing" clause ("Leveraging our data, we..."), nominalisation ("the implementation of"), stacked abstract nouns (alignment / transformation / optimization / synergy)
+**Marcadores gramaticais:** oração de abertura em "-ing" ("Leveraging our data, we..."), nominalização ("the implementation of"), substantivos abstratos empilhados (alignment / transformation / optimization / synergy)
 
-**2026 LinkedIn layer:** quietly, "X matters." as a sentence, compound(s), "a signal", "the work", "built different", load-bearing, "doing the heavy lifting", "let that sink in", "that's the real story"
+**Camada 2026 do LinkedIn:** quietly, "X matters." como frase, compound(s), "a signal", "the work", "built different", load-bearing, "doing the heavy lifting", "let that sink in", "that's the real story"
 
-**Decaying 2023-24 set (count as one marker each, but do not chase in isolation):** delve, tapestry, realm, intricate, journey, paradigm, cultivate
+**Conjunto em queda de 2023-24 (conte como um marcador cada, mas não persiga isoladamente):** delve, tapestry, realm, intricate, journey, paradigm, cultivate
 
-## Phrase blacklist (single hit = fix)
+## Lista negra de frases (uma ocorrência = corrigir)
 
-Reveal bridges and negative parallelism are scrubbed on one hit because they are reach-negative on LinkedIn (vendor data, 2026):
+Pontes de revelação e paralelismo negativo são removidos em uma única ocorrência porque são negativos para alcance no LinkedIn (dados de fornecedor, 2026):
 
-- "The result?" / "The catch?" / "The kicker?" (-4.8%)
-- "It's not just X, it's Y" and all 6 negative-parallelism forms (-4.9%)
-- "Stop X, start Y" (-6.7%)
-- "Here's what / Here's how / Here's the thing" (-4.3%)
+- "The result?" / "The catch?" / "The kicker?" (-4,8%)
+- "It's not just X, it's Y" e todas as 6 formas de paralelismo negativo (-4,9%)
+- "Stop X, start Y" (-6,7%)
+- "Here's what / Here's how / Here's the thing" (-4,3%)
 - "In today's fast-paced world"
 - "Game-changer"
 - "Deep dive"
@@ -58,17 +58,17 @@ Reveal bridges and negative parallelism are scrubbed on one hit because they are
 - "In the age of AI"
 - "Paradigm shift"
 - "The hard truth is" / "The uncomfortable reality is"
-- Sincerity announcements as opener or pivot: "let me be honest", "I'll be real", "honestly?", "to be direct", "the honest version is", "honest caveat", "real talk", "full transparency", "unpopular opinion:"
+- Anúncios de sinceridade como abertura ou pivô: "let me be honest", "I'll be real", "honestly?", "to be direct", "the honest version is", "honest caveat", "real talk", "full transparency", "unpopular opinion:"
 
-## Opening-line tells
+## Indícios de linha de abertura
 
-- Any sentence starting with "In today's..."
-- Rhetorical question hooks ("Have you ever wondered...?") — dead on LinkedIn
-- All-caps first line ("THIS CHANGED EVERYTHING.")
+- Qualquer frase começando com "In today's..."
+- Ganchos de pergunta retórica ("Have you ever wondered...?") — mortos no LinkedIn
+- Primeira linha toda em maiúsculas ("THIS CHANGED EVERYTHING.")
 - "Most people don't realize..."
 - "Here's a hard truth..."
 
-## Closing-line tells
+## Indícios de linha de fechamento
 
 - "What do you think?"
 - "Thoughts?"
@@ -76,43 +76,43 @@ Reveal bridges and negative parallelism are scrubbed on one hit because they are
 - "Let me know in the comments!"
 - "Tag someone who needs this."
 
-## Structural tells
+## Indícios estruturais
 
-- Every sentence the same length, machine-flat (expert readers cite structure 36% of the time). Fix only where it reads flat; on LinkedIn sentence-length variance is not a reach lever in either direction (our corpus, within-creator: null to slightly negative), so never manufacture it
-- Staccato stacks: "Short. Punchy. Done.", "Simple. Effective. Easy.", "No X. No Y. Just Z.", "All the X. None of the Y."
-- One-word paragraphs ("Still." "Mostly." "Exactly.")
-- More than 2 standalone fragments (<4 words) in the post
-- Long/short/long/short seesaw across the whole post (mechanical alternation is a humanizer fingerprint)
-- Pseudo-Socratic Q&A ("Why? Because...")
-- Every paragraph 3 lines
-- Perfect parallel structure across a list
-- Stacked or perfectly parallel triads, or 3+ triads in one post ("faster, cheaper, better"). One natural triad is fine
-- Hedging stacks: "perhaps", "might", "could potentially", "it seems" (performed hesitancy runs 2x human rate)
-- Framed confession: a sincerity sentence wrapped around a fact ("I'll be honest, this hurt: we lost the client"). The fact alone is fine
-- Passive voice >10% of clauses
-- Uniformly flat tone with no reaction, no opinion, no concrete detail (the over-scrubbed fingerprint)
+- Toda frase com o mesmo comprimento, mecanicamente achatada (leitores especializados citam estrutura 36% das vezes). Corrija apenas onde soar achatado; no LinkedIn a variância de comprimento de frase não é uma alavanca de alcance em nenhum dos sentidos (nosso corpus, dentro do mesmo criador: de nulo a levemente negativo), então nunca fabrique isso
+- Empilhamentos staccato: "Short. Punchy. Done.", "Simple. Effective. Easy.", "No X. No Y. Just Z.", "All the X. None of the Y."
+- Parágrafos de uma única palavra ("Still." "Mostly." "Exactly.")
+- Mais de 2 fragmentos isolados (<4 palavras) no post
+- Vaivém longo/curto/longo/curto ao longo do post inteiro (alternância mecânica é assinatura de humanizador)
+- Pseudo-diálogo socrático ("Why? Because...")
+- Todo parágrafo com 3 linhas
+- Estrutura paralela perfeita em uma lista
+- Tríades empilhadas ou perfeitamente paralelas, ou 3+ tríades em um post ("faster, cheaper, better"). Uma tríade natural está tudo bem
+- Empilhamentos de hedge: "perhaps", "might", "could potentially", "it seems" (hesitação encenada corre a 2x a taxa humana)
+- Confissão emoldurada: uma frase de sinceridade envolvendo um fato ("I'll be honest, this hurt: we lost the client"). O fato sozinho está tudo bem
+- Voz passiva >10% das orações
+- Tom uniformemente achatado sem reação, sem opinião, sem detalhe concreto (a assinatura da limpeza excessiva)
 
-## 2026 dos-and-donts blockers (auto-fail)
+## Bloqueios de dos-and-donts de 2026 (falha automática)
 
-| Pattern | Why | Fix |
+| Padrão | Motivo | Correção |
 |---|---|---|
-| External link in post body | -40 to -60% reach penalty; LinkedIn suppresses off-platform traffic | Move link to first comment, or summarize the insight inline |
-| "Comment YES if you agree" / "Drop a 🙌" / manufactured CTA | Algorithm explicitly detects and demotes engagement bait | Ask a specific open question tied to the post's thesis |
-| Press-release / corporate-polished tone | Underperforms personal voice 3x; suppresses authenticity signals | Rewrite in first person with a concrete moment |
-| Humble-brag opener ("honored to announce…") | Failures outperform humble brags **8.5x** | Lead with what broke or what you learned |
-| Significant edits within first hour of posting | Resets the algorithm's initial distribution test | Fix typos only in first 60 min; hold structural edits |
-| Posts >3x/week from one author | Diminishing returns; cannibalizes own reach | Cap at 2-3x/week, same time/days |
-| Company-page-only distribution | Employee posts get 6-8x more reach than company pages | Publish from personal profile, let company reshare |
-| Pure vanity-metric chasing (likes only) | Likes are weakest signal; saves > comments > shares > likes | Design for saves: frameworks, templates, data |
-| Announcement openers ("I'm excited to share") | Reads as PR; kills voice | Replace with the concrete moment that prompted the post |
+| Link externo no corpo do post | Penalidade de -40 a -60% no alcance; o LinkedIn suprime tráfego para fora da plataforma | Mova o link para o primeiro comentário, ou resuma o insight no próprio texto |
+| "Comment YES if you agree" / "Drop a 🙌" / CTA fabricado | O algoritmo detecta e rebaixa explicitamente isca de engajamento | Faça uma pergunta aberta e específica ligada à tese do post |
+| Tom de release de imprensa / polido demais no estilo corporativo | Tem desempenho 3x pior que voz pessoal; suprime sinais de autenticidade | Reescreva em primeira pessoa com um momento concreto |
+| Abertura de humble-brag ("honored to announce…") | Fracassos superam humble brags em **8,5x** | Comece pelo que quebrou ou pelo que você aprendeu |
+| Edições significativas na primeira hora após publicar | Reseta o teste inicial de distribuição do algoritmo | Corrija apenas erros de digitação nos primeiros 60 min; segure edições estruturais |
+| Posts >3x/semana de um mesmo autor | Retornos decrescentes; canibaliza o próprio alcance | Limite a 2-3x/semana, mesmo horário/dias |
+| Distribuição apenas via página da empresa | Posts de funcionários têm 6-8x mais alcance que páginas de empresa | Publique pelo perfil pessoal, deixe a empresa republicar |
+| Perseguição pura de métrica de vaidade (só curtidas) | Curtidas são o sinal mais fraco; salvamentos > comentários > compartilhamentos > curtidas | Projete para salvamentos: frameworks, templates, dados |
+| Aberturas de anúncio ("I'm excited to share") | Soa como assessoria de imprensa; mata a voz | Substitua pelo momento concreto que motivou o post |
 
-## Attention budget
+## Orçamento de atenção
 
-Average user screen attention is **47 seconds** (down from 150 seconds in 2004). Post dwell-time target: 31-60 seconds.
+A atenção média de tela do usuário é de **47 segundos** (caindo de 150 segundos em 2004). Meta de tempo de permanência no post: 31-60 segundos.
 
-Flag any draft that demands >60s of continuous reading without a visual break, list, or fragment sentence — it'll lose the skim layer.
+Sinalize qualquer rascunho que exija mais de 60s de leitura contínua sem uma quebra visual, lista ou frase fragmentada — ele vai perder a camada de leitura rápida (skim).
 
-## Regex patterns (for audit implementation)
+## Padrões regex (para implementação de auditoria)
 
 ```python
 import re
@@ -138,7 +138,7 @@ DENSITY_PATTERNS = {
 
 # SINGLE-HIT patterns: one match = fix.
 AI_PATTERNS = {
-    "en_dash": r"\u2013",
+    "en_dash": r"–",
     "double_dash": r"--",
     # Reveal bridges (reach-negative on LinkedIn).
     "reveal_bridge": r"(?im)^(the (result|outcome|answer|lesson|catch|kicker|truth)\?|here'?s (what|how|why|the thing)\b|stop \w+[^.\n]{0,40}[.,] ?start \b|plot twist:)",
@@ -153,7 +153,7 @@ AI_PATTERNS = {
     # Sincerity announcements as opener or pivot.
     "sincerity_marker": r"(?im)^[\s>*\-]*(let me be (honest|real|direct|clear)|i'?ll be (honest|real|direct)|honestly\?|honest (caveat|version|answer)|the honest (version|answer|truth) is|to be (direct|honest|transparent)|real talk|full transparency|can i be (honest|vulnerable)|not gonna lie|ngl|unpopular opinion)\b",
     # Case-insensitive opener match; allow leading whitespace, bullets, or quote marks.
-    "opener_filler": r"(?im)^[\s>*\-]*[\"'\u201c]?(In today's|Have you ever|Most people don't realize|Here's a hard truth)",
+    "opener_filler": r"(?im)^[\s>*\-]*[\"'“]?(In today's|Have you ever|Most people don't realize|Here's a hard truth)",
     # Generic closing-question CTA: matches "What do you think?" / "What are your thoughts?" / "Thoughts?" / "Your take?" etc.
     "closer_filler": r"(?i)(what (do|are) you (think|your? thought)|what(?:'s| is) your (take|thoughts?)|thoughts\?|agree or disagree\?|let me know in the comments|tag someone|let that sink in|that'?s the real story)",
 }
@@ -162,7 +162,7 @@ def em_dash_excess(text: str) -> int:
     """Em dashes above the cap (~1 per 100 words, floor 1, ceiling 2 per post). 0 = fine."""
     words = len(text.split())
     cap = max(1, min(2, round(words / 100)))
-    return max(0, text.count("\u2014") - cap)
+    return max(0, text.count("—") - cap)
 
 def fragment_count(text: str) -> int:
     """Standalone sentences under 4 words. More than 2 per post = forced rhythm."""
@@ -181,6 +181,6 @@ assert re.search(AI_PATTERNS["closer_filler"], "What's your take?")
 assert re.search(AI_PATTERNS["reveal_bridge"], "The result? We doubled.")
 assert re.search(AI_PATTERNS["no_no_just"], "No meetings. No decks. Just code.")
 assert re.search(AI_PATTERNS["sincerity_marker"], "Let me be honest: this one hurt.")
-assert em_dash_excess("a \u2014 b " * 3 + "word " * 90) == 2
-assert em_dash_excess("one \u2014 dash in " + "word " * 120) == 0
+assert em_dash_excess("a — b " * 3 + "word " * 90) == 2
+assert em_dash_excess("one — dash in " + "word " * 120) == 0
 ```

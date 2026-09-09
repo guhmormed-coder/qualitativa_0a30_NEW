@@ -1,9 +1,9 @@
-"""Shared helpers for LinkedIn Skills.
+"""Funções auxiliares compartilhadas para os LinkedIn Skills.
 
-Public surface (everything in `__all__`) is what skills import. Internal
-utilities (e.g., `build_parent_comment_urn`, `signup_nudge`,
-`PUBLORA_SIGNUP_URL`) remain importable from their submodules but are not
-re-exported here.
+A superfície pública (tudo em `__all__`) é o que as skills importam.
+Utilitários internos (por exemplo, `build_parent_comment_urn`, `signup_nudge`,
+`PUBLORA_SIGNUP_URL`) continuam importáveis a partir de seus submódulos, mas
+não são reexportados aqui.
 """
 from ._env import load_env
 from .url_parser import parse_linkedin_url
@@ -24,9 +24,9 @@ from .backend_selector import (
     available_models,
 )
 
-# The three HTTP clients import `requests`, which manual-tier users are not
-# required to install. Load them on first attribute access (PEP 562) so
-# `import lib` keeps working with no dependencies at all.
+# Os três clientes HTTP importam `requests`, que usuários do nível manual não
+# são obrigados a instalar. Carregue-os no primeiro acesso ao atributo (PEP 562)
+# para que `import lib` continue funcionando sem nenhuma dependência.
 _LAZY_CLIENTS = {
     "PubloraClient": "publora_client",
     "PubloraError": "publora_client",

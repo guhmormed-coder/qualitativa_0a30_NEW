@@ -1,127 +1,127 @@
 ---
 name: linkedin-post-writer
-description: Draft a new LinkedIn post from scratch using one of 20 2026 hook formulas (anaphora, R.I.P., time-anchor, curiosity-gap, contrarian, controlled A/B, false-binary, and more) plus a founders-edition angle library, picked by engagement goal (comments, reposts, likes, saves). Runs the humanizer pass and schedules via Publora on approval. Use to write a post, find a hook or proven format, or get founder-specific angles. Not for reviewing existing drafts (use linkedin-humanizer --mode audit).
+description: Cria uma nova publicação do LinkedIn do zero usando uma das 20 fórmulas de hook de 2026 (anáfora, R.I.P., âncora temporal, gap de curiosidade, contrarian, A/B controlado, falso binário, e mais) além de uma biblioteca de ângulos para founders, escolhida pelo objetivo de engajamento (comentários, reposts, curtidas, salvamentos). Executa o passo de humanização e agenda via Publora após a aprovação. Use para escrever uma publicação, encontrar um hook ou formato comprovado, ou obter ângulos específicos para founders. Não serve para revisar rascunhos existentes (use linkedin-humanizer --mode audit).
 ---
 
 # LinkedIn Post Writer
 
-Ship long-form LinkedIn posts using hook formulas that actually performed in 2025-2026 (verified engagement multipliers).
+Publique posts longos no LinkedIn usando fórmulas de hook que realmente performaram em 2025-2026 (multiplicadores de engajamento verificados).
 
-## When to use
+## Quando usar
 
-- User says "write me a LinkedIn post about X"
-- User has a topic + a rough angle and needs a hook + structure
-- User wants to pick from known-winning formats and fill in their voice
-- User wants to audit + schedule in one flow
+- O usuário diz "escreva uma publicação do LinkedIn sobre X"
+- O usuário tem um tópico + um ângulo aproximado e precisa de um hook + estrutura
+- O usuário quer escolher entre formatos comprovadamente vencedores e preencher com sua própria voz
+- O usuário quer auditar + agendar em um único fluxo
 
-## Formulas this skill can use
+## Fórmulas que esta skill pode usar
 
-| Code | Formula | Reference eng | Best for |
+| Código | Fórmula | Engajamento de referência | Melhor para |
 |---|---|---|---|
-| F1 | Platform Risk Anaphora | 4,240 | Category/platform posts, product-as-fix |
-| F2 | R.I.P. Obituary | 3,822 | Era-ending claims, industry pivots |
-| F3 | Year-over-Year Pivot | 494, 3.74x | Identity shifts, founder reflection |
-| F4 | Time-Anchor Confession | 1,519+ | Vulnerability, voice reset, ICP re-targeting (2026: use with care, see caveats) |
-| F5 | Self-Proving Meta | 1,082 / 435 comments | Commitment-based posts, tests in public |
-| F6 | Comment-Gate Lead Magnet | 717-3,008 | List building (2026: use with care, real deliverable only, see caveats) |
-| F7 | Odd-Precision Money Ledger | 1,755, 9.4x | Founder build-log, cost breakdowns (2026: strongest opener, number-first) |
-| F8 | Paid-vs-Free Reversal | 550, 19.64x | Free framework give-away |
-| F9 | Curiosity-Gap Teaser | 306, 4.25x | Emergent behavior, behind-the-scenes (2026: use with care, pay off in 2 lines) |
-| F10 | Contrarian + Historical Receipts | 3,083 | Sacred-cow takes, AI/tech cycles |
-| F11 | Emotional Cold-Open | high-reach* | Real story with emotional stakes (likes) |
-| F12 | Permission Slip | comment-heavy* | Encouragement, reassurance (comments; 2026: use with care, needs a dated fact) |
-| F13 | Bait-and-Switch Reversal | high-reach* | Policy/process change that's an upgrade (likes) |
-| F14 | Named Gratitude / Tribute | repost-heavy* | Thanking mentors / team / departing colleague (reposts) |
-| F15 | Explain-to-Kids | save-heavy* | Demystifying jargon (saves) |
-| F16 | Status-Strip Humility | like-heavy* | Senior voice wanting warmth not distance (likes) |
-| F17 | Controlled A/B Anecdote | structural† | One-variable comparison, delegation/AI takes (comments) |
-| F18 | False-Binary Dissolve | structural† | "Both obvious answers fail" governance/strategy (comments/reposts; 2026: it is the post's one contrast) |
-| F19 | Anecdote-Meets-Evidence Bridge | structural† | Personal noticing + a data stack (comments/saves) |
-| F20 | Diverging-Curves Close | structural† | Two trajectories that diverge, quotable maxim (reposts) |
+| F1 | Anáfora de Risco de Plataforma | 4.240 | Publicações sobre categoria/plataforma, produto como solução |
+| F2 | Obituário R.I.P. | 3.822 | Afirmações de fim de era, mudanças de rumo no setor |
+| F3 | Virada Ano a Ano | 494, 3,74x | Mudanças de identidade, reflexão de founder |
+| F4 | Confissão com Âncora Temporal | 1.519+ | Vulnerabilidade, reset de voz, re-segmentação de ICP (2026: usar com cautela, ver ressalvas) |
+| F5 | Meta Autocomprobatória | 1.082 / 435 comentários | Publicações baseadas em compromisso, testes em público |
+| F6 | Isca de Lead via Comentário-Portão | 717-3.008 | Construção de lista (2026: usar com cautela, apenas com entregável real, ver ressalvas) |
+| F7 | Livro-Razão de Precisão Ímpar | 1.755, 9,4x | Diário de construção do founder, detalhamento de custos (2026: abertura mais forte, número primeiro) |
+| F8 | Reversão Pago-vs-Gratuito | 550, 19,64x | Distribuição gratuita de um framework |
+| F9 | Teaser de Gap de Curiosidade | 306, 4,25x | Comportamento emergente, bastidores (2026: usar com cautela, resolver em 2 linhas) |
+| F10 | Contrarian + Evidências Históricas | 3.083 | Opiniões contra vacas sagradas, ciclos de IA/tecnologia |
+| F11 | Abertura Emocional a Frio | alto alcance* | História real com peso emocional (curtidas) |
+| F12 | Autorização para Sentir | rico em comentários* | Encorajamento, reasseguramento (comentários; 2026: usar com cautela, precisa de um fato datado) |
+| F13 | Reversão Isca-e-Troca | alto alcance* | Mudança de política/processo que é uma melhoria (curtidas) |
+| F14 | Gratidão / Tributo Nominal | rico em reposts* | Agradecer mentores / equipe / colega que está saindo (reposts) |
+| F15 | Explicar-para-Crianças | rico em salvamentos* | Desmistificar jargão (salvamentos) |
+| F16 | Humildade com Faixa de Status | rico em curtidas* | Voz sênior que quer transmitir calor, não distância (curtidas) |
+| F17 | Anedota A/B Controlada | estrutural† | Comparação de uma variável, opiniões sobre delegação/IA (comentários) |
+| F18 | Dissolução do Falso Binário | estrutural† | "As duas respostas óbvias falham" em governança/estratégia (comentários/reposts; 2026: é o único contraste da publicação) |
+| F19 | Ponte Anedota-Evidência | estrutural† | Observação pessoal + um conjunto de dados (comentários/salvamentos) |
+| F20 | Fechamento com Curvas Divergentes | estrutural† | Duas trajetórias que divergem, máxima citável (reposts) |
 
-\* F11-F16 reach is absolute 2026-corpus reach (often source-driven: a reshare or a famous author), NOT a baseline multiplier like the F1-F10 numbers. The two columns measure different things and are not comparable: F11's "256k" is raw reach, F8's "550, 19.64x" is a format multiplier. Do not rank formulas by putting these side by side. See `../../references/hook-formulas.md` for each formula's real reference and caveats.
+\* O alcance de F11-F16 é o alcance absoluto do corpus 2026 (muitas vezes impulsionado pela fonte: um reshare ou um autor famoso), NÃO um multiplicador de base como os números de F1-F10. As duas colunas medem coisas diferentes e não são comparáveis: o "256k" de F11 é alcance bruto, o "550, 19,64x" de F8 é um multiplicador de formato. Não classifique fórmulas colocando esses números lado a lado. Veja `../../references/hook-formulas.md` para a referência real e as ressalvas de cada fórmula.
 
-† F17-F20 are **structural formulas**: they shape the logic of a post (a controlled comparison, a false binary, an evidence bridge, two diverging curves) rather than its topic. They carry no reference number and are chosen by primary goal. They were built for the founders edition and several founder angles pin them by name.
+† F17-F20 são **fórmulas estruturais**: moldam a lógica de uma publicação (uma comparação controlada, um falso binário, uma ponte de evidência, duas curvas divergentes) em vez do seu tópico. Não carregam um número de referência e são escolhidas pelo objetivo principal. Foram criadas para a edição de founders e vários ângulos de founder as fixam pelo nome.
 
-Full skeletons in `../../references/hook-formulas.md`. F1-F10 are the long-form thought-leadership set; F11-F16 (validated against a 2026 corpus of above-average performers) skew shorter and emotional and each carries a primary engagement goal.
+Esqueletos completos em `../../references/hook-formulas.md`. F1-F10 são o conjunto de liderança de pensamento em formato longo; F11-F16 (validadas contra um corpus 2026 de posts com desempenho acima da média) tendem a ser mais curtas e emocionais, e cada uma carrega um objetivo de engajamento primário.
 
-### 2026 reach caveats (Sep 2026 audit)
+### Ressalvas de alcance 2026 (auditoria de set/2026)
 
-The reference numbers above are unchanged; what changed is how the 2026 feed treats the *device* each formula leans on. Every formula in `../../references/hook-formulas.md` now carries a "2026 reach note"; the ones that matter when picking:
+Os números de referência acima permanecem inalterados; o que mudou foi como o feed de 2026 trata o *recurso* em que cada fórmula se apoia. Toda fórmula em `../../references/hook-formulas.md` agora carrega uma "nota de alcance 2026"; as que importam na hora de escolher:
 
-- **Never open with a question.** Question as the first line is -34% median likes across all follower bands (MagicPost, 1.2M posts; vendor data, proprietary AI-score). Move the question to the close, where it is +3%.
-- **Prefer number-first.** An odd-precision number in line 1 is +34% median likes (same source). F7 is the strongest 2026 opener; F3, F5, F17 are number-first by construction.
-- **F4 Confession, use with care:** a specific, dated, uncomfortable fact with no "let me be honest" / "confession:" framing; substance inside the first 3 lines. Manufactured candor is the "false vulnerability" tell; genuine vulnerability is +7 to +10% (vendor data).
-- **F6 Comment-Gate, use with care:** comment-gate CTAs are the named target of LinkedIn's March 2026 authenticity update, and the July 2026 "AI slop" report button cuts flagged posts ~40% views. Only with a real, named deliverable, and never "comment X to get Y" phrasing.
-- **F9 Curiosity-Gap, use with care:** teaser phrases ("what nobody tells you", "what most people miss", "the real question is") are on the 2026 AI-tell consensus lists. The gap must be specific and pay off within 2 lines, before the fold.
-- **F12 Permission Slip and F18 False-Binary, use with care:** both are generic-frame devices ("Stop X, start Y" -6.7%, "It's not X, it's Y" -4.9%, vendor data). They survive with a dated fact and as the post's only contrast.
-- **Density rule:** one contrast and one triple per post, zero "The result?" / "Plot twist:" / "Here's what" bridges. 98-100% of top human creators still use these devices; the tell is repetition plus emptiness, not the device.
-- **Still lifts reach:** number-first line, closing question, P.S. sign-off (+7.5%), 1,000+ chars (1.18x) and 20+ sentences (1.14x, AuthoredUp 3M posts), 1-2 sentence paragraphs with blank lines (recommended layout, not a tell).
+- **Nunca abra com uma pergunta.** Pergunta como primeira linha é -34% de curtidas medianas em todas as faixas de seguidores (MagicPost, 1,2M publicações; dados de fornecedor, AI-score proprietário). Mova a pergunta para o fechamento, onde ela é +3%.
+- **Prefira número primeiro.** Um número de precisão ímpar na linha 1 é +34% de curtidas medianas (mesma fonte). F7 é a abertura mais forte de 2026; F3, F5, F17 já colocam o número primeiro por construção.
+- **F4 Confissão, usar com cautela:** um fato específico, datado e desconfortável, sem enquadramento do tipo "vou ser sincero" / "confissão:"; a substância precisa estar nas primeiras 3 linhas. Franqueza fabricada é o sinal de "falsa vulnerabilidade"; vulnerabilidade genuína é +7 a +10% (dados de fornecedor).
+- **F6 Comentário-Portão, usar com cautela:** CTAs de comentário-portão são o alvo nomeado da atualização de autenticidade de março/2026 do LinkedIn, e o botão de denúncia de "AI slop" de julho/2026 corta cerca de 40% das visualizações de publicações sinalizadas. Só usar com um entregável real e nomeado, e nunca com a frase "comente X para receber Y".
+- **F9 Gap de Curiosidade, usar com cautela:** frases de teaser ("o que ninguém te conta", "o que a maioria não percebe", "a pergunta real é") estão nas listas de consenso de sinais de IA de 2026. O gap precisa ser específico e ser resolvido em até 2 linhas, antes do corte de "ver mais".
+- **F12 Autorização para Sentir e F18 Falso Binário, usar com cautela:** ambas são recursos de enquadramento genérico ("Pare de X, comece Y" -6,7%, "Não é X, é Y" -4,9%, dados de fornecedor). Sobrevivem com um fato datado e sendo o único contraste da publicação.
+- **Regra de densidade:** um contraste e uma tríade por publicação, zero pontes de revelação do tipo "O resultado?" / "Reviravolta:" / "Eis o que". 98-100% dos principais criadores humanos ainda usam esses recursos; o sinal de alerta é repetição somada a vazio, não o recurso em si.
+- **Ainda eleva o alcance:** linha com número primeiro, pergunta de fechamento, assinatura em P.S. (+7,5%), 1.000+ caracteres (1,18x) e 20+ frases (1,14x, AuthoredUp, 3M publicações), parágrafos de 1-2 frases com linhas em branco (layout recomendado, não é um sinal de IA).
 
-### Pick by goal first
+### Escolha primeiro pelo objetivo
 
-If the user knows what they want the post to earn, start here, then narrow by topic. Canonical mapping: `../../references/hook-formulas.md` → Engagement-goal split.
+Se o usuário já sabe o que quer que a publicação renda, comece aqui e depois refine pelo tópico. Mapeamento canônico: `../../references/hook-formulas.md` → Divisão por objetivo de engajamento.
 
-| Goal | Reach for |
+| Objetivo | Buscar |
 |---|---|
-| Comments | F17, F10, F4, F12, F9 (F4/F12/F9 with their 2026 caveats) |
+| Comentários | F17, F10, F4, F12, F9 (F4/F12/F9 com suas ressalvas de 2026) |
 | Reposts | F14, F2, F8 |
-| Likes | F11, F13, F16 |
-| Saves | F15, F7, F8 |
+| Curtidas | F11, F13, F16 |
+| Salvamentos | F15, F7, F8 |
 
-## Steps
+## Passos
 
-**Voice profile first (all drafts).** If `../../references/voice-profile.md` has `filled: yes`, load it and match the user's voice fingerprint, hard rules, and CTA/link style throughout. If it is not filled, mention once that `linkedin-humanizer --mode profile` can learn their voice from a few posts, then proceed with the generic voice rules.
+**Perfil de voz primeiro (todos os rascunhos).** Se `../../references/voice-profile.md` tiver `filled: yes`, carregue-o e siga a impressão digital de voz do usuário, as regras fixas e o estilo de CTA/link em tudo. Se não estiver preenchido, mencione uma vez que `linkedin-humanizer --mode profile` pode aprender a voz do usuário a partir de alguns posts, e então prossiga com as regras de voz genéricas.
 
-**Founder mode (when the writer is a founder).** Before picking a formula, open `../../references/founder-topics.md` and offer a founder **angle** (A1-A10) that fits their goal. The angle picks the *territory* (reprice the category, the scarce-shots math, the delegation line, and so on); several angles pin the formula for you (A9 uses F17, A10 uses F18+F20). Founder angles compound trust with a narrow audience of investors, hires, and design partners rather than chasing broad reach. Fill the angle's bracketed slots with the founder's real numbers, then continue from step 3.
+**Modo founder (quando quem escreve é um founder).** Antes de escolher uma fórmula, abra `../../references/founder-topics.md` e ofereça um **ângulo** de founder (A1-A10) que combine com o objetivo dele. O ângulo define o *território* (reprecificar a categoria, a matemática das oportunidades escassas, a linha de delegação, e assim por diante); vários ângulos já fixam a fórmula para você (A9 usa F17, A10 usa F18+F20). Ângulos de founder constroem confiança com um público restrito de investidores, contratações e design partners, em vez de perseguir alcance amplo. Preencha os campos entre colchetes do ângulo com os números reais do founder e então continue a partir do passo 3.
 
-1. **Gather inputs.** Topic, angle, draft ideas if the user has them, target audience (founders / operators / marketers), desired length (short 300-500 / medium 900-1300 / long 1500-1900 chars).
-2. **Pick the formula.** First ask (or infer) the goal: comments, reposts, likes, or saves. Use the "Pick by goal first" table to shortlist, then suggest 2-3 formulas that also fit the topic and let the user pick. Show the reference engagement number next to each, plus the formula's 2026 caveat if it has one. Two hook rules apply regardless of formula: **never open with a question** (-34% median likes; the question goes at the close, +3%) and **prefer a number-first line** (+34% median likes; both MagicPost vendor data, proprietary AI-score). If the best hook you have is a question, invert it into the number that answers it.
-3. **Draft the post.** Fill the formula skeleton with user voice. Respect the 2026 algorithm rules:
-   - Hook in first 210 chars (before "… see more"); line 1 is a statement or a number, never a question, never "Here's what/how", never "Stop X, start Y"
-   - 900-1,300 char sweet spot for text posts; 1,000+ chars and 20+ sentences carry a 1.18x / 1.14x reach lift (AuthoredUp 3M posts), so do not trim a substantive post below 1,000 to hit the sweet spot
-   - Double line-breaks between ideas, not single; 1-2 sentence paragraphs are the recommended layout
-   - One contrast and one triple per post maximum; no "The result?" / "Plot twist:" reveal bridges (Density rule in `../../references/hook-formulas.md`)
-   - Close with a specific question, and add a one-line P.S. when there is a real follow-up (+7.5%)
-   - 0-2 hashtags, placed at end
-   - No external links in body (move to first comment)
-4. **Humanizer pass.** Scrub 2026 AI vocab by density, cap em dashes (about one per 100 words), break stacked triads, generic openers and reveal bridges. Add at least 1 specific number, 1 named entity, 1 first-person concrete detail per 100 words.
-5. **Run audit.** Optionally invoke `linkedin-humanizer --mode audit` for algorithm + voice checks before showing to user.
-6. **Optional illustration.** If the post would land better with a visual (or the user asks), offer one: draft an image and generate it with `lib.illustrate(prompt, kind="wide")`, pulling brand handle/color from Voice & Brand Profile §6 for the overlay. Show the returned `url` + `cost` in the approval card and attach it via `media_urls` on publish. For a **multi-image grid** (2-10 images in one post) use `lib.illustrate_set([p1, p2, ...], kind="wide", overlay=brand)` and pass every `url` in `media_urls=[...]`. Full workflow: `../linkedin-humanizer/sub-skills/illustration.md`. No Pixfaro key -> it drafts the prompt for the user to generate manually.
-7. **Approval card.** Show: formula used, full draft, char count, suggested posting window (Tue/Wed/Thu 7:30-9:00 AM local), reaction targets from likely commenters, and the illustration (if any).
-8. **On approval.** Call `lib.publish(kind="post", draft_text=<approved>, target_url="https://www.linkedin.com/post/new/", platforms=[{"platform":"linkedin","platformId":<id>}], scheduled_time=<iso_or_None>, media_urls=<list_or_None>)`. The wrapper handles Publora / manual / diy routing.
+1. **Reúna os insumos.** Tópico, ângulo, ideias de rascunho se o usuário já tiver, público-alvo (founders / operadores / profissionais de marketing), tamanho desejado (curto 300-500 / médio 900-1300 / longo 1500-1900 caracteres).
+2. **Escolha a fórmula.** Primeiro pergunte (ou infira) o objetivo: comentários, reposts, curtidas ou salvamentos. Use a tabela "Escolha primeiro pelo objetivo" para pré-selecionar, depois sugira 2-3 fórmulas que também combinem com o tópico e deixe o usuário escolher. Mostre o número de engajamento de referência ao lado de cada uma, mais a ressalva de 2026 da fórmula, se houver. Duas regras de hook valem independentemente da fórmula: **nunca abra com uma pergunta** (-34% de curtidas medianas; a pergunta vai para o fechamento, +3%) e **prefira uma linha com número primeiro** (+34% de curtidas medianas; ambos dados de fornecedor MagicPost, AI-score proprietário). Se o melhor hook que você tem é uma pergunta, inverta-o para o número que a responde.
+3. **Redija a publicação.** Preencha o esqueleto da fórmula com a voz do usuário. Respeite as regras do algoritmo de 2026:
+   - Hook nos primeiros 210 caracteres (antes do "... ver mais"); a linha 1 é uma afirmação ou um número, nunca uma pergunta, nunca "Eis o que/como", nunca "Pare de X, comece Y"
+   - Faixa ideal de 900-1.300 caracteres para publicações em texto; 1.000+ caracteres e 20+ frases carregam um ganho de alcance de 1,18x / 1,14x (AuthoredUp, 3M publicações), então não corte uma publicação substancial abaixo de 1.000 só para acertar a faixa ideal
+   - Quebras de linha duplas entre ideias, não simples; parágrafos de 1-2 frases são o layout recomendado
+   - No máximo um contraste e uma tríade por publicação; nenhuma ponte de revelação do tipo "O resultado?" / "Reviravolta:" (regra de Densidade em `../../references/hook-formulas.md`)
+   - Feche com uma pergunta específica, e adicione um P.S. de uma linha quando houver um desdobramento real (+7,5%)
+   - 0-2 hashtags, colocadas no final
+   - Nenhum link externo no corpo (mover para o primeiro comentário)
+4. **Passo de humanização.** Elimine vocabulário de IA de 2026 por densidade, limite travessões (cerca de um a cada 100 palavras), quebre tríades empilhadas, aberturas genéricas e pontes de revelação. Adicione pelo menos 1 número específico, 1 entidade nomeada, 1 detalhe concreto em primeira pessoa a cada 100 palavras.
+5. **Execute a auditoria.** Opcionalmente, invoque `linkedin-humanizer --mode audit` para verificações de algoritmo e voz antes de mostrar ao usuário.
+6. **Ilustração opcional.** Se a publicação ficar melhor com um visual (ou o usuário pedir), ofereça um: rascunhe uma imagem e gere-a com `lib.illustrate(prompt, kind="wide")`, puxando o handle/cor da marca do Perfil de Voz e Marca §6 para a sobreposição. Mostre a `url` e o `cost` retornados no cartão de aprovação e anexe-os via `media_urls` na publicação. Para uma **grade de múltiplas imagens** (2-10 imagens em uma publicação) use `lib.illustrate_set([p1, p2, ...], kind="wide", overlay=brand)` e passe cada `url` em `media_urls=[...]`. Fluxo completo: `../linkedin-humanizer/sub-skills/illustration.md`. Sem chave da Pixfaro -> a skill redige o prompt para o usuário gerar manualmente.
+7. **Cartão de aprovação.** Mostre: fórmula usada, rascunho completo, contagem de caracteres, janela de publicação sugerida (ter/qua/qui 7h30-9h00 horário local), alvos de reação de prováveis comentaristas, e a ilustração (se houver).
+8. **Na aprovação.** Chame `lib.publish(kind="post", draft_text=<approved>, target_url="https://www.linkedin.com/post/new/", platforms=[{"platform":"linkedin","platformId":<id>}], scheduled_time=<iso_or_None>, media_urls=<list_or_None>)`. O wrapper cuida do roteamento Publora / manual / diy.
 
-## Hard rules (from user feedback)
+## Regras fixas (a partir de feedback de usuários)
 
-Global voice rules: see root `SKILL.md` §Voice rules. Additional skill-specific rules:
+Regras de voz globais: veja o `SKILL.md` raiz §Regras de voz. Regras adicionais específicas desta skill:
 
-- Never frame LinkedIn as inferior in a LinkedIn post (algo penalty).
-- Don't name-drop the user's product in a way that reads as self-promo. One mention max, and only when it's the natural conclusion, not the pitch.
-- Include at least one moment of real vulnerability or concrete stakes. Pure insight posts don't land in 2026.
-- Natural rhythm, not manufactured variance: one genuinely long sentence next to a short one per paragraph is fine; never alternate long/short across the post and never stack fragments (at most 2 standalone fragments per post). Touch a paragraph only if every sentence reads the same flat length.
+- Nunca enquadre o LinkedIn como inferior em uma publicação do LinkedIn (penalidade do algoritmo).
+- Não cite o produto do usuário de um jeito que soe como autopromoção. No máximo uma menção, e apenas quando for a conclusão natural, não o pitch.
+- Inclua pelo menos um momento de vulnerabilidade real ou peso concreto. Publicações de puro insight não performam em 2026.
+- Ritmo natural, não variância fabricada: uma frase genuinamente longa ao lado de uma curta por parágrafo está ok; nunca alterne longo/curto ao longo de toda a publicação e nunca empilhe fragmentos (no máximo 2 fragmentos isolados por publicação). Só mexa em um parágrafo se toda frase tiver o mesmo comprimento monótono.
 
-## Anti-patterns (skill will refuse)
+## Antipadrões (a skill vai recusar)
 
-- All-caps first line ("THIS CHANGED EVERYTHING."). This holds even for F11 Emotional Cold-Open: carry the intensity with word choice, never caps.
-- Question as the first line ("Ever wondered why...?"). Invert to a number, move the question to the close.
-- "Here's what / here's how" or "Stop X, start Y" as the opener; "The result?" / "Plot twist:" as a reveal bridge
-- Announced candor ("Let me be honest", "Confession:") with no dated fact behind it
-- "Comment X to get Y" comment-gate phrasing
-- Em dashes above the cap (more than about one per 100 words)
-- "In today's fast-paced world" openers
-- Rule-of-three lists without receipts
-- "Game-changer", "deep dive", "leverage", "fundamentally"
-- External links in the body
-- Reused engagement-bait closers ("tag someone who needs this")
+- Primeira linha em caixa alta ("ISSO MUDOU TUDO."). Isso vale até para F11 Abertura Emocional a Frio: carregue a intensidade na escolha das palavras, nunca em caixa alta.
+- Pergunta como primeira linha ("Já se perguntou por que...?"). Inverta para um número, mova a pergunta para o fechamento.
+- "Eis o que / eis como" ou "Pare de X, comece Y" como abertura; "O resultado?" / "Reviravolta:" como ponte de revelação
+- Franqueza anunciada ("Vou ser sincero", "Confissão:") sem um fato datado por trás
+- Frase de comentário-portão "Comente X para receber Y"
+- Travessões acima do limite (mais de cerca de um a cada 100 palavras)
+- Aberturas do tipo "No mundo acelerado de hoje"
+- Listas de regra-de-três sem provas
+- "Game-changer", "mergulho profundo", "alavancar", "fundamentalmente"
+- Links externos no corpo
+- Fechamentos genéricos de isca de engajamento ("marque alguém que precisa ver isso")
 
-## Resources
+## Recursos
 
-- `../../references/hook-formulas.md` — all 20 formula skeletons with worked examples, per-formula 2026 reach notes, "What still lifts reach in 2026" and the Density rule
-- `../../references/founder-topics.md` — founders-edition library of 10 founder angles (A1-A10) with fill-in templates
-- `../../references/algorithm-heuristics.md` — 2026 posting rules (timing, format, length)
-- `references/humanizer-checklist.md` — the full scrub list
+- `../../references/hook-formulas.md` — todos os 20 esqueletos de fórmula com exemplos trabalhados, notas de alcance 2026 por fórmula, "O que ainda eleva o alcance em 2026" e a regra de Densidade
+- `../../references/founder-topics.md` — biblioteca de 10 ângulos de founder (A1-A10) da edição para founders, com templates de preenchimento
+- `../../references/algorithm-heuristics.md` — regras de publicação de 2026 (timing, formato, extensão)
+- `references/humanizer-checklist.md` — a lista completa de limpeza
 
-## Related skills
+## Skills relacionadas
 
-- `linkedin-humanizer` — aggressive AI-tell scrubber, plus `--mode audit` for pre-publish review
-- `linkedin-hook-extractor` — reverse-engineer a hook from a viral post you admire
+- `linkedin-humanizer` — removedor agressivo de sinais de IA, mais `--mode audit` para revisão antes de publicar
+- `linkedin-hook-extractor` — faz engenharia reversa de um hook a partir de uma publicação viral que você admira
