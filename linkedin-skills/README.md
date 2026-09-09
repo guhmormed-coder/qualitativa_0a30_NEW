@@ -2,7 +2,7 @@
   <img src="assets/linkedin-skills-hero.png" alt="11 Claude Code and Codex skills for LinkedIn marketing — open source, MIT licensed" width="900" />
 </p>
 
-# LinkedIn Marketing Skills for Claude Code and Codex
+# Skills de Marketing para LinkedIn para Claude Code e Codex
 
 <p align="center">
   <img src="https://img.shields.io/github/v/release/sergebulaev/linkedin-skills?color=1E40AF&label=release" alt="Latest release">
@@ -14,13 +14,13 @@
   <img src="https://img.shields.io/badge/PRs-welcome-F59E0B.svg" alt="PRs Welcome">
 </p>
 
-**Claude skills for LinkedIn.** 11 Claude Code and Codex skills that write LinkedIn posts, comments, and replies in your voice. They draft content, strip AI tells, and wait for your approval before anything gets published. No coding required.
+**Skills do Claude para LinkedIn.** 11 skills para Claude Code e Codex que escrevem posts, comentários e respostas do LinkedIn na sua voz. Elas redigem o conteúdo, removem marcas de IA e aguardam sua aprovação antes de qualquer publicação. Não é preciso programar.
 
-> **On another platform too?** The same team ships matching marketing skill bundles for [X (Twitter)](https://github.com/sergebulaev/x-skills) · [Instagram](https://github.com/sergebulaev/instagram-skills) · [YouTube](https://github.com/sergebulaev/youtube-skills) · [TikTok](https://github.com/sergebulaev/tiktok-skills) · [Threads](https://github.com/sergebulaev/threads-skills) · [Facebook](https://github.com/sergebulaev/facebook-skills). Same voice engine, same approve-before-publish flow.
+> **Também está em outra plataforma?** A mesma equipe distribui pacotes de skills de marketing equivalentes para [X (Twitter)](https://github.com/sergebulaev/x-skills) · [Instagram](https://github.com/sergebulaev/instagram-skills) · [YouTube](https://github.com/sergebulaev/youtube-skills) · [TikTok](https://github.com/sergebulaev/tiktok-skills) · [Threads](https://github.com/sergebulaev/threads-skills) · [Facebook](https://github.com/sergebulaev/facebook-skills). Mesmo motor de voz, mesmo fluxo de aprovar-antes-de-publicar.
 
-## Install
+## Instalação
 
-Pick whichever way you use Claude Code or Codex:
+Escolha a forma como você usa Claude Code ou Codex:
 
 ### Codex CLI
 
@@ -29,7 +29,7 @@ codex plugin marketplace add sergebulaev/linkedin-skills
 codex plugin add linkedin-skills@linkedin-skills
 ```
 
-To test a local clone before publishing changes:
+Para testar um clone local antes de publicar mudanças:
 
 ```bash
 git clone https://github.com/sergebulaev/linkedin-skills.git
@@ -40,29 +40,29 @@ codex plugin add linkedin-skills@linkedin-skills
 
 ### claude.ai (web)
 
-1. Open https://claude.ai/code
-2. Go to **Skills** in the sidebar
-3. Click **Add from GitHub**
-4. Paste: `sergebulaev/linkedin-skills`
-5. Done. The skills activate automatically when you ask about LinkedIn.
+1. Abra https://claude.ai/code
+2. Vá em **Skills** na barra lateral
+3. Clique em **Add from GitHub**
+4. Cole: `sergebulaev/linkedin-skills`
+5. Pronto. As skills são ativadas automaticamente quando você perguntar sobre LinkedIn.
 
 ### Claude Desktop (Mac / Windows)
 
-1. Open Claude Desktop
-2. Click **Customize**
-3. Click the **+** next to **Personal plugins** → **Create plugin** → **Add marketplace**
-4. Choose **Add from a repository** and paste: `sergebulaev/linkedin-skills`
-5. Install the plugin
-6. Done. Start a new conversation and ask Claude to write a LinkedIn post.
+1. Abra o Claude Desktop
+2. Clique em **Customize**
+3. Clique no **+** ao lado de **Personal plugins** → **Create plugin** → **Add marketplace**
+4. Escolha **Add from a repository** e cole: `sergebulaev/linkedin-skills`
+5. Instale o plugin
+6. Pronto. Inicie uma nova conversa e peça ao Claude para escrever um post no LinkedIn.
 
 ### OpenClaw
 
-1. Open your OpenClaw working directory
-2. Clone the skills into it:
+1. Abra seu diretório de trabalho do OpenClaw
+2. Clone as skills nele:
    ```bash
    git clone https://github.com/sergebulaev/linkedin-skills.git
    ```
-3. In OpenClaw settings, add this to your system prompt:
+3. Nas configurações do OpenClaw, adicione isto ao seu system prompt:
    ```
    You have LinkedIn marketing skills in ./linkedin-skills/.
    For any LinkedIn task, read the relevant skills/*/SKILL.md first.
@@ -70,7 +70,7 @@ codex plugin add linkedin-skills@linkedin-skills
        lib/apify_client.py for reading posts / comments / engagers,
        lib/publora_client.py for publishing actions.
    ```
-4. Done. Ask OpenClaw to write a LinkedIn post or comment.
+4. Pronto. Peça ao OpenClaw para escrever um post ou comentário no LinkedIn.
 
 ### Claude Code (CLI / VS Code / JetBrains)
 
@@ -79,7 +79,7 @@ codex plugin add linkedin-skills@linkedin-skills
 /plugin install linkedin-skills@linkedin-skills
 ```
 
-Or clone the repo and open it as your working directory:
+Ou clone o repositório e abra-o como seu diretório de trabalho:
 
 ```bash
 git clone https://github.com/sergebulaev/linkedin-skills.git
@@ -88,211 +88,211 @@ cd linkedin-skills
 
 ### Hermes Agent
 
-Hermes Agent (Nous Research) follows the agentskills.io open standard and loads `skills/*/SKILL.md` directly. Clone the bundle into your Hermes skills folder:
+O Hermes Agent (Nous Research) segue o padrão aberto agentskills.io e carrega `skills/*/SKILL.md` diretamente. Clone o pacote na sua pasta de skills do Hermes:
 
 ```bash
 git clone https://github.com/sergebulaev/linkedin-skills.git ~/.hermes/skills/linkedin-skills
 ```
 
-Coming from OpenClaw? `hermes claw migrate` imports these skills automatically. Then call `/<skill-name>` from any of your Hermes chat surfaces.
+Vindo do OpenClaw? `hermes claw migrate` importa essas skills automaticamente. Depois chame `/<skill-name>` a partir de qualquer uma das suas interfaces de chat do Hermes.
 
-### Any agent (skills CLI)
+### Qualquer agente (CLI de skills)
 
-One command that works across Claude Code, Codex, Cursor, and any other agent that reads SKILL.md files:
+Um único comando que funciona em Claude Code, Codex, Cursor e qualquer outro agente que leia arquivos SKILL.md:
 
 ```bash
 npx skills add sergebulaev/linkedin-skills
 ```
 
-> **Found this useful? [Star the repo](https://github.com/sergebulaev/linkedin-skills).** Curated Claude Code and Codex directories rank and gate by star count, so a star is what makes these skills findable for the next person. It is the only thing we ask. No signup, no email.
+> **Achou útil? [Dê uma estrela no repositório](https://github.com/sergebulaev/linkedin-skills).** Os diretórios de Claude Code e Codex mais bem curados ranqueiam e filtram por número de estrelas, então uma estrela é o que torna essas skills encontráveis para a próxima pessoa. É a única coisa que pedimos. Sem cadastro, sem e-mail.
 
-## What you can do
+## O que você pode fazer
 
-Once installed, just ask Claude Code or Codex for help with LinkedIn. The right skill activates automatically.
+Depois de instalado, basta pedir ajuda ao Claude Code ou ao Codex sobre LinkedIn. A skill certa é ativada automaticamente.
 
-**Write a post:**
-> "Write me a LinkedIn post about why AI agencies are replacing traditional ones. Make it viral."
+**Escrever um post:**
+> "Escreva um post no LinkedIn sobre por que agências de IA estão substituindo as tradicionais. Deixe viral."
 
-**Comment on someone's post:**
-> "Comment on this post: https://linkedin.com/posts/... — I want to add a thoughtful take."
+**Comentar no post de alguém:**
+> "Comente neste post: https://linkedin.com/posts/... — quero adicionar uma reflexão pertinente."
 
-**Check a draft before publishing:**
-> "Audit this post draft for AI tells and algorithm issues: [paste your text]"
+**Revisar um rascunho antes de publicar:**
+> "Audite este rascunho de post em busca de marcas de IA e problemas de algoritmo: [cole seu texto]"
 
-**Reverse-engineer a viral post:**
-> "What hook formula does this post use? https://linkedin.com/posts/..."
+**Fazer engenharia reversa de um post viral:**
+> "Que fórmula de gancho este post usa? https://linkedin.com/posts/..."
 
-**Plan your week:**
-> "Create a 7-day LinkedIn content plan. I'm a B2B SaaS founder targeting VPs of Marketing."
+**Planejar sua semana:**
+> "Crie um plano de conteúdo de 7 dias para o LinkedIn. Sou fundador de uma SaaS B2B mirando VPs de Marketing."
 
-**Rewrite your profile:**
-> "Optimize my LinkedIn profile for inbound leads: https://linkedin.com/in/yourname"
+**Reescrever seu perfil:**
+> "Otimize meu perfil do LinkedIn para leads inbound: https://linkedin.com/in/seunome"
 
-**Remove AI tells from any text:**
-> "Humanize this text: [paste AI-generated draft]"
+**Remover marcas de IA de qualquer texto:**
+> "Humanize este texto: [cole o rascunho gerado por IA]"
 
-Every skill shows you a draft first and waits for your OK before doing anything. Nothing gets posted without your approval.
+Toda skill mostra um rascunho primeiro e aguarda seu aval antes de fazer qualquer coisa. Nada é publicado sem sua aprovação.
 
-## The 11 skills
+## As 11 skills
 
-| Skill | What it does |
+| Skill | O que faz |
 |---|---|
-| **Post Writer** | Drafts viral-ready posts using 20 proven 2026 hook formulas (anaphora, R.I.P. obituary, year-over-year pivot, curiosity gap, emotional cold-open, controlled A/B, false-binary, and 13 more) plus a founders-edition angle library, picked by engagement goal |
-| **Comment Drafter** | Drafts a comment on any LinkedIn post from its URL |
-| **Reply Handler** | Drafts a reply to any comment, correctly handling LinkedIn's 2-level thread flattening |
-| **Post Audit** | Checks your draft against 2026 algorithm rules and AI-detection patterns before you publish |
-| **Humanizer** | Removes the AI tells human readers and LinkedIn's slop filter react to: 2026 AI vocabulary scored by paragraph density, reveal bridges, staccato fragment stacks, stacked triads, performed sincerity; caps em dashes instead of banning them. Does not promise to beat detectors (no edit reliably does). Bundles three sub-tools: AI-emoji density scorer, multi-detector spread tester (GPTZero, Originality.ai, ZeroGPT, Sapling, Copyleaks) that documents how much they disagree, and a rule-explainer reference for defending stylistic choices. |
-| **Hook Extractor** | Reverse-engineers the hook formula from any viral post. Returns a blank template you can fill with your own topic |
-| **Content Planner** | Creates a 7-day plan with daily post topics, formats, hooks, posting times, and comment targets |
-| **Engagement Monitor** | Two read-side workflows: (1) tracks your comment threads for author replies and drafts follow-ups in the 6-24h window; (2) pulls likers and commenters on any post and groups them by ICP fit (peer / aspirational / prospect). |
-| **Profile Optimizer** | Rewrites your headline, About section, Featured section, and Experience for 2026 conversion patterns |
-| **Employee Advocacy** | Plans a team LinkedIn program: 14-day launch, posting cadence, brand governance, ROI tracking |
-| **Repurposer** | Turns content from another platform (tweet, thread, YouTube video, blog, newsletter) into a native LinkedIn post: re-hooks for the fold, expands to the 900-1300 char sweet spot, moves links to the first comment, runs the humanizer |
+| **Post Writer** | Redige posts prontos para viralizar usando 20 fórmulas de gancho comprovadas de 2026 (anáfora, obituário R.I.P., virada ano a ano, lacuna de curiosidade, abertura emocional a frio, A/B controlado, falso binário e mais 13) além de uma biblioteca de ângulos para a edição de fundadores, escolhida conforme o objetivo de engajamento |
+| **Comment Drafter** | Redige um comentário para qualquer post do LinkedIn a partir da sua URL |
+| **Reply Handler** | Redige uma resposta a qualquer comentário, tratando corretamente o achatamento de threads em 2 níveis do LinkedIn |
+| **Post Audit** | Verifica seu rascunho contra as regras de algoritmo de 2026 e padrões de detecção de IA antes de você publicar |
+| **Humanizer** | Remove as marcas de IA às quais leitores humanos e o filtro de "slop" do LinkedIn reagem: vocabulário de IA de 2026 pontuado por densidade em cada parágrafo, pontes de revelação, blocos de frases curtas em staccato, tríades empilhadas, sinceridade forçada; limita travessões em vez de proibi-los. Não promete enganar detectores (nenhuma edição faz isso de forma confiável). Reúne três sub-ferramentas: pontuador de densidade de emojis de IA, testador de dispersão entre múltiplos detectores (GPTZero, Originality.ai, ZeroGPT, Sapling, Copyleaks) que documenta o quanto eles discordam, e uma referência explicativa das regras para justificar escolhas estilísticas. |
+| **Hook Extractor** | Faz engenharia reversa da fórmula de gancho de qualquer post viral. Retorna um modelo em branco que você pode preencher com seu próprio tema |
+| **Content Planner** | Cria um plano de 7 dias com temas diários de post, formatos, ganchos, horários de publicação e alvos para comentar |
+| **Engagement Monitor** | Dois fluxos de leitura: (1) acompanha suas threads de comentário em busca de respostas do autor e redige follow-ups na janela de 6 a 24h; (2) coleta curtidas e comentários em qualquer post e os agrupa por adequação ao ICP (par / aspiracional / prospect). |
+| **Profile Optimizer** | Reescreve seu headline, seção Sobre, seção Destaques e Experiência conforme os padrões de conversão de 2026 |
+| **Employee Advocacy** | Planeja um programa de LinkedIn para a equipe: lançamento de 14 dias, cadência de publicação, governança de marca, acompanhamento de ROI |
+| **Repurposer** | Transforma conteúdo de outra plataforma (tweet, thread, vídeo do YouTube, blog, newsletter) em um post nativo do LinkedIn: refaz o gancho para a dobra da tela, expande até o intervalo ideal de 900-1300 caracteres, move links para o primeiro comentário, executa o humanizer |
 
-## Built for founders
+## Feito para fundadores
 
-If you are a founder, the bundle ships a dedicated founder layer. Your real constraint is rarely reach. It is a small number of high-stakes readers: the next investor, the next hire, the design partner who becomes a case study. The founder layer optimizes for trust with that narrow audience instead of impressions.
+Se você é fundador, o pacote inclui uma camada dedicada para fundadores. Sua verdadeira restrição raramente é alcance. É um número pequeno de leitores de alto impacto: o próximo investidor, a próxima contratação, o parceiro de design que vira case de sucesso. A camada de fundadores otimiza para confiança com esse público restrito, em vez de impressões.
 
-- **10 founder angles** (`references/founder-topics.md`) as fill-in templates: reprice the category, content-to-pipeline, audience of one, the scarce-shots math, the unglamorous bet, the limit of delegation, designed serendipity, the evasive-sentence test, the delegation line, the learning gate. Each maps to an engagement goal and a hook formula.
-- **4 structural hook formulas (F17-F20)** that shape a post's logic: controlled A/B anecdote, false-binary dissolve, anecdote-meets-evidence bridge, diverging-curves close.
-- **A founders-edition content plan** (Conviction / Building in public / The math / Proof) in the Content Planner.
+- **10 ângulos para fundadores** (`references/founder-topics.md`) como modelos para preencher: reprecificar a categoria, conteúdo para pipeline, audiência de um, a matemática das chances escassas, a aposta pouco glamorosa, o limite da delegação, serendipidade planejada, o teste da frase evasiva, a linha da delegação, o portão do aprendizado. Cada um se conecta a um objetivo de engajamento e a uma fórmula de gancho.
+- **4 fórmulas de gancho estruturais (F17-F20)** que moldam a lógica de um post: anedota A/B controlada, dissolução do falso binário, ponte anedota-encontra-evidência, fechamento de curvas divergentes.
+- **Um plano de conteúdo na edição de fundadores** (Convicção / Construindo em público / A matemática / Prova) no Content Planner.
 
-Just tell the Post Writer you are a founder, or ask the Content Planner for a "founder plan," and the skills reach for these first.
+Basta dizer ao Post Writer que você é fundador, ou pedir ao Content Planner um "plano de fundador", que as skills recorrem primeiro a esses recursos.
 
-## Community skills
+## Skills da comunidade
 
-Standalone skills built by other people on this bundle's conventions (same voice rules, same approval-card flow, same `Not for X (use Y)` disambiguation). They live in their authors' repos, so the core stays at 11 skills and one read/write pipeline. Install them next to this bundle the same way.
+Skills independentes construídas por outras pessoas seguindo as convenções deste pacote (as mesmas regras de voz, o mesmo fluxo de cartão de aprovação, a mesma desambiguação `Not for X (use Y)`). Elas vivem nos repositórios de seus autores, então o núcleo permanece com 11 skills e um único pipeline de leitura/escrita. Instale-as ao lado deste pacote da mesma forma.
 
-- [linkedin-outreach](https://github.com/smfardeen7/linkedin-skills/tree/add-linkedin-outreach-skill/skills/linkedin-outreach) by [@smfardeen7](https://github.com/smfardeen7) - drafts 300-character connection-request notes (10 scenario templates) and post-accept follow-up sequences with day offsets and stop rules. Draft-only: LinkedIn has no invite or DM API, you paste and send.
+- [linkedin-outreach](https://github.com/smfardeen7/linkedin-skills/tree/add-linkedin-outreach-skill/skills/linkedin-outreach) por [@smfardeen7](https://github.com/smfardeen7) - redige notas de pedido de conexão com 300 caracteres (10 modelos de cenário) e sequências de follow-up pós-aceite com prazos em dias e regras de parada. Apenas rascunho: o LinkedIn não tem API de convite ou DM, você cola e envia.
 
-Built one? Open a PR that adds a single line here.
+Construiu uma? Abra um PR adicionando uma única linha aqui.
 
-## Optional: read LinkedIn data with Apify
+## Opcional: ler dados do LinkedIn com o Apify
 
-Four of the skills (Comment Drafter, Reply Handler, Hook Extractor, Engagement Monitor) can read post bodies, comment threads, your own recent comments, and the people who liked or commented on any post. Without an Apify token they fall back to asking you to paste the relevant text. With one, they fetch automatically.
+Quatro das skills (Comment Drafter, Reply Handler, Hook Extractor, Engagement Monitor) conseguem ler o corpo de posts, threads de comentários, seus próprios comentários recentes e as pessoas que curtiram ou comentaram em qualquer post. Sem um token do Apify, elas recorrem a pedir que você cole o texto relevante. Com um token, elas buscam automaticamente.
 
-[Apify](https://console.apify.com/sign-up) free tier ships with $5/month of credit, which goes a long way at $1-$5 per 1,000 results. The skills use four no-cookies actors:
+O plano gratuito do [Apify](https://console.apify.com/sign-up) vem com $5/mês de crédito, o que rende bastante a $1-$5 por 1.000 resultados. As skills usam quatro atores sem cookies:
 
-| Use case | Actor | Cost |
+| Caso de uso | Ator | Custo |
 |---|---|---|
-| Post body by URL | `supreme_coder/linkedin-post` | $1 / 1,000 |
-| Comments + replies on a post | `apimaestro/linkedin-post-comments-replies-engagements-scraper-no-cookies` | $5 / 1,000 |
-| Your own recent comments | `apimaestro/linkedin-profile-comments` | $5 / 1,000 |
-| Likers + commenters on any post | `scraping_solutions/linkedin-posts-engagers-likers-and-commenters-no-cookies` | $5 / 1,000 |
+| Corpo do post por URL | `supreme_coder/linkedin-post` | $1 / 1.000 |
+| Comentários + respostas em um post | `apimaestro/linkedin-post-comments-replies-engagements-scraper-no-cookies` | $5 / 1.000 |
+| Seus próprios comentários recentes | `apimaestro/linkedin-profile-comments` | $5 / 1.000 |
+| Curtidas + comentários em qualquer post | `scraping_solutions/linkedin-posts-engagers-likers-and-commenters-no-cookies` | $5 / 1.000 |
 
-Setup: drop `APIFY_TOKEN=apify_api_...` into your `.env`. The thin client at `lib/apify_client.py` exposes `fetch_post`, `fetch_post_comments`, `fetch_user_recent_comments`, and `fetch_post_engagers`.
+Configuração: coloque `APIFY_TOKEN=apify_api_...` no seu `.env`. O cliente leve em `lib/apify_client.py` expõe `fetch_post`, `fetch_post_comments`, `fetch_user_recent_comments` e `fetch_post_engagers`.
 
-A typical creator running daily comment ops + a weekly engager-analytics sweep stays under $2/month, well inside the free tier.
+Um criador de conteúdo típico rodando operações diárias de comentários mais uma varredura semanal de analytics de engajamento fica abaixo de $2/mês, bem dentro do plano gratuito.
 
-## Optional: auto-post with Publora
+## Opcional: publicação automática com o Publora
 
-By default, skills draft content for you to copy-paste into LinkedIn. If you want Claude Code or Codex to publish directly to your LinkedIn (and optionally to X, Threads, Instagram), connect Publora. It takes about 2 minutes.
+Por padrão, as skills redigem conteúdo para você copiar e colar no LinkedIn. Se você quiser que o Claude Code ou o Codex publiquem diretamente no seu LinkedIn (e, opcionalmente, no X, Threads, Instagram), conecte o Publora. Leva cerca de 2 minutos.
 
-### What is Publora?
+### O que é o Publora?
 
-[Publora](https://publora.com) is a publishing API that handles LinkedIn's quirks (3 different URL formats, reaction type mismatches, thread flattening bugs). The free tier gives you 15 posts/month.
+O [Publora](https://publora.com) é uma API de publicação que lida com as peculiaridades do LinkedIn (3 formatos diferentes de URL, incompatibilidades no tipo de reação, bugs de achatamento de threads). O plano gratuito dá 15 posts/mês.
 
-Publora also ships [official MCP skills](https://github.com/publora/skills) (`npx skills add publora/skills`): one skill per platform, covering the publish side only. This bundle is the layer above them, adding the reading, the writing craft and the approval flow.
+O Publora também distribui [skills MCP oficiais](https://github.com/publora/skills) (`npx skills add publora/skills`): uma skill por plataforma, cobrindo apenas o lado da publicação. Este pacote é a camada acima delas, adicionando a leitura, o ofício da escrita e o fluxo de aprovação.
 
-### Setup (2 minutes)
+### Configuração (2 minutos)
 
-**Step 1.** Sign up at https://app.publora.com/signup (free)
+**Passo 1.** Cadastre-se em https://app.publora.com/signup (grátis)
 
-**Step 2.** Connect LinkedIn: click **Channels** in the left sidebar, then **Add Channel**, pick **LinkedIn**, authorize.
+**Passo 2.** Conecte o LinkedIn: clique em **Channels** na barra lateral esquerda, depois em **Add Channel**, escolha **LinkedIn**, autorize.
 
-**Step 3.** Find your Platform ID: go to **Channels**, click your LinkedIn account. The ID looks like `linkedin-ABC123DEF`. Copy the whole thing including `linkedin-`.
+**Passo 3.** Encontre seu Platform ID: vá em **Channels**, clique na sua conta do LinkedIn. O ID se parece com `linkedin-ABC123DEF`. Copie tudo, incluindo `linkedin-`.
 
-**Step 4.** Get your API key: click **Settings** (gear icon, bottom-left), then **API**, then **Create Key**. Copy the `sk_...` string.
+**Passo 4.** Obtenha sua chave de API: clique em **Settings** (ícone de engrenagem, canto inferior esquerdo), depois em **API**, depois em **Create Key**. Copie a string `sk_...`.
 
-**Step 5.** Create a file called `.env` in the linkedin-skills folder:
+**Passo 5.** Crie um arquivo chamado `.env` na pasta linkedin-skills:
 
 ```
 PUBLORA_API_KEY=sk_paste_your_key_here
 LINKEDIN_PLATFORM_ID=linkedin-paste_your_id_here
 ```
 
-If you cloned the repo, you can copy the template instead:
+Se você clonou o repositório, pode copiar o modelo em vez disso:
 
 ```bash
 cp .env.example .env
 ```
 
-Then open `.env` and replace the placeholders with your real values.
+Depois abra `.env` e substitua os placeholders pelos seus valores reais.
 
-**Step 6.** Install two small Python packages:
+**Passo 6.** Instale dois pequenos pacotes Python:
 
 ```bash
 pip install requests python-dotenv
 ```
 
-**Step 7.** Test it. Ask Claude Code or Codex:
+**Passo 7.** Teste. Peça ao Claude Code ou ao Codex:
 
-> "Schedule a test LinkedIn post via Publora 24 hours from now: 'testing the API connection — will cancel in dashboard'."
+> "Agende um post de teste no LinkedIn via Publora para daqui a 24 horas: 'testando a conexão da API — vou cancelar no painel'."
 
-If Publora returns a scheduled-post ID, you're set. Cancel the post in the Publora dashboard before the scheduled time. If you get HTTP 401, your API key is wrong. If you get HTTP 400 about a missing platformId, your `LINKEDIN_PLATFORM_ID` isn't set. See [Troubleshooting](#troubleshooting).
+Se o Publora retornar um ID de post agendado, está tudo certo. Cancele o post no painel do Publora antes do horário agendado. Se você receber HTTP 401, sua chave de API está errada. Se receber HTTP 400 sobre um platformId ausente, seu `LINKEDIN_PLATFORM_ID` não está configurado. Veja [Solução de problemas](#solução-de-problemas).
 
-## Optional: generate illustrations with Pixfaro
+## Opcional: gerar ilustrações com o Pixfaro
 
-Posts with a visual get more dwell time. The Post Writer can generate an illustration for a draft (a feed image, a carousel slide, or a quote-card of your hook) and attach it automatically when publishing. Without a key it drafts the image prompt and asks you to generate it yourself, so nothing breaks.
+Posts com um elemento visual conseguem mais tempo de permanência. O Post Writer pode gerar uma ilustração para um rascunho (uma imagem de feed, um slide de carrossel ou um card de citação com seu gancho) e anexá-la automaticamente ao publicar. Sem uma chave, ele redige o prompt da imagem e pede que você mesmo a gere, então nada quebra.
 
-[Pixfaro](https://pixfaro.com) is a single image API over multiple models (from `flux-schnell` at $0.004 to `gpt-5-image`). It composites your handle, brand color, or logo onto the image as a **pixel-exact overlay**, so a cheap base model still renders crisp text on a quote-card or thumbnail. Pull those brand fields from your [Voice & Brand Profile](references/voice-profile.md) (section 6) and every asset stays on-brand.
+O [Pixfaro](https://pixfaro.com) é uma única API de imagem sobre múltiplos modelos (do `flux-schnell` a $0,004 até o `gpt-5-image`). Ele sobrepõe seu handle, cor de marca ou logo na imagem como uma **camada pixel a pixel**, então mesmo um modelo base barato renderiza texto nítido em um card de citação ou miniatura. Puxe esses campos de marca do seu [Perfil de Voz e Marca](references/voice-profile.md) (seção 6) e todo ativo permanece alinhado com sua marca.
 
-Setup: drop `PIXFARO_TOKEN=pf_live_...` into your `.env`. The thin client at `lib/pixfaro_client.py` and the wrappers `lib.illustrate(prompt, kind=...)` / `lib.refine(image_id, instruction)` return a hosted URL that flows straight into `lib.publish(..., media_urls=[url])`. `refine` edits a prior image by its id (cheaper than regenerating); results carry `cost`, `balance_after`, and a `premium` flag so the skills never quietly spend on a pricey model.
+Configuração: coloque `PIXFARO_TOKEN=pf_live_...` no seu `.env`. O cliente leve em `lib/pixfaro_client.py` e os wrappers `lib.illustrate(prompt, kind=...)` / `lib.refine(image_id, instruction)` retornam uma URL hospedada que vai direto para `lib.publish(..., media_urls=[url])`. O `refine` edita uma imagem anterior pelo seu id (mais barato do que regenerar); os resultados trazem `cost`, `balance_after` e um sinalizador `premium`, para que as skills nunca gastem discretamente em um modelo caro.
 
-## Voice rules
+## Regras de voz
 
-Every skill follows these rules automatically:
+Toda skill segue estas regras automaticamente:
 
-1. Em dashes capped at about 1 per 100 words. The character stopped being a tell in 2026; the density is.
-2. Capitalize names. Always. Lowercase reads as disrespectful.
-3. No AI vocabulary: "leverage", "fundamentally", "streamline", "harness", "delve", "unlock", "foster".
-4. Specific numbers beat adjectives. "$14,200" beats "significant savings".
-5. One sharp insight per comment beats three vague ones.
-6. 200-350 chars for comments, 900-1,300 chars for posts.
+1. Travessões limitados a cerca de 1 a cada 100 palavras. O caractere deixou de ser uma marca em 2026; a densidade é que é.
+2. Capitalize nomes. Sempre. Minúsculas soam como desrespeito.
+3. Sem vocabulário de IA: "leverage", "fundamentally", "streamline", "harness", "delve", "unlock", "foster".
+4. Números específicos vencem adjetivos. "$14.200" vence "economia significativa".
+5. Uma percepção afiada por comentário vale mais que três vagas.
+6. 200-350 caracteres para comentários, 900-1.300 caracteres para posts.
 
-## Troubleshooting
+## Solução de problemas
 
-| Problem | Fix |
+| Problema | Correção |
 |---|---|
-| Skills don't activate when I ask about LinkedIn | Make sure you installed via the Skills panel, `/plugin install`, or `codex plugin add`. Try starting a new conversation. |
-| "Publora API key not provided" | Your `.env` file is missing or in the wrong folder. It should be in the `linkedin-skills/` root. |
-| "401 Unauthorized" from Publora | Your API key expired. Go to Publora Settings > API > Create a new key. |
-| "404 on comment/post" | Your `LINKEDIN_PLATFORM_ID` is wrong. Go to Publora Channels and copy the full `linkedin-...` string. |
-| "400 reactionType" error | Known Publora quirk. The skills handle this automatically. If you're calling the API manually, use PRAISE (not CELEBRATE), INTEREST (not INSIGHTFUL). |
-| `pip install` fails | Use a virtual environment: `python -m venv venv && source venv/bin/activate && pip install requests python-dotenv` |
+| As skills não ativam quando pergunto sobre LinkedIn | Confirme que você instalou pelo painel de Skills, `/plugin install`, ou `codex plugin add`. Tente iniciar uma nova conversa. |
+| "Publora API key not provided" | Seu arquivo `.env` está ausente ou na pasta errada. Ele deve estar na raiz de `linkedin-skills/`. |
+| "401 Unauthorized" do Publora | Sua chave de API expirou. Vá em Publora Settings > API > Create a new key. |
+| "404 on comment/post" | Seu `LINKEDIN_PLATFORM_ID` está errado. Vá em Publora Channels e copie a string completa `linkedin-...`. |
+| Erro "400 reactionType" | Peculiaridade conhecida do Publora. As skills tratam isso automaticamente. Se você estiver chamando a API manualmente, use PRAISE (não CELEBRATE), INTEREST (não INSIGHTFUL). |
+| `pip install` falha | Use um ambiente virtual: `python -m venv venv && source venv/bin/activate && pip install requests python-dotenv` |
 
-## Cross-cutting references
+## Referências transversais
 
-- [`references/industry-benchmarks.md`](references/industry-benchmarks.md) — engagement rates, time-per-post, reach multipliers across industries
-- [`references/engagement-metrics-taxonomy.md`](references/engagement-metrics-taxonomy.md) — what to measure at post / account / team / business level
+- [`references/industry-benchmarks.md`](references/industry-benchmarks.md) — taxas de engajamento, tempo por post, multiplicadores de alcance entre setores
+- [`references/engagement-metrics-taxonomy.md`](references/engagement-metrics-taxonomy.md) — o que medir em nível de post / conta / equipe / negócio
 
 ---
 
 <details>
-<summary><b>For developers: runtime compatibility, URL parsing, and internals</b></summary>
+<summary><b>Para desenvolvedores: compatibilidade de runtime, parsing de URL e internos</b></summary>
 
-## Runtime compatibility
+## Compatibilidade de runtime
 
 ```
 linkedin-skills/
-├── skills/          ← SKILL.md frontmatter; native to Claude Code and Codex, others read as markdown
-├── .codex-marketplace/ ← generated nested Codex package (run scripts/sync_codex_marketplace.py)
-├── lib/             ← pure Python, works in any agent runtime
-├── references/      ← pure markdown, works anywhere
-└── scripts/         ← pure Python CLI, works anywhere
+├── skills/          ← SKILL.md frontmatter; nativo do Claude Code e Codex, outros leem como markdown
+├── .codex-marketplace/ ← pacote Codex aninhado gerado (execute scripts/sync_codex_marketplace.py)
+├── lib/             ← Python puro, funciona em qualquer runtime de agente
+├── references/      ← markdown puro, funciona em qualquer lugar
+└── scripts/         ← CLI Python puro, funciona em qualquer lugar
 ```
 
-| Runtime | Auto-discovers skills? | Setup |
+| Runtime | Descobre skills automaticamente? | Configuração |
 |---|---|---|
-| **Claude Code** (CLI, Desktop, Web, IDE) | Yes | Install via plugin or clone. Skills activate on matching prompts. |
-| **Codex CLI** | Yes | Install via `codex plugin marketplace add sergebulaev/linkedin-skills` and `codex plugin add linkedin-skills@linkedin-skills`. |
-| **Anthropic Managed Agents** (`/v1/agents`) | Yes | Pass skill files in the agent context. |
-| **OpenClaw** | Manual | Mount the repo, add system prompt pointing to `skills/*/SKILL.md`. |
-| **Cursor / Cline / Aider** | Manual | Read `SKILL.md` files as prompt context; import `lib/` as Python. |
-| **Manus** | No | Upload `references/` as knowledge base. Call Publora API directly. |
-| **LangChain / AutoGen** | No | Use `lib/` as a package; feed `references/` as prompt context. |
+| **Claude Code** (CLI, Desktop, Web, IDE) | Sim | Instale via plugin ou clone. As skills ativam com prompts compatíveis. |
+| **Codex CLI** | Sim | Instale via `codex plugin marketplace add sergebulaev/linkedin-skills` e `codex plugin add linkedin-skills@linkedin-skills`. |
+| **Anthropic Managed Agents** (`/v1/agents`) | Sim | Passe os arquivos de skill no contexto do agente. |
+| **OpenClaw** | Manual | Monte o repositório, adicione um system prompt apontando para `skills/*/SKILL.md`. |
+| **Cursor / Cline / Aider** | Manual | Leia os arquivos `SKILL.md` como contexto de prompt; importe `lib/` como Python. |
+| **Manus** | Não | Faça upload de `references/` como base de conhecimento. Chame a API do Publora diretamente. |
+| **LangChain / AutoGen** | Não | Use `lib/` como pacote; alimente `references/` como contexto de prompt. |
 
-### OpenClaw quickstart
+### Início rápido no OpenClaw
 
 ```bash
 git clone git@github.com:sergebulaev/linkedin-skills.git
@@ -305,7 +305,7 @@ git clone git@github.com:sergebulaev/linkedin-skills.git
 #      lib/publora_client.py for publishing."
 ```
 
-### Generic Python agent quickstart
+### Início rápido para um agente Python genérico
 
 ```python
 import sys; sys.path.insert(0, "path/to/linkedin-skills")
@@ -329,23 +329,23 @@ img = illustrate("Minimal flat-vector lighthouse, calm blue palette", kind="wide
 # img["url"] -> pass to publish(..., media_urls=[img["url"]])
 ```
 
-## URL handling
+## Tratamento de URL
 
-LinkedIn has three post URN types. The `lib/url_parser.py` handles all of them:
+O LinkedIn tem três tipos de URN de post. O `lib/url_parser.py` trata todos eles:
 
-| URL fragment | URN |
+| Fragmento de URL | URN |
 |---|---|
 | `/posts/slug-activity-7448...` | `urn:li:activity:7448...` |
 | `/posts/slug-share-7449...` | `urn:li:share:7449...` |
 | `/feed/update/urn:li:ugcPost:7447...` | `urn:li:ugcPost:7447...` |
 
-Comment URLs include a `commentUrn` query param. The parser extracts both `post_urn` and `comment_id`.
+URLs de comentário incluem um parâmetro de consulta `commentUrn`. O parser extrai tanto `post_urn` quanto `comment_id`.
 
-## Thread flattening
+## Achatamento de threads
 
-LinkedIn flattens reply threads to 2 levels. When replying to a reply, `parentComment` must point to the top-level comment URN, not the reply's URN. The `linkedin-reply-handler` skill handles this correctly.
+O LinkedIn achata threads de resposta em 2 níveis. Ao responder a uma resposta, `parentComment` deve apontar para o URN do comentário de nível superior, não para o URN da resposta. A skill `linkedin-reply-handler` trata isso corretamente.
 
-## Testing the parser
+## Testando o parser
 
 ```bash
 python lib/url_parser.py "https://www.linkedin.com/posts/<author-handle>_activity-<id>"
@@ -353,32 +353,32 @@ python lib/url_parser.py "https://www.linkedin.com/posts/<author-handle>_activit
 
 </details>
 
-## References
+## Referências
 
-- [Publora API docs](https://docs.publora.com) — endpoint reference for the publishing layer
-- [Apify console](https://console.apify.com) — manage actors, tokens, and usage for the read layer
-- [360Brew paper](https://arxiv.org/abs/2501.16450) — LinkedIn's ranking foundation model
-- [AuthoredUp 2026 reach data](https://authoredup.com/) — format-level reach benchmarks
+- [Documentação da API do Publora](https://docs.publora.com) — referência de endpoints da camada de publicação
+- [Console do Apify](https://console.apify.com) — gerencie atores, tokens e uso da camada de leitura
+- [Artigo do 360Brew](https://arxiv.org/abs/2501.16450) — o modelo de fundação de ranqueamento do LinkedIn
+- [Dados de alcance de 2026 da AuthoredUp](https://authoredup.com/) — benchmarks de alcance por formato
 
-## Who builds this
+## Quem constrói isto
 
-These skills come out of [Creative Content Crafts](https://cccrafts.ai), an engineering company. We build the machinery underneath a company's public voice: ICP parsing, engagement systems, content guardrails, and posting infrastructure. We do not sell the words themselves.
+Essas skills vêm da [Creative Content Crafts](https://cccrafts.ai), uma empresa de engenharia. Nós construímos a maquinaria por trás da voz pública de uma empresa: parsing de ICP, sistemas de engajamento, guardrails de conteúdo e infraestrutura de publicação. Não vendemos as palavras em si.
 
-We call that layer **content engineering**. Writing collapsed to the price of a chat subscription. What stayed valuable is everything below it: pulling every post your market wrote this week, keeping a live list of the people who matter, engaging on it daily with judgment in the loop, and catching the risky drafts before the platform does.
+Chamamos essa camada de **engenharia de conteúdo**. Escrever caiu para o preço de uma assinatura de chat. O que permaneceu valioso é tudo o que está abaixo disso: coletar todo post que seu mercado escreveu nesta semana, manter uma lista viva das pessoas que importam, engajar nela diariamente com julgamento no processo, e capturar os rascunhos arriscados antes que a plataforma o faça.
 
-On LinkedIn specifically, that is the whole job. We are engineers of LinkedIn growth, not a ghostwriting agency.
+No LinkedIn especificamente, isso é o trabalho inteiro. Somos engenheiros de crescimento no LinkedIn, não uma agência de ghostwriting.
 
-This repo is the thin top layer of that stack, open-sourced. The engine underneath is what we build for clients.
+Este repositório é a camada superior fina dessa pilha, disponibilizada como código aberto. O motor por baixo é o que construímos para clientes.
 
-## License
+## Licença
 
 MIT. Powered by [Publora](https://publora.com).
 
-## Related open-source skill bundles
+## Pacotes de skills de código aberto relacionados
 
-Part of a family of AI social-media marketing skill bundles for Claude Code and Codex:
+Parte de uma família de pacotes de skills de marketing de mídia social com IA para Claude Code e Codex:
 
-- **linkedin-skills - LinkedIn (this repo)**
+- **linkedin-skills - LinkedIn (este repositório)**
 - [x-skills](https://github.com/sergebulaev/x-skills) - X (Twitter)
 - [instagram-skills](https://github.com/sergebulaev/instagram-skills) - Instagram
 - [youtube-skills](https://github.com/sergebulaev/youtube-skills) - YouTube
@@ -386,4 +386,4 @@ Part of a family of AI social-media marketing skill bundles for Claude Code and 
 - [tiktok-skills](https://github.com/sergebulaev/tiktok-skills) - TikTok
 - [facebook-skills](https://github.com/sergebulaev/facebook-skills) - Facebook Pages
 
-Also: [Anthropic Skills repo](https://github.com/anthropics/skills), the `awesome-claude-skills` directory.
+Veja também: [Repositório de Skills da Anthropic](https://github.com/anthropics/skills), o diretório `awesome-claude-skills`.

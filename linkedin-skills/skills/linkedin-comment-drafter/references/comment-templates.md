@@ -1,219 +1,224 @@
-# 7 Comment Templates (2026)
+# 7 Templates de Comentário (2026)
 
-Each template has a fill-in skeleton, a psychological reason it works, and a real example from the reference library.
+Cada template tem um esqueleto de preenchimento, uma razão psicológica de por que funciona, e um exemplo real da biblioteca de referência.
 
-## Contents
+## Conteúdo
 
-- T1 - Missing-Piece
-- T2 - Answer-the-Closing-Question
-- T3 - Data-First
-- T4 - Practitioner Observation
-- T5 - Counter-with-Concession
-- T6 - Quotable-Reframe
-- T7 - Ask-a-Sharper-Question
-- Anti-patterns (never ship these)
-- Reaction type heuristics
-- Length & Weight Rules
-- High-Weight Comment Structure (4-part)
-- Sales-oriented templates (new)
+- T1 - Peça-Faltante
+- T2 - Responder-a-Pergunta-de-Fechamento
+- T3 - Dados-Primeiro
+- T4 - Observação-de-Praticante
+- T5 - Contrapor-com-Concessão
+- T6 - Reformulação-Citável
+- T7 - Fazer-uma-Pergunta-Mais-Afiada
+- Antipadrões (nunca publicar estes)
+- Heurísticas de tipo de reação
+- Regras de Extensão e Peso
+- Estrutura de Comentário de Alto Peso (4 partes)
+- Templates orientados a vendas (novo)
 
-## T1 — Missing-Piece
+## T1 — Peça-Faltante
 
-**Skeleton:**
+**Esqueleto:**
 ```
-[Name] the [their-thesis] argument misses one piece.. [what-moved].
+[Nome] o argumento sobre [tese-deles] deixa passar uma peça.. [o-que-mudou].
 
-when [their-condition], the real differentiator is [specific-skill], not [their-focus].
+quando [condição-deles], o verdadeiro diferencial é [habilidade-específica], não [foco-deles].
 ```
 
-**Why it works:** Agrees on the premise, then sharpens it with one piece the author didn't name. Authors reply because you've extended their thinking, not restated it.
+**Por que funciona:** Concorda com a premissa, depois a afia com uma peça que o autor não mencionou. Autores respondem porque você estendeu o raciocínio deles, não o repetiu.
 
-**Real example (Apr 2026, got a personal reply from the author 22h later):**
-> the tools-as-equalizer argument misses one piece.. the moat moved from tools to taste.
+**Exemplo real (abr/2026, recebeu resposta pessoal do autor 22h depois):**
+> o argumento das ferramentas como equalizador deixa passar uma peça.. o fosso competitivo mudou de ferramentas para gosto/critério.
 >
-> when everyone has the same LLM and the same automation platform, the differentiator is whether you actually know what your customer wants and have the conviction to point the tool at the right thing.
+> quando todo mundo tem o mesmo LLM e a mesma plataforma de automação, o diferencial é saber de verdade o que seu cliente quer e ter a convicção de apontar a ferramenta para a coisa certa.
 
-**Hit rate:** highest in 2026 testing. Author-reply probability ~15%.
-
----
-
-## T2 — Answer-the-Closing-Question
-
-**When to use:** The post ends with a question. Any question.
-
-**Skeleton:**
-```
-[direct answer, not a hedge].
-
-[one concrete example OR number]. [why this matters for their framing].
-```
-
-**Why it works:** Authors LOVE when someone actually answers the question instead of pivoting to their own hot take. You become memorable as "the person who engaged with my actual question."
-
-**Real example:**
-> seeing exactly this in B2B content and marketing.. our team of six with AI ships what a 30-person agency used to charge for, and the clients figured it out faster than the agencies did.
+**Taxa de acerto:** a mais alta nos testes de 2026. Probabilidade de resposta do autor ~15%.
 
 ---
 
-## T3 — Data-First
+## T2 — Responder-a-Pergunta-de-Fechamento
 
-**Skeleton:**
+**Quando usar:** A publicação termina com uma pergunta. Qualquer pergunta.
+
+**Esqueleto:**
 ```
-half the [population] I see now [specific-behavior].
+[resposta direta, sem enrolação].
 
-the [old-assumption] broke around [date/event]. [new-rule].
+[um exemplo concreto OU número]. [por que isso importa para o enquadramento deles].
 ```
 
-**Why it works:** Opens with a number the author can't argue with. Contextualizes against a dated event so the claim is falsifiable. High quotability.
+**Por que funciona:** Autores ADORAM quando alguém realmente responde à pergunta em vez de desviar para sua própria opinião quente. Você se torna memorável como "a pessoa que engajou de verdade com minha pergunta".
 
-**Example:**
-> half the sales calls I'm on now, the person already knows what I think before we start.
+**Exemplo real:**
+> vendo exatamente isso em conteúdo B2B e marketing.. nosso time de seis pessoas com IA entrega o que uma agência de 30 pessoas cobrava para fazer, e os clientes perceberam isso mais rápido do que as agências.
+
+---
+
+## T3 — Dados-Primeiro
+
+**Esqueleto:**
+```
+metade da [população] que vejo hoje [comportamento-específico].
+
+a [suposição-antiga] quebrou por volta de [data/evento]. [nova-regra].
+```
+
+**Por que funciona:** Abre com um número que o autor não pode contestar. Contextualiza contra um evento datado, tornando a afirmação refutável. Alta citabilidade.
+
+**Exemplo:**
+> em metade das ligações de venda que faço hoje, a pessoa já sabe o que eu penso antes de começarmos.
+
 >
-> the old qualification script broke around late 2024. content does the qualifying before the meeting happens.
+> o roteiro antigo de qualificação quebrou por volta do fim de 2024. o conteúdo faz a qualificação antes mesmo da reunião acontecer.
 
 ---
 
-## T4 — Practitioner Observation
+## T4 — Observação-de-Praticante
 
-**Skeleton:**
+**Esqueleto:**
 ```
-[Name] when [condition-A] the [system] does X, when [condition-B] it does Y.
+[Nome] quando [condição-A] o [sistema] faz X, quando [condição-B] faz Y.
 
-[the rule behind it].. that's when [desirable outcome] kicks in.
+[a regra por trás disso].. é aí que [resultado desejado] entra em ação.
 ```
 
-**Why it works:** Shows you've actually operated the thing the author is theorizing about. Concrete operational knowledge beats abstract framework.
+**Por que funciona:** Mostra que você realmente operou aquilo que o autor está teorizando. Conhecimento operacional concreto vence framework abstrato.
 
-**Example:**
-> when tools are exposed directly the agent treats them as menu items, when they're wrapped in intent the agent picks based on what it's actually trying to accomplish.
+**Exemplo:**
+> quando as ferramentas são expostas diretamente o agente as trata como itens de menu, quando elas são embrulhadas em intenção o agente escolhe com base no que ele realmente está tentando realizar.
+
 >
-> the tool layer should always feel one level too abstract for the agent.. that's when judgment kicks in instead of pattern matching.
+> a camada de ferramentas deveria sempre parecer um nível abstrata demais para o agente.. é aí que o julgamento entra em ação em vez do reconhecimento de padrões.
 
 ---
 
-## T5 — Counter-with-Concession
+## T5 — Contrapor-com-Concessão
 
-**Skeleton:**
+**Esqueleto:**
 ```
-agree on [point-1 from their post]. the part I'd push on is [point-2].
+concordo no [ponto-1 do post deles]. a parte em que eu contestaria é [ponto-2].
 
-[one reason rooted in a specific case or number].
+[um motivo fundamentado em um caso ou número específico].
 ```
 
-**Why it works:** Concession earns the disagreement. The author reads past the first line because they're getting credit first. The push-back is then taken seriously.
+**Por que funciona:** A concessão conquista o direito de discordar. O autor lê até o fim porque recebeu crédito primeiro. A contestação é então levada a sério.
 
-**Example:**
-> you're right on healthcare specifics but I'd push the distinction differently.
+**Exemplo:**
+> você está certo nos detalhes de saúde, mas eu colocaria a distinção de outro jeito.
+
 >
-> the regulation isn't the real blocker.. the consensus bias IS the compliance framework. the losers lost because the industry had agreed on a mechanism.
+> a regulação não é o verdadeiro obstáculo.. o viés de consenso É o framework de compliance. os perdedores perderam porque o setor tinha concordado com um mecanismo.
 
 ---
 
-## T6 — Quotable-Reframe
+## T6 — Reformulação-Citável
 
-**Skeleton:**
+**Esqueleto:**
 ```
-[one short quotable line, under 12 words, standalone].
+[uma linha curta e citável, com menos de 12 palavras, independente].
 
-[expansion: why this is true now, one concrete cause].
+[expansão: por que isso é verdade agora, uma causa concreta].
 ```
 
-**Why it works:** Third parties screenshot and quote the first line. The author can re-share the line back to their own audience.
+**Por que funciona:** Terceiros tiram print e citam a primeira linha. O autor pode compartilhar a linha de volta para a própria audiência.
 
-**Example:**
-> thin harness has been our approach since we started tracking 35k LinkedIn profiles daily.
+**Exemplo:**
+> harness enxuto é nossa abordagem desde que começamos a acompanhar 35 mil perfis do LinkedIn por dia.
+
 >
-> the moment the harness gets fat the model stops surprising you because you've pre-decided what it can think.
+> no momento em que o harness engorda, o modelo para de te surpreender porque você já decidiu de antemão o que ele pode pensar.
 
 ---
 
-## T7 — Ask-a-Sharper-Question
+## T7 — Fazer-uma-Pergunta-Mais-Afiada
 
-**When to use:** The post is 60% of a big idea — the author left something unresolved.
+**Quando usar:** A publicação é 60% de uma grande ideia — o autor deixou algo sem resolver.
 
-**Skeleton:**
+**Esqueleto:**
 ```
-[Name] the harder version of this question is.. [reframed question that assumes their premise and goes one level deeper].
+[Nome] a versão mais difícil dessa pergunta é.. [pergunta reformulada que assume a premissa deles e vai um nível mais fundo].
 
-curious if you've seen [specific case].
+curioso para saber se você já viu [caso específico].
 ```
 
-**Why it works:** Founders in discovery mode engage with sharper questions. Low-effort for them (they like the question), high-visibility for you (they reply publicly).
+**Por que funciona:** Founders em modo de descoberta engajam com perguntas mais afiadas. Baixo esforço para eles (gostam da pergunta), alta visibilidade para você (eles respondem publicamente).
 
-**Example:**
-> the harder version of this question is.. when the attacker and defender are the same model, who gets the patch cycle?
+**Exemplo:**
+> a versão mais difícil dessa pergunta é.. quando o atacante e o defensor são o mesmo modelo, quem controla o ciclo de correção?
+
 >
-> curious if you've seen enterprise buyers even think about this yet.
+> curioso para saber se os compradores corporativos já pensam nisso.
 
 ---
 
-## Anti-patterns (never ship these)
+## Antipadrões (nunca publicar estes)
 
-- "Great post, [Name]!" — dead on arrival
-- "This." / "100%" / "Couldn't agree more" — zero signal
-- Emoji-only replies
-- Tagging a third party to farm reach
-- Any comment mentioning your own product by name on a third-party post
-- Em dashes (`—`), rule-of-three lists, "it's not X, it's Y"
-- Comments over 500 chars unless answering a direct question with depth
+- "Ótima publicação, [Nome]!" — morto ao nascer
+- "Isso." / "100%" / "Não poderia concordar mais" — sinal zero
+- Respostas só com emoji
+- Marcar um terceiro só para pescar alcance
+- Qualquer comentário mencionando o próprio produto pelo nome na publicação de terceiros
+- Travessões (`—`), listas de regra-de-três, "não é X, é Y"
+- Comentários com mais de 500 caracteres, a menos que estejam respondendo a uma pergunta direta com profundidade
 
-## Reaction type heuristics
+## Heurísticas de tipo de reação
 
-| Template | Default reaction |
+| Template | Reação padrão |
 |---|---|
-| T1 Missing-Piece | `INTEREST` |
-| T2 Answer-the-Closing-Question | `APPRECIATION` |
-| T3 Data-First | `INTEREST` |
-| T4 Practitioner Observation | `INTEREST` |
-| T5 Counter-with-Concession | `INTEREST` (never `LIKE` — reads passive) |
-| T6 Quotable-Reframe | `APPRECIATION` |
-| T7 Ask-a-Sharper-Question | `INTEREST` |
+| T1 Peça-Faltante | `INTEREST` |
+| T2 Responder-a-Pergunta-de-Fechamento | `APPRECIATION` |
+| T3 Dados-Primeiro | `INTEREST` |
+| T4 Observação-de-Praticante | `INTEREST` |
+| T5 Contrapor-com-Concessão | `INTEREST` (nunca `LIKE` — soa passivo) |
+| T6 Reformulação-Citável | `APPRECIATION` |
+| T7 Fazer-uma-Pergunta-Mais-Afiada | `INTEREST` |
 
-React before commenting, pause 8-15s, then comment. Spacing makes the interaction look human.
+Reaja antes de comentar, pause 8-15s, depois comente. O espaçamento faz a interação parecer humana.
 
 ---
 
-## Length & Weight Rules
+## Regras de Extensão e Peso
 
-- **Minimum length:** comments under 10 words get near-zero algorithmic weight. Target 12+ words for any comment meant to drive reach. "Great post!" and single-emoji replies are functionally invisible to the ranker.
-- **High-weight sweet spot:** 200-350 chars (~25-50 words), 2 short paragraphs.
-- **Upper bound:** over 500 chars reads as a thread hijack and depresses the parent post's Depth Score.
+- **Extensão mínima:** comentários com menos de 10 palavras recebem peso algorítmico próximo de zero. Mire em 12+ palavras para qualquer comentário que deva gerar alcance. "Ótima publicação!" e respostas de emoji único são praticamente invisíveis para o ranqueador.
+- **Ponto ideal de alto peso:** 200-350 caracteres (~25-50 palavras), 2 parágrafos curtos.
+- **Limite superior:** acima de 500 caracteres soa como sequestro de tópico e deprime o Depth Score da publicação original.
 
-## High-Weight Comment Structure (4-part)
+## Estrutura de Comentário de Alto Peso (4 partes)
 
-All four elements together trigger the "in-depth comment" algorithmic signal:
+Os quatro elementos juntos disparam o sinal algorítmico de "comentário aprofundado":
 
-1. **Reference a specific point** from the original post (quote or paraphrase one line)
-2. **Add your own data / test result / personal experience** with a number
-3. **Introduce a new keyword or angle** the post didn't cover
-4. **End with a genuine question** that invites thread depth
+1. **Faça referência a um ponto específico** da publicação original (cite ou parafraseie uma linha)
+2. **Adicione seu próprio dado / resultado de teste / experiência pessoal** com um número
+3. **Introduza uma palavra-chave ou ângulo novo** que a publicação não cobriu
+4. **Termine com uma pergunta genuína** que convide a aprofundar a conversa
 
-**Worked example:**
+**Exemplo trabalhado:**
 
-> The point about dwell time hit me - I tested this last month by adding 3 line breaks every 2 sentences. Impressions went from ~800 to 2,400 on two consecutive posts. One thing I'm still figuring out: does this work the same way for carousels?
+> O ponto sobre tempo de permanência me pegou - testei isso mês passado adicionando 3 quebras de linha a cada 2 frases. As impressões foram de ~800 para 2.400 em duas publicações consecutivas. Uma coisa que ainda estou tentando entender: isso funciona do mesmo jeito para carrosséis?
 
-## Sales-oriented templates (new)
+## Templates orientados a vendas (novo)
 
-### SALES-T1 — Account Engagement Warmup
+### SALES-T1 — Aquecimento de Engajamento com Conta-Alvo
 
-**When to use:** On posts from target-account prospects, before any outreach. Goal: build familiarity so your name is recognized on the first call.
+**Quando usar:** Em publicações de prospects de contas-alvo, antes de qualquer abordagem. Objetivo: construir familiaridade para que seu nome seja reconhecido na primeira ligação.
 
-**Skeleton:**
+**Esqueleto:**
 ```
-[React to a specific point from prospect's post].
-[Add one insight from your industry that reinforces their thesis].
-```
-
-No pitch. No link. The recognition on the first call is the entire value.
-
-### SALES-T2 — Expertise-Building Comment
-
-**When to use:** On industry/peer posts where you can "position yourself as someone worth listening to".
-
-**Skeleton:**
-```
-[Industry insight from your own experience tied to OP's point].
-[One specific case or number that proves the insight isn't borrowed].
+[Reaja a um ponto específico da publicação do prospect].
+[Adicione um insight do seu setor que reforce a tese dele].
 ```
 
-**Cadence:** 2-3 comments per day on target-account posts (not all at once — spread across morning/afternoon).
+Sem pitch. Sem link. O reconhecimento na primeira ligação é todo o valor.
+
+### SALES-T2 — Comentário de Construção de Expertise
+
+**Quando usar:** Em publicações de setor/pares onde você pode "se posicionar como alguém que vale a pena ouvir".
+
+**Esqueleto:**
+```
+[Insight de setor da sua própria experiência conectado ao ponto do autor].
+[Um caso ou número específico que prove que o insight não foi emprestado].
+```
+
+**Cadência:** 2-3 comentários por dia em publicações de contas-alvo (não todos de uma vez — espalhe entre manhã/tarde).

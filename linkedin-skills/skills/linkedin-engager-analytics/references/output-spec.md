@@ -1,36 +1,36 @@
-# Mode 2. Engager analytics — output spec
+# Modo 2. Análise de engajadores — especificação de saída
 
-Canonical sample outputs for the engager-analytics report. See `SKILL.md` for the workflow steps.
+Exemplos canônicos de saída do relatório de análise de engajadores. Veja `SKILL.md` para as etapas do workflow.
 
-## Engager roster
+## Roster de engajadores
 
-| # | Type | Name | Title | Company | Profile | ICP tier |
+| # | Tipo | Nome | Cargo | Empresa | Perfil | Camada ICP |
 |---|---|---|---|---|---|---|
-| 1 | commenter | Author A | Director | Cosmetics Co | linkedin.com/in/... | Prospect |
-| 2 | commenter | Author B | Senior PM | Enterprise SaaS Co | linkedin.com/in/... | Aspirational |
-| 3 | liker | Author C | Founder | Solo brand LLC | linkedin.com/in/... | Peer |
+| 1 | comentarista | Author A | Director | Cosmetics Co | linkedin.com/in/... | Prospect |
+| 2 | comentarista | Author B | Senior PM | Enterprise SaaS Co | linkedin.com/in/... | Aspiracional |
+| 3 | curtidor | Author C | Founder | Solo brand LLC | linkedin.com/in/... | Peer |
 
-## Tier breakdown
+## Detalhamento por camada
 
-| Tier | Definition | Count | % of total |
+| Camada | Definição | Quantidade | % do total |
 |---|---|---|---|
-| Peer | Founder / operator at company in same niche, 5-50 employees | 12 | 24% |
-| Aspirational | Senior leader at 50+ company in adjacent niche | 9 | 18% |
-| Prospect | Director / C-suite at company matching ICP | 18 | 36% |
-| Other | Doesn't fit any tier | 11 | 22% |
+| Peer | Fundador / operador em empresa do mesmo nicho, 5-50 funcionários | 12 | 24% |
+| Aspiracional | Líder sênior em empresa com 50+ funcionários num nicho adjacente | 9 | 18% |
+| Prospect | Director / C-suite em empresa que corresponde ao ICP | 18 | 36% |
+| Outro | Não se encaixa em nenhuma camada | 11 | 22% |
 
-## Action lists
+## Listas de ação
 
-- **Follow back** (peers worth reciprocal engagement): top 5 by activity
-- **Comment-drop targets** (aspirational creators with their own posts): top 5
-- **DM-able prospects** (with the rationale): top 5 with one-line opener seed
+- **Seguir de volta** (peers que merecem engajamento recíproco): top 5 por atividade
+- **Alvos de comment-drop** (criadores aspiracionais com posts próprios): top 5
+- **Prospects DM-áveis** (com a justificativa): top 5 com semente de abridor de uma linha
 
-## Example run
+## Execução de exemplo
 
-> Input: analyze engagers on https://www.linkedin.com/posts/<author>_..., max 100
+> Entrada: analisar engajadores em https://www.linkedin.com/posts/<author>_..., máximo 100
 
-> Output:
-> - 50 commenters fetched ($0.25)
-> - Tier split: 6 Peer / 14 Aspirational / 18 Prospect / 12 Other
-> - 3 cross-post engagers detected (also engaged with my post 2 weeks ago)
-> - Top 5 DM-able prospects with one-line openers attached
+> Saída:
+> - 50 comentaristas obtidos ($0,25)
+> - Divisão por camada: 6 Peer / 14 Aspiracional / 18 Prospect / 12 Outro
+> - 3 engajadores cross-post detectados (também engajaram com meu post 2 semanas atrás)
+> - Top 5 prospects DM-áveis com abridores de uma linha anexados

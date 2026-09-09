@@ -1,9 +1,10 @@
-"""Approval gate helpers.
+"""Auxiliares do portão de aprovação.
 
-Every skill that posts to LinkedIn MUST present a draft to the user and wait
-for explicit approval before calling Publora. This file is a thin conventions
-layer, not runtime enforcement — skills should call `render_approval_card`
-to format the draft consistently and then stop until the user says go.
+Toda skill que publica no LinkedIn DEVE apresentar um rascunho ao usuário e
+aguardar aprovação explícita antes de chamar a Publora. Este arquivo é uma
+camada fina de convenções, não uma imposição em tempo de execução — as
+skills devem chamar `render_approval_card` para formatar o rascunho de
+forma consistente e então parar até o usuário dar o sinal verde.
 """
 from __future__ import annotations
 from typing import Optional
@@ -18,13 +19,13 @@ def render_approval_card(
     char_count: Optional[int] = None,
     extra_context: Optional[dict] = None,
 ) -> str:
-    """Format a standardized approval card for the user to review.
+    """Formata um cartão de aprovação padronizado para o usuário revisar.
 
-    The card MUST contain:
-    - What the action is (post / comment / reply / reaction)
-    - The full preview text
-    - Target URL if applicable
-    - A clear prompt: "reply YES to post or suggest edits"
+    O cartão DEVE conter:
+    - Qual é a ação (post / comentário / resposta / reação)
+    - O texto de prévia completo
+    - URL de destino, se aplicável
+    - Um prompt claro: "responda SIM para publicar ou sugira edições"
     """
     lines = [f"## Draft ready for approval — {kind}", ""]
     if target_url:

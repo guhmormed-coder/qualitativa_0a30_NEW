@@ -1,3 +1,3 @@
-# Voice rules
+# Regras de voz
 
-This file moved to root-level `references/voice-rules.md`. Update your citation.
+Este arquivo foi movido para `references/voice-rules.md` na raiz. Atualize sua citação.

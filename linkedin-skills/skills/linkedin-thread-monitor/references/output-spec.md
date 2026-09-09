@@ -1,33 +1,33 @@
-# Mode 1. Thread monitoring — output spec
+# Modo 1. Monitoramento de threads — especificação de saída
 
-Canonical sample outputs for the daily thread-monitoring report. See `SKILL.md` for the workflow steps.
+Exemplos canônicos de saída do relatório diário de monitoramento de threads. Veja `SKILL.md` para as etapas do workflow.
 
-## Daily report
+## Relatório diário
 
-| Posted | Author | Post | Comment | Reply? | Stage | Action |
+| Postado | Autor | Post | Comentário | Resposta? | Estágio | Ação |
 |---|---|---|---|---|---|---|
-| 18h ago | Author A | SaaS Co. | "moat moved to taste" | author replied 14h ago | Warm (6-24h window) | Reply now |
-| 22h ago | Author B | Enterprise SaaS | "integration depth moat" | No | Cold | Skip |
-| 3h ago | Author C | AI vendor | "twin economies" | No | Watch | Check in 3h |
+| 18h atrás | Author A | SaaS Co. | "moat moved to taste" | autor respondeu há 14h | Morno (janela 6-24h) | Responder agora |
+| 22h atrás | Author B | Enterprise SaaS | "integration depth moat" | Não | Frio | Ignorar |
+| 3h atrás | Author C | AI vendor | "twin economies" | Não | Observação | Verificar em 3h |
 
-## For each warm thread
+## Para cada thread morna
 
-- Thread preview (last 3 turns)
-- Suggested response (drafted via `linkedin-reply-handler`)
-- Reaction target (the specific reply URN, not the post)
-- Priority (high / medium / low)
+- Prévia da thread (últimos 3 turnos)
+- Resposta sugerida (redigida via `linkedin-reply-handler`)
+- Alvo da reação (a URN da resposta específica, não a do post)
+- Prioridade (alta / média / baixa)
 
-## Weekly roll-up
+## Consolidado semanal
 
-- Total comments posted
-- Author-reply rate (target 15%+)
-- Conversion to DM (when thread closes warm)
+- Total de comentários postados
+- Taxa de resposta do autor (meta 15%+)
+- Conversão para DM (quando a thread fecha morna)
 
-## Example run
+## Execução de exemplo
 
-> Input: monitor sbulaev profile, last 24h
+> Entrada: monitorar o perfil sbulaev, últimas 24h
 
-> Output:
-> - 1 warm thread: the author replied 14h ago on their post. Current stage: Warm (8-24h). Suggested response ready. Action: post within 2 hours.
-> - 8 cold threads (no author engagement). Skip.
-> - 3 watching threads (<6h old, author may still reply). Check again in 3-6h.
+> Saída:
+> - 1 thread morna: o autor respondeu há 14h no post dele. Estágio atual: Morno (8-24h). Resposta sugerida pronta. Ação: postar em até 2 horas.
+> - 8 threads frias (sem engajamento do autor). Ignorar.
+> - 3 threads em observação (<6h, o autor ainda pode responder). Verificar de novo em 3-6h.

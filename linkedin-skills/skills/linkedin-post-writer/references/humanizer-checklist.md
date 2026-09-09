@@ -1,101 +1,101 @@
-# Humanizer Pre-Publish Checklist (V3, 2026-09)
+# Checklist de Pré-Publicação do Humanizador (V3, 2026-09)
 
-Every post must pass this before the approval card is shown. If any fail, rewrite that section and re-run. Full rules: `../../linkedin-humanizer/references/scrub-rules.md`. The unit is the paragraph: one marker is English, three is a signature.
+Toda publicação deve passar por isso antes que o cartão de aprovação seja exibido. Se algo falhar, reescreva aquela seção e rode de novo. Regras completas: `../../linkedin-humanizer/references/scrub-rules.md`. A unidade é o parágrafo: um marcador é inglês/IA, três é uma assinatura.
 
-## SCRUB (score, then delete or replace)
+## LIMPEZA (pontue, depois apague ou substitua)
 
-### Punctuation
-- [ ] Em dashes (`—`) at or under ~1 per 100 words (1-2 per post). Replace only the excess, with `,` or `:` or `( )` or a rewrite. Never with `.` (a split dash stacks fragments, a worse tell). Do not push to zero: zero is below the human baseline
-- [ ] No en dashes (`–`) between clauses (number ranges stay)
-- [ ] No double dashes (`--`)
-- [ ] No curly quotes (convert to straight `"`)
-- [ ] No Oxford commas in casual posts (too tidy)
+### Pontuação
+- [ ] Travessões (`—`) em cerca de 1 a cada 100 palavras ou menos (1-2 por publicação). Substitua apenas o excedente, por `,` ou `:` ou `( )` ou reescrevendo. Nunca por `.` (um travessão partido empilha fragmentos, um sinal ainda pior). Não zere: zero está abaixo da linha de base humana
+- [ ] Nenhum meio-travessão (`–`) entre orações (faixas numéricas permanecem)
+- [ ] Nenhum travessão duplo (`--`)
+- [ ] Nenhuma aspa curva (converter para aspas retas `"`)
+- [ ] Nenhuma vírgula de Oxford em publicações informais (fica formal demais)
 
-### Vocabulary (density per paragraph: 3+ = rewrite the paragraph, 2 = replace the weakest, 1 = leave)
-Durable 2026 markers (common words, the ones that survived):
-- [ ] significant, crucial, notably, particularly, comprehensive, insights
-- [ ] robust, leverage, foster, landscape, nuanced, multifaceted, holistic
-- [ ] streamline, elevate, empower
-- [ ] fundamentally, essentially, ultimately, crucially
-Older corporate verbs (weaker, still counted): utilize, facilitate, harness, unlock, navigate, seamless, ecosystem
-Grammar markers (each counts as one):
-- [ ] Sentence opening with an "-ing" clause ("Leveraging our data, we...") -> put the actor first
-- [ ] Nominalisation ("the implementation of") -> use the verb
-2026 LinkedIn layer (each counts as one):
-- [ ] quietly, "X matters.", compound, "a signal", "the work", "built different", load-bearing, "doing the heavy lifting", "let that sink in", "that's the real story"
-Decaying 2023-24 set (delve, tapestry, realm, journey, paradigm, cultivate): count as one, do not chase alone
+### Vocabulário (densidade por parágrafo: 3+ = reescrever o parágrafo, 2 = substituir o mais fraco, 1 = deixar)
+Marcadores duráveis de 2026 (palavras comuns, as que sobreviveram):
+- [ ] significativo, crucial, notavelmente, particularmente, abrangente, insights
+- [ ] robusto, alavancar, fomentar, panorama, nuançado, multifacetado, holístico
+- [ ] otimizar, elevar, capacitar
+- [ ] fundamentalmente, essencialmente, em última análise, crucialmente
+Verbos corporativos mais antigos (mais fracos, ainda contam): utilizar, facilitar, aproveitar, destravar, navegar, contínuo/seamless, ecossistema
+Marcadores gramaticais (cada um conta como um):
+- [ ] Frase que abre com um gerúndio ("Alavancando nossos dados, nós...") -> coloque o agente primeiro
+- [ ] Nominalização ("a implementação de") -> use o verbo
+Camada LinkedIn 2026 (cada um conta como um):
+- [ ] silenciosamente, "X importa.", composto, "um sinal", "o trabalho", "construído diferente", estrutural/load-bearing, "carregando o peso", "deixa isso te atravessar", "essa é a história real"
+Conjunto em decadência 2023-24 (mergulhar fundo/delve, tapeçaria, reino, jornada, paradigma, cultivar): conte como um, não persiga sozinho
 
-### Phrases (single hit = fix; these are reach-negative on LinkedIn)
-- [ ] "It's not just X, it's Y" and every negative-parallelism form (-4.9%)
-- [ ] "The result?" / "The catch?" reveal (-4.8%)
-- [ ] "Stop X, start Y" (-6.7%)
-- [ ] "Here's what / how / the thing" (-4.3%)
-- [ ] "In today's fast-paced world"
+### Frases (uma ocorrência já basta = corrigir; são frases que prejudicam o alcance no LinkedIn)
+- [ ] "Não é apenas X, é Y" e toda forma de paralelismo negativo (-4,9%)
+- [ ] Revelação "O resultado?" / "O problema?" (-4,8%)
+- [ ] "Pare de X, comece Y" (-6,7%)
+- [ ] "Eis o que / como / a questão é" (-4,3%)
+- [ ] "No mundo acelerado de hoje"
 - [ ] "Game-changer"
-- [ ] "Deep dive"
-- [ ] "At the end of the day"
-- [ ] "Needle-moving"
+- [ ] "Mergulho profundo"
+- [ ] "No fim das contas"
+- [ ] "Que muda o jogo/needle-moving"
 
-### Structure
-- [ ] No paragraph reads machine-flat (every sentence the same length, no clause doing work). Fix that one paragraph only; never manufacture variance. On LinkedIn sentence-length variance is not a reach lever (our corpus: null to slightly negative within-creator)
-- [ ] One genuinely long sentence next to a short one is fine; a fragment run is the tell. One-idea-per-line posts keep their uniform rhythm
-- [ ] No staccato stacks ("Short. Punchy. Done.", "Simple. Effective. Easy.", "No X. No Y. Just Z.", "All the X. None of the Y.")
-- [ ] No one-word paragraphs ("Still." "Mostly.")
-- [ ] At most 2 standalone fragments in the whole post
-- [ ] No pseudo-Socratic "Why? Because..."
-- [ ] Layout is fine: 1-2 sentence paragraphs with blank lines stay. Fragment-for-drama inside them is the tell
-- [ ] No perfect parallel structure across a list
-- [ ] No hedging stack ("perhaps", "might", "could potentially", "it seems")
-- [ ] No sincerity announcement as opener or pivot ("let me be honest", "I'll be real", "honestly?", "to be direct", "the honest version is", "honest caveat")
-- [ ] No passive voice >10% of clauses
-- [ ] At most one natural rule-of-three; no stacked or perfectly parallel triads, never 3+ in a post
-- [ ] No opening with a rhetorical question (on LinkedIn it reads AI)
-- [ ] No closing with "What do you think?"
+### Estrutura
+- [ ] Nenhum parágrafo soa mecanicamente plano (toda frase com o mesmo comprimento, nenhuma oração fazendo trabalho de verdade). Corrija apenas aquele parágrafo; nunca fabrique variância. No LinkedIn, variância de comprimento de frase não é uma alavanca de alcance (nosso corpus: nula a levemente negativa dentro do mesmo criador)
+- [ ] Uma frase genuinamente longa ao lado de uma curta está ok; uma sequência de fragmentos é o sinal de alerta. Publicações com uma ideia por linha mantêm seu ritmo uniforme
+- [ ] Nenhuma pilha staccato ("Curto. Direto. Pronto.", "Simples. Eficaz. Fácil.", "Nada de X. Nada de Y. Só Z.", "Todo o X. Nada do Y.")
+- [ ] Nenhum parágrafo de uma palavra só ("Ainda." "Quase sempre.")
+- [ ] No máximo 2 fragmentos isolados em toda a publicação
+- [ ] Nenhum pseudo-socrático "Por quê? Porque..."
+- [ ] O layout está ok: parágrafos de 1-2 frases com linhas em branco permanecem. Fragmentar por drama dentro deles é que é o sinal de alerta
+- [ ] Nenhuma estrutura paralela perfeita ao longo de uma lista
+- [ ] Nenhuma pilha de ressalvas ("talvez", "poderia", "possivelmente poderia", "parece que")
+- [ ] Nenhum anúncio de sinceridade como abertura ou virada ("vou ser sincero", "vou ser real", "sinceramente?", "para ser direto", "a versão honesta é", "ressalva honesta")
+- [ ] Nenhuma voz passiva em >10% das orações
+- [ ] No máximo uma regra-de-três natural; nenhuma tríade empilhada ou perfeitamente paralela, nunca 3+ em uma publicação
+- [ ] Nenhuma abertura com pergunta retórica (no LinkedIn isso soa como IA)
+- [ ] Nenhum fechamento com "O que você acha?"
 
-## ADD (human fingerprints)
+## ADICIONAR (impressões digitais humanas)
 
-- [ ] One odd-precision number WITH a named referent: who, what, when, or what it cost ("$4,730 in Vercel overages, March invoice"). Bare numbers do not count; LLM copy uses more numbers than humans
-- [ ] ≥1 named entity (real person, company, date, city, tool)
-- [ ] ≥1 first-person sensory detail (what you saw, heard, touched)
-- [ ] ≥1 contradiction or self-correction stated as fact ("I predicted 3 months. It took 11.")
-- [ ] One opinion with stakes: something someone could disagree with
-- [ ] One specific, dated, uncomfortable fact stated flat, with no framing sentence before or after it ("We lost Carta as a client on 14 Feb." Not "I'll be honest, this hurt: ..."). The fact carries the vulnerability; the frame turns it into performed sincerity
-- [ ] Nothing was inserted that the author did not say: no added hedges, no added confessions, no invented numbers
+- [ ] Um número de precisão ímpar COM um referente nomeado: quem, o quê, quando, ou quanto custou ("R$ 4.730 em excedentes da Vercel, fatura de março"). Números soltos não contam; texto de LLM usa mais números do que humanos
+- [ ] ≥1 entidade nomeada (pessoa real, empresa, data, cidade, ferramenta)
+- [ ] ≥1 detalhe sensorial em primeira pessoa (o que você viu, ouviu, tocou)
+- [ ] ≥1 contradição ou autocorreção declarada como fato ("Eu previ 3 meses. Levou 11.")
+- [ ] Uma opinião com risco: algo que alguém possa discordar
+- [ ] Um fato específico, datado e desconfortável declarado sem rodeios, sem frase de enquadramento antes ou depois ("Perdemos a Carta como cliente em 14 de fevereiro." Não "Vou ser sincero, isso doeu: ..."). O fato carrega a vulnerabilidade; o enquadramento transforma isso em sinceridade encenada
+- [ ] Nada foi inserido que o autor não disse: nenhuma ressalva adicionada, nenhuma confissão adicionada, nenhum número inventado
 
-## SELF-CHECK (over-correction guard)
+## AUTOVERIFICAÇÃO (proteção contra correção excessiva)
 
-- [ ] The scrub did not create staccato stacks, reveal bridges, or one-word paragraphs
-- [ ] The scrub did not add a framed confession or a hedge
-- [ ] The author's tone, reactions, one em dash and one natural triad survived. Uniformly flat prose is a humanizer fingerprint
-- [ ] Edits were proportional to real problems. A clean draft gets 2-3 touches, not a quota. When in doubt, leave it
+- [ ] A limpeza não criou pilhas staccato, pontes de revelação ou parágrafos de uma palavra
+- [ ] A limpeza não adicionou uma confissão enquadrada ou uma ressalva
+- [ ] O tom do autor, as reações, um travessão e uma tríade natural sobreviveram. Prosa uniformemente plana é uma marca registrada de humanizador
+- [ ] As edições foram proporcionais a problemas reais. Um rascunho limpo recebe 2-3 ajustes, não uma cota. Na dúvida, deixe como está
 
-## Target scores
+## Metas de pontuação
 
-- Flesch reading ease: >55 (conversational)
-- Passive voice: <8%
-- Vocabulary / grammar markers: no paragraph at 3+
-- Em dash density: about 1 per 100 words
-- Standalone fragments: at most 2 per post
-- Detector scores (GPTZero, Originality, Pangram) are not a target. No post-hoc edit reliably beats them, and on 100-300 word text their output is noise. Do not report one as a result
+- Facilidade de leitura Flesch: >55 (conversacional)
+- Voz passiva: <8%
+- Marcadores de vocabulário/gramática: nenhum parágrafo em 3+
+- Densidade de travessões: cerca de 1 a cada 100 palavras
+- Fragmentos isolados: no máximo 2 por publicação
+- Pontuações de detector (GPTZero, Originality, Pangram) não são uma meta. Nenhuma edição posterior bate esses detectores de forma confiável, e em textos de 100-300 palavras a saída deles é ruído. Não reporte uma pontuação dessas como resultado
 
-## DO rules (from 2026 dos-and-donts playbook)
+## Regras de FAZER (do guia de dos-and-donts de 2026)
 
-- [ ] Lead with strongest insight first (inverted pyramid) — hook captures in 3 lines
-- [ ] Keep length 300-400 words, 20+ sentences (dwell-time optimal)
-- [ ] Use line breaks, **bold**, lists for scannability and dwell time
-- [ ] End with a **genuine question**, not engagement bait
-- [ ] Include at least one real failure or behind-the-scenes moment (failures draw **8.5x more engagement** than polished posts)
-- [ ] Make content save-worthy: framework, template, or specific data
-- [ ] Post 2-3x per week max, same days/times (audience training)
-- [ ] Engage 15-30 min **before AND after** posting (up to +20% reach)
-- [ ] Reply to every comment within the first hour (first 90 min = distribution fate)
-- [ ] Engage on 10-15 others' posts daily with substantive comments
-- [ ] Write from personal experience (validates expertise over marketing)
+- [ ] Comece com o insight mais forte primeiro (pirâmide invertida) — o hook captura em 3 linhas
+- [ ] Mantenha a extensão em 300-400 palavras, 20+ frases (ótimo para tempo de permanência)
+- [ ] Use quebras de linha, **negrito**, listas para escaneabilidade e tempo de permanência
+- [ ] Termine com uma **pergunta genuína**, não isca de engajamento
+- [ ] Inclua pelo menos um fracasso real ou momento de bastidores (fracassos geram **8,5x mais engajamento** do que publicações polidas)
+- [ ] Torne o conteúdo digno de salvar: framework, template ou dado específico
+- [ ] Publique no máximo 2-3x por semana, nos mesmos dias/horários (treinamento de audiência)
+- [ ] Interaja 15-30 min **antes E depois** de publicar (até +20% de alcance)
+- [ ] Responda a todo comentário na primeira hora (os primeiros 90 min decidem o destino da distribuição)
+- [ ] Comente em 10-15 publicações de outras pessoas por dia, com comentários substanciais
+- [ ] Escreva a partir de experiência pessoal (valida expertise melhor do que marketing)
 
-## Final voice check
+## Verificação final de voz
 
-- Capitalize all proper names (people, companies, products)
-- Capitalize company/product names (HubSpot, Claude, Co.Actor)
-- Don't frame LinkedIn as inferior on LinkedIn
-- Don't name-drop own product more than once
-- One sharp insight, not three vague ones
+- Capitalize todos os nomes próprios (pessoas, empresas, produtos)
+- Capitalize nomes de empresas/produtos (HubSpot, Claude, Co.Actor)
+- Não enquadre o LinkedIn como inferior no próprio LinkedIn
+- Não cite o próprio produto mais de uma vez
+- Um insight afiado, não três vagos

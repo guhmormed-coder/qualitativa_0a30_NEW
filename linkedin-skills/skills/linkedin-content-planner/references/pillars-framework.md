@@ -1,224 +1,224 @@
-# 3-Pillar Content Framework
+# Framework dos 3 Pilares de Conteúdo
 
-## Contents
+## Conteúdo
 
-- Why publish from a personal profile (not the company page)
-- The pillars
-- Weekly mix guardrails
-- Content-to-inbound ratio targets
-- Growth-stage playbook (by follower count)
-- Alternative mix: funnel-weighted (for B2B founders selling one product)
-- 5 narrative types for the Personal pillar
-- Persona-specific pillar mixes
-- Recovery / cold-start 5-step protocol
-- Weekly cadence template
-- Team overlap prevention
-- Comment-first allocation
-- The comment strategy (not optional)
+- Por que publicar a partir de um perfil pessoal (não da página da empresa)
+- Os pilares
+- Salvaguardas do mix semanal
+- Metas de proporção conteúdo-para-inbound
+- Playbook por estágio de crescimento (por número de seguidores)
+- Mix alternativo: ponderado por funil (para fundadores B2B que vendem um único produto)
+- 5 tipos de narrativa para o pilar Pessoal
+- Mixes de pilares por persona
+- Protocolo de recuperação / cold-start em 5 passos
+- Template de cadência semanal
+- Prevenção de sobreposição de equipe
+- Alocação com prioridade em comentários
+- A estratégia de comentários (não é opcional)
 
-## Why publish from a personal profile (not the company page)
+## Por que publicar a partir de um perfil pessoal (não da página da empresa)
 
-Personal founder profiles outperform corporate pages by:
-- **315% in engagement**
-- **270% in conversions**
-- **6-8x in reach** (employee vs brand-page posts)
+Perfis pessoais de fundadores superam páginas corporativas em:
+- **315% em engajamento**
+- **270% em conversões**
+- **6-8x em alcance** (posts de funcionário vs. de página de marca)
 
-Rule: publish on the founder/executive account first. The company page reshares, never originates.
+Regra: publique primeiro na conta do fundador/executivo. A página da empresa reposta, nunca origina.
 
-71% of consumers prefer CEOs active on social. Investors, talent, and clients all check the founder's LinkedIn before meetings.
+71% dos consumidores preferem CEOs ativos nas redes sociais. Investidores, talentos e clientes conferem o LinkedIn do fundador antes de reuniões.
 
-## The pillars
+## Os pilares
 
-### 1. Authority / Expertise (40-50% of posts)
+### 1. Autoridade / Expertise (40-50% dos posts)
 
-**What:** Frameworks, tactical how-tos, data-driven takes, industry analysis, named systems, teardowns.
+**O quê:** Frameworks, tutoriais táticos, análises orientadas por dados, análises do setor, sistemas nomeados, teardowns.
 
-**Why:** Establishes you as someone worth following for a specific skill. Compounds over quarters.
+**Por quê:** Estabelece você como alguém que vale a pena seguir por uma habilidade específica. Composto ao longo dos trimestres.
 
-**Formats:** Text-only (tactical), carousel (frameworks), native article (evergreen).
+**Formatos:** Somente texto (tático), carrossel (frameworks), artigo nativo (perene).
 
-**Hook formulas:** F7 Odd-Precision Money, F10 Contrarian Historical, F8 Paid-vs-Free Reversal, F5 Self-Proving Meta.
+**Fórmulas de gancho:** F7 Odd-Precision Money, F10 Contrarian Historical, F8 Paid-vs-Free Reversal, F5 Self-Proving Meta.
 
-**Example angle:** "How we cut agent cost per outcome from $2.40 to $0.08 in 6 weeks."
-
----
-
-### 2. Personal Narrative (30-40%)
-
-**What:** Lessons from failures, origin stories, vulnerability, behind-the-scenes, what I got wrong.
-
-**Why:** Trust compounds on vulnerability. Pure insight posts don't land in 2026.
-
-**Formats:** Text-only long-form (1200-1500 chars), occasional video (<90s).
-
-**Hook formulas:** F4 Time-Anchor Confession, F3 Year-over-Year Pivot, F9 Curiosity-Gap Teaser.
-
-**Example angle:** "4 months ago I stopped publishing 'inspirational' posts. Here's what changed."
+**Ângulo de exemplo:** "Como reduzimos o custo de agente por resultado de $2,40 para $0,08 em 6 semanas."
 
 ---
 
-### 3. Community / Engagement (20-30%)
+### 2. Narrativa Pessoal (30-40%)
 
-**What:** Questions, polls, customer wins, spotlight posts, responses to industry news.
+**O quê:** Lições de fracassos, histórias de origem, vulnerabilidade, bastidores, o que eu errei.
 
-**Why:** Poll votes and comment threads are high-signal engagement in 360Brew.
+**Por quê:** A confiança se constrói sobre a vulnerabilidade. Posts de puro insight não engajam em 2026.
 
-**Formats:** Native polls, short text (300-500 chars), spotlight posts.
+**Formatos:** Texto longo (1200-1500 caracteres), vídeo ocasional (<90s).
 
-**Hook formulas:** F6 Comment-Gate (sparingly, once/month max), standalone polls.
+**Fórmulas de gancho:** F4 Time-Anchor Confession, F3 Year-over-Year Pivot, F9 Curiosity-Gap Teaser.
 
-**Example angle:** "Which metric actually predicts revenue? Poll below."
-
----
-
-### 4. Product / Offer (10-15%, optional)
-
-**What:** Soft launches, case studies, customer wins featuring your product, one explicit CTA.
-
-**Why:** Without this, the pipeline goes dry. With too much, trust breaks.
-
-**Formats:** Single image + soft CTA, native article for case studies.
-
-**Hook formulas:** F2 R.I.P. Obituary (when pivoting category), F1 Anaphora (framing product as fix).
-
-**Example angle:** "We rebuilt our pricing around agent outcomes, not seats. Here's the 2-week result."
+**Ângulo de exemplo:** "4 meses atrás eu parei de publicar posts 'inspiracionais'. Veja o que mudou."
 
 ---
 
-## Weekly mix guardrails
+### 3. Comunidade / Engajamento (20-30%)
 
-- **Total posts:** 3-5 per week. 6+ triggers 360Brew cannibalization penalty.
-- **No pillar >60%** of the week. Signals single-note, reduces compounding.
-- **Product/Offer max 1 post/week.** Overuse kills trust.
-- **Vary formula within a pillar.** Don't run F7 Odd-Precision Money two Authority posts in a row.
+**O quê:** Perguntas, enquetes, vitórias de clientes, posts de destaque, respostas a notícias do setor.
 
-## Content-to-inbound ratio targets
+**Por quê:** Votos em enquetes e threads de comentários são engajamento de alto sinal no 360Brew.
 
-- **Under 5k followers:** 1 qualified inbound per 10-15 posts
-- **5k-20k followers:** 1 per 5-8 posts
-- **20k+ followers:** 1 per 3-5 posts
+**Formatos:** Enquetes nativas, texto curto (300-500 caracteres), posts de destaque.
 
-Comments amplify this 2-3x. Without comments, the inbound funnel is thinner than it looks.
+**Fórmulas de gancho:** F6 Comment-Gate (com moderação, no máximo 1x/mês), enquetes isoladas.
 
-## Growth-stage playbook (by follower count)
+**Ângulo de exemplo:** "Qual métrica realmente prevê receita? Enquete abaixo."
 
-### 0-1,000 followers
-- **Commenting > posting.** 10-15 thoughtful comments per day.
-- Niche specificity: pick one narrow topic and stake it.
-- Daily connection requests with personalized notes (5-10/day).
-- Don't worry about post frequency — build credibility through comments first.
+---
 
-### 1,000-10,000 followers
-- Post **3-4x/week** at fixed times (audience training).
-- Carousels perform best at this stage (screenshot-bait frameworks).
-- Launch a newsletter — expect ~10% of LinkedIn followers to subscribe.
-- Start appearing on other creators' podcasts / threads.
+### 4. Produto / Oferta (10-15%, opcional)
 
-### 10,000+ followers
-- Original research, strong opinions with evidence, thought leadership posts.
-- 1-2 long-form posts per week + daily short takes.
-- Give away one genuinely valuable asset per quarter.
+**O quê:** Lançamentos suaves, estudos de caso, vitórias de clientes destacando seu produto, um CTA explícito.
 
-### "Giants strategy" (any stage)
-Comment on large-account posts **1-5 minutes before they publish** (check their usual publishing cadence; LinkedIn shows your comment to their audience when the post drops). Rides their audience discovery wave.
+**Por quê:** Sem isso, o pipeline seca. Com excesso, a confiança se rompe.
 
-## Alternative mix: funnel-weighted (for B2B founders selling one product)
+**Formatos:** Imagem única + CTA suave, artigo nativo para estudos de caso.
 
-Use INSTEAD OF pillar mix when you have one narrow ICP and a short sales cycle:
+**Fórmulas de gancho:** F2 R.I.P. Obituary (ao pivotar de categoria), F1 Anaphora (enquadrando o produto como solução).
 
-- **20% top-funnel** — awareness, contrarian takes, industry POV
-- **60% middle-funnel** — education, frameworks, teardowns
-- **20% bottom-funnel** — case studies, offers, soft CTAs
+**Ângulo de exemplo:** "Reconstruímos nosso preço em torno de resultados de agente, não de assentos. Aqui está o resultado de 2 semanas."
 
-## 5 narrative types for the Personal pillar
+---
 
-Rotate; don't run two of the same type in a 2-week window.
+## Salvaguardas do mix semanal
 
-1. **Painful Lessons** — what went wrong + what you learned (vulnerability)
-2. **Client Breakthrough** — real results with context (social proof without bragging)
-3. **Contrarian Opinion** — challenge conventional wisdom + receipts
-4. **Behind-the-Scenes** — raw process, not polish
-5. **Perspective Shift** — "I used to believe X. Then I learned Y."
+- **Total de posts:** 3-5 por semana. 6+ dispara a penalidade de canibalização do 360Brew.
+- **Nenhum pilar acima de 60%** da semana. Sinaliza mensagem de nota única, reduz o efeito composto.
+- **Produto/Oferta no máximo 1 post/semana.** O uso excessivo mata a confiança.
+- **Varie a fórmula dentro de um pilar.** Não use F7 Odd-Precision Money em dois posts de Autoridade seguidos.
 
-## Persona-specific pillar mixes
+## Metas de proporção conteúdo-para-inbound
 
-Different audiences need different pillar distributions. Start from the default 40/30/20/10 and adjust:
+- **Abaixo de 5 mil seguidores:** 1 inbound qualificado a cada 10-15 posts
+- **5 mil-20 mil seguidores:** 1 a cada 5-8 posts
+- **20 mil+ seguidores:** 1 a cada 3-5 posts
 
-### Executives (C-level thought leadership)
-- Authority: 60% (investor / talent / client audiences evaluate here)
-- Personal Narrative: 30%
-- Community: 10%
-- Product/Offer: 0%
+Comentários amplificam isso em 2-3x. Sem comentários, o funil de inbound é mais fino do que parece.
 
-**Voice notes:** time-efficient (15 min/week), signal over volume, avoid hustle cues. Content should pass the "investors will read this before our next meeting" test.
+## Playbook por estágio de crescimento (por número de seguidores)
 
-### Sales teams (social selling)
-- Authority: 20%
-- Personal Narrative: 25%
-- Community: 45% (network-warming, pre-call familiarity)
-- Product/Offer: 10%
+### 0-1.000 seguidores
+- **Comentar > postar.** 10-15 comentários ponderados por dia.
+- Especificidade de nicho: escolha um tópico estreito e se posicione nele.
+- Solicitações de conexão diárias com notas personalizadas (5-10/dia).
+- Não se preocupe com a frequência de posts — construa credibilidade primeiro através dos comentários.
 
-**Voice notes:** practical, outcome-oriented, network-centric. Frame posting as pre-call warming, not brand-building. Trusted-network language beats personal-brand language. Stats: 87% of sales pros say social selling is effective; 78% of social sellers outsell peers.
+### 1.000-10.000 seguidores
+- Poste **3-4x/semana** em horários fixos (treinamento do público).
+- Carrosséis performam melhor nesse estágio (frameworks isca-de-captura-de-tela).
+- Lance uma newsletter — espere que ~10% dos seguidores do LinkedIn se inscrevam.
+- Comece a aparecer em podcasts / threads de outros criadores.
 
-### Marketing teams (employee advocacy)
-- Authority: 25%
-- Personal Narrative: 15%
-- Community: 40% (employee amplification)
-- Product/Offer: 20% (campaign distribution)
+### 10.000+ seguidores
+- Pesquisa original, opiniões fortes com evidências, posts de liderança de pensamento.
+- 1-2 posts longos por semana + opiniões curtas diárias.
+- Ofereça um ativo genuinamente valioso por trimestre.
 
-**Voice notes:** operational — distribution, amplification, efficiency. Position employees as the channel, not the brand handle. 8x more engagement on employee posts vs brand posts.
+### Estratégia "gigantes" (qualquer estágio)
+Comente em posts de contas grandes **1-5 minutos antes de eles publicarem** (verifique a cadência habitual de publicação deles; o LinkedIn mostra seu comentário à audiência deles quando o post sai). Aproveita a onda de descoberta da audiência deles.
 
-### Founders (when wearing the exec hat)
-Same as Executives, but with leeway to include more behind-the-scenes content if shipping in public.
+## Mix alternativo: ponderado por funil (para fundadores B2B que vendem um único produto)
 
-For a dedicated founder plan, use the **founders-edition pillar set** (Conviction / Building in public / The math / Proof) and the 10 founder angles in `../../../references/founder-topics.md` instead of the generic Authority / Narrative / Community / Product mix. It is built for founders raising, hiring, and landing design partners, where a narrow high-trust audience matters more than reach.
+Use NO LUGAR DO mix de pilares quando você tem um ICP estreito e um ciclo de vendas curto:
 
-## Recovery / cold-start 5-step protocol
+- **20% topo de funil** — consciência, opiniões contrárias, ponto de vista do setor
+- **60% meio de funil** — educação, frameworks, teardowns
+- **20% fundo de funil** — estudos de caso, ofertas, CTAs suaves
 
-Use when an account has been dormant, shadowbanned, or reset after a pod-detection penalty.
+## 5 tipos de narrativa para o pilar Pessoal
 
-1. **Days 1-5: don't post.** Leave 20-30 substantive comments per day.
-2. **Week 2+:** post 3-5x/week on the Mon/Wed/Fri pillar rotation.
-3. **Own the first 30 min:** reply to every comment; add 3-5 self-comments for thread depth.
-4. **Send 3-5 intentional non-pitch DMs per day** (algorithm reads DM activity as a trust signal).
-5. **Commit to the full 4-week cycle** — distribution widens in weeks 3-4, not week 1.
+Alterne; não use dois do mesmo tipo em uma janela de 2 semanas.
 
-Observed outcome: 1K to 100K+ impressions in 7 days on an already-credible account.
+1. **Lições Dolorosas** — o que deu errado + o que você aprendeu (vulnerabilidade)
+2. **Avanço do Cliente** — resultados reais com contexto (prova social sem se gabar)
+3. **Opinião Contrária** — desafie o senso comum + provas
+4. **Bastidores** — processo bruto, não polido
+5. **Mudança de Perspectiva** — "Eu costumava acreditar em X. Depois aprendi Y."
 
-## Weekly cadence template
+## Mixes de pilares por persona
+
+Públicos diferentes precisam de distribuições de pilares diferentes. Comece pelo padrão 40/30/20/10 e ajuste:
+
+### Executivos (liderança de pensamento C-level)
+- Autoridade: 60% (públicos de investidores / talentos / clientes avaliam aqui)
+- Narrativa Pessoal: 30%
+- Comunidade: 10%
+- Produto/Oferta: 0%
+
+**Notas de voz:** eficiente em tempo (15 min/semana), sinal em vez de volume, evite sinais de hustle. O conteúdo deve passar no teste "investidores vão ler isso antes da nossa próxima reunião".
+
+### Times de vendas (venda social)
+- Autoridade: 20%
+- Narrativa Pessoal: 25%
+- Comunidade: 45% (aquecimento de rede, familiaridade pré-ligação)
+- Produto/Oferta: 10%
+
+**Notas de voz:** prático, orientado a resultado, centrado em rede. Enquadre a publicação como aquecimento pré-ligação, não como construção de marca. Linguagem de rede-de-confiança supera linguagem de marca-pessoal. Estatísticas: 87% dos profissionais de vendas dizem que a venda social é eficaz; 78% dos vendedores sociais vendem mais do que seus pares.
+
+### Times de marketing (advocacy de funcionários)
+- Autoridade: 25%
+- Narrativa Pessoal: 15%
+- Comunidade: 40% (amplificação por funcionários)
+- Produto/Oferta: 20% (distribuição de campanha)
+
+**Notas de voz:** operacional — distribuição, amplificação, eficiência. Posicione os funcionários como o canal, não como o handle da marca. 8x mais engajamento em posts de funcionários vs. posts de marca.
+
+### Fundadores (quando usando o chapéu de executivo)
+Igual a Executivos, mas com liberdade para incluir mais conteúdo de bastidores caso estejam construindo em público.
+
+Para um plano dedicado a fundadores, use o **conjunto de pilares da edição para fundadores** (Convicção / Construindo em público / A matemática / Prova) e os 10 ângulos de fundador em `../../../references/founder-topics.md` em vez do mix genérico Autoridade / Narrativa / Comunidade / Produto. Foi construído para fundadores captando investimento, contratando, e conquistando parceiros de design, onde um público estreito de alta confiança importa mais do que alcance.
+
+## Protocolo de recuperação / cold-start em 5 passos
+
+Use quando uma conta esteve inativa, foi shadowbanned, ou foi resetada após uma penalidade de detecção de pod.
+
+1. **Dias 1-5: não poste.** Deixe 20-30 comentários substantivos por dia.
+2. **Semana 2+:** poste 3-5x/semana na rotação de pilares Seg/Qua/Sex.
+3. **Domine os primeiros 30 min:** responda a todo comentário; adicione 3-5 auto-comentários para dar profundidade à thread.
+4. **Envie 3-5 DMs intencionais e sem venda por dia** (o algoritmo lê a atividade de DM como sinal de confiança).
+5. **Comprometa-se com o ciclo completo de 4 semanas** — a distribuição se amplia nas semanas 3-4, não na semana 1.
+
+Resultado observado: de 1 mil a mais de 100 mil impressões em 7 dias em uma conta já credível.
+
+## Template de cadência semanal
 
 ```
-Mon  commenting day (no post; 20+ substantive comments)
-Tue  Authority post (framework / teardown)
-Wed  Personal Narrative (confession / lesson / story)
-Thu  Community (poll OR spotlight OR question post)
-Fri  Authority OR Contrarian Historical
-Sat  off
-Sun  off (OR newsletter if you have one)
+Seg  dia de comentários (sem post; 20+ comentários substantivos)
+Ter  post de Autoridade (framework / teardown)
+Qua  Narrativa Pessoal (confissão / lição / história)
+Qui  Comunidade (enquete OU destaque OU post de pergunta)
+Sex  Autoridade OU Contrarian Historical
+Sáb  sem post
+Dom  sem post (OU newsletter, se você tiver uma)
 ```
 
-Rationale: algorithm penalizes same-topic-same-angle repetition; rotating pillar type per weekday keeps topical variance high without the writer having to re-plan each week.
+Racional: o algoritmo penaliza a repetição de mesmo-tópico-mesmo-ângulo; girar o tipo de pilar por dia da semana mantém a variância temática alta sem que o redator precise replanejar toda semana.
 
-## Team overlap prevention
+## Prevenção de sobreposição de equipe
 
-When multiple creators post from the same brand/topic cluster, coordinate via a shared activity feed to avoid:
-- Same-day posts on the same hook/angle (cannibalizes reach)
-- Two team members commenting on the same third-party thread within 1 hour (reads as brigading)
-- Duplicate carousels/frameworks shipped in the same week
+Quando vários criadores publicam a partir do mesmo cluster de marca/tópico, coordene por meio de um feed de atividade compartilhado para evitar:
+- Posts no mesmo dia sobre o mesmo gancho/ângulo (canibaliza o alcance)
+- Dois membros da equipe comentando na mesma thread de terceiros dentro de 1 hora (soa como brigading)
+- Carrosséis/frameworks duplicados lançados na mesma semana
 
-Rule: before scheduling, check what teammates published in the last 72h and what they have queued for the next 48h.
+Regra: antes de agendar, verifique o que os colegas de equipe publicaram nas últimas 72h e o que eles têm na fila para as próximas 48h.
 
-## Comment-first allocation
+## Alocação com prioridade em comentários
 
-- A well-crafted comment on someone else's post gets **30-75x more likes** than your own posts at the same stage
-- Meaningful comments drive **8x more profile views** than likes alone
-- LinkedIn comment volume grew **37% YoY** in early 2025 — comment surface area is where distribution is moving
-- Under 5K followers: weight **2:1 toward commenting** vs posting
-- Above 5K: weight 1:1
+- Um comentário bem elaborado no post de outra pessoa recebe **30-75x mais curtidas** do que seus próprios posts no mesmo estágio
+- Comentários significativos geram **8x mais visualizações de perfil** do que apenas curtidas
+- O volume de comentários no LinkedIn cresceu **37% ano a ano** no início de 2025 — a superfície de comentários é para onde a distribuição está se movendo
+- Abaixo de 5 mil seguidores: pondere **2:1 a favor de comentar** em vez de postar
+- Acima de 5 mil: pondere 1:1
 
-## The comment strategy (not optional)
+## A estratégia de comentários (não é opcional)
 
-- **10-20 substantive comments per day** on other creators' posts
-- **Mix:** 70% peers (similar follower count), 20% aspirational (10-100x), 10% prospects
-- **Comment within first 60 min** of target creator's post for first-commenter advantage
-- **Comments drive 60-70% of inbound DMs**, not your own posts
+- **10-20 comentários substantivos por dia** em posts de outros criadores
+- **Mix:** 70% pares (número de seguidores similar), 20% aspiracionais (10-100x), 10% prospects
+- **Comente dentro dos primeiros 60 min** do post do criador-alvo para a vantagem de primeiro-a-comentar
+- **Comentários geram 60-70% dos DMs de inbound**, não os seus próprios posts

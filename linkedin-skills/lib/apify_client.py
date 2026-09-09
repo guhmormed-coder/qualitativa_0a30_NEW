@@ -1,33 +1,38 @@
-"""Thin Apify client for the LinkedIn Skills project.
+"""Cliente Apify enxuto para o projeto LinkedIn Skills.
 
-Replaces the previous private HarvestAPI dependency. Each method wraps one
-public Apify actor and uses the run-sync-get-dataset-items endpoint, so the
-caller gets results back in a single HTTP request (no polling required).
+Substitui a antiga dependência privada do HarvestAPI. Cada método encapsula
+um actor público do Apify e usa o endpoint run-sync-get-dataset-items, de
+modo que o chamador recebe os resultados em uma única requisição HTTP (sem
+necessidade de polling).
 
-Auth: APIFY_TOKEN env var (or constructor arg), sent as an
-`Authorization: Bearer` header (never as a `?token=` query parameter, which
-would leak the credential into proxy logs and error traces).
+Autenticação: variável de ambiente APIFY_TOKEN (ou argumento do construtor),
+enviada como cabeçalho `Authorization: Bearer` (nunca como parâmetro de
+query `?token=`, o que vazaria a credencial para logs de proxy e rastros de
+erro).
 
-Actors used (all no-cookies, public, "$1-$5 per 1,000 results"):
+Actors usados (todos sem cookies, públicos, "$1-$5 por 1.000 resultados"):
   - apimaestro/linkedin-post-detail
-      Fetch post body, author, stats, and the reshare `share_urn` by post URL
-      (input key `post_urls`, no cookies). Output is nested and normalized to
-      the flat contract by `_normalize_post`. Use for hook extraction,
-      pre-comment context, and resolving the reshare parent URN. (Replaced
-      supreme_coder/linkedin-post, which started returning empty results.)
+      Busca o corpo do post, autor, estatísticas e o `share_urn` de reshare
+      pela URL do post (chave de entrada `post_urls`, sem cookies). A saída
+      é aninhada e normalizada para o contrato plano por `_normalize_post`.
+      Use para extração de gancho, contexto pré-comentário e resolução da
+      URN pai do reshare. (Substituiu supreme_coder/linkedin-post, que
+      passou a retornar resultados vazios.)
   - apimaestro/linkedin-post-comments-replies-engagements-scraper-no-cookies
-      Fetch comments + replies on a post (by post ID or URL). Use for
-      reply-handler thread structure and to avoid duplicate comment takes.
+      Busca comentários + respostas de um post (por ID ou URL do post). Use
+      para a estrutura de thread do reply-handler e para evitar capturas de
+      comentário duplicadas.
   - apimaestro/linkedin-profile-comments
-      Fetch a user's recent comments by username. Use for engagement-monitor
-      author-reply tracking.
+      Busca os comentários recentes de um usuário pelo username. Use para o
+      rastreamento de respostas do autor no engagement-monitor.
   - scraping_solutions/linkedin-posts-engagers-likers-and-commenters-no-cookies
-      Fetch the people who liked or commented on a post. Use for engagement
-      analytics (group by seniority, company, role, ICP fit).
+      Busca as pessoas que curtiram ou comentaram um post. Use para
+      analytics de engajamento (agrupar por senioridade, empresa, cargo,
+      fit com o ICP).
 
-Caching: in-process LRU (256 entries, 6h TTL). Pass `force_refresh=True` on
-any method to bypass. Retries on transient 408/429/5xx (3 attempts with
-exponential backoff + jitter).
+Cache: LRU em processo (256 entradas, TTL de 6h). Passe `force_refresh=True`
+em qualquer método para ignorá-lo. Novas tentativas em 408/429/5xx
+transitórios (3 tentativas com backoff exponencial + jitter).
 """
 from __future__ import annotations
 import json
@@ -101,21 +106,21 @@ class ApifyClient:
         self._session = requests.Session()
         self._cache: OrderedDict[str, tuple[float, Any]] = OrderedDict()
 
-    # ---- Post body --------------------------------------------------------
+    # ---- Corpo do post ------------------------------------------------------
 
     def fetch_post(
         self, post_url: str, *, force_refresh: bool = False
     ) -> dict[str, Any]:
-        """Return the post body, author, and engagement stats for one post.
+        """Retorna o corpo do post, autor e estatísticas de engajamento de um post.
 
         Args:
-            post_url: Any of LinkedIn's three URN URL shapes works.
-            force_refresh: If True, bypass cache and re-fetch from Apify.
+            post_url: Qualquer um dos três formatos de URL de URN do LinkedIn funciona.
+            force_refresh: Se True, ignora o cache e busca novamente na Apify.
 
         Returns:
-            Dict with keys: text, authorName, authorProfileUrl, urn, shareUrn,
-            canShare, url, numLikes, numComments, numShares, postedAtISO, plus
-            extra metadata. `shareUrn` is the reshare parent URN
+            Dict com as chaves: text, authorName, authorProfileUrl, urn, shareUrn,
+            canShare, url, numLikes, numComments, numShares, postedAtISO, além de
+            metadados extras. `shareUrn` é a URN pai do reshare
             (`urn:li:share:*` / `urn:li:ugcPost:*`).
         """
         items = self._run_sync(
@@ -125,9 +130,10 @@ class ApifyClient:
             raise ApifyError(f"no post returned for {post_url}")
         post = self._normalize_post(items[0])
         if not post.get("text") and not post.get("authorName"):
-            # apimaestro returns a nulled shell (job_title "This post cannot be
-            # displayed") for private, removed, or login-walled posts. Treat it
-            # as unavailable so callers fall back to asking the user to paste.
+            # o apimaestro retorna um shell nulo (job_title "This post cannot be
+            # displayed") para posts privados, removidos ou atrás de login. Trate
+            # como indisponível para que os chamadores caiam de volta em pedir
+            # ao usuário para colar o texto.
             raise ApifyError(
                 f"post not retrievable (private, removed, or login-walled): {post_url}"
             )
@@ -135,8 +141,8 @@ class ApifyClient:
 
     @staticmethod
     def _normalize_post(raw: dict[str, Any]) -> dict[str, Any]:
-        """Flatten apimaestro/linkedin-post-detail's nested response to the flat
-        post contract the skills consume. Keeps the raw payload under `_raw`."""
+        """Achata a resposta aninhada do apimaestro/linkedin-post-detail para o
+        contrato de post plano que as skills consomem. Mantém o payload bruto em `_raw`."""
         post = raw.get("post") or {}
         author = raw.get("author") or {}
         stats = raw.get("stats") or {}
@@ -154,8 +160,8 @@ class ApifyClient:
             "text": post.get("text"),
             "urn": activity_urn or share_urn,
             "shareUrn": share_urn,
-            # apimaestro does not expose canShare; leave None so reshare only
-            # blocks on an explicit False (LinkedIn still rejects if disabled).
+            # o apimaestro não expõe canShare; deixe None para que o reshare só
+            # bloqueie com um False explícito (o LinkedIn ainda rejeita se estiver desabilitado).
             "canShare": None,
             "url": post.get("url"),
             "type": post.get("type"),
@@ -173,7 +179,7 @@ class ApifyClient:
             "_raw": raw,
         }
 
-    # ---- Post comments ----------------------------------------------------
+    # ---- Comentários do post --------------------------------------------------
 
     def fetch_post_comments(
         self,
@@ -183,13 +189,13 @@ class ApifyClient:
         scrape_replies: bool = False,
         force_refresh: bool = False,
     ) -> list[dict[str, Any]]:
-        """Return comments (and optionally replies) on a post.
+        """Retorna comentários (e opcionalmente respostas) de um post.
 
         Args:
-            post_id: Activity ID, ugcPost ID, or full post URL.
-            max_items: Cap on comments returned.
-            scrape_replies: If True, each comment's `replies` list is populated.
-            force_refresh: Bypass cache.
+            post_id: Activity ID, ugcPost ID, ou URL completa do post.
+            max_items: Limite máximo de comentários retornados.
+            scrape_replies: Se True, a lista `replies` de cada comentário é preenchida.
+            force_refresh: Ignora o cache.
         """
         items = self._run_sync(
             self.POST_COMMENTS_ACTOR,
@@ -200,12 +206,12 @@ class ApifyClient:
             },
             force_refresh=force_refresh,
         )
-        # The actor appends a run-summary object ({"summary": {...}}) alongside
-        # the comments (and returns it alone when a post has zero comments).
-        # Drop it so callers only ever see real comment records.
+        # O actor anexa um objeto de resumo da execução ({"summary": {...}}) junto
+        # com os comentários (e o retorna sozinho quando um post tem zero comentários).
+        # Descarte-o para que os chamadores só vejam registros de comentário reais.
         return [it for it in items if isinstance(it, dict) and "summary" not in it]
 
-    # ---- Profile (user) recent comments ----------------------------------
+    # ---- Comentários recentes do perfil (usuário) ----------------------------
 
     def fetch_user_recent_comments(
         self,
@@ -214,14 +220,14 @@ class ApifyClient:
         result_limit: int = 30,
         force_refresh: bool = False,
     ) -> list[dict[str, Any]]:
-        """Return a user's most recent comments across LinkedIn."""
+        """Retorna os comentários mais recentes de um usuário em todo o LinkedIn."""
         return self._run_sync(
             self.PROFILE_COMMENTS_ACTOR,
             {"username": username, "resultLimit": result_limit},
             force_refresh=force_refresh,
         )
 
-    # ---- Post engagers (likers + commenters) -----------------------------
+    # ---- Engajadores do post (curtidas + comentários) -----------------------
 
     def fetch_post_engagers(
         self,
@@ -230,14 +236,14 @@ class ApifyClient:
         max_items: int = 50,
         force_refresh: bool = False,
     ) -> list[dict[str, Any]]:
-        """Return the people who liked or commented on a post."""
+        """Retorna as pessoas que curtiram ou comentaram um post."""
         return self._run_sync(
             self.POST_ENGAGERS_ACTOR,
             {"urls": [post_url], "maxItems": max_items},
             force_refresh=force_refresh,
         )
 
-    # ---- Cache helpers ----------------------------------------------------
+    # ---- Auxiliares de cache -----------------------------------------------
 
     @staticmethod
     def _cache_key(actor_id: str, payload: dict[str, Any]) -> str:
@@ -260,7 +266,7 @@ class ApifyClient:
         while len(self._cache) > CACHE_MAX_ENTRIES:
             self._cache.popitem(last=False)
 
-    # ---- Internals --------------------------------------------------------
+    # ---- Internos -----------------------------------------------------------
 
     def _run_sync(
         self,
@@ -283,9 +289,9 @@ class ApifyClient:
     def _do_request(
         self, actor_id: str, payload: dict[str, Any]
     ) -> Any:
-        # The token goes in the Authorization header, never the query string.
-        # A token in the URL leaks into proxy logs, shell history, error traces
-        # and Referer headers; a header does not.
+        # O token vai no cabeçalho Authorization, nunca na query string.
+        # Um token na URL vaza para logs de proxy, histórico do shell, rastros
+        # de erro e cabeçalhos Referer; um cabeçalho não.
         url = f"{self.BASE_URL}/acts/{actor_id}/run-sync-get-dataset-items"
         r = self._session.post(
             url,

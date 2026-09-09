@@ -1,131 +1,131 @@
-# Project conventions - linkedin-skills
+# Convenções do projeto - linkedin-skills
 
-This file is for any Codex agent working on this repository. Read it
-before making changes. Conventions here are mandatory unless the user asks
-otherwise.
+Este arquivo é para qualquer agente Codex trabalhando neste repositório. Leia-o
+antes de fazer alterações. As convenções aqui são obrigatórias, a menos que o usuário peça
+o contrário.
 
-## Versioning
+## Versionamento
 
-- Single source of truth: `.codex-plugin/plugin.json`,
-  `.agents/plugins/marketplace.json`, `.claude-plugin/plugin.json`, and
-  `.claude-plugin/marketplace.json`. Plugin manifests must always match on
-  package name and version; marketplace entries must point to the same package;
-  author, license, homepage, and the public skill-bundle description must stay
-  aligned.
-- Keep `AGENTS.md` and `CLAUDE.md` aligned when changing shared project
-  rules. Codex-specific workflow details belong here; Claude-specific
-  workflow details belong in `CLAUDE.md`.
-- Codex marketplace install uses `.codex-marketplace/linkedin-skills/`.
-  Do not edit that generated package by hand. Update the root files first,
-  then run `python3 scripts/sync_codex_marketplace.py`.
-- **Default: bump the PATCH segment (3rd level, `0.0.X`).** This is the
-  automatic behavior for every shippable commit, regardless of how
-  large the diff feels. Skill renames, lib API breaks, new features:
-  still PATCH by default.
-- Only bump MINOR or MAJOR when **the user explicitly asks** for a
-  higher rank ("this is minor", "make it 2.0", "bump major"). Do not
-  promote on your own initiative even if semver textbook says so.
-- After bumping, two steps are required:
-  1. Tag the commit: `git tag -a v<X.Y.Z> -m "..."` + `git push origin v<X.Y.Z>`
-  2. **Publish a GitHub Release** for the tag: `gh release create v<X.Y.Z> --title "v<X.Y.Z>" --notes "<changelog>" --latest`
-  A tag alone does NOT update the README release badge or the
-  Releases page. The shields.io badge reads from the Releases API,
-  not from raw tags. Skipping step 2 leaves the badge stale.
+- Única fonte da verdade: `.codex-plugin/plugin.json`,
+  `.agents/plugins/marketplace.json`, `.claude-plugin/plugin.json` e
+  `.claude-plugin/marketplace.json`. Os manifestos de plugin devem sempre corresponder no
+  nome e versão do pacote; as entradas de marketplace devem apontar para o mesmo pacote;
+  autor, licença, homepage e a descrição pública do pacote de skills devem se manter
+  alinhados.
+- Mantenha `AGENTS.md` e `CLAUDE.md` alinhados ao alterar
+  regras compartilhadas do projeto. Detalhes de fluxo de trabalho específicos do Codex pertencem
+  aqui; detalhes de fluxo de trabalho específicos do Claude pertencem a `CLAUDE.md`.
+- A instalação via marketplace do Codex usa `.codex-marketplace/linkedin-skills/`.
+  Não edite esse pacote gerado manualmente. Atualize os arquivos da raiz primeiro,
+  depois execute `python3 scripts/sync_codex_marketplace.py`.
+- **Padrão: incremente o segmento PATCH (3º nível, `0.0.X`).** Este é o
+  comportamento automático para todo commit que vai ao ar, independentemente de o
+  diff parecer grande. Renomeações de skill, quebras de API na lib, novas funcionalidades:
+  ainda assim PATCH por padrão.
+- Só incremente MINOR ou MAJOR quando **o usuário pedir explicitamente** por um
+  nível superior ("isso é minor", "faça 2.0", "incremente major"). Não
+  promova por iniciativa própria mesmo que o manual do semver diga o contrário.
+- Depois de incrementar, dois passos são obrigatórios:
+  1. Marque o commit com uma tag: `git tag -a v<X.Y.Z> -m "..."` + `git push origin v<X.Y.Z>`
+  2. **Publique um GitHub Release** para a tag: `gh release create v<X.Y.Z> --title "v<X.Y.Z>" --notes "<changelog>" --latest`
+  Uma tag sozinha NÃO atualiza o badge de release do README nem a
+  página de Releases. O badge do shields.io lê da API de Releases,
+  não das tags brutas. Pular o passo 2 deixa o badge desatualizado.
 
 ## Commits
 
-- Primary author **must** be Sergey: every `git commit` needs
-  `--author="Sergey Bulaev <s@bulaev.org>"`. Verify with
-  `git log -1 --format='%an <%ae>'` before pushing.
-- Co-author trailers are fine when appropriate.
-- Verify locally before push: build never breaks, no broken refs in
-  `SKILL.md`, library smoke import passes.
+- O autor principal **deve** ser Sergey: todo `git commit` precisa de
+  `--author="Sergey Bulaev <s@bulaev.org>"`. Verifique com
+  `git log -1 --format='%an <%ae>'` antes de dar push.
+- Trailers de co-autoria são aceitáveis quando apropriado.
+- Verifique localmente antes do push: o build nunca quebra, sem referências
+  quebradas em `SKILL.md`, o smoke import da biblioteca passa.
 
-## Skill bundle invariants
+## Invariantes do pacote de skills
 
-- **Exactly 11 skills.** Adding requires merging or splitting elsewhere
-  to stay at 10. The number is announced in plugin manifests and the README.
-- **Frontmatter `description:` target <= 400 chars** (some bundle-heavy
-  skills land slightly higher when their scope is genuinely broad - keep
-  under 510). Always include a "Not for X (use Y)" disambiguation
-  sentinel when the skill overlaps with a sibling.
-- **No em dashes anywhere in `description:` fields.** Em dashes in body
-  prose are allowed for table separators and list dividers only.
-- **Skill names are public surface.** Renaming a skill is a major
-  version bump and requires updating: plugin manifests, marketplace entries,
-  root `SKILL.md` bundle list, README skill table, every `linkedin-<name>`
-  cross-reference in sibling SKILL.md files.
+- **Exatamente 11 skills.** Adicionar exige mesclar ou dividir outra em outro lugar
+  para permanecer em 10. O número é anunciado nos manifestos de plugin e no README.
+- **`description:` do frontmatter, alvo de <= 400 caracteres** (algumas skills mais densas
+  do pacote chegam um pouco mais alto quando seu escopo é genuinamente amplo - mantenha
+  abaixo de 510). Sempre inclua uma sentinela de desambiguação "Not for X (use Y)"
+  quando a skill se sobrepuser a uma irmã.
+- **Nenhum travessão em nenhum lugar dentro dos campos `description:`.** Travessões no
+  texto do corpo são permitidos apenas para separadores de tabela e divisores de lista.
+- **Nomes de skill são superfície pública.** Renomear uma skill é um incremento de
+  versão major e exige atualizar: manifestos de plugin, entradas de marketplace,
+  lista de pacotes do `SKILL.md` raiz, tabela de skills do README, toda
+  referência cruzada `linkedin-<name>` em arquivos SKILL.md irmãos.
 
-## Voice rules + reference layout
+## Regras de voz + layout de referências
 
-- Canonical voice rules live at root `references/voice-rules.md`.
-  Skill-local "Hard rules" sections must only contain skill-specific
-  overrides (char ranges, threading rules, format constraints) and start
-  with: `Global voice rules: see root SKILL.md Voice rules.`
-- Other root-level references shared across skills:
-  `references/hook-formulas.md` (20 canonical formulas),
-  `references/algorithm-heuristics.md`, and
-  `references/untrusted-content.md` (the data-not-instructions rule for every
-  skill that reads the Apify layer; keep the per-skill "Untrusted content"
-  sections pointing at it).
-- Skill-local references live in `skills/<skill>/references/`. Cite from
-  the skill with bare `references/X.md`. Cite root from skills with
+- As regras de voz canônicas ficam em `references/voice-rules.md` na raiz.
+  As seções "Hard rules" específicas de cada skill devem conter apenas
+  substituições específicas da skill (intervalos de caracteres, regras de thread, restrições de formato) e começar
+  com: `Global voice rules: see root SKILL.md Voice rules.`
+- Outras referências no nível raiz compartilhadas entre skills:
+  `references/hook-formulas.md` (20 fórmulas canônicas),
+  `references/algorithm-heuristics.md`, e
+  `references/untrusted-content.md` (a regra de dado-não-instrução para toda
+  skill que lê a camada Apify; mantenha as seções "Untrusted content" de cada
+  skill apontando para ela).
+- Referências específicas de skill ficam em `skills/<skill>/references/`. Cite a partir
+  da skill com `references/X.md` puro. Cite a raiz a partir das skills com
   `../../references/X.md`.
-- `linkedin-humanizer` has `sub-skills/` for folded-in workflows
-  (post-audit, emoji-detector, detector-tester, rules-explainer) and
-  `scripts/` for runnable tools. Don't duplicate this pattern in other
-  skills without a clear reason.
+- `linkedin-humanizer` tem `sub-skills/` para fluxos incorporados
+  (post-audit, emoji-detector, detector-tester, rules-explainer) e
+  `scripts/` para ferramentas executáveis. Não duplique esse padrão em outras
+  skills sem um motivo claro.
 
-## Layer separation
+## Separação de camadas
 
-- **Read layer (Apify):** `lib/apify_client.py`. Four methods -
+- **Camada de leitura (Apify):** `lib/apify_client.py`. Quatro métodos -
   `fetch_post`, `fetch_post_comments`, `fetch_user_recent_comments`,
-  `fetch_post_engagers`. All cached (256-entry LRU, 6h TTL, opt-out via
-  `force_refresh=True`). Skills should call these or the
-  `lib.fetch_post(url)` wrapper that handles the APIFY_TOKEN-or-paste
-  fallback.
-- **Write layer (Publora):** `lib/publora_client.py`. Skills should call
-  `lib.publish(kind, draft_text, target_url, ...)` (kinds: comment / reply /
-  post / reshare) or the `lib.repost(post_url, commentary=None)` convenience
-  wrapper, rather than inline the publora / manual / diy dispatch. Real endpoint
-  paths: `POST /create-post`, `POST /linkedin-comments`,
+  `fetch_post_engagers`. Todos em cache (LRU de 256 entradas, TTL de 6h, opt-out via
+  `force_refresh=True`). As skills devem chamar esses métodos ou o
+  wrapper `lib.fetch_post(url)` que trata o fallback de
+  APIFY_TOKEN-ou-colar.
+- **Camada de escrita (Publora):** `lib/publora_client.py`. As skills devem chamar
+  `lib.publish(kind, draft_text, target_url, ...)` (tipos: comment / reply /
+  post / reshare) ou o wrapper de conveniência `lib.repost(post_url, commentary=None)`,
+  em vez de embutir o dispatch publora / manual / diy diretamente. Caminhos de endpoint reais:
+  `POST /create-post`, `POST /linkedin-comments`,
   `DELETE /linkedin-comments`, `POST /linkedin-reactions`,
-  `POST /linkedin-reshare`. Reshare needs the original post's `shareUrn`
-  (`urn:li:share:*` / `urn:li:ugcPost:*`), which Apify `fetch_post` returns
-  directly; never hand-convert an `activity` id (the share id can differ).
-  Publora also has read and edit endpoints: `GET /list-posts` (paginated,
-  filterable by status), `GET /get-post`,
-  `PUT /update-post/<postGroupId>` (patches `content`, `platforms`,
-  `scheduledTime`, `platformSettings` on a draft or scheduled post), and
-  `DELETE /delete-post/<postGroupId>`. Also `post-logs`, `test-connection`,
-  `platform-limits` and `webhooks`. Prefer editing a scheduled post over
-  delete-and-recreate.
-- Don't suggest competitor schedulers (Buffer, Hootsuite, Later) by
-  name in committed files - the bundle is positioned as the canonical
-  Apify-read + Publora-write integration.
+  `POST /linkedin-reshare`. O reshare precisa do `shareUrn` do post original
+  (`urn:li:share:*` / `urn:li:ugcPost:*`), que o `fetch_post` do Apify retorna
+  diretamente; nunca converta manualmente um id `activity` (o id de share pode ser diferente).
+  O Publora também tem endpoints de leitura e edição: `GET /list-posts` (paginado,
+  filtrável por status), `GET /get-post`,
+  `PUT /update-post/<postGroupId>` (aplica patch em `content`, `platforms`,
+  `scheduledTime`, `platformSettings` em um post em rascunho ou agendado), e
+  `DELETE /delete-post/<postGroupId>`. Também `post-logs`, `test-connection`,
+  `platform-limits` e `webhooks`. Prefira editar um post agendado a
+  apagar-e-recriar.
+- Não sugira agendadores concorrentes (Buffer, Hootsuite, Later) pelo
+  nome em arquivos versionados - o pacote é posicionado como a integração
+  canônica de leitura via Apify + escrita via Publora.
 
-## Codex marketplace package
+## Pacote de marketplace do Codex
 
-- Codex requires marketplace entries to point at a nested plugin directory.
-  The root remains the Claude-facing source layout.
-- `.agents/plugins/marketplace.json` points to
+- O Codex exige que as entradas de marketplace apontem para um diretório de plugin aninhado.
+  A raiz permanece o layout de origem voltado para o Claude.
+- `.agents/plugins/marketplace.json` aponta para
   `.codex-marketplace/linkedin-skills`.
-- `scripts/sync_codex_marketplace.py` copies the root Codex manifest,
+- `scripts/sync_codex_marketplace.py` copia o manifesto Codex raiz,
   `SKILL.md`, `skills/`, `references/`, `lib/`, `scripts/`,
-  `requirements.txt`, `.env.example`, and `LICENSE` into the hidden package.
-- After editing any copied file, run the sync script before testing or
-  committing.
+  `requirements.txt`, `.env.example` e `LICENSE` para o pacote oculto.
+- Depois de editar qualquer arquivo copiado, execute o script de sincronização antes de testar ou
+  fazer commit.
 
-## testing/ is gitignored
+## testing/ está no gitignore
 
-- `testing/` is the local scratch directory: API keys, sample API
-  responses, validation reports, integration scripts.
-- Never write secrets above `testing/` (the rest of the repo is public).
-- The `.gitignore` rule for `testing/` is load-bearing; do not change.
+- `testing/` é o diretório de rascunho local: chaves de API, respostas
+  de API de exemplo, relatórios de validação, scripts de integração.
+- Nunca escreva segredos acima de `testing/` (o resto do repositório é público).
+- A regra do `.gitignore` para `testing/` é estrutural; não a altere.
 
-## Validation before push
+## Validação antes do push
 
-Run from repo root:
+Execute a partir da raiz do repositório:
 
 ```bash
 python3 -c "from lib import publish, fetch_post, ApifyClient, PubloraClient; print('OK')"
@@ -139,4 +139,4 @@ python3 -m json.tool .claude-plugin/plugin.json >/dev/null
 python3 -m json.tool .claude-plugin/marketplace.json >/dev/null
 ```
 
-If any of these fail, do not push.
+Se algum destes falhar, não faça push.
