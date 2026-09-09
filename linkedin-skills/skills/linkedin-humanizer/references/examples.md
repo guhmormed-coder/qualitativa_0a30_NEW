@@ -1,18 +1,18 @@
-# Examples — LinkedIn Humanizer
+# Exemplos — LinkedIn Humanizer
 
-## Example
+## Exemplo
 
-> **Input:**
-> "In today's fast-paced landscape, businesses must fundamentally leverage AI to unlock robust ROI. It's not just about adoption, it's about transformation. As of my last update in January 2024, the trends are clear — here's what I've learned."
+> **Entrada:**
+> "No cenário acelerado de hoje, as empresas precisam fundamentalmente alavancar a IA para desbloquear um ROI robusto. Não se trata apenas de adoção, trata-se de transformação. Até minha última atualização em janeiro de 2024, as tendências são claras — aqui está o que aprendi."
 >
-> **Output (default mode = forensic + strict):**
-> "businesses need AI to cut costs. adoption is the easy part. transformation is the actual work. here's what we learned running 35k LinkedIn profiles through our system daily."
+> **Saída (modo padrão = forensic + strict):**
+> "as empresas precisam de IA para cortar custos. adoção é a parte fácil. transformação é o trabalho de verdade. aqui está o que aprendemos rodando 35 mil perfis do LinkedIn pelo nosso sistema todos os dias."
 >
 > **Diff:**
-> - FORENSIC: removed "As of my last update in January 2024" disclaimer
-> - STRICT: paragraph scored 5 markers (fast-paced landscape, fundamentally, leverage, unlock, robust) = rewrite the paragraph, not word-by-word
-> - STRICT: removed "It's not just X, it's Y" negative parallelism (single-hit rule), replaced with paired declaratives
-> - PASS 1: the one em dash was under the cap (~1 per 100 words); it went only because the sentence around it was rewritten. It was not replaced with a period
-> - PASS 3: added a number with a referent (35k LinkedIn profiles, daily) from the user's own input; nothing fabricated, no hedge, no "let me be honest" frame
-> - PASS 4: two fragments in the output ("adoption is the easy part." "transformation is the actual work.") are within the 2-per-post cap and are paired declaratives, not a "The result?" reveal; left as is
-> - AESTHETIC was NOT applied
+> - FORENSIC: removido o aviso "Até minha última atualização em janeiro de 2024"
+> - STRICT: o parágrafo pontuou 5 marcadores (cenário acelerado, fundamentalmente, alavancar, desbloquear, robusto) = reescrever o parágrafo, não palavra por palavra
+> - STRICT: removido o paralelismo negativo "Não se trata apenas de X, trata-se de Y" (regra de ocorrência única), substituído por declarativas emparelhadas
+> - PASSO 1: o único travessão estava dentro do teto (~1 a cada 100 palavras); ele saiu apenas porque a frase ao redor foi reescrita. Não foi substituído por um ponto final
+> - PASSO 3: adicionado um número com referente (35 mil perfis do LinkedIn, diariamente) a partir da própria entrada do usuário; nada foi inventado, sem hedge, sem moldura de "deixa eu ser honesto"
+> - PASSO 4: dois fragmentos na saída ("adoção é a parte fácil." "transformação é o trabalho de verdade.") estão dentro do teto de 2 por post e são declarativas emparelhadas, não uma revelação do tipo "E o resultado?"; deixados como estão
+> - AESTHETIC NÃO foi aplicado

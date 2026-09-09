@@ -1,64 +1,64 @@
-# Emoji Patterns — AI vs. Human
+# Padrões de Emoji — IA vs. Humano
 
-Pattern data from MagicPost LinkedIn analysis (Feb 2026, viral post with 220 engagement).
+Dados de padrão da análise de LinkedIn da MagicPost (fev 2026, post viral com 220 de engajamento).
 
-Source frequencies measured across a corpus of AI-generated vs. human-authored LinkedIn posts. The percentage column shows how often each emoji appears in AI-generated content.
+Frequências de origem medidas em um corpus de posts do LinkedIn gerados por IA vs. escritos por humanos. A coluna de porcentagem mostra com que frequência cada emoji aparece em conteúdo gerado por IA.
 
-## AI-correlated emojis (the "tells")
+## Emojis correlacionados com IA (os "indícios")
 
-| Emoji | Name | AI Frequency | Why it's a tell | Human-pattern alternative |
+| Emoji | Nome | Frequência em IA | Por que é um indício | Alternativa de padrão humano |
 |-------|------|--------------|-----------------|---------------------------|
-| 💡 | lightbulb | 2.57% | ChatGPT signature for "insight" / "tip" — most diagnostic single emoji | 🪛 (screwdriver) for fix-it posts, 📍 (pin) for highlights, or remove |
-| 🚀 | rocket | 3.28% | Highest-frequency AI emoji. Signals "launch" / "growth" in template fashion | 📦 (box) for shipping, 🛫 (takeoff) for travel, or remove |
-| ✨ | sparkles | 3.11% | "Magic AI" / "transformation" cliché. Almost never appears in human ops content | Remove. No clean substitute |
-| ♻️ | recycling | 2.93% | Used to flag re-shares and "lessons learned" loops. AI overuses for filler | 🔁 (repeat) only if literally about repetition, or remove |
-| 🎯 | target | 2.07% | "Goals" / "objectives" cliché | 📌 (pushpin) for specific items, or remove |
-| 📈 | chart_increasing | 1.89% | "Growth" / "metrics" template signal | Use a real number in plain text instead |
-| 🔑 | key | 1.74% | "Key takeaway" / "key insight" template | Skip the emoji, write the takeaway in plain prose |
-| 🎯 | dart | 1.68% | Same family as target above — both flag templated structure | Same as target |
-| 💪 | muscle | 1.45% | "Strength" / "resilience" platitude | Remove or replace with concrete detail |
-| 🔥 | fire | 1.31% | Borderline — used in human content too, but flagged when clustered with others | Keep if standalone, swap to 🌶️ (chili) or 🥵 (hot face) for variety |
+| 💡 | lâmpada | 2,57% | Assinatura do ChatGPT para "insight" / "dica" — o emoji único mais diagnóstico | 🪛 (chave de fenda) para posts de "como consertar", 📍 (alfinete) para destaques, ou remover |
+| 🚀 | foguete | 3,28% | Emoji de IA com maior frequência. Sinaliza "lançamento" / "crescimento" de forma modelada | 📦 (caixa) para envio, 🛫 (decolagem) para viagem, ou remover |
+| ✨ | brilhos | 3,11% | Clichê de "IA mágica" / "transformação". Quase nunca aparece em conteúdo humano de operações | Remover. Sem substituto limpo |
+| ♻️ | reciclagem | 2,93% | Usado para sinalizar republicações e ciclos de "lições aprendidas". IA usa em excesso como preenchimento | 🔁 (repetir) apenas se for literalmente sobre repetição, ou remover |
+| 🎯 | alvo | 2,07% | Clichê de "metas" / "objetivos" | 📌 (alfinete de mapa) para itens específicos, ou remover |
+| 📈 | gráfico_crescente | 1,89% | Sinal modelado de "crescimento" / "métricas" | Use um número real em texto simples em vez disso |
+| 🔑 | chave | 1,74% | Template de "principal aprendizado" / "insight principal" | Pule o emoji, escreva o aprendizado em prosa simples |
+| 🎯 | dardo | 1,68% | Mesma família do alvo acima — ambos sinalizam estrutura modelada | Igual ao alvo |
+| 💪 | músculo | 1,45% | Clichê de "força" / "resiliência" | Remover ou substituir por um detalhe concreto |
+| 🔥 | fogo | 1,31% | Limítrofe — usado em conteúdo humano também, mas sinalizado quando agrupado com outros | Manter se isolado, trocar por 🌶️ (pimenta) ou 🥵 (rosto de calor) para variar |
 
-## Cluster rules
+## Regras de agrupamento
 
-- 1 AI-pattern emoji in isolation: usually fine
-- 2 in one post: borderline — flag in `--strict` mode
-- 3+ in one post: AI-likely — flag in all modes
-- Same emoji 2+ times: repetition tell — flag in all modes
+- 1 emoji de padrão IA isolado: geralmente está bem
+- 2 em um post: limítrofe — sinalizar no modo `--strict`
+- 3+ em um post: provável IA — sinalizar em todos os modos
+- Mesmo emoji 2+ vezes: indício de repetição — sinalizar em todos os modos
 
-## Position rules
+## Regras de posição
 
-AI-generated posts tend to put emojis at:
-- End of opening hook line (lightbulb, rocket, sparkles)
-- Start of every bullet in a list (target, key, fire)
-- End of CTA line (rocket, fire, muscle)
+Posts gerados por IA tendem a colocar emojis em:
+- Fim da linha de gancho de abertura (lâmpada, foguete, brilhos)
+- Início de cada item de uma lista (alvo, chave, fogo)
+- Fim da linha de CTA (foguete, fogo, músculo)
 
-If the draft has emojis at all three positions, treat as AI-likely regardless of which emojis they are.
+Se o rascunho tiver emojis nas três posições, trate como provável IA independentemente de quais emojis sejam.
 
-## Human-pattern emojis (sub-1% AI correlation)
+## Emojis de padrão humano (correlação com IA abaixo de 1%)
 
-These appear at much lower frequency in AI-generated content. Not "human-proof" — just less of a tell:
+Estes aparecem com frequência muito menor em conteúdo gerado por IA. Não são "à prova de IA" — apenas menos um indício:
 
-| Emoji | Name | Notes |
+| Emoji | Nome | Notas |
 |-------|------|-------|
-| ☕ | coffee | Concrete, mundane — AI rarely uses |
-| 🍕 | pizza | Specific food — AI rarely uses |
-| 📦 | package | Shipping / ops — concrete |
-| 🪛 | screwdriver | Fix-it posts — newer emoji, AI training lags |
-| 🌶️ | chili | "Spicy take" replacement for fire |
-| 📍 | round_pushpin | Specific location / item highlight |
-| 🛫 | airplane_departure | Travel / launch — more specific than rocket |
-| 🥵 | hot_face | Reaction emoji — less templated than fire |
-| 🪟 | window | Newer emoji, AI training lags |
-| 🧃 | beverage_box | Newer emoji, AI training lags |
+| ☕ | café | Concreto, mundano — IA raramente usa |
+| 🍕 | pizza | Comida específica — IA raramente usa |
+| 📦 | pacote | Envio / operações — concreto |
+| 🪛 | chave de fenda | Posts de "como consertar" — emoji mais novo, o treinamento de IA está atrasado |
+| 🌶️ | pimenta | Substituto de "opinião picante" para o fogo |
+| 📍 | alfinete_de_mapa | Destaque de local / item específico |
+| 🛫 | avião_decolando | Viagem / lançamento — mais específico que o foguete |
+| 🥵 | rosto_de_calor | Emoji de reação — menos modelado que o fogo |
+| 🪟 | janela | Emoji mais novo, o treinamento de IA está atrasado |
+| 🧃 | caixinha_de_suco | Emoji mais novo, o treinamento de IA está atrasado |
 
-## What this data does NOT prove
+## O que estes dados NÃO provam
 
-- It doesn't prove these emojis are "wrong" — humans use 💡 and 🚀 too
-- It proves they appear 2-3x more often in AI-generated content than baseline
-- A single AI-pattern emoji in a post is not a verdict — the cluster + repetition pattern is the tell
-- New emojis released after model training cutoffs are mechanically less likely to appear in AI output, which is why the human-pattern list skews toward newer Unicode additions
+- Não provam que esses emojis estão "errados" — humanos também usam 💡 e 🚀
+- Provam que eles aparecem 2-3x mais em conteúdo gerado por IA do que a referência
+- Um único emoji de padrão IA em um post não é um veredito — o padrão de agrupamento + repetição é o indício
+- Emojis novos lançados depois do corte de treinamento dos modelos têm mecanicamente menos chance de aparecer em saídas de IA, por isso a lista de padrão humano tende a favorecer adições mais recentes do Unicode
 
-## Update cadence
+## Frequência de atualização
 
-Frequencies should be re-measured quarterly as AI training data shifts. Last update: Feb 2026 (MagicPost).
+As frequências devem ser remedidas trimestralmente conforme os dados de treinamento de IA mudam. Última atualização: fev 2026 (MagicPost).

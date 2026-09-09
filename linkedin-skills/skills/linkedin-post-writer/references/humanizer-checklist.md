@@ -78,7 +78,7 @@ Conjunto em decadência 2023-24 (mergulhar fundo/delve, tapeçaria, reino, jorna
 - Fragmentos isolados: no máximo 2 por publicação
 - Pontuações de detector (GPTZero, Originality, Pangram) não são uma meta. Nenhuma edição posterior bate esses detectores de forma confiável, e em textos de 100-300 palavras a saída deles é ruído. Não reporte uma pontuação dessas como resultado
 
-## Regras de FAZER (do guia de dos-and-donts de 2026)
+## Regras de FAZER (do guia de boas práticas e armadilhas de 2026)
 
 - [ ] Comece com o insight mais forte primeiro (pirâmide invertida) — o hook captura em 3 linhas
 - [ ] Mantenha a extensão em 300-400 palavras, 20+ frases (ótimo para tempo de permanência)

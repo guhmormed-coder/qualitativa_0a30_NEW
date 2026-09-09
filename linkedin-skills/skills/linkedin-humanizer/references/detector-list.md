@@ -1,126 +1,126 @@
-# Supported AI Detectors
+# Detectores de IA Suportados
 
-Last updated: 2026-04-25
+Última atualização: 2026-04-25
 
-Five primary detectors plus optional extras. Each entry covers: API endpoint, auth, known accuracy issues, and the citation that documents the issue.
+Cinco detectores principais mais extras opcionais. Cada entrada cobre: endpoint de API, autenticação, problemas de precisão conhecidos e a citação que documenta o problema.
 
-## Contents
+## Conteúdo
 
 - 1. GPTZero
 - 2. Originality.ai
 - 3. ZeroGPT
 - 4. Sapling
 - 5. Copyleaks
-- Optional / extended detectors
-- Why the spread matters
-- Quick stats to drop in a reply
+- Detectores opcionais / estendidos
+- Por que a dispersão importa
+- Estatísticas rápidas para usar em uma resposta
 
 ---
 
 ## 1. GPTZero
 
 - **Web**: https://gptzero.me
-- **API docs**: https://api.gptzero.me/v2/predict/text
-- **Auth**: `x-api-key` header. Free tier: 10k words/month. Paid from $9.99/mo.
-- **Returns**: `documents[0].class_probabilities.ai` (0.0-1.0) plus per-sentence breakdown.
+- **Documentação da API**: https://api.gptzero.me/v2/predict/text
+- **Autenticação**: header `x-api-key`. Plano gratuito: 10 mil palavras/mês. Pago a partir de $9,99/mês.
+- **Retorna**: `documents[0].class_probabilities.ai` (0,0-1,0) mais um detalhamento por frase.
 
-**Known issues:**
-- Stanford study (Liang et al. 2023) included GPTZero in the cohort that flagged **61.3% of TOEFL essays** from non-native English writers as AI. ESL bias is documented and reproducible.
-- Inflates scores on technical / dense prose regardless of authorship.
-- Will not run on text under 250 characters; gives unstable scores under 100 words.
+**Problemas conhecidos:**
+- O estudo de Stanford (Liang et al. 2023) incluiu o GPTZero no grupo que sinalizou **61,3% das redações do TOEFL** de autores não nativos de inglês como IA. O viés contra falantes de ESL (inglês como segunda língua) está documentado e é reproduzível.
+- Infla os escores em prosa técnica / densa independentemente da autoria.
+- Não roda em textos com menos de 250 caracteres; dá escores instáveis abaixo de 100 palavras.
 
-**Citation**: Liang, W., Yuksekgonul, M., Mao, Y., Wu, E., & Zou, J. (2023). "GPT detectors are biased against non-native English writers." *Patterns*, 4(7). https://doi.org/10.1016/j.patter.2023.100779
+**Citação**: Liang, W., Yuksekgonul, M., Mao, Y., Wu, E., & Zou, J. (2023). "GPT detectors are biased against non-native English writers." *Patterns*, 4(7). https://doi.org/10.1016/j.patter.2023.100779
 
 ---
 
 ## 2. Originality.ai
 
 - **Web**: https://originality.ai
-- **API docs**: https://docs.originality.ai/
-- **Auth**: `X-OAI-API-KEY` header. No free tier — $0.01 per 100 words minimum.
-- **Returns**: `score.ai` (0.0-1.0), `score.original` (0.0-1.0).
+- **Documentação da API**: https://docs.originality.ai/
+- **Autenticação**: header `X-OAI-API-KEY`. Sem plano gratuito — mínimo de $0,01 por 100 palavras.
+- **Retorna**: `score.ai` (0,0-1,0), `score.original` (0,0-1,0).
 
-**Known issues:**
-- Marketed as "99% accurate" but multiple independent tests put real-world accuracy in the 60-80% range.
-- Aggressively flags any text that has been edited by Grammarly or similar tools, since editing patterns mimic LLM patterns.
-- Sergey's team meeting test (2026): scored a hand-written article **100% AI** while GPTZero scored the same article 82% and ZeroGPT scored 50%. 50-point spread on identical text.
+**Problemas conhecidos:**
+- Vendido como "99% preciso", mas múltiplos testes independentes colocam a precisão real na faixa de 60-80%.
+- Sinaliza agressivamente qualquer texto que tenha sido editado pelo Grammarly ou ferramentas similares, já que os padrões de edição imitam padrões de LLM.
+- Teste da reunião de equipe do Sergey (2026): pontuou um artigo escrito à mão como **100% IA**, enquanto o GPTZero pontuou o mesmo artigo em 82% e o ZeroGPT em 50%. Dispersão de 50 pontos no mesmo texto.
 
-**Citation**: Internal CCC team test, March 2026 meeting transcript (`projects/coactor/transcripts/`); also referenced in Sergey Bulaev's April 2026 LinkedIn post on detector unreliability.
+**Citação**: Teste interno da equipe CCC, transcrição de reunião de março de 2026 (`projects/coactor/transcripts/`); também referenciado no post de abril de 2026 de Sergey Bulaev no LinkedIn sobre a falta de confiabilidade dos detectores.
 
 ---
 
 ## 3. ZeroGPT
 
 - **Web**: https://www.zerogpt.com
-- **API docs**: https://api.zerogpt.com/api/detect/detectText
-- **Auth**: `ApiKey` header. Free tier: 5 requests/min. Paid plans available.
-- **Returns**: `data.fakePercentage` (0-100 integer), `data.isHuman` boolean.
+- **Documentação da API**: https://api.zerogpt.com/api/detect/detectText
+- **Autenticação**: header `ApiKey`. Plano gratuito: 5 requisições/min. Planos pagos disponíveis.
+- **Retorna**: `data.fakePercentage` (inteiro de 0-100), booleano `data.isHuman`.
 
-**Known issues:**
-- Famously unstable — the same input pasted twice 30 seconds apart can return scores 20+ points apart.
-- Flags US Constitution, Bible verses, and Declaration of Independence at 90%+ AI when pasted as plain text.
-- Susceptible to trivial paraphrasing — adding two typos drops a 95% score to 30%.
+**Problemas conhecidos:**
+- Famoso por ser instável — a mesma entrada colada duas vezes com 30 segundos de diferença pode retornar escores com 20+ pontos de diferença.
+- Sinaliza a Constituição dos EUA, versículos da Bíblia e a Declaração de Independência como 90%+ IA quando colados como texto simples.
+- Suscetível a paráfrases triviais — adicionar dois erros de digitação derruba um escore de 95% para 30%.
 
-**Citation**: Multiple replicated demos on Twitter/X 2023-2024; Vanderbilt University communication on disabling Turnitin (Aug 2023) cited similar instability across the detector category. https://www.vanderbilt.edu/brightspace/2023/08/16/guidance-on-ai-detection-and-why-were-disabling-turnitins-ai-detector/
+**Citação**: Múltiplas demonstrações replicadas no Twitter/X 2023-2024; comunicado da Universidade Vanderbilt sobre a desativação do Turnitin (ago 2023) citou instabilidade semelhante em toda a categoria de detectores. https://www.vanderbilt.edu/brightspace/2023/08/16/guidance-on-ai-detection-and-why-were-disabling-turnitins-ai-detector/
 
 ---
 
 ## 4. Sapling
 
 - **Web**: https://sapling.ai/ai-content-detector
-- **API docs**: https://sapling.ai/docs/api/aidetect
-- **Auth**: `key` field in JSON body. Free tier: 50 requests/day.
-- **Returns**: `score` (0.0-1.0), per-sentence `sentence_scores`.
+- **Documentação da API**: https://sapling.ai/docs/api/aidetect
+- **Autenticação**: campo `key` no corpo JSON. Plano gratuito: 50 requisições/dia.
+- **Retorna**: `score` (0,0-1,0), `sentence_scores` por frase.
 
-**Known issues:**
-- Tends to score lower than GPTZero/Originality on the same text — useful as a contrarian signal in the parallel test.
-- Worse on creative writing than on technical prose.
-- Does not handle markdown — strip formatting before sending.
+**Problemas conhecidos:**
+- Tende a pontuar mais baixo que GPTZero/Originality no mesmo texto — útil como sinal contrário no teste paralelo.
+- Pior em escrita criativa do que em prosa técnica.
+- Não lida com markdown — remova a formatação antes de enviar.
 
-**Citation**: Sapling's own published benchmarks (https://sapling.ai/ai-content-detector/benchmark) acknowledge ~3-5% false positive rate even in their best-case dataset.
+**Citação**: Os próprios benchmarks publicados da Sapling (https://sapling.ai/ai-content-detector/benchmark) reconhecem uma taxa de falso positivo de ~3-5% mesmo no dataset de melhor caso deles.
 
 ---
 
 ## 5. Copyleaks
 
 - **Web**: https://copyleaks.com/ai-content-detector
-- **API docs**: https://api.copyleaks.com/documentation/v3/writer-detector/submit
-- **Auth**: 2-step. POST to `/v3/account/login` with email + key, get bearer token, then POST to `/v2/writer-detector/{scanId}/check`.
-- **Returns**: `summary.ai` (0-100), per-paragraph breakdown.
+- **Documentação da API**: https://api.copyleaks.com/documentation/v3/writer-detector/submit
+- **Autenticação**: 2 etapas. POST para `/v3/account/login` com email + chave, obtém um token bearer, depois POST para `/v2/writer-detector/{scanId}/check`.
+- **Retorna**: `summary.ai` (0-100), detalhamento por parágrafo.
 
-**Known issues:**
-- Adelphi University used Copyleaks-style detector output as the sole evidence in the case that became *Newby v. Adelphi University* (Oct 2025). Federal court ordered the violation expunged.
-- Heavily penalizes formal academic writing regardless of authorship.
-- Unstable across re-submissions of the same text.
+**Problemas conhecidos:**
+- A Universidade Adelphi usou a saída de um detector no estilo Copyleaks como única evidência no caso que se tornou *Newby v. Adelphi University* (out 2025). Um tribunal federal ordenou que a violação fosse expurgada.
+- Penaliza fortemente a escrita acadêmica formal independentemente da autoria.
+- Instável em resubmissões do mesmo texto.
 
-**Citation**: *Newby v. Adelphi University*, U.S. District Court (E.D.N.Y.), October 2025. Coverage: Inside Higher Ed, "Court Orders University to Drop AI-Cheating Charge" (Oct 2025).
-
----
-
-## Optional / extended detectors
-
-These can be added via `--extra` flag. None have free APIs.
-
-- **Turnitin AI Writing** — disabled by Vanderbilt, Cambridge, others. No public API; institutional only.
-- **Winston AI** — https://gowinston.ai. Paid only.
-- **Crossplag AI** — https://crossplag.com. Paid only.
-- **Writer.com AI Content Detector** — free web UI, no API. Use `--manual` mode.
-- **Scribbr AI Detector** — free web UI, no API. Use `--manual` mode.
+**Citação**: *Newby v. Adelphi University*, Tribunal Distrital dos EUA (E.D.N.Y.), outubro de 2025. Cobertura: Inside Higher Ed, "Court Orders University to Drop AI-Cheating Charge" (out 2025).
 
 ---
 
-## Why the spread matters
+## Detectores opcionais / estendidos
 
-OpenAI shut down its own AI Text Classifier in July 2023 with this public statement: "low rate of accuracy" — internally measured at 26%. If the company that ships the model cannot reliably detect its own output, no third-party detector built on weaker signals can be trusted as ground truth.
+Podem ser adicionados via flag `--extra`. Nenhum tem API gratuita.
 
-Reference: OpenAI blog, "New AI classifier for indicating AI-written text" (Jan 31, 2023), updated July 2023 with discontinuation notice.
+- **Turnitin AI Writing** — desativado por Vanderbilt, Cambridge, entre outras. Sem API pública; apenas institucional.
+- **Winston AI** — https://gowinston.ai. Apenas pago.
+- **Crossplag AI** — https://crossplag.com. Apenas pago.
+- **Writer.com AI Content Detector** — UI web gratuita, sem API. Use o modo `--manual`.
+- **Scribbr AI Detector** — UI web gratuita, sem API. Use o modo `--manual`.
 
 ---
 
-## Quick stats to drop in a reply
+## Por que a dispersão importa
 
-- **61.3%** — TOEFL essays by ESL writers misclassified as AI by 7 detectors (Stanford 2023)
-- **5.1%** — same detectors' false positive rate on US 8th-grade essays (Stanford 2023)
-- **26%** — OpenAI's own classifier accuracy before shutdown (July 2023)
-- **50 points** — spread observed on a single article in CCC team testing (2026)
-- **0** — number of US courts that have upheld a "detector said so" finding without corroborating evidence as of April 2026
+A OpenAI desligou seu próprio AI Text Classifier em julho de 2023 com esta declaração pública: "baixa taxa de precisão" — medida internamente em 26%. Se a própria empresa que lança o modelo não consegue detectar de forma confiável a saída dele, nenhum detector de terceiros construído sobre sinais mais fracos pode ser tratado como verdade absoluta.
+
+Referência: blog da OpenAI, "New AI classifier for indicating AI-written text" (31 de janeiro de 2023), atualizado em julho de 2023 com aviso de descontinuação.
+
+---
+
+## Estatísticas rápidas para usar em uma resposta
+
+- **61,3%** — redações do TOEFL de autores ESL classificadas incorretamente como IA por 7 detectores (Stanford 2023)
+- **5,1%** — taxa de falso positivo dos mesmos detectores em redações de alunos do 8º ano nos EUA (Stanford 2023)
+- **26%** — precisão do próprio classificador da OpenAI antes do desligamento (julho de 2023)
+- **50 pontos** — dispersão observada em um único artigo no teste da equipe CCC (2026)
+- **0** — número de tribunais dos EUA que sustentaram uma decisão baseada apenas em "o detector disse" sem evidência corroborante até abril de 2026

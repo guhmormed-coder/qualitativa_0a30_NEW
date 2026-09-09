@@ -456,30 +456,31 @@ def illustrate(
     overlay: Optional[dict[str, Any]] = None,
     **kwargs: Any,
 ) -> dict[str, Any]:
-    """Generate an illustration via the active image backend.
+    """Gera uma ilustração via o backend de imagem ativo.
 
-    This is the image analogue of `publish()`. On success with a Pixfaro key it
-    returns the hosted URL, which you pass straight to
-    `publish("post", text, url, media_urls=[result["url"]])`.
+    Este é o análogo de imagem de `publish()`. Em caso de sucesso com uma
+    chave da Pixfaro, retorna a URL hospedada, que você repassa diretamente
+    para `publish("post", text, url, media_urls=[result["url"]])`.
 
     Args:
-        prompt: The image description (1-4000 chars).
-        kind: Semantic size hint mapped via ILLUSTRATION_ASPECTS
+        prompt: A descrição da imagem (1-4000 caracteres).
+        kind: Dica semântica de tamanho mapeada via ILLUSTRATION_ASPECTS
             (post/portrait/carousel/quote/wide/thumbnail/story/cover).
-        aspect_ratio: Explicit "w:h" override (wins over `kind`).
-        model: Pixfaro model id. Defaults to nano-banana-2 (balanced). Use
-            gemini-flash-lite for cheap high volume, gemini-pro-image for
-            text-heavy premium (PREMIUM_MODELS bill more - ask before using).
+        aspect_ratio: Override explícito "largura:altura" (prevalece sobre `kind`).
+        model: Id do modelo da Pixfaro. Padrão nano-banana-2 (equilibrado). Use
+            gemini-flash-lite para alto volume barato, gemini-pro-image para
+            premium com muito texto (PREMIUM_MODELS cobra mais - pergunte antes de usar).
         resolution: "1K" | "2K" | "4K".
-        overlay: Pixel-exact branding composite {text|logo_id, position,
-            opacity, font, color}. Feed brand fields from the Voice & Brand
-            Profile so every asset is on-brand. Text here is crisp even on a
-            cheap base model (it is composited, not model-generated).
+        overlay: Composição de marca com precisão de pixel {text|logo_id, position,
+            opacity, font, color}. Alimente os campos de marca a partir do Perfil
+            de Voz & Marca para que todo asset fique dentro da identidade. O
+            texto aqui fica nítido mesmo em um modelo base barato (é
+            composição, não gerado pelo modelo).
 
     Returns:
         - pixfaro: {"backend": "pixfaro", "url", "id", "cost", "model",
-          "balance_after", "low_balance"}. Keep `id` to `refine()` later.
-        - manual:  {"backend": "manual", "message": <prompt block>}.
+          "balance_after", "low_balance"}. Guarde `id` para usar em `refine()` depois.
+        - manual:  {"backend": "manual", "message": <bloco de prompt>}.
     """
     ar = aspect_ratio or ILLUSTRATION_ASPECTS.get(kind, "1:1")
     if image_backend() == "manual":
@@ -498,23 +499,25 @@ def illustrate(
     return _image_result(data, used_model)
 
 
-LINKEDIN_MAX_IMAGES = 10  # LinkedIn multi-image grid cap (swipeable carousels are API-unsupported)
+LINKEDIN_MAX_IMAGES = 10  # limite de grade multi-imagem do LinkedIn (carrosséis deslizáveis não são suportados pela API)
 
 
 def illustrate_set(prompts, **kwargs) -> list[dict[str, Any]]:
-    """Generate several illustrations for a LinkedIn multi-image grid post.
+    """Gera várias ilustrações para um post em grade multi-imagem do LinkedIn.
 
-    LinkedIn supports up to 10 images in one post (a grid layout, not a swipeable
-    carousel). Pass 2-10 prompts; get back a list of `illustrate()` results in
-    order. Collect the pixfaro URLs and attach them all in one publish:
+    O LinkedIn suporta até 10 imagens em um post (um layout em grade, não um
+    carrossel deslizável). Passe de 2 a 10 prompts; receba de volta uma lista
+    de resultados de `illustrate()` em ordem. Colete as URLs da pixfaro e
+    anexe todas em uma única publicação:
 
         shots = illustrate_set([p1, p2, p3], kind="wide", overlay=brand)
         urls = [s["url"] for s in shots if s.get("url")]
         publish("post", text, target, media_urls=urls)
 
-    Each item is a normal `illustrate()` dict (pixfaro or manual). `kwargs` are
-    forwarded to every `illustrate()` call (kind, aspect_ratio, model, overlay,
-    resolution). Note LinkedIn cannot mix images with video in one post.
+    Cada item é um dict `illustrate()` normal (pixfaro ou manual). `kwargs`
+    são repassados para cada chamada de `illustrate()` (kind, aspect_ratio,
+    model, overlay, resolution). Note que o LinkedIn não pode misturar
+    imagens com vídeo em um único post.
     """
     prompts = list(prompts)
     if len(prompts) < 2:
@@ -534,14 +537,14 @@ def refine(
     overlay: Optional[dict[str, Any]] = None,
     **kwargs: Any,
 ) -> dict[str, Any]:
-    """Iteratively edit a prior illustration by its `id` (not URL).
+    """Edita iterativamente uma ilustração anterior pelo seu `id` (não pela URL).
 
-    Pass the `id` returned by `illustrate()` (or a previous `refine()`) plus a
-    natural-language `instruction` ("make the sky darker", "swap the headline").
-    Cheaper and more on-brand than regenerating. Omit `aspect_ratio`/`resolution`
-    to keep the source shape and billing tier.
+    Passe o `id` retornado por `illustrate()` (ou um `refine()` anterior) mais
+    uma `instruction` em linguagem natural ("deixe o céu mais escuro", "troque
+    o título"). Mais barato e mais fiel à marca do que regenerar. Omita
+    `aspect_ratio`/`resolution` para manter o formato de origem e o nível de cobrança.
 
-    Returns the same shape as `illustrate()` (pixfaro) or a manual message.
+    Retorna o mesmo formato de `illustrate()` (pixfaro) ou uma mensagem manual.
     """
     if image_backend() == "manual":
         return {"backend": "manual", "message": manual_edit_message(instruction)}
@@ -561,9 +564,9 @@ def refine(
 
 
 def available_models() -> Optional[list[dict[str, Any]]]:
-    """Live Pixfaro model catalog (id, best_for, latency, price tiers), or None
-    in manual mode / on error. Use this to show current pricing instead of
-    hard-coding it."""
+    """Catálogo ao vivo de modelos da Pixfaro (id, best_for, latência, níveis de
+    preço), ou None no modo manual / em caso de erro. Use isto para mostrar o
+    preço atual em vez de fixá-lo no código."""
     if image_backend() == "manual":
         return None
     try:
@@ -573,10 +576,10 @@ def available_models() -> Optional[list[dict[str, Any]]]:
 
 
 if __name__ == "__main__":
-    print(f"Active backend: {active_backend()}")
-    print(f"Image backend:  {image_backend()}")
+    print(f"Backend ativo: {active_backend()}")
+    print(f"Backend de imagem:  {image_backend()}")
     if active_backend() == "manual":
-        print("\nExample manual message:")
+        print("\nExemplo de mensagem manual:")
         print("-" * 60)
         print(manual_mode_message(
             draft_text="This is a great draft for LinkedIn.",
