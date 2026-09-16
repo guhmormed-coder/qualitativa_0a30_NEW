@@ -14,6 +14,30 @@ A estrutura narrativa de cada brief é o esqueleto — a abertura nunca deve cit
 
 ---
 
+## Formato ideal (colar junto com a instrução de voz)
+
+**Tamanho:** 130 a 220 palavras. Abaixo disso o post soa raso pra uma opinião forte; acima disso, no formato de opinião/provocação (diferente de um "guia"), começa a perder quem só ia ler no scroll. Os briefs mais narrativos (com cena + virada + fechamento) tendem pro topo dessa faixa; os mais diretos (provocação seca, pouca "história"), pro fundo.
+
+**As primeiras 2-3 linhas decidem tudo.** O LinkedIn corta o post depois de ~140 caracteres (cerca de 2 linhas no celular) e mostra "ver mais". Essas linhas precisam funcionar sozinhas, sem depender do resto — é a cena/frase de abertura do brief, nunca o nome do framework, nunca uma frase de contexto tipo "hoje eu quero falar sobre". Se a abertura do brief está bem escolhida, ela já cumpre esse papel.
+
+**Parágrafos curtos, linha pulada com frequência.** 1 a 3 frases por parágrafo, no máximo. LinkedIn não tem markdown — não há bold real, não há bullet nativo bonito — então o único recurso de respiro visual é a quebra de linha. Isso importa mais no celular (a maioria da leitura) do que no desktop.
+
+**Mapeamento estrutura narrativa → blocos visuais:**
+- *Abertura* (cena/observação) → primeiras 1-3 linhas, isoladas, sem introdução.
+- *Desenvolvimento* → 1-2 parágrafos curtos conectando a cena ao padrão maior; é aqui, no meio, que entra o nome do framework/autor como validação — nunca antes.
+- *Virada* → o parágrafo mais forte do post, geralmente 1-2 frases, isolado com quebra de linha antes e depois pra ganhar destaque visual. É onde a provocação/cutucada aparece.
+- *Fechamento* → 1-2 linhas finais, separadas do resto por quebra. Pergunta real ou afirmação seca — nunca as duas coisas juntas, escolhe uma.
+
+**Hashtag:** zero, ou no máximo 1-2 discretas no fim, nunca um bloco de 5+ no final do post — isso lê como automação/agência de conteúdo, contra o tom pessoal e ácido que a instrução de voz pede.
+
+**Emoji:** evitar. Combina mal com "cutucada na ferida" — emoji suaviza o que devia cortar. Se usar, no máximo 1, nunca como bullet substituindo quebra de linha.
+
+**Link:** não colar link de referência dentro do corpo do post (o algoritmo do LinkedIn penaliza alcance de post com link de saída). Se quiser citar a fonte real (Lenny's Newsletter, autor do framework), citar o nome sem link, ou colocar o link nos comentários depois de publicar.
+
+**Fechamento sem gancho vazio:** a instrução de voz já pede isso, reforçando aqui — nada de "e você, já passou por isso?" solto. Ou fecha com a pergunta específica que já está no brief (a que soa como pergunta que você faria de verdade), ou fecha com afirmação seca sem pedir comentário.
+
+---
+
 ## Bloco 1 — Descoberta e pesquisa de cliente
 
 ### 1. Jobs to be Done
