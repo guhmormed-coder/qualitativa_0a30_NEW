@@ -38,6 +38,49 @@ A estrutura narrativa de cada brief é o esqueleto — a abertura nunca deve cit
 
 ---
 
+## Formato por tema — post, carrossel ou artigo
+
+Critério usado pra classificar cada um dos 28:
+
+- **Post (texto corrido):** o tema vive de uma virada única, argumento linear ou apelo pessoal/voz — sem etapas nem comparação que peça decomposição visual. Usa a estrutura narrativa do brief direto: abertura → desenvolvimento → virada → fechamento, num texto só.
+- **Carrossel:** o tema tem estrutura visual natural — passo a passo, comparação lado a lado (antes/depois, certo/errado), framework com etapas nomeadas, ou lista curta (3-5 itens). Regra prática pro slide: Slide 1 = a cena/abertura do brief (funciona como capa); slides do meio = cada item da comparação ou etapa (geralmente o "não pode faltar" do brief já é o conteúdo desses slides); último slide = a virada/cutucada como fechamento — é o slide mais compartilhável, não enterra a provocação no meio.
+- **Artigo (LinkedIn Article ou newsletter):** o tema pede mais contexto, mais de um exemplo/dado, ou é sobre algo estrutural/organizacional que fica raso em 200 palavras. A abertura do brief vira a introdução do artigo; dá pra usar subtítulos pra cada bloco do "não pode faltar"; fecha com síntese, não precisa de pergunta.
+
+| # | Tema | Formato | Por quê |
+|---|------|---------|---------|
+| 1 | Jobs to be Done | Post | Virada única (dado que já existe vs. formato que falta); vira carrossel só se quiser ensinar o template de 4 campos como passo a passo |
+| 2 | Continuous Discovery Habits | Post | Contraste PM/CS num argumento linear |
+| 3 | Build Trap | Post | Opinião de processo; vira artigo se quiser empilhar mais de um caso de feature mal adotada |
+| 4 | RICE / confidence score | Carrossel | Comparação natural: confidence de achismo vs. confidence com dado de CS |
+| 5 | North Star Metric vs. churn | Post | A virada (frequência x profundidade) é uma frase, não uma lista |
+| 6 | PLG vs. CS-led growth | Post | Argumento linear com uma virada central |
+| 7 | Opportunity Solution Tree | Carrossel | "Pedido pronto" vs. "problema real" é comparação clássica de slide, e a árvore do framework é visual por natureza |
+| 8 | Influência sem autoridade | Post | Pessoal, depende de voz e timing, não de estrutura |
+| 9 | The Mom Test | Carrossel | Pergunta ruim vs. pergunta boa — comparação direta, ótima pra slide |
+| 10 | Motor de PMF da Superhuman | Carrossel | Metodologia de 4 passos, pede decomposição |
+| 11 | Job Moves / JTBD carreira | Post | Paralelo cliente/funcionário funciona melhor como argumento corrido |
+| 12 | Ativação / aha moment | Post | Contraste único (evento inventado vs. observado) |
+| 13 | Curva de retenção | Post | Uma ideia central (lagging vs. leading indicator) |
+| 14 | Motivo de cancelamento | Carrossel | Dropdown raso vs. motivo investigado — comparação visual forte |
+| 15 | DRICE | Carrossel | Evolução de framework com etapa nova — pede mostrar RICE ao lado de DRICE |
+| 16 | Health score sem CS | Post | Um exemplo concreto carrega o post inteiro |
+| 17 | 5 passos de motion PLG | Carrossel | Literalmente 5 passos — pede um slide por etapa |
+| 18 | Onboarding manual como vantagem | Artigo | Case rico o suficiente pra render mais contexto e dado do que cabe num post |
+| 19 | NRR / expansão | Post | Argumento linear (quem realmente fechou a expansão) |
+| 20 | PR-FAQ / Working Backwards | Carrossel | Estrutura de documento, passo a passo de como escrever um; vira artigo se quiser entregar o template completo |
+| 21 | Product Ops | Artigo | Tema organizacional que precisa de mais contexto pra não soar raso — bom pra virar peça de referência linkável |
+| 22 | Getting buy-in sem crachá | Carrossel | Lista de táticas de convencimento, decompõe bem em slides |
+| 23 | Trilha real de CS pra Produto | Post | Pessoal — mas vira artigo se quiser contar a trajetória completa com mais detalhe |
+| 24 | NPS é teatro | Post | Uma virada (autorrelato x comportamento), sem etapas |
+| 25 | Voice of Customer Council | Post | Crítica de processo, argumento linear |
+| 26 | Cliente ameaçando cancelar | Post | Depende de tom/cena, perde força fatiado em slides |
+| 27 | Deprecar feature | Post | Uma separação central (decisão certa x processo errado), não uma lista |
+| 28 | QBR desperdiçado | Artigo | Tema estrutural com potencial de virar peça de referência; vira carrossel se preferir um "checklist de reaproveitamento de QBR" |
+
+**Resumo:** 16 posts, 8 carrosséis, 4 artigos. Os posts dominam de propósito — é o formato que mais carrega opinião/voz pessoal, que é o objetivo central da série. Carrossel entra só onde a comparação ou os passos são genuinamente visuais. Artigo fica reservado pros 4 temas mais estruturais/organizacionais, que ganham por ter mais espaço pra contexto.
+
+---
+
 ## Bloco 1 — Descoberta e pesquisa de cliente
 
 ### 1. Jobs to be Done
