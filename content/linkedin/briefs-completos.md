@@ -12,6 +12,16 @@ Escreva como eu falo, não como um post de LinkedIn genérico de CS/produto cost
 
 A estrutura narrativa de cada brief é o esqueleto — a abertura nunca deve citar o framework de cara, sempre parte de uma cena ou observação concreta primeiro. O nome do framework/autor entra no meio, como validação, nunca como abertura.
 
+**Regras extraídas de posts reais meus (não invente, siga estas):**
+- **Nunca usar travessão (—) no meio de frase.** Eu mesmo já critiquei publicamente quem escreve com travessão como sinal de texto gerado por IA. Usar ponto, vírgula, ou quebra de linha em vez disso. Traço curto de início de linha em lista (tipo "- item") é diferente e pode ser usado.
+- **Emoji é permitido, com função, nunca genérico/corporativo.** Uso real: 👇 (apontar pra algo embaixo), emoji temático ligado ao assunto do post (ex: alien/monstro quando o post usa referência de filme), cara cansada/de deboche quando o tom pede. Nunca emoji de "celebração corporativa" tipo 🚀🎉 solto.
+- **"kkk" como marcador de riso é autêntico, pode usar.**
+- **Analogia de cultura pop (filme, série, referência que todo mundo conhece) é uma ferramenta real minha pra explicar coisa técnica ou densa — considerar como opção quando o tema permitir.**
+- **Endereçar o post a uma pessoa/marca específica ("Dear Mr. Cook,", ou o Zuck implícito no post do WhatsApp) é um gancho de abertura que uso de verdade — vale repetir quando fizer sentido.**
+- **Fechamento tende a ser mais brincalhão/comunidade do que reflexivo-sério.** Ex: "testa aí e me conta", "marca aquele amigo que...". Uma pergunta reflexiva pesada não é o padrão mais comum meu — só usar se o post for do tipo mais pessoal/vulnerável (ver próximo ponto).
+- **Vulnerabilidade pessoal genuína (não só "insight profissional") faz parte do meu repertório** — não precisa ficar sempre no registro "profissional cutucando o mercado". Um post mais cru, tipo relato pessoal com lição de vida, também é minha voz.
+- **Hashtag: uso esporádico, só em post mais "institucional/recapitulação" (tipo recap de treinamento), nunca em post de opinião/provocação.**
+
 ---
 
 ## Formato ideal (colar junto com a instrução de voz)
@@ -26,15 +36,17 @@ A estrutura narrativa de cada brief é o esqueleto — a abertura nunca deve cit
 - *Abertura* (cena/observação) → primeiras 1-3 linhas, isoladas, sem introdução.
 - *Desenvolvimento* → 1-2 parágrafos curtos conectando a cena ao padrão maior; é aqui, no meio, que entra o nome do framework/autor como validação — nunca antes.
 - *Virada* → o parágrafo mais forte do post, geralmente 1-2 frases, isolado com quebra de linha antes e depois pra ganhar destaque visual. É onde a provocação/cutucada aparece.
-- *Fechamento* → 1-2 linhas finais, separadas do resto por quebra. Pergunta real ou afirmação seca — nunca as duas coisas juntas, escolhe uma.
+- *Fechamento* → 1-2 linhas finais, separadas do resto por quebra. Três formatos válidos, confirmados pelos posts reais: pergunta real (que você faria de verdade), afirmação seca (tipo aforismo), ou convite leve/brincalhão tipo "testa aí e me conta" / "marca aquele amigo que...". Nunca gancho de engajamento genérico e forçado.
 
-**Hashtag:** zero, ou no máximo 1-2 discretas no fim, nunca um bloco de 5+ no final do post — isso lê como automação/agência de conteúdo, contra o tom pessoal e ácido que a instrução de voz pede.
+**Hashtag:** raro. Só em post mais "institucional/recap" (ex: resumo de treinamento que você deu), nunca em post de opinião/provocação — confirmado pelos posts reais, onde hashtag só aparece no post mais formal.
 
-**Emoji:** evitar. Combina mal com "cutucada na ferida" — emoji suaviza o que devia cortar. Se usar, no máximo 1, nunca como bullet substituindo quebra de linha.
+**Emoji:** permitido, com função — apontar pra algo (👇), reforçar o tom de um assunto específico (emoji temático), marcar deboche/cansaço. Nunca emoji de celebração corporativa genérica (🚀🎉) solto sem contexto.
 
-**Link:** não colar link de referência dentro do corpo do post (o algoritmo do LinkedIn penaliza alcance de post com link de saída). Se quiser citar a fonte real (Lenny's Newsletter, autor do framework), citar o nome sem link, ou colocar o link nos comentários depois de publicar.
+**Link:** não colar link de referência dentro do corpo do post (o algoritmo do LinkedIn penaliza alcance de post com link de saída). Se quiser citar a fonte real (Lenny's Newsletter, autor do framework, Forrester/Gartner/McKinsey), citar o nome sem link, ou colocar o link nos comentários depois de publicar.
 
-**Fechamento sem gancho vazio:** a instrução de voz já pede isso, reforçando aqui — nada de "e você, já passou por isso?" solto. Ou fecha com a pergunta específica que já está no brief (a que soa como pergunta que você faria de verdade), ou fecha com afirmação seca sem pedir comentário.
+**Travessão:** nunca usar (—) no meio de frase — ver a regra na Instrução de voz acima, é a correção mais importante de todas.
+
+**Fechamento sem gancho vazio:** a instrução de voz já pede isso, reforçando aqui — nada de "e você, já passou por isso?" solto e genérico. Fecha com pergunta específica, afirmação seca, ou convite leve de comunidade (marcar alguém, "testa aí") — os três são autênticos, gancho vazio de engajamento forçado é que não é.
 
 ---
 
