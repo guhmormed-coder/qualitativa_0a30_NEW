@@ -22,6 +22,15 @@ A estrutura narrativa de cada brief é o esqueleto — a abertura nunca deve cit
 - **Vulnerabilidade pessoal genuína (não só "insight profissional") faz parte do meu repertório** — não precisa ficar sempre no registro "profissional cutucando o mercado". Um post mais cru, tipo relato pessoal com lição de vida, também é minha voz.
 - **Hashtag: uso esporádico, só em post mais "institucional/recapitulação" (tipo recap de treinamento), nunca em post de opinião/provocação.**
 
+**Padrões de ritmo (extraídos de fala ditada, não de post editado — mais autêntico que qualquer post já publicado, porque não passou pelo filtro de "ficar apresentável"):**
+- **Repetição em três pra dar ênfase.** Ex: "corta gasto, corta gasto, corta gasto". Repetir a mesma palavra/ideia 2-3 vezes seguidas é recurso real, não erro de edição.
+- **Construção "meio X, meio Y".** Ex: "meio alfinetando, meio sarcástico". Serve pra descrever um tom que não é uma coisa só.
+- **Correção ao vivo, no meio da própria frase.** Ex: "como eu poderia fazer, e o que eu teria que fazer, melhor dizendo, pra...". Reformular a pergunta/afirmação no meio do parágrafo, sem apagar a primeira tentativa, soa mais real do que already-polished.
+- **"entendeu?", "viu?", "né?", "sabe?" como conectivo espalhado ao longo do texto**, não só como fechamento — funciona quase como vírgula de respiro, reforça que é alguém falando, não um documento.
+- **Regra de calibração:** priorizar sempre fala ditada/bruta (sem edição do autor) sobre post já publicado como fonte de voz — post publicado já foi filtrado, fala ditada não.
+
+**Distinção obrigatória: Ikatec e Digisac nunca aparecem como assunto.** Pode falar de marketing conversacional, CS, produto, IA em atendimento, com o mesmo punch de sempre (ácido, cutucando, alfinetando na medida) — mas sempre em nível de mercado/setor, nunca citando situação específica da empresa atual do autor, nunca com estrutura que soe "isso é sobre onde eu trabalho" ou pitch de venda disfarçado. Nenhum brief deve citar Ikatec ou Digisac como exemplo, mesmo que o tema (WhatsApp, marketing conversacional) seja adjacente ao setor de atuação do autor.
+
 ---
 
 ## Formato ideal (colar junto com a instrução de voz)
