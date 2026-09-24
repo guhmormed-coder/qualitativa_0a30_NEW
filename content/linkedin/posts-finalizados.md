@@ -58,13 +58,13 @@ Fora isso, antes de perguntar pro cliente por que ele tá saindo: você já perg
 
 ## 3. O ROI de IA que ninguém tá medindo
 
-**Status:** ✅ publicado (foi ao ar na terça-feira). ⚠️ **Pendência:** o dado "7 em cada 100 empresas comprovam retorno mensurável" não tem fonte primária confirmada e contradiz outro dado real (TI Inside cita 40% de empresas comprovando ROI de GenIA). O trecho "86%/24%" tem lastro melhor (PwC e/ou EY-Parthenon CEO Outlook 2026). Autor vai reescrever esse trecho no post já publicado.
+**Status:** ✅ publicado (foi ao ar na terça-feira), texto abaixo já é a **versão revisada** (pós-publicação). ⚠️ **Pendência ainda em aberto:** o "86%/24%" tem fonte nomeável (EY-Parthenon CEO Outlook 2026, possivelmente também PwC — não confirmado qual dos dois é o certo), mas a framing de "só 24% viram resultado bom" pode estar distorcendo o dado real da EY, que sugere que a maioria relata algum grau de resultado positivo. Autor ainda vai decidir se mantém ou reformula essa parte. O resto já foi corrigido: trocado "7 em cada 100 comprovam retorno" (sem fonte) por "93% não usam métrica clara" (TOTVS, com fonte), cortada a piada do amigo músico (analogia redundante com o rinoceronte), e adicionado fechamento ácido.
 
 Toda empresa comprou alguma coisa de IA esse ano. Poucas sabem dizer se aquilo deu certo.
 
-Não é chute meu, não. É número: 86% dos CEOs no Brasil esperam um impacto grande da IA nos próximos dois anos. Só que 24% dizem que o resultado já veio melhor do que esperavam. E 7 em cada 100 empresas têm dado real de que esse retorno funciona.
+Não é chute meu, não. É número: 86% dos CEOs no Brasil esperam um impacto grande da IA nos próximos dois anos. Só que 24% dizem que o resultado já veio melhor do que esperavam. E, segundo levantamento da TOTVS, 93% das empresas não usam nenhuma métrica clara pra medir se aquele investimento voltou.
 
-As outras 93 têm fé.
+A maioria não tá com dado. Tá com fé.
 
 Pode parecer besteira, mas o motivo geralmente é o mesmo: a empresa coloca a IA antes do processo. Quando isso acontece, você tá queimando dinheiro.
 
@@ -80,9 +80,9 @@ Todo mundo tenta implantar IA pra evitar custo ou reduzir custo. Só que IA bem 
 
 Quer testar? Monta dois agentes de IA. Dá a mesma tarefa pros dois. O treinado especificamente pra aquilo resolve melhor e mais barato. O generalista, pensado só pra "reduzir custo", fica dando voltas e voltas e voltas na mesma tarefa, gastando seu token sem metade da precisão do outro.
 
-É que nem aquele amigo músico que toca um monte de instrumento. Você pergunta como ele faz, e ele responde: "é que eu toco tudo mal".
-
 Então pensa nisso antes de implantar IA: não é qual custo você quer evitar. É qual problema você quer resolver. E qual é o processo desse problema, hoje, sem IA nenhuma.
+
+Espero ter ajudado. Ou, no mínimo, ter estragado seu dia.
 
 ---
 
