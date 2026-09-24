@@ -46,9 +46,9 @@ Sugestão de sequência pro mês 1 (2 posts/semana, ajustar dia conforme sua rot
 
 | Semana | Post 1 | Post 2 | Status |
 |---|---|---|---|
-| 1 | Motivo de cancelamento — versão geral (dropdown vs. conversa real) | ROI de IA que ninguém mede | Textos prontos (`posts-finalizados.md` #1 e #3) |
+| 1 | ROI de IA que ninguém mede | Motivo de cancelamento — versão geral (dropdown vs. conversa real) | ✅ ROI de IA publicado (terça-feira); cancelamento v. geral pronto pra ir (`posts-finalizados.md` #3 e #1) |
 | 2 | Motivo de cancelamento — versão high-touch (boi de piranha, autocrítica) | Opportunity Solution Tree — "cliente quer botão X" | Textos prontos (`posts-finalizados.md` #2 e #4) |
-| 3 | CSM comissionado — CS virou vendedor disfarçado? | Influência sem autoridade (pessoal, seu tom mais cru) | CSM comissionado com texto pronto mas aguardando sua confirmação final (`posts-finalizados.md` #5); Influência sem autoridade ainda não tem texto final |
+| 3 | CSM comissionado — CS virou vendedor disfarçado? | Influência sem autoridade (pessoal, seu tom mais cru) | Textos prontos, ambos aguardando sua confirmação final (`posts-finalizados.md` #5 e #6) |
 | 4 | Shadow AI dentro do time de atendimento | Trilha real de CS pra Produto (pessoal) | Sem brief formal (Shadow AI) / sem texto final ainda |
 | 5 | O que realmente pesa pra quem contrata PM vindo de CS | — | Sem brief formal ainda |
 

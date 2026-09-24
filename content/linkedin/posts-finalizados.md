@@ -58,7 +58,7 @@ Fora isso, antes de perguntar pro cliente por que ele tá saindo: você já perg
 
 ## 3. O ROI de IA que ninguém tá medindo
 
-**Status:** aprovado (baseado em ditado seu, só formatado).
+**Status:** ✅ publicado (foi ao ar na terça-feira).
 
 Toda empresa comprou alguma coisa de IA esse ano. Poucas sabem dizer se aquilo deu certo.
 
@@ -130,3 +130,23 @@ Bota comissão em cima disso e a pergunta muda: você indicou aquele upgrade por
 Ninguém sente o próprio viés funcionando por dentro. Isso não é falta de caráter, é biologia.
 
 Seu CS de hoje ainda é voz do cliente, ou é vendedor de crachá emprestado?
+
+---
+
+## 6. Influência sem autoridade
+
+**Status:** recém-escrito, aguardando sua confirmação (ainda não passou por rodada de feedback).
+
+Levei um tempo pra entender uma coisa: ninguém ignora sua ideia porque você não tem cargo pra mandar. Ignora porque você chegou com dado solto e esperou que ele se defendesse sozinho.
+
+Eu reclamava disso. "Eu trouxe o número, por que ninguém prioriza?" Achava que faltava crachá de gerente, de diretor, de sei lá o quê.
+
+PM também não manda em ninguém. Não manda em engenharia, não manda em design. Sobrevive convencendo, todo santo dia, sem autoridade de verdade pra impor nada. É a mesma corda bamba que CS anda achando que só ele anda.
+
+A diferença não tá no cargo. Tá em levar o dado com uma história junto, ou largar o dado sozinho na mesa e torcer.
+
+Ninguém decide em cima de número frio. Decide em cima de número que já veio embrulhado num "por que isso importa agora" e "o que acontece se a gente não fizer nada".
+
+Isso eu não sabia fazer. Achava chato, achava que "quem precisa entender, entende". Demorei pra perceber que dado sem narrativa é dado que ninguém lembra na segunda reunião.
+
+Quem vive dizendo "eu não tenho autoridade pra mudar isso": você já tentou de verdade convencer alguém, ou só apresentou e esperou que a ideia se vendesse sozinha?
