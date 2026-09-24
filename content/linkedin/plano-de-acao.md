@@ -42,14 +42,15 @@ O Premium some no mês 2. As ações abaixo usam recursos que desaparecem, entã
 
 Usar a voz corrigida (sem travessão, CTA leve tipo "marca um amigo"/"testa aí", emoji quando tiver função, analogia de cultura pop quando fizer sentido pro tema). Alternar entre os três lotes que já temos: CS/Produto (framework), Marketing Conversacional (Digisac/WhatsApp), e os temas novos e mais fortes que a pesquisa trouxe.
 
-Sugestão de sequência pro mês 1 (2 posts/semana, ajustar dia conforme sua rotina):
+Sugestão de sequência pro mês 1 (2 posts/semana, ajustar dia conforme sua rotina). Textos finais dos 5 primeiros já estão em `posts-finalizados.md`:
 
-| Semana | Post 1 | Post 2 |
-|---|---|---|
-| 1 | Motivo de cancelamento — dropdown vs. conversa real (formato prático, fácil comentário) | ROI de IA que ninguém mede — ângulo CS vendo se a ferramenta entrega valor de verdade |
-| 2 | Opportunity Solution Tree — "cliente quer botão X" (autocrítica, gera identificação) | CSM comissionado — CS virou vendedor disfarçado? (tensão real, dois lados) |
-| 3 | Influência sem autoridade (pessoal, seu tom mais cru) | Shadow AI dentro do time de atendimento (fresco, ninguém mais tá falando disso do seu jeito) |
-| 4 | Trilha real de CS pra Produto (pessoal — mais parecido com o tom do post da arritmia) | O que realmente pesa pra quem contrata PM vindo de CS (meta, mostra prova, não framework) |
+| Semana | Post 1 | Post 2 | Status |
+|---|---|---|---|
+| 1 | Motivo de cancelamento — versão geral (dropdown vs. conversa real) | ROI de IA que ninguém mede | Textos prontos (`posts-finalizados.md` #1 e #3) |
+| 2 | Motivo de cancelamento — versão high-touch (boi de piranha, autocrítica) | Opportunity Solution Tree — "cliente quer botão X" | Textos prontos (`posts-finalizados.md` #2 e #4) |
+| 3 | CSM comissionado — CS virou vendedor disfarçado? | Influência sem autoridade (pessoal, seu tom mais cru) | CSM comissionado com texto pronto mas aguardando sua confirmação final (`posts-finalizados.md` #5); Influência sem autoridade ainda não tem texto final |
+| 4 | Shadow AI dentro do time de atendimento | Trilha real de CS pra Produto (pessoal) | Sem brief formal (Shadow AI) / sem texto final ainda |
+| 5 | O que realmente pesa pra quem contrata PM vindo de CS | — | Sem brief formal ainda |
 
 ---
 
