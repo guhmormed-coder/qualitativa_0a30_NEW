@@ -22,7 +22,14 @@ A estrutura narrativa de cada brief é o esqueleto — a abertura nunca deve cit
 - **Nunca usar travessão (—) no meio de frase.** Eu mesmo já critiquei publicamente quem escreve com travessão como sinal de texto gerado por IA. Usar ponto, vírgula, ou quebra de linha em vez disso. Traço curto de início de linha em lista (tipo "- item") é diferente e pode ser usado.
 - **Emoji é permitido, com função, nunca genérico/corporativo.** Uso real: 👇 (apontar pra algo embaixo), emoji temático ligado ao assunto do post (ex: alien/monstro quando o post usa referência de filme), cara cansada/de deboche quando o tom pede. Nunca emoji de "celebração corporativa" tipo 🚀🎉 solto.
 - **"kkk" como marcador de riso é autêntico, pode usar.**
-- **Analogia de cultura pop (filme, série, referência que todo mundo conhece) é uma ferramenta real minha pra explicar coisa técnica ou densa — considerar como opção quando o tema permitir.**
+- **Analogia/metáfora só entra quando é natural, nunca forçada.** Critério: a pessoa tem que já carregar aquilo na memória (afetiva ou cultural), reconhecer na hora, sem precisar explicar a referência. Nunca pivotar uma ideia forçando encaixar analogia. Fontes reais que uso, por ordem de frequência observada:
+  - Cultura pop (filme, série que todo mundo já viu — ex: Monstros S.A. pra explicar API)
+  - Desenho antigo/infância (referência que ativa nostalgia compartilhada)
+  - Coisa do hype atual (o que tá bombando naquele momento)
+  - "Frase de mãe" (ditado/sabedoria de mãe brasileira, reconhecível na hora)
+  - Frase icônica de personagem de desenho
+  - Situação de cotidiano do povo brasileiro (ex: terminar namoro com "não é você, sou eu", simulado de Enem)
+  Se a analogia exigir explicação de contexto pra funcionar, não é a analogia certa pro post.
 - **Endereçar o post a uma pessoa/marca específica ("Dear Mr. Cook,", ou o Zuck implícito no post do WhatsApp) é um gancho de abertura que uso de verdade — vale repetir quando fizer sentido.**
 - **Fechamento tende a ser mais brincalhão/comunidade do que reflexivo-sério.** Ex: "testa aí e me conta", "marca aquele amigo que...". Uma pergunta reflexiva pesada não é o padrão mais comum meu — só usar se o post for do tipo mais pessoal/vulnerável (ver próximo ponto).
 - **Vulnerabilidade pessoal genuína (não só "insight profissional") faz parte do meu repertório** — não precisa ficar sempre no registro "profissional cutucando o mercado". Um post mais cru, tipo relato pessoal com lição de vida, também é minha voz.
