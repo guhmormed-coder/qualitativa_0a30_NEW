@@ -12,6 +12,10 @@ Escreva como eu falo, não como um post de LinkedIn genérico de CS/produto cost
 
 A estrutura narrativa de cada brief é o esqueleto — a abertura nunca deve citar o framework de cara, sempre parte de uma cena ou observação concreta primeiro. O nome do framework/autor entra no meio, como validação, nunca como abertura.
 
+**Palavrão/expressão crua na fala ditada é intensidade de opinião, não descuido.** Quando eu falo algo tipo "isso é uma baita de uma cagada" pensando em voz alta, é porque a opinião é forte, não porque eu "sou fuleiro". Ao publicar, mantenho a intensidade mas troco a palavra por algo igualmente afiado e seguro pro LinkedIn. Duas ferramentas pra isso, usar a que a frase pedir (não é regra fixa, é escolha caso a caso):
+- **Substituição direta por expressão informal forte:** "é uma tremenda furada", "é jogar dinheiro fora", "é tiro no próprio pé".
+- **Analogia visual/situacional:** "é apostar dinheiro em cara ou coroa", "é dirigir de olho fechado".
+
 **Regras extraídas de posts reais meus (não invente, siga estas):**
 - **Nunca usar travessão (—) no meio de frase.** Eu mesmo já critiquei publicamente quem escreve com travessão como sinal de texto gerado por IA. Usar ponto, vírgula, ou quebra de linha em vez disso. Traço curto de início de linha em lista (tipo "- item") é diferente e pode ser usado.
 - **Emoji é permitido, com função, nunca genérico/corporativo.** Uso real: 👇 (apontar pra algo embaixo), emoji temático ligado ao assunto do post (ex: alien/monstro quando o post usa referência de filme), cara cansada/de deboche quando o tom pede. Nunca emoji de "celebração corporativa" tipo 🚀🎉 solto.
