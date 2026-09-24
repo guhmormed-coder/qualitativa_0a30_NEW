@@ -16,6 +16,8 @@ A estrutura narrativa de cada brief é o esqueleto — a abertura nunca deve cit
 - **Substituição direta por expressão informal forte:** "é uma tremenda furada", "é jogar dinheiro fora", "é tiro no próprio pé".
 - **Analogia visual/situacional:** "é apostar dinheiro em cara ou coroa", "é dirigir de olho fechado".
 
+**Nunca frase explicativa tipo "professorzão" — trocar por metáfora seca.** Evitar construções tipo "o que a gente tem que fazer é entender X" ou "a lição aqui é Y". Em vez de explicar a moral, entregar ela como imagem curta e direta (ex: em vez de "o que precisamos é entender o motivo por trás do motivo", usar algo como "é aí que mora a mágica do CS: ler nas entrelinhas"). Regra geral, não só do post específico onde isso apareceu.
+
 **Regras extraídas de posts reais meus (não invente, siga estas):**
 - **Nunca usar travessão (—) no meio de frase.** Eu mesmo já critiquei publicamente quem escreve com travessão como sinal de texto gerado por IA. Usar ponto, vírgula, ou quebra de linha em vez disso. Traço curto de início de linha em lista (tipo "- item") é diferente e pode ser usado.
 - **Emoji é permitido, com função, nunca genérico/corporativo.** Uso real: 👇 (apontar pra algo embaixo), emoji temático ligado ao assunto do post (ex: alien/monstro quando o post usa referência de filme), cara cansada/de deboche quando o tom pede. Nunca emoji de "celebração corporativa" tipo 🚀🎉 solto.
