@@ -4,6 +4,17 @@ Arquivo único que substitui `briefs-cs-product.md` e `briefs-temas-novos.md`. M
 
 Cada brief agora tem uma camada a mais: **estrutura narrativa** — a sequência de ideias que o post deveria seguir (abertura → virada → fechamento). Não são frases prontas. É a lógica de progressão, pra você (ou o agente) não perder o fio nem cair num post de "parágrafo solto atrás de parágrafo solto".
 
+## Regra obrigatória de dado/estatística
+
+Todo número apresentado num post (percentual, pesquisa, estatística) precisa vir com a fonte nomeada (instituto/empresa que fez o levantamento), não só o número solto. Antes de entregar um post com dado numérico:
+
+1. **Nomear a fonte explicitamente pro autor** junto com o texto do post (ex: "segundo pesquisa da PwC/maio 2026", não só "86% dos CEOs").
+2. **Marcar o nível de confiança**: se o número veio de leitura direta da fonte primária, ou só de resumo de busca (o que é mais fraco e precisa de aviso).
+3. **Nunca apresentar número de fontes conflitantes como se fosse um pacote único e coerente** — se duas pesquisas diferentes têm números parecidos mas não é certeza que são a mesma, avisar isso.
+4. Se não for possível confirmar a fonte primária (ex: acesso bloqueado, resumo de busca sem atribuição clara), **avisar isso claramente antes de publicar**, não deixar pra descobrir depois que o post já foi ao ar.
+
+Motivo: post já publicado com número sem lastro (caso real: "7 em cada 100 empresas" no post de ROI de IA, que não teve fonte confirmável e ainda contradiz outro dado real encontrado) é risco de queimar credibilidade se alguém cobrar fonte nos comentários — e no LinkedIn isso acontece.
+
 ---
 
 ## Instrução de voz (colar antes de qualquer brief)

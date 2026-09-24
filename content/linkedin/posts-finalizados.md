@@ -58,7 +58,7 @@ Fora isso, antes de perguntar pro cliente por que ele tá saindo: você já perg
 
 ## 3. O ROI de IA que ninguém tá medindo
 
-**Status:** ✅ publicado (foi ao ar na terça-feira).
+**Status:** ✅ publicado (foi ao ar na terça-feira). ⚠️ **Pendência:** o dado "7 em cada 100 empresas comprovam retorno mensurável" não tem fonte primária confirmada e contradiz outro dado real (TI Inside cita 40% de empresas comprovando ROI de GenIA). O trecho "86%/24%" tem lastro melhor (PwC e/ou EY-Parthenon CEO Outlook 2026). Autor vai reescrever esse trecho no post já publicado.
 
 Toda empresa comprou alguma coisa de IA esse ano. Poucas sabem dizer se aquilo deu certo.
 
