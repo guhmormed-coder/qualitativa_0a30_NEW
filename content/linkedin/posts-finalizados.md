@@ -155,3 +155,25 @@ Ninguém decide em cima de número frio. Decide em cima de número que já veio 
 Isso eu não sabia fazer. Achava chato, achava que "quem precisa entender, entende". Demorei pra perceber que dado sem narrativa é dado que ninguém lembra na segunda reunião.
 
 Quem vive dizendo "eu não tenho autoridade pra mudar isso": você já tentou de verdade convencer alguém, ou só apresentou e esperou que a ideia se vendesse sozinha?
+
+---
+
+## 7. Carrossel "O fantasma voltou" — V2 do carrossel de Halloween
+
+**Status:** rascunho aprovado no formato, **agendado pra outubro** (perto do Halloween, não antes — decisão do autor, pra manter o gancho sazonal que funcionou no V1). Sequência do carrossel "5 Dicas para exorcizar o fantasma do CANCELAMENTO" (publicado há ~1 ano). Usa o insight do boi de piranha como gancho, mas em formato de sinais de alerta, não confissão pessoal.
+
+**Capa:** "O FANTASMA VOLTOU 👻 SINAIS QUE ELE JÁ TÁ NA SUA CONTA (ANTES DE VOCÊ TER QUE PERGUNTAR POR QUÊ)"
+
+**Slide 2 (gancho):** "Se você teve que perguntar pro cliente 'por que você tá cancelando' numa conta que acompanha de perto, a pergunta já é o sinal. O fantasma não aparece do nada — ele deixa rastro antes. Aqui embaixo, os rastros mais comuns."
+
+**Slide 3:** "1) Sumiu da call recorrente 📉 — reunião que sempre tinha presença, agora vem só o assistente, ou cancela em cima da hora."
+
+**Slide 4:** "2) Resposta que ficou lenta 🐌 — quem respondia em minutos, agora leva dias. Não é falta de tempo, é falta de prioridade."
+
+**Slide 5:** "3) Trocou de interlocutor sem avisar 👤 — e ninguém te contou. Você só descobre quando pergunta 'cadê fulano?'"
+
+**Slide 6:** "4) Parou de reclamar 🤐 — parece bom, mas não é. Cliente engajado reclama. Cliente que já desistiu, fica quieto."
+
+**Slide 7 (bônus, ação prática):** "Avistou um desses? Não espera o próximo QBR. Liga, sem pauta de venda, só pra saber como tá."
+
+**Slide final (CTA, mesmo formato do V1):** "SALVA (pra ter o checklist de caça-fantasma sempre à mão) / CURTE (se você também já perdeu conta por não ver os sinais) / COMENTA (outros sinais que você já viu) / COMPARTILHA (com quem tá devendo esse QBR)"

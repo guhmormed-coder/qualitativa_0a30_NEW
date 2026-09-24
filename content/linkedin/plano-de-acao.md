@@ -52,6 +52,8 @@ Sugestão de sequência pro mês 1 (2 posts/semana, ajustar dia conforme sua rot
 | 4 | Shadow AI dentro do time de atendimento | Trilha real de CS pra Produto (pessoal) | Sem brief formal (Shadow AI) / sem texto final ainda |
 | 5 | O que realmente pesa pra quem contrata PM vindo de CS | — | Sem brief formal ainda |
 
+**Fora da sequência semanal, agendado pra outubro:** carrossel "O fantasma voltou" (V2 do carrossel de Halloween, `posts-finalizados.md` #7) — publicar perto do Halloween pra manter o gancho sazonal, não na sequência normal de 2x/semana.
+
 ---
 
 ## Mês 2 em diante — sem Premium
