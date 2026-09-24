@@ -58,13 +58,18 @@ Fora isso, antes de perguntar pro cliente por que ele tá saindo: você já perg
 
 ## 3. O ROI de IA que ninguém tá medindo
 
-**Status:** ✅ publicado (foi ao ar na terça-feira), texto abaixo já é a **versão revisada** (pós-publicação). ⚠️ **Pendência ainda em aberto:** o "86%/24%" tem fonte nomeável (EY-Parthenon CEO Outlook 2026, possivelmente também PwC — não confirmado qual dos dois é o certo), mas a framing de "só 24% viram resultado bom" pode estar distorcendo o dado real da EY, que sugere que a maioria relata algum grau de resultado positivo. Autor ainda vai decidir se mantém ou reformula essa parte. O resto já foi corrigido: trocado "7 em cada 100 comprovam retorno" (sem fonte) por "93% não usam métrica clara" (TOTVS, com fonte), cortada a piada do amigo músico (analogia redundante com o rinoceronte), e adicionado fechamento ácido.
+**Status:** ✅ publicado (foi ao ar na terça-feira), editado ao vivo pelo autor com a versão final abaixo. **Fonte confirmada:** TOTVS, "Panorama IA nas empresas brasileiras" (junho/2025, em parceria com H2R Insights & Trends, 194 entrevistas abril-maio/2025) — PDF: conteudo.totvs.com/hubfs/Estudo_Panorama_IA_2025.pdf. Achado exato: "Apenas 7% das empresas brasileiras calculam o ROI obtido a partir da implementação e utilização das soluções de IA. 93% das empresas não usam nenhuma métrica clara para medir os resultados." São dois achados distintos do mesmo estudo, não inferência — seguro marcar @TOTVS na publicação. **Nota restante (baixa prioridade):** framing do "86%/24%" (EY-Parthenon CEO Outlook 2026) mantida como está, decisão do autor.
 
-Toda empresa comprou alguma coisa de IA esse ano. Poucas sabem dizer se aquilo deu certo.
+Versão final publicada e editada (com abertura "levanta o dedo" e fechamento ácido):
 
-Não é chute meu, não. É número: 86% dos CEOs no Brasil esperam um impacto grande da IA nos próximos dois anos. Só que 24% dizem que o resultado já veio melhor do que esperavam. E, segundo levantamento da TOTVS, 93% das empresas não usam nenhuma métrica clara pra medir se aquele investimento voltou.
+🖐️ Levanta o dedo aí se sua empresa contratou qualquer serviço de IA esse ano.
 
-A maioria não tá com dado. Tá com fé.
+Mente não, levanta a mão aí que eu sei... Já dá pra gente dar as mãos.
+
+E não é chute meu, não. É número: 86% dos CEOs no Brasil esperam um impacto grande da IA nos próximos dois anos. Só 24% dizem que o resultado já veio melhor do que esperavam.
+
+Segundo a TOTVS, 7 em cada 100 empresas têm métricas claras pra calcular o ROI desse investimento.
+As outras 93 têm fé.
 
 Pode parecer besteira, mas o motivo geralmente é o mesmo: a empresa coloca a IA antes do processo. Quando isso acontece, você tá queimando dinheiro.
 
