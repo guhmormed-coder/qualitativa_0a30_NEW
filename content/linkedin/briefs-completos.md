@@ -31,9 +31,20 @@ A estrutura narrativa de cada brief é o esqueleto — a abertura nunca deve cit
   - Situação de cotidiano do povo brasileiro (ex: terminar namoro com "não é você, sou eu", simulado de Enem)
   Se a analogia exigir explicação de contexto pra funcionar, não é a analogia certa pro post.
 - **Endereçar o post a uma pessoa/marca específica ("Dear Mr. Cook,", ou o Zuck implícito no post do WhatsApp) é um gancho de abertura que uso de verdade — vale repetir quando fizer sentido.**
+- **Citar figura conhecida do meio como falsa humildade antes de soltar conselho direto.** Ex: "não querendo roubar o lugar do Caito Maia, mas ó:" seguido de lista de opinião direta. Funciona como desarmante antes da cutucada.
+- **Apelido carinhoso/pun de endereçamento pro público-alvo.** Ex: "CNPJoto" pra quem tem empresa. Vale criar um assim quando o tema render.
+- **Catchphrase real e repetida: "é aí que mora [X]".** Ex: "é aí que mora o pulo do gato" (post de problemas), "é aí que mora a mágica do CS" (post de cancelamento). Não é acaso, é estrutura minha — usar como fechamento de virada quando fizer sentido.
+- **Abertura de saudação direta e informal à audiência é recorrente:** "Hey rede!!", "Fala Rede, cês tão bão?", "Boo!", "Opa, bom demais da conta!?". Trocar o cumprimento por tema/humor, mas manter o formato de "chamar a rede antes de começar" como opção.
 - **Fechamento tende a ser mais brincalhão/comunidade do que reflexivo-sério.** Ex: "testa aí e me conta", "marca aquele amigo que...". Uma pergunta reflexiva pesada não é o padrão mais comum meu — só usar se o post for do tipo mais pessoal/vulnerável (ver próximo ponto).
+- **Sign-off catchphrase de desenho/cultura pop também vale como fechamento, não só analogia no meio do texto.** Ex: "E por hoje é só, pessoal!" (variação do "that's all, folks" clássico).
+- **"Fechou?" entra na família de conectivo junto com "né?/sabe?/viu?/entendeu?".**
 - **Vulnerabilidade pessoal genuína (não só "insight profissional") faz parte do meu repertório** — não precisa ficar sempre no registro "profissional cutucando o mercado". Um post mais cru, tipo relato pessoal com lição de vida, também é minha voz.
 - **Hashtag: uso esporádico, só em post mais "institucional/recapitulação" (tipo recap de treinamento), nunca em post de opinião/provocação.**
+- **Emoji de assinatura pode ser whimsical/sem função explícita, não só funcional.** Ex: 🥕 como sign-off sem relação óbvia com o tema — marca pessoal, não precisa sempre justificar.
+
+**Regra específica de carrossel (extraída do carrossel real "5 dicas pra exorcizar o fantasma do cancelamento"):**
+- **O conceito/tema visual se sustenta em TODO slide, não só na capa.** Se abrir com metáfora de fantasma/exorcismo, cada slide carrega isso no título e no texto, não só a primeira.
+- **Slide final de CTA transforma curtir/comentar/compartilhar/salvar em piada dentro do mesmo universo temático** (ex: "salva pra usar de amuleto mais tarde", "comenta pra exorcizar sua rede também"), não pede engajamento genérico.
 
 **Padrões de ritmo (extraídos de fala ditada, não de post editado — mais autêntico que qualquer post já publicado, porque não passou pelo filtro de "ficar apresentável"):**
 - **Repetição em três pra dar ênfase.** Ex: "corta gasto, corta gasto, corta gasto". Repetir a mesma palavra/ideia 2-3 vezes seguidas é recurso real, não erro de edição.
