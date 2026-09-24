@@ -27,7 +27,7 @@ A estrutura narrativa de cada brief é o esqueleto — a abertura nunca deve cit
   - Desenho antigo/infância (referência que ativa nostalgia compartilhada)
   - Coisa do hype atual (o que tá bombando naquele momento)
   - "Frase de mãe" (ditado/sabedoria de mãe brasileira, reconhecível na hora)
-  - Frase icônica de personagem de desenho
+  - Frase icônica de personagem de desenho (confirmado: "Lembre-se, Simba: por trás de todo CNPJ sempre tem um CPF!" — Rei Leão. Estrutura reaproveitável: "Lembre-se, [personagem]: [sabedoria adaptada pro tema]")
   - Situação de cotidiano do povo brasileiro (ex: terminar namoro com "não é você, sou eu", simulado de Enem)
   Se a analogia exigir explicação de contexto pra funcionar, não é a analogia certa pro post.
 - **Endereçar o post a uma pessoa/marca específica ("Dear Mr. Cook,", ou o Zuck implícito no post do WhatsApp) é um gancho de abertura que uso de verdade — vale repetir quando fizer sentido.**
@@ -42,9 +42,16 @@ A estrutura narrativa de cada brief é o esqueleto — a abertura nunca deve cit
 - **Hashtag: uso esporádico, só em post mais "institucional/recapitulação" (tipo recap de treinamento), nunca em post de opinião/provocação.**
 - **Emoji de assinatura pode ser whimsical/sem função explícita, não só funcional.** Ex: 🥕 como sign-off sem relação óbvia com o tema — marca pessoal, não precisa sempre justificar.
 
-**Regra específica de carrossel (extraída do carrossel real "5 dicas pra exorcizar o fantasma do cancelamento"):**
-- **O conceito/tema visual se sustenta em TODO slide, não só na capa.** Se abrir com metáfora de fantasma/exorcismo, cada slide carrega isso no título e no texto, não só a primeira.
-- **Slide final de CTA transforma curtir/comentar/compartilhar/salvar em piada dentro do mesmo universo temático** (ex: "salva pra usar de amuleto mais tarde", "comenta pra exorcizar sua rede também"), não pede engajamento genérico.
+**Regra específica de carrossel (extraída de 3 carrosséis reais: fantasma do cancelamento, receita do efeito wow, funeral da batata do KFC):**
+- **O conceito/tema visual se sustenta em TODO slide, não só na capa.** Se abrir com metáfora (fantasma, receita de cozinha, funeral), cada slide carrega isso no título e no texto até o fim, não só a primeira.
+- **Slide final de CTA transforma curtir/comentar/compartilhar/salvar em piada dentro do mesmo universo temático** (ex: "salva pra usar de amuleto mais tarde", "comenta pra exorcizar sua rede também", "salva pra mostrar na firma mais tarde"), não pede engajamento genérico. Esse é o padrão fixo de fechamento de carrossel, repetido em pelo menos 2 carrosséis diferentes.
+- **Métrica/unidade literal aplicada a conceito abstrato, quando a metáfora for de receita/fórmula.** Ex: "500g de Objetivos Claros, 1 xícara de Desafios do Cliente, 2 colheres de Ferramentas" pra explicar o que compõe um bom briefing. Transforma lista abstrata em algo concreto e engraçado.
+- **Grafia fonética/regional pra dar voz de personagem, quando o carrossel tiver uma "persona" sustentada** (ex: chef de receita). "Non esquece do tomperro!", "Meeexe, maínha!", vogal esticada pra emular fala. Só usar quando o conceito do carrossel já pede uma voz encarnada, não forçar em carrossel comum.
+- **Carrossel também pode ser case real + número, não só lista de dicas.** Contar uma história real (ex: campanha de marca, decisão de empresa) com dado concreto, terminando em lição pro leitor — formato alternativo ao "N dicas".
+- **Quebra de quarta parede, cutucando o leitor no meio da narrativa.** Ex: "(ACHOU QUE TAVA SOZINHO, NÉ? KKKK)" — comentário parentético direto pro leitor, no meio do texto.
+- **❌ como bullet visual pra lista de consequência ruim** (formato específico de carrossel, não de post de texto).
+- **CTA final de carrossel pode convidar pra conectar de verdade**, algo que não cabe bem num post de opinião curto: "Hey, bora nos conectar pra trocar experiências?! linkedin.com/in/[handle]".
+- **Sempre checar magnitude de número antes de citar case de terceiro** (estatística implausível — tipo bilhões de reação numa campanha — derruba a credibilidade do resto do carrossel).
 
 **Padrões de ritmo (extraídos de fala ditada, não de post editado — mais autêntico que qualquer post já publicado, porque não passou pelo filtro de "ficar apresentável"):**
 - **Repetição em três pra dar ênfase.** Ex: "corta gasto, corta gasto, corta gasto". Repetir a mesma palavra/ideia 2-3 vezes seguidas é recurso real, não erro de edição.
