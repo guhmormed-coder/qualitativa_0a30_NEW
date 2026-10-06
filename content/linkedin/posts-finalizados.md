@@ -24,7 +24,7 @@ Na hora de ir você não quer bater a porta na cara de ninguém. Afinal, a gente
 Quando isso acontece no corporativo, é aí que mora a mágica do CS: Ler nas entrelinhas. Ou, entre as opções do checkbox. Vai saber...
 
 Cliente que entendeu o valor do que comprou, que conseguiu extrair ROI daquilo, que resolveu satisfatoriamente uma dor não vaza por 50 reais a mais na fatura. Vaza quando o valor nunca ficou claro pra ele, ou quando o valor não justifica o investimento.
-Pautar roadmap em formulário preenchido no momento do tchau é apostar evolução do teu produto em Bet.
+Pautar roadmap em formulário preenchido "na hora do adeus" é apostar evolução do teu produto em Bet.
 
 Declarar motivo é rápido, dá pra preencher com qqr groselha. Investigar o motivo por trás do motivo, analisar um LTV inteiro de relacionamento (tem opção de múltipla escolha pra isso?), ouvir o que ninguém colocaria num dropdown dá muito mais trabalho. Mas é milhões de vezes mais eficaz.
 

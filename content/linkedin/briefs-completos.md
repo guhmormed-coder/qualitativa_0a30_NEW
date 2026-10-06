@@ -40,6 +40,7 @@ A estrutura narrativa de cada brief é o esqueleto — a abertura nunca deve cit
   - "Frase de mãe" (ditado/sabedoria de mãe brasileira, reconhecível na hora)
   - Frase icônica de personagem de desenho (confirmado: "Lembre-se, Simba: por trás de todo CNPJ sempre tem um CPF!" — Rei Leão. Estrutura reaproveitável: "Lembre-se, [personagem]: [sabedoria adaptada pro tema]")
   - Situação de cotidiano do povo brasileiro (ex: terminar namoro com "não é você, sou eu", simulado de Enem)
+  - Música brega/clássica brasileira, usada como marcador de tempo/momento dentro da frase (confirmado: "'na hora do adeus' é apostar evolução do teu produto em Bet" — refrão de Reginaldo Rossi, "Rei do Brega". Funciona bem quando a frase da música já é, por si, um marcador temporal natural — encaixa na gramática sem precisar explicar a referência)
   Se a analogia exigir explicação de contexto pra funcionar, não é a analogia certa pro post.
 - **Endereçar o post a uma pessoa/marca específica ("Dear Mr. Cook,", ou o Zuck implícito no post do WhatsApp) é um gancho de abertura que uso de verdade — vale repetir quando fizer sentido.**
 - **Citar figura conhecida do meio como falsa humildade antes de soltar conselho direto.** Ex: "não querendo roubar o lugar do Caito Maia, mas ó:" seguido de lista de opinião direta. Funciona como desarmante antes da cutucada.
