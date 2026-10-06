@@ -49,6 +49,12 @@ A estrutura narrativa de cada brief é o esqueleto — a abertura nunca deve cit
 - **Fechamento tende a ser mais brincalhão/comunidade do que reflexivo-sério.** Ex: "testa aí e me conta", "marca aquele amigo que...". Uma pergunta reflexiva pesada não é o padrão mais comum meu — só usar se o post for do tipo mais pessoal/vulnerável (ver próximo ponto).
 - **Sign-off catchphrase de desenho/cultura pop também vale como fechamento, não só analogia no meio do texto.** Ex: "E por hoje é só, pessoal!" (variação do "that's all, folks" clássico).
 - **"Fechou?" entra na família de conectivo junto com "né?/sabe?/viu?/entendeu?".**
+- **Expressão regional brasileira específica (não genérica) como fechamento de frase.** Ex: "Confirma... Com Deus, como dizem em MG." — não precisa ser nacional, pode ser regional e nomear a região. Reforça autenticidade mais que gíria nacional batida.
+- **Imagem de aposta/jogo (Bet, ficha, cara ou coroa) é analogia recorrente pra decisão arriscada feita no escuro** — e "Bet" especificamente (app de aposta esportiva) é mais atual que "cara ou coroa", pode reaparecer na mesma peça de forma consistente (ex: "apostar em Bet" + depois "apostar todas as fichas").
+- **Gíria crua tipo "qqr groselha" pra dizer "qualquer coisa sem valor"** — entra na mesma família de "furada"/"baita de uma cagada": intensidade de opinião, vocabulário carregado.
+- **Parênteses de comentário meta no meio do parágrafo**, tipo "(plot twist: quase nunca é!)" — interrompe o próprio argumento pra rir da própria piada, sem tirar o fio.
+- **"Vai saber..." como trailing phrase de dúvida irônica**, depois de uma pergunta retórica sem resposta clara.
+- **Fechamento com imperativo direto + dupla negativa pra ênfase**, tipo "Não confia naquele clique cegamente não." — mais forte que fechar só em pergunta.
 - **Vulnerabilidade pessoal genuína (não só "insight profissional") faz parte do meu repertório** — não precisa ficar sempre no registro "profissional cutucando o mercado". Um post mais cru, tipo relato pessoal com lição de vida, também é minha voz.
 - **Hashtag: uso esporádico, só em post mais "institucional/recapitulação" (tipo recap de treinamento), nunca em post de opinião/provocação.**
 - **Emoji de assinatura pode ser whimsical/sem função explícita, não só funcional.** Ex: 🥕 como sign-off sem relação óbvia com o tema — marca pessoal, não precisa sempre justificar.

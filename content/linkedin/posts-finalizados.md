@@ -8,29 +8,27 @@ Textos já calibrados na voz real (sem travessão, sem tom professoral, com as r
 
 ## 1. Motivo de cancelamento (versão geral)
 
-**Status:** aprovado, pronto pra publicar como está.
+**Status:** versão final do autor (editada por ele em cima do rascunho), ainda não confirmado se já foi publicada — perguntar status.
 
-Cliente cancela. Aparece a telinha chata: "Por que você está saindo?"
+Cliente cancela. Pop-up na tela: "Por que você está saindo?"
 
-Ele tem uns 5 segundos de paciência antes de fechar a aba. Marca "preço". Confirma. Pronto, foi embora.
+Ele tem uns 5 segundos de paciência antes de fechar a aba. Marca "preço". Confirma... Com Deus, como dizem em MG.
 
-E aquele clique vira dado.
-Vira slide de retenção.
-Vira decisão de não investir em tal parte do produto, porque "o problema é preço, não é isso aqui".
+Com isso aquele clique vira dado, slide de retenção em reunião de Diretoria e consequentemente a decisão de incluir ou deixar algo de lado porque "o problema é o preço, não isso aqui!"
 
-Só que preço quase nunca é a causa. É o sintoma.
+Só que o preço não é causa, é sintoma.
 
-É igual quando você termina um namoro e fala "não é você, sou eu", sabendo que o motivo é a outra pessoa. Na hora você não quer bater a porta na cara de ninguém. Afinal, a gente nunca sabe o dia de amanhã, né?
+É igual quando a gente termina um namoro falando "não é você, sou eu". (plot twist: quase nunca é!)
+Na hora de ir você não quer bater a porta na cara de ninguém. Afinal, a gente nunca sabe o dia de amanhã, né?
 
-É aí que mora a mágica do CS: ler nas entrelinhas. Ou, no caso, entre as opções do checkbox.
+Quando isso acontece no corporativo, é aí que mora a mágica do CS: Ler nas entrelinhas. Ou, entre as opções do checkbox. Vai saber...
 
-Cliente que entendeu o valor do que comprou, que conseguiu extrair ROI daquilo, não vaza por 50 reais a mais na fatura. Vaza quando o valor nunca ficou claro pra ele, ou quando o valor não justifica o investimento.
+Cliente que entendeu o valor do que comprou, que conseguiu extrair ROI daquilo, que resolveu satisfatoriamente uma dor não vaza por 50 reais a mais na fatura. Vaza quando o valor nunca ficou claro pra ele, ou quando o valor não justifica o investimento.
+Pautar roadmap em formulário preenchido no momento do tchau é apostar evolução do teu produto em Bet.
 
-Pautar decisão de roadmap num campo de formulário preenchido é apostar tudo no cara ou coroa.
+Declarar motivo é rápido, dá pra preencher com qqr groselha. Investigar o motivo por trás do motivo, analisar um LTV inteiro de relacionamento (tem opção de múltipla escolha pra isso?), ouvir o que ninguém colocaria num dropdown dá muito mais trabalho. Mas é milhões de vezes mais eficaz.
 
-Motivo declarado é rápido, eu posso preencher e colocar qualquer coisa ali. Investigar o motivo por trás do motivo, analisar anos de relacionamento (tem opção de múltipla escolha pra isso?), ouvir o que a pessoa nunca colocaria num dropdown: dá muito mais trabalho. Mas é milhões de vezes mais eficaz.
-
-Então, antes de cortar orçamento de alguma coisa, ou deixar uma evolução de fora porque "os dados de churn apontaram pra preço": você já fez call com pelo menos cinco clientes que cancelaram, ou confiou naquele clique?
+Então, antes de apostar todas as suas fichas, ou cortar um recurso/feature de lado porque "o relatório de churn aponta isso": Faz uma call de 20 minutos com uns 5 clientes que cancelaram. Não confia naquele clique cegamente não. 😉
 
 ---
 
