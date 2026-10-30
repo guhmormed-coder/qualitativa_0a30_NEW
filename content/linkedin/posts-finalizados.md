@@ -156,22 +156,22 @@ Quem vive dizendo "eu não tenho autoridade pra mudar isso": você já tentou de
 
 ---
 
-## 7. Carrossel "O fantasma voltou" — V2 do carrossel de Halloween
+## 7. Carrossel "O fantasma voltou" — V2 do carrossel de Halloween (versão folclore brasileiro)
 
-**Status:** rascunho aprovado no formato, **agendado pra outubro** (perto do Halloween, não antes — decisão do autor, pra manter o gancho sazonal que funcionou no V1). Sequência do carrossel "5 Dicas para exorcizar o fantasma do CANCELAMENTO" (publicado há ~1 ano). Usa o insight do boi de piranha como gancho, mas em formato de sinais de alerta, não confissão pessoal.
+**Status:** texto final reconstruído em 30/10 (a primeira versão, a do checklist genérico de sinais, foi descartada por ser "óbvia demais" — ficou só a memória da virada pro folclore brasileiro, nunca tinha sido salva). Agendado pra sair perto do Dia do Saci (31/10), pra aproveitar o gancho sazonal. Decisão tomada: Padre Quevedo fica de fora — pesquisa confirmou que ele é cético/desmistificador, não exorcista, então usá-lo como personagem de assombração soaria errado pra quem conhece a história real dele.
 
-**Capa:** "O FANTASMA VOLTOU 👻 SINAIS QUE ELE JÁ TÁ NA SUA CONTA (ANTES DE VOCÊ TER QUE PERGUNTAR POR QUÊ)"
+**Capa:** "ESSE ANO O FOLCLORE INVADIU O CS 👻 5 ASSOMBRAÇÕES QUE MORAM NA SUA CARTEIRA DE CLIENTES (E VOCÊ TALVEZ NÃO TENHA VISTO AINDA)"
 
-**Slide 2 (gancho):** "Se você teve que perguntar pro cliente 'por que você tá cancelando' numa conta que acompanha de perto, a pergunta já é o sinal. O fantasma não aparece do nada — ele deixa rastro antes. Aqui embaixo, os rastros mais comuns."
+**Slide 2 (gancho):** "Ano passado a gente exorcizou o fantasma do cancelamento. Esse ano o bicho pegou carona no folclore. Cada sinal de risco que você ignora vira uma criatura diferente rondando sua conta. Bora reconhecer cada uma antes que ela leve seu cliente embora."
 
-**Slide 3:** "1) Sumiu da call recorrente 📉 — reunião que sempre tinha presença, agora vem só o assistente, ou cancela em cima da hora."
+**Slide 3:** "A IARA 🧜‍♀️ — Canta lindo, te afoga igual. É aquele cliente que só elogia, dá nota máxima em toda pesquisa, sorri em toda call... e cancela do nada. NPS alto não é sinônimo de fidelidade, é sinônimo de educação."
 
-**Slide 4:** "2) Resposta que ficou lenta 🐌 — quem respondia em minutos, agora leva dias. Não é falta de tempo, é falta de prioridade."
+**Slide 4:** "O CURUPIRA 🦶 — Pé virado pro lado errado, rastro que só confunde. É o dashboard todo verde, login todo dia, uso constante... só que ninguém mais usa a função que gera valor de verdade. Rastro enganoso aponta pro caminho errado."
 
-**Slide 5:** "3) Trocou de interlocutor sem avisar 👤 — e ninguém te contou. Você só descobre quando pergunta 'cadê fulano?'"
+**Slide 5:** "A MULA SEM CABEÇA 🔥 — Corre em fogo, ninguém segura. É quando o ticket vira escalada de sexta à noite, porque um sinal pequeno foi ignorado durante meses. O fogo não nasce do nada, nasce do que ficou escondido."
 
-**Slide 6:** "4) Parou de reclamar 🤐 — parece bom, mas não é. Cliente engajado reclama. Cliente que já desistiu, fica quieto."
+**Slide 6:** "O LOBISOMEM 🐺 — Nas noites de lua cheia (leia-se: no QBR), é gente boa, maior parceiro, assina tudo. No resto do mês, nem responde o WhatsApp. Sponsor engajado uma vez por trimestre não é sponsor engajado."
 
-**Slide 7 (bônus, ação prática):** "Avistou um desses? Não espera o próximo QBR. Liga, sem pauta de venda, só pra saber como tá."
+**Slide 7 (bônus):** "O SACI 🌪️ — Perna só, pentelho, vive aprontando bagunça pequena. É aquele 'só mais uma coisinha' que parece bobo isolado, mas em conjunto forma um redemoinho que desestabiliza a conta inteira. E segundo a lenda, capturando o gorro dele, ele obedece. Trocando em miúdos: dá nome ao problema recorrente antes que ele vire praga."
 
-**Slide final (CTA, mesmo formato do V1):** "SALVA (pra ter o checklist de caça-fantasma sempre à mão) / CURTE (se você também já perdeu conta por não ver os sinais) / COMENTA (outros sinais que você já viu) / COMPARTILHA (com quem tá devendo esse QBR)"
+**Slide final (CTA, mesmo formato do V1):** "SALVA (pra ter o caça-assombração sempre à mão, antes do bicho pegar sua carteira) / CURTE (se você já topou com alguma dessas no corredor do seu CRM) / COMENTA (qual dessas assombrações já rondou sua conta) / COMPARTILHA (com quem também precisa benzer a carteira de clientes)"
