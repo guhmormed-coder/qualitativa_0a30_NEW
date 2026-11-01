@@ -178,7 +178,7 @@ Quem vive dizendo "eu não tenho autoridade pra mudar isso": você já tentou de
 
 **Texto da postagem (vai no corpo do post, acima do carrossel, já que não tem mais slide de capa/explicação):**
 
-**Decisão:** sem referência a Finados — autor pediu pra tirar, risco de soar deslocado associando piada a data de luto. Trocado por callback direto ao carrossel antigo "fantasma do cancelamento", reforçando ideia de sequência/continuidade.
+**Decisão:** sem referência a Finados — autor pediu pra tirar, risco de soar deslocado associando piada a data de luto. Trocado por callback direto ao carrossel antigo "fantasma do cancelamento", reforçando ideia de sequência/continuidade. Nomes das 6 criaturas tirados do texto (spoiler, mata a curiosidade de deslizar o carrossel). Fechamento com piada de corrente de WhatsApp/e-mail (7 anos de azar), ideia do autor.
 
 > Um tempo atrás, fiz um carrossel aqui pra espantar o fantasma do cancelamento.
 >
@@ -186,8 +186,8 @@ Quem vive dizendo "eu não tenho autoridade pra mudar isso": você já tentou de
 >
 > Com um atrasinho, mas saiu. Antes tarde do que nunca.
 >
-> Curupira, Iara, Lobisomem, Mula sem cabeça, Saci, Mapinguari. Cada um com o jeitinho dele de assombrar conta.
+> São 6 criaturas do nosso folclore. Cada uma com o jeitinho dela de assombrar conta.
 >
-> Desliza pro carrossel 👇 e reconhece pelo menos um. Aposto que sim.
+> Desliza pro carrossel 👇 e reconhece pelo menos uma. Aposto que sim.
 >
-> Qual dessas já rondou sua conta? Comenta aqui embaixo. E marca quem também já cruzou com algum desses.
+> Qual dessas já rondou sua conta? Comenta aqui embaixo e compartilha com sua rede. Corrente do bem, versão CS: quem não repassar pra pelo menos 3 pessoas leva 7 anos de azar com essa galera toda no seu pé. kkkk
