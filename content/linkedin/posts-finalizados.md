@@ -156,22 +156,36 @@ Quem vive dizendo "eu não tenho autoridade pra mudar isso": você já tentou de
 
 ---
 
-## 7. Carrossel "O fantasma voltou" — V2 do carrossel de Halloween (versão folclore brasileiro)
+## 7. Carrossel "Lendas Urbanas do Customer Success" (folclore brasileiro)
 
-**Status:** texto final reconstruído em 30/10 (a primeira versão, a do checklist genérico de sinais, foi descartada por ser "óbvia demais" — ficou só a memória da virada pro folclore brasileiro, nunca tinha sido salva). Agendado pra sair perto do Dia do Saci (31/10), pra aproveitar o gancho sazonal. Decisão tomada: Padre Quevedo fica de fora — pesquisa confirmou que ele é cético/desmistificador, não exorcista, então usá-lo como personagem de assombração soaria errado pra quem conhece a história real dele.
+**Status:** texto e conceito final fechados em 01/11, depois de várias rodadas (a versão "sinais de alerta" e depois a versão "CS cria o próprio monstro" foram descartadas por ficarem forçadas — a certa mistura ângulo de cliente, ângulo de CS e ângulo de situação, sem fórmula fixa). Perdeu a janela do Dia do Saci (31/10) por falta de tempo — vai sair no feriado de Finados (02/11, segunda) em vez de domingo (01/11), por ser o dia de maior uso do LinkedIn entre os dois, e porque Finados (dia de lembrar quem partiu/ronda por aí) encaixa tematicamente até melhor que Halloween. Padre Quevedo ficou de fora (é cético/desmistificador, não exorcista — não encaixava como assombração). Imagens de fundo: ver `prompts-imagens-carrossel-halloween.md` (estilo Maurício de Sousa + versão fotorrealista), uma por criatura, sem texto embutido — o texto de cada criatura é sobreposto depois no editor, e a explicação do conceito fica só no texto da postagem (sem slide de capa/abertura).
 
-**Capa:** "ESSE ANO O FOLCLORE INVADIU O CS 👻 5 ASSOMBRAÇÕES QUE MORAM NA SUA CARTEIRA DE CLIENTES (E VOCÊ TALVEZ NÃO TENHA VISTO AINDA)"
+**Nome do carrossel:** "Lendas Urbanas do Customer Success"
 
-**Slide 2 (gancho):** "Ano passado a gente exorcizou o fantasma do cancelamento. Esse ano o bicho pegou carona no folclore. Cada sinal de risco que você ignora vira uma criatura diferente rondando sua conta. Bora reconhecer cada uma antes que ela leve seu cliente embora."
+**Ordem final das 6 criaturas:**
 
-**Slide 3:** "A IARA 🧜‍♀️ — Canta lindo, te afoga igual. É aquele cliente que só elogia, dá nota máxima em toda pesquisa, sorri em toda call... e cancela do nada. NPS alto não é sinônimo de fidelidade, é sinônimo de educação."
+**O CURUPIRA 🦶** — "Pé virado pro lado errado, confunde quem olha a pegada. O time inteiro de olho no dashboard, KPI subindo, tudo verde, tudo lindo... enquanto o cliente, na vida real, já tá andando pro lado contrário. A pegada aponta pra um caminho. O cliente foi pelo outro."
 
-**Slide 4:** "O CURUPIRA 🦶 — Pé virado pro lado errado, rastro que só confunde. É o dashboard todo verde, login todo dia, uso constante... só que ninguém mais usa a função que gera valor de verdade. Rastro enganoso aponta pro caminho errado."
+**A IARA 🧜‍♀️** — "Canta lindo, afoga igual. Cliente te enche de elogio em toda call, dá nota 10 em pesquisa, te chama de parceiro... e cancela sem aviso. Elogio não paga boleto. Se a única prova de relacionamento bom é um elogio solto, você tá nadando atrás da voz, não atrás do peixe."
 
-**Slide 5:** "A MULA SEM CABEÇA 🔥 — Corre em fogo, ninguém segura. É quando o ticket vira escalada de sexta à noite, porque um sinal pequeno foi ignorado durante meses. O fogo não nasce do nada, nasce do que ficou escondido."
+**O LOBISOMEM 🐺** — "Lua cheia, vira bicho. Resto do mês, gente fina. Tem cliente assim: participa de toda call de roadmap, pede feature nova, ajuda a construir produto, é parceirão... até o boleto chegar. Na hora de pagar, vira outro — questiona linha por linha, disputa valor que ele mesmo pediu. Mesma pessoa, lua diferente."
 
-**Slide 6:** "O LOBISOMEM 🐺 — Nas noites de lua cheia (leia-se: no QBR), é gente boa, maior parceiro, assina tudo. No resto do mês, nem responde o WhatsApp. Sponsor engajado uma vez por trimestre não é sponsor engajado."
+**A MULA SEM CABEÇA 🔥** — "Sossegada a semana inteira, mansinha. Sexta à noite, vira bicho de fogo: exige resolvido na hora o que teve 5 dias úteis pra resolver, só virou 'urgente' depois do expediente. O problema não nasceu sexta. Só escolheu sexta pra aparecer."
 
-**Slide 7 (bônus):** "O SACI 🌪️ — Perna só, pentelho, vive aprontando bagunça pequena. É aquele 'só mais uma coisinha' que parece bobo isolado, mas em conjunto forma um redemoinho que desestabiliza a conta inteira. E segundo a lenda, capturando o gorro dele, ele obedece. Trocando em miúdos: dá nome ao problema recorrente antes que ele vire praga."
+**O SACI 🌪️** — "Aparece causando alvoroço, abre 50 chamado, fala com meio time ao mesmo tempo, vira bagunça só. Só que, quando você pergunta uma coisa simples tipo 'pode me mandar o print da tela?', vira fumaça. Some. Redemoinho de problema, sem substância nenhuma quando você tenta entender o que é de verdade."
 
-**Slide final (CTA, mesmo formato do V1):** "SALVA (pra ter o caça-assombração sempre à mão, antes do bicho pegar sua carteira) / CURTE (se você já topou com alguma dessas no corredor do seu CRM) / COMENTA (qual dessas assombrações já rondou sua conta) / COMPARTILHA (com quem também precisa benzer a carteira de clientes)"
+**O MAPINGUARI 👹 (fechamento)** — "Só aparece quando a mata já foi provocada demais. Tem cliente que nunca abre chamado, nunca fala com CS — primeira ligação já é pro seu diretor, pro VP, pro C-level. Qualquer probleminha pequeno vira comitê de crise antes mesmo de você saber que existia um problema."
+
+**Texto da postagem (vai no corpo do post, acima do carrossel, já que não tem mais slide de capa/explicação):**
+
+> Era pra sair no Dia do Saci. Até lenda se atrasa de vez em quando.
+>
+> Hoje é Finados, dia de lembrar quem já se foi. No folclore brasileiro, também é dia de saber quem ainda ronda por aí sem avisar.
+>
+> Separei 6 lendas urbanas do Customer Success: criaturas do nosso folclore que, sem querer, a gente topa com elas na carteira de clientes o ano inteiro.
+>
+> Curupira, Iara, Lobisomem, Mula sem cabeça, Saci, Mapinguari. Cada um com o jeitinho dele de assombrar conta.
+>
+> Desliza pro carrossel 👇 e reconhece pelo menos um. Aposto que sim.
+>
+> Qual dessas já rondou sua conta? Comenta aqui embaixo. E marca quem também já cruzou com algum desses.
