@@ -4,6 +4,18 @@
 
 ---
 
+## Conversor pra foto realista (com mais sombra)
+
+Use esse bloco no lugar da frase de abertura "Comic book illustration in the art style of..." de qualquer um dos 6 prompts abaixo (mantendo o resto da descrição da cena igual), ou jogue junto com a imagem já gerada numa ferramenta que aceite imagem de referência (image-to-image).
+
+```
+Hyperrealistic photographic rendering, not a cartoon, not an illustration, not cel-shaded, no flat colors, no comic outlines, no watercolor texture. Shot as if with a professional camera, 85mm lens, shallow depth of field, cinematic low-key lighting with strong directional moonlight or firelight as the single main light source. Deep, high-contrast chiaroscuro shadows with sharp, well-defined edges, dramatic rim lighting separating the subject from a mostly dark background. Realistic skin/fur/scale textures with visible pores, individual fur strands, subsurface scattering on skin, fabric weave detail on clothing, wet reflective highlights where appropriate (water, fire, sweat). Volumetric fog/mist catching the light beams. Subtle film grain, National Geographic creature-photography aesthetic, 8K detail, physically accurate light falloff and shadow depth. Same subject, pose, props and scene composition as described below, but fully photoreal instead of illustrated:
+```
+
+Pra ferramentas que aceitam prompt negativo, adicionar: `--no cartoon, illustration, flat colors, cel shading, outlines, 2D, anime, watercolor, comic`
+
+---
+
 ## 1. Curupira
 
 Comic book illustration in the art style of Mauricio de Sousa (Turma da Mônica), Brazilian cartoonist: bold clean black outlines, flat bright cel-shaded colors, rounded friendly character shapes, classic Brazilian "gibi" look. Whimsical-spooky mood, not gory or realistic horror, big expressive eyes, mischievous friendly-eerie expression. Warm earthy Brazilian palette mixed with haunted-night accents: deep forest green, ochre/terracotta, indigo night blue, ember orange, moonlight cream. Vertical portrait composition, 1080x1350px, 4:5 aspect ratio, full bleed background, no text, no logos, no watermark. Character in lower two-thirds of frame; upper third simpler/darker for negative space. Curupira: small forest spirit with fiery red/orange hair, reddish-brown skin, barefoot, walking through a floating cluster of glowing green upward-trending chart icons and checkmarks (like floating KPI dashboard graphics) in a dark Atlantic Forest at dusk. His feet are clearly turned backwards, and his glowing footprint trail curves away from the charts, off into the misty dark trees in the opposite direction, visually showing the data points one way and his actual path going another. Mischievous, sly grin. --ar 4:5
