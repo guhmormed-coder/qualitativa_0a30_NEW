@@ -178,11 +178,13 @@ Quem vive dizendo "eu não tenho autoridade pra mudar isso": você já tentou de
 
 **Texto da postagem (vai no corpo do post, acima do carrossel, já que não tem mais slide de capa/explicação):**
 
-> Era pra sair no Dia do Saci. Até lenda se atrasa de vez em quando.
+**Decisão:** sem referência a Finados — autor pediu pra tirar, risco de soar deslocado associando piada a data de luto. Trocado por callback direto ao carrossel antigo "fantasma do cancelamento", reforçando ideia de sequência/continuidade.
+
+> Um tempo atrás, fiz um carrossel aqui pra espantar o fantasma do cancelamento.
 >
-> Hoje é Finados, dia de lembrar quem já se foi. No folclore brasileiro, também é dia de saber quem ainda ronda por aí sem avisar.
+> Hoje eu volto com a sequência: lendas não tão fantásticas assim, que podem aparecer em qualquer operação de CS, bem mais perto da sua carteira de clientes do que parece.
 >
-> Separei 6 lendas urbanas do Customer Success: criaturas do nosso folclore que, sem querer, a gente topa com elas na carteira de clientes o ano inteiro.
+> Com um atrasinho, mas saiu. Antes tarde do que nunca.
 >
 > Curupira, Iara, Lobisomem, Mula sem cabeça, Saci, Mapinguari. Cada um com o jeitinho dele de assombrar conta.
 >
